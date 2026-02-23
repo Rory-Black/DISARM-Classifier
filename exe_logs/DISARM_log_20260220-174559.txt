@@ -1,0 +1,9 @@
+DISARM Log File - Created on 20260220-174559
+SETUP:
+Large Model: gpt-oss:latest
+Fast Model: gpt-oss:latest
+Temperature: 0.0
+Max Fix Attempts: 2
+
+==================================================
+
