@@ -117,6 +117,8 @@ def test_batch_clf(num_tests=-1, checkpoint=0):
 
         # Perform Tactic classifications:
         identified_tactics = disarm_classifer.identify_tactics(article_content)
+        # reset chat history for techniques (to emulate normal execution of batchCLF loop)
+        disarm_classifer.conversation_history_main = []
         identified_techniques = []
         print(f"Tactics identified by model: {identified_tactics}")
         for required_tactic in article_tactics:
@@ -164,7 +166,7 @@ def print_log(str):
 def main():
     large_model = "gpt-oss:latest"
     fast_model = "gpt-oss:latest"
-    test_batch_clf(num_tests=5, checkpoint=15)
+    test_batch_clf(num_tests=5, checkpoint=0 )
 
 if __name__ == "__main__":
     main()

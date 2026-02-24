@@ -156,14 +156,18 @@ class DISARMClassifier:
         self.article_content = article_content
         self.total_failures = 0
         self.log_filename = None
+        self.conversation_history_main = []
+        self.conversation_history_debug = []
         self.new_log_file()
         with open("DISARM.json", "r", encoding="utf-8") as f:
             self.disarm_json = json.load(f)
 
-    def ask_openwebui(self, prompt, system_prompt=None, temperature=0.0, model=LARGE_MODEL, log=True):
-        messages = []
+    def ask_openwebui(self, prompt, system_prompt=None, temperature=0.0, model=LARGE_MODEL, log=True, messages = None):
         start_time = time.time()
         print(f"{model} thinking...")
+
+        if messages is None:
+            messages = []
 
         if system_prompt:
             messages.append({
@@ -233,12 +237,24 @@ class DISARMClassifier:
         print("\nDone in", round(time.time() - start_time, 2), "seconds")
 
         if log: self.log_result(full_response, prompt, round(time.time() - start_time, 2))
+        # log to conversation history 
+        self.conversation_history_debug.append({
+            "role": "user",
+            "content": prompt
+        })
+        self.conversation_history_debug.append(
+        {
+            "role": "assistant",
+            "content": full_response
+        })
         return full_response
 
     # TODO add some manual checks to parse responses into json without relying on the model
     def prompt_valid_DISARM_response(self, prompt, system_prompt, available_classes, response_format):
         f_prev = self.total_failures
         start_time = time.time()
+        # reset debug prompt history
+        self.conversation_history_debug = []
         classification_fix_system_prompt = f"""The agent has been designed to fix invalid json formatting into valid ones.
 The agent must ensure that the fixed json formatting adheres to the available classifications provided by the user and does not include any classifications that were not identified in the previous response.
 The agent MUST respond with the following JSON format: 
@@ -249,15 +265,14 @@ Do not add commentary or any other text.
 It is essential not to add any classes that were not identified in the previous response. You are only fixing the formatting of the previously identified classes to match the valid json format and available classes provided by the user.
 """
 
-        result_raw = self.ask_openwebui(prompt=prompt, system_prompt=system_prompt)
+        result_raw = self.ask_openwebui(prompt=prompt, system_prompt=system_prompt, messages=self.conversation_history_main.copy())
         result_parsed = self.responce_to_json(result_raw)
         # attempt to fix invalid classifications until valid ones are returned or a certain number of attempts is reached to avoid infinite loops
         attempts = 0
         while not self.valid_classifications(result_parsed, available_classes) and attempts < MAX_FIX_ATTEMPTS:
-            error_code = f"ERROR: Model failed to return valid DISARM Classification: {result_raw}\n The agent MUST respond a JSON format from the list of available classifications: {available_classes}"
+            error_code = f"ERROR: Model failed to return valid DISARM Classification \nThe agent MUST respond a JSON format from ONLY the list of available classifications: {available_classes}"
             print(error_code)
-            fix_prompt = f"Invalid json format:\n{result_raw}\n\n Available classes: \n{available_classes}"
-            result_raw = self.ask_openwebui(prompt= fix_prompt, system_prompt=classification_fix_system_prompt, model=self.FAST_MODEL)
+            result_raw = self.ask_openwebui(prompt= error_code, system_prompt=classification_fix_system_prompt, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
             result_parsed = self.responce_to_json(result_raw)
             attempts += 1
             self.total_failures += 1
@@ -265,9 +280,21 @@ It is essential not to add any classes that were not identified in the previous 
         if not self.valid_classifications(result_parsed, available_classes):
             print(f"ERROR: Model failed to return valid DISARM Classification after {MAX_FIX_ATTEMPTS} attempts: {result_raw}\n Recursing and trying again...")
             self.total_failures += 1
-            result_parsed = self.prompt_valid_DISARM_response(prompt=prompt, system_prompt=system_prompt, available_classes=available_classes, response_format=response_format)
+            result_parsed, result_raw = self.prompt_valid_DISARM_response(prompt=prompt, system_prompt=system_prompt, available_classes=available_classes, response_format=response_format)
         self.log_round(available_classes, result_parsed, round(time.time() - start_time, 2), self.total_failures - f_prev)
-        return result_parsed
+
+        # Update conversation history 
+        self.conversation_history_main.append({
+            "role": "user",
+            "content": prompt
+        })
+        self.conversation_history_main.append(
+        {
+            "role": "assistant",
+            "content": result_raw
+        })
+        
+        return result_parsed, result_raw
 
     # TODO correct for infinite loops
     def responce_to_json(self, result_raw):
@@ -278,10 +305,10 @@ It is essential not to add any classes that were not identified in the previous 
                 parse_success = True         
             except json.JSONDecodeError:
                 self.total_failures+=1
-                error_code = f"ERROR: Failed to parse JSON from model response: {result_raw}\nModel failed to return valid JSON"
+                error_code = f"ERROR: Failed to parse JSON from model response \nModel failed to return valid JSON"
                 print(error_code)
-                fix_prompt = error_code + "\n Respond ONLY with valid JSON."
-                result_raw = self.ask_openwebui(prompt=fix_prompt, system_prompt=JSON_FIX_SYSTEM_PROMPT, model=self.FAST_MODEL)
+                fix_prompt = error_code + "\nRespond ONLY with valid JSON."
+                result_raw = self.ask_openwebui(prompt=fix_prompt, system_prompt=JSON_FIX_SYSTEM_PROMPT, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
                 try:
                     result_parsed = json.loads(result_raw)
                     parse_success = True
@@ -384,7 +411,7 @@ It is essential not to add any classes that were not identified in the previous 
         # print(ta_prompt)
         
         print("Identifying Tactics...")
-        ta_result_parsed = self.prompt_valid_DISARM_response(prompt=ta_prompt, system_prompt=TA_SYSTEM_PROMPT, available_classes=available_classifications, response_format=TA_FORMAT)
+        ta_result_parsed, raw = self.prompt_valid_DISARM_response(prompt=ta_prompt, system_prompt=TA_SYSTEM_PROMPT, available_classes=available_classifications, response_format=TA_FORMAT)
         ta_result_list = ta_result_parsed.get("Tactics", [])    
         print("Identified Tactics: " + str(ta_result_list))
         return ta_result_list
@@ -417,8 +444,8 @@ It is essential not to add any classes that were not identified in the previous 
         
         # print(t_prompt)
         
-        t_result = self.prompt_valid_DISARM_response(prompt=t_prompt, system_prompt=T_SYSTEM_PROMPT, available_classes=available_classifications, response_format=T_FORMAT)
-        t_result_list = t_result.get("Techniques", [])
+        t_result_parsed, raw = self.prompt_valid_DISARM_response(prompt=t_prompt, system_prompt=T_SYSTEM_PROMPT, available_classes=available_classifications, response_format=T_FORMAT)
+        t_result_list = t_result_parsed.get("Techniques", [])
         print("Identified Techniques: " + str(t_result_list))
         return t_result_list
 
@@ -429,7 +456,9 @@ It is essential not to add any classes that were not identified in the previous 
 
         #TACTICS
         tactics = self.identify_tactics(article_content)
-
+        # reset conversation history for freshness
+        # TODO change history reset to remove article from the prompt, and instead store as initial chat history
+        self.conversation_history_main = []
         #TECHNIQUES LOOP
         total_techniques = []
         for tactic in tactics:
@@ -448,7 +477,7 @@ def get_mitre_external_id(obj):
 
 def main():
     interpreter = DISARMClassifier()
-    interpreter.batch_clf(article_content=TEST_DATA)
+    # interpreter.batch_clf(article_content=TEST_DATA)
 
 if __name__ == "__main__":
     main()
