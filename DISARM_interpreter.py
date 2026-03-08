@@ -85,6 +85,36 @@ At the Grand Prix Final, Malinin was third after the short but still finished 30
 
 He has such an advantage because of a deadly combination of fearlessness and ability. His program for the free skate has a much higher technical score than any of his rivals - judges will give extra credit for ambition and he will also be rewarded with a higher component score.
 """
+TEST_DATA_3 = """
+A United States Navy submarine sank an Iranian ship with a single torpedo as the frigate was transiting the Indian Ocean, marking the first such kill by a U.S. submarine since World War II, the Pentagon confirmed on Wednesday.
+
+Defense Secretary Pete Hegseth confirmed the strike during a Pentagon press briefing on Operation Epic Fury alongside Chairman of the Joint Chiefs of Staff Gen. Dan Caine.
+
+“Yesterday, in the Indian Ocean ... an American submarine sunk an Iranian warship that thought it was safe in international waters,” Hegseth said. “Instead, it was sunk by a torpedo. Quiet death. The first sinking of an enemy ship by a torpedo since World War II.”
+
+The identity of the fast-attack boat was not revealed, as is custom for operational security surrounding submarine operations.
+
+The strike occurred off the southern coast of Sri Lanka, according to Reuters, which would indicate the action occurred in the U.S. Indo-Pacific Command area of responsibility.
+
+The IRIS Dena, a Moudge-class frigate assigned to the Southern Fleet of the Islamic Republic of Iran Navy, was in the region after reportedly taking part in a naval drill in the Bay of Bengal.
+
+Sri Lankan Foreign minister Vijitha Herath said 180 people were on board the IRIS Dena. Thirty-two people were subsequently rescued by Sri Lankan naval personnel.
+
+Commander Buddhika Sampath, a Sri Lankan navy spokesman, said the rescue effort was also recovering bodies from the scene.
+
+“For the first time since 1945, a United States Navy fast attack submarine has sunk an enemy combatant ship using a single Mk-48 torpedo to achieve immediate effect, sending the warship to the bottom of the sea,” Caine said during the press briefing Wednesday.
+
+“This is an incredible demonstration of America’s global reach. To hunt, find and kill an out-of-area deployer is something that only the United States can do at this type of scale.”
+
+Caine added that, to date, the U.S. has hit over 2,000 total targets across Iran and destroyed more than 20 of the Islamic Republic’s naval vessels.
+
+The campaign has “effectively neutralized, at this point in time, Iran’s major naval presence in theater,” he said.
+
+Strikes on infrastructure and naval capability by the vast assembly of U.S. forces in the region are expected to continue over the next 24 to 48 hours, Caine noted.
+
+“We’ll continue to assess our progress against the military objectives,” he said.
+"""
+
 TA_FORMAT = """
 {
 “Tactics”: [“List of tactic names”]
@@ -198,7 +228,7 @@ class DISARMClassifier:
                 "mirostat": 0,
             },
             stream=True,
-            timeout=1000
+            timeout=1500
         )
 
         full_response = ""
@@ -419,8 +449,6 @@ It is essential not to add any classes that were not identified in the previous 
     def identify_techniques_for_tactic(self, tactic, article_content):
         print("Testing for tactic: " + tactic)
         techniques = []
-        filtered_techniques = []
-        available_classifications = []
         for obj in self.disarm_json["objects"]:
             if obj.get("type") == "attack-pattern":
                 for phase in obj.get("kill_chain_phases", []):
@@ -428,6 +456,14 @@ It is essential not to add any classes that were not identified in the previous 
                         techniques.append(obj)
                         # print(obj["name"])
 
+        return self.identify_techniques(article_content, techniques)
+
+    def identify_techniques(self, article_content, techniques=None):
+        if techniques is None:
+            techniques = self.get_all_techniques()
+
+        filtered_techniques = []
+        available_classifications = []
         for technique in techniques:
             filtered_techniques.append({
                 "external_id": get_mitre_external_id(technique),
@@ -449,9 +485,15 @@ It is essential not to add any classes that were not identified in the previous 
         print("Identified Techniques: " + str(t_result_list))
         return t_result_list
 
+    def get_all_techniques(self):
+        techniques = []
+        for obj in self.disarm_json["objects"]:
+            if obj.get("type") == "attack-pattern":
+                techniques.append(obj)
+        return techniques
+
     # MAIN EXECUTION
     def batch_clf(self, article_content):
-        self.total_failures = 0
         start_time = time.time()
 
         #TACTICS
@@ -469,6 +511,15 @@ It is essential not to add any classes that were not identified in the previous 
         print("\nTotal execution time: " + str(round(time.time() - start_time, 2)) + " seconds")
         self.log_final_result(tactics,total_techniques, round(time.time() - start_time, 2), self.total_failures)
 
+    def select_all_clf(self, article_content):
+        start_time = time.time() 
+
+        total_techniques = self.identify_techniques(article_content=article_content)
+
+        print("Total Identified Techniques: " + str(total_techniques))
+        print("\nTotal execution time: " + str(round(time.time() - start_time, 2)) + " seconds")
+        self.log_final_result(None,total_techniques, round(time.time() - start_time, 2), self.total_failures)
+
 def get_mitre_external_id(obj):
     for ref in obj.get("external_references", []):
         if ref.get("source_name") == "mitre-attack":
@@ -477,7 +528,7 @@ def get_mitre_external_id(obj):
 
 def main():
     interpreter = DISARMClassifier()
-    # interpreter.batch_clf(article_content=TEST_DATA)
+    interpreter.batch_clf(article_content=TEST_DATA_3)
 
 if __name__ == "__main__":
     main()

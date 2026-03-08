@@ -159,6 +159,73 @@ Time Taken: {round((time.time() - start_time)/60, 2)} minuites
 {'='*50}"""
     print_log(final_log)
 
+def test_single_clf(num_tests=-1, checkpoint=0):
+    start_time = time.time()
+    disarm_data = DISARMDataMaster()
+    new_log_file()
+    incident_ids = disarm_data.get_incident_ids()
+    # variables to keep track of overall performance
+    t_total = ta_mtchs_total = t_abs_mtchs_total = t_prt_mtchs_total = 0
+    
+    # incident loop
+    for incident_id in incident_ids:
+        # break loop if number of tests reached
+        if num_tests == 0:
+            break
+        technique_matches = 0
+        technique_partial_matches = 0
+
+        # get the incident data
+        result = retrieve_incident_data(disarm_data, incident_id)
+
+        # skip if no url/data is available
+        if result is None:
+            print_log(f"Skipping incident {incident_id} - missing data\n")
+            continue
+        if checkpoint > 0:
+            print_log(f"Skipping incident {incident_id} by user request\n")
+            checkpoint -= 1
+            continue
+        article_content, article_tactics, article_techniques = result
+        t_total += len(article_techniques)
+        
+        disarm_classifer = DISARMClassifier()
+        print_log(f"Testing for incident with ID: {incident_id}\nTechniques: {article_techniques}\n")
+        print_log(f"Classifier log created in: {disarm_classifer.log_filename}\n")
+        print_log(f"Article Character Length: {len(article_content)}\n")
+
+        # perform technique classification for all techniques
+        identified_techniques = disarm_classifer.identify_techniques(article_content)
+        print(f"Techniques identified by model: {identified_techniques}")
+        for required_technique in article_techniques:
+            if required_technique in identified_techniques:
+                technique_matches+=1
+            elif partial_match(required_technique, identified_techniques):
+                technique_partial_matches+=1
+        # record results
+        t_abs_mtchs_total += technique_matches
+        t_prt_mtchs_total += technique_partial_matches
+        results_log = f"""Results:
+Identified techniques({(len(identified_techniques))}): {identified_techniques}
+
+Correct Techniques: {technique_matches + technique_partial_matches}/{len(article_techniques)}
+    Absolute technique matches: {technique_matches}
+    Partial technique matches: {technique_partial_matches}
+{'-'*50}"""
+        print_log(results_log)
+        num_tests-=1
+
+    final_log = f"""
+{'='*50}
+Final Results:
+{'-'*50}
+Correct Techniques: {t_abs_mtchs_total + t_prt_mtchs_total}/{t_total} \t ({((t_abs_mtchs_total+t_prt_mtchs_total)/t_total)*100}%)
+    Absolute technique matches: {t_abs_mtchs_total} \t ({(t_abs_mtchs_total/t_total)*100}%)
+    Partial technique matches: {t_prt_mtchs_total} \t ({(t_prt_mtchs_total/t_total)*100}%)
+Time Taken: {round((time.time() - start_time)/60, 2)} minuites
+{'='*50}"""
+    print_log(final_log)
+
 def print_log(str):
     print(str)
     log_to_file(str)
@@ -166,7 +233,7 @@ def print_log(str):
 def main():
     large_model = "gpt-oss:latest"
     fast_model = "gpt-oss:latest"
-    test_batch_clf(num_tests=5, checkpoint=0 )
+    test_single_clf(num_tests=5, checkpoint=0)
 
 if __name__ == "__main__":
     main()
