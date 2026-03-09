@@ -3,9 +3,11 @@ import time
 import requests
 
 OPENWEBUI_URL = "https://ai.datagaucho.com"
+VLLM_URL = "http://localhost:8000"
+
 API_KEY = "sk-b3ce02f3eb5948f4b36a86c4ce23818e"
-LARGE_MODEL = "qwen3-coder:30b"
-FAST_MODEL = "qwen3-coder:30b"
+LARGE_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8"
+FAST_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8"
 
 TEST_DATA = """
 Iran has taken a page from the Russian playbook: Passing off military groups as civilians for the sake of PR and plausible deniability.
@@ -163,7 +165,7 @@ The agent has been designed to enforce and fix json formatting.
 Respond only with valid JSON.
 Do not add commentary or any other text.
 """
-MAX_FIX_ATTEMPTS = 2
+MAX_FIX_ATTEMPTS = 10
 ANALYSIS_SYSTEM_PROMPT = """
 The Agent is designed to provide an analysis of the execution log of a DISARM batch classification of an article.
 The agent should focus on the tactics and techniques identified by the model at each round, and must report any inconsistencies where they did not persist due to parsing errors etc...
@@ -191,6 +193,90 @@ class DISARMClassifier:
         self.new_log_file()
         with open("DISARM.json", "r", encoding="utf-8") as f:
             self.disarm_json = json.load(f)
+
+    def ask_vllm(self, prompt, system_prompt=None, temperature=0.0, model=LARGE_MODEL, log=True, messages = None):
+        start_time = time.time()
+        print(f"{model} thinking...")
+
+        if messages is None:
+            messages = []
+
+        if system_prompt:
+            messages.append({
+                "role": "system",
+                "content": system_prompt
+            })
+
+        messages.append({
+            "role": "user",
+            "content": prompt
+        })
+
+        response = requests.post(
+            f"{VLLM_URL}/v1/chat/completions",
+            headers={
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": model,
+                "messages": messages,
+                "temperature": temperature,
+                "stream": True,
+                "seed": 48,
+                "top_p": 1.0
+            },
+            stream=True,
+            timeout=200
+        )
+
+        full_response = ""
+
+        for line in response.iter_lines():
+            if not line:
+                continue
+
+            decoded = line.decode("utf-8")
+
+            if not decoded.startswith("data: "):
+                continue
+
+            chunk = decoded.replace("data: ", "")
+
+            if chunk == "[DONE]":
+                break
+
+            try:
+                chunk_json = json.loads(chunk)
+            except json.JSONDecodeError:
+                continue
+
+            if "choices" not in chunk_json:
+                continue
+
+            choice = chunk_json["choices"][0]
+            delta = choice.get("delta", {})
+
+            if "content" in delta:
+                token = delta["content"]
+                print(token, end="", flush=True)
+                full_response += token
+
+        print()
+        print("\nDone in", round(time.time() - start_time, 2), "seconds")
+
+        if log: self.log_result(full_response, prompt, round(time.time() - start_time, 2))
+        # log to conversation history 
+        self.conversation_history_debug.append({
+            "role": "user",
+            "content": prompt
+        })
+        self.conversation_history_debug.append(
+        {
+            "role": "assistant",
+            "content": full_response
+        })
+
+        return full_response
 
     def ask_openwebui(self, prompt, system_prompt=None, temperature=0.0, model=LARGE_MODEL, log=True, messages = None):
         start_time = time.time()
@@ -294,19 +380,18 @@ RESPOND ONLY WITH VALID JSON.
 Do not add commentary or any other text.
 It is essential not to add any classes that were not identified in the previous response. You are only fixing the formatting of the previously identified classes to match the valid json format and available classes provided by the user.
 """
-
-        result_raw = self.ask_openwebui(prompt=prompt, system_prompt=system_prompt, messages=self.conversation_history_main.copy())
-        result_parsed = self.responce_to_json(result_raw)
-        # attempt to fix invalid classifications until valid ones are returned or a certain number of attempts is reached to avoid infinite loops
         attempts = 0
+        result_raw = self.ask_vllm(prompt=prompt, system_prompt=system_prompt, messages=self.conversation_history_main.copy())
+        result_parsed = self.responce_to_json(result_raw, attempts)
+        # attempt to fix invalid classifications until valid ones are returned or a certain number of attempts is reached to avoid infinite loops
         while not self.valid_classifications(result_parsed, available_classes) and attempts < MAX_FIX_ATTEMPTS:
             error_code = f"ERROR: Model failed to return valid DISARM Classification \nThe agent MUST respond a JSON format from ONLY the list of available classifications: {available_classes}"
             print(error_code)
-            result_raw = self.ask_openwebui(prompt= error_code, system_prompt=classification_fix_system_prompt, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
-            result_parsed = self.responce_to_json(result_raw)
+            result_raw = self.ask_vllm(prompt= error_code, system_prompt=classification_fix_system_prompt, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
+            result_parsed = self.responce_to_json(result_raw, attempts)
             attempts += 1
             self.total_failures += 1
-        # if not valid classification, recurse and try again
+        # if not valid classification, recurse and try again. NOTE: does not work with deterministic outputs
         if not self.valid_classifications(result_parsed, available_classes):
             print(f"ERROR: Model failed to return valid DISARM Classification after {MAX_FIX_ATTEMPTS} attempts: {result_raw}\n Recursing and trying again...")
             self.total_failures += 1
@@ -327,24 +412,27 @@ It is essential not to add any classes that were not identified in the previous 
         return result_parsed, result_raw
 
     # TODO correct for infinite loops
-    def responce_to_json(self, result_raw):
+    def responce_to_json(self, result_raw, attempts):
         parse_success = False
-        while not parse_success:
+        result_parsed = None
+        while not parse_success and attempts < MAX_FIX_ATTEMPTS:
             try:
                 result_parsed = json.loads(result_raw)       
                 parse_success = True         
             except json.JSONDecodeError:
                 self.total_failures+=1
+                attempts += 1
                 error_code = f"ERROR: Failed to parse JSON from model response \nModel failed to return valid JSON"
                 print(error_code)
                 fix_prompt = error_code + "\nRespond ONLY with valid JSON."
-                result_raw = self.ask_openwebui(prompt=fix_prompt, system_prompt=JSON_FIX_SYSTEM_PROMPT, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
+                result_raw = self.ask_vllm(prompt=fix_prompt, system_prompt=JSON_FIX_SYSTEM_PROMPT, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
                 try:
                     result_parsed = json.loads(result_raw)
                     parse_success = True
                 except json.JSONDecodeError:
                     self.total_failures+=1
-                    print(f"ERROR: Failed to parse JSON from model response: {result_raw}\nModel still failed to return valid JSON, trying again...")
+                    attempts += 1
+                    print(f"ERROR: Failed to parse JSON from model response: {result_raw}\nModel still failed to return valid JSON, trying again...")     
         return result_parsed
 
     def parse_json_to_disarm(self, json, available_classes):
@@ -401,7 +489,7 @@ It is essential not to add any classes that were not identified in the previous 
         with open(self.log_filename, "r", encoding="utf-8") as f:
             execution_log = f.read()
             prompt = f"Provide a detailed anaysis of this execution log: \n\n {execution_log}"
-            analysis = self.ask_openwebui(prompt=prompt, system_prompt=ANALYSIS_SYSTEM_PROMPT, model=self.LARGE_MODEL, log=False)
+            analysis = self.ask_vllm(prompt=prompt, system_prompt=ANALYSIS_SYSTEM_PROMPT, model=self.LARGE_MODEL, log=False)
         with open(self.log_filename, "a", encoding="utf-8") as f:
             f.write(f"\n\nEXECUTION ANALYSIS:\n{analysis}")
 
@@ -528,7 +616,7 @@ def get_mitre_external_id(obj):
 
 def main():
     interpreter = DISARMClassifier()
-    interpreter.batch_clf(article_content=TEST_DATA_3)
+    interpreter.batch_clf(article_content=TEST_DATA)
 
 if __name__ == "__main__":
     main()

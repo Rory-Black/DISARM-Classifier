@@ -233,7 +233,7 @@ def print_log(str):
 def main():
     large_model = "gpt-oss:latest"
     fast_model = "gpt-oss:latest"
-    test_single_clf(num_tests=5, checkpoint=0)
+    test_batch_clf(num_tests=25, checkpoint=0)
 
 if __name__ == "__main__":
     main()
