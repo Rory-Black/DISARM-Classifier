@@ -1,13 +1,18 @@
 import json
 import time
 import requests
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="http://localhost:8000/v1",
+    api_key="EMPTY"
+)
 
 OPENWEBUI_URL = "https://ai.datagaucho.com"
 VLLM_URL = "http://localhost:8000"
 
 API_KEY = "sk-b3ce02f3eb5948f4b36a86c4ce23818e"
-LARGE_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8"
-FAST_MODEL = "Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8"
+LARGE_MODEL = "Qwen/Qwen3.5-35B-A3B"
 
 TEST_DATA = """
 Iran has taken a page from the Russian playbook: Passing off military groups as civilians for the sake of PR and plausible deniability.
@@ -117,11 +122,7 @@ Strikes on infrastructure and naval capability by the vast assembly of U.S. forc
 “We’ll continue to assess our progress against the military objectives,” he said.
 """
 
-TA_FORMAT = """
-{
-“Tactics”: [“List of tactic names”]
-}
-"""
+
 TA_SYSTEM_PROMPT = """
 The AI assistant has been designed to understand and categorize user input by the given Tactics. 
 When processing user input, the assistant must predict the Tactics from one of the pre-defined options specified. 
@@ -140,11 +141,7 @@ The agent MUST respond with the following JSON format:
 Respond only with valid JSON.
 Do not add commentary.
 """
-T_FORMAT = """
-{
-“Techniques”: [“List of external_id”]
-}
-"""
+
 T_SYSTEM_PROMPT = """
 The AI assistant has been designed to understand and categorize user input by the given techniques. When processing user input, the assistant must predict the techniques from one of the pre-defined options specified. It is essential to note that an article may have multiple Techniques associated. If the user input is not relevant to any techniques, the assistant should print nothing, indicating that the input does not align with the available categories. 
 The user input will be in the following format:
@@ -179,10 +176,8 @@ class DISARMClassifier:
     def __init__(self,
                  article_content=TEST_DATA,
                  large_model=LARGE_MODEL,
-                 fast_model=FAST_MODEL,
                  max_fix_attempts=MAX_FIX_ATTEMPTS):
         self.LARGE_MODEL = large_model
-        self.FAST_MODEL = fast_model
         self.max_fix_attempts = max_fix_attempts
 
         self.article_content = article_content
@@ -190,80 +185,63 @@ class DISARMClassifier:
         self.log_filename = None
         self.conversation_history_main = []
         self.conversation_history_debug = []
+
         self.new_log_file()
         with open("DISARM.json", "r", encoding="utf-8") as f:
             self.disarm_json = json.load(f)
 
-    def ask_vllm(self, prompt, system_prompt=None, temperature=0.0, model=LARGE_MODEL, log=True, messages = None):
+    def prompt_llm(self, prompt, system_prompt=None, log=True, messages = None):
         start_time = time.time()
-        print(f"{model} thinking...")
+        print(f"{self.LARGE_MODEL} thinking...")
 
-        if messages is None:
-            messages = []
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt}
+        ]
 
-        if system_prompt:
-            messages.append({
-                "role": "system",
-                "content": system_prompt
-            })
-
-        messages.append({
-            "role": "user",
-            "content": prompt
-        })
-
-        response = requests.post(
-            f"{VLLM_URL}/v1/chat/completions",
-            headers={
-                "Content-Type": "application/json"
-            },
-            json={
-                "model": model,
-                "messages": messages,
-                "temperature": temperature,
-                "stream": True,
-                "seed": 48,
-                "top_p": 1.0
-            },
-            stream=True,
-            timeout=200
-        )
+        response = self.vllm_response(messages=messages)
 
         full_response = ""
 
-        for line in response.iter_lines():
-            if not line:
-                continue
+        # use for streaming 
+        # for line in response.iter_lines():
+        #     if not line:
+        #         continue
 
-            decoded = line.decode("utf-8")
+        #     decoded = line.decode("utf-8")
 
-            if not decoded.startswith("data: "):
-                continue
+        #     if not decoded.startswith("data: "):
+        #         continue
 
-            chunk = decoded.replace("data: ", "")
+        #     chunk = decoded.replace("data: ", "")
 
-            if chunk == "[DONE]":
-                break
+        #     if chunk == "[DONE]":
+        #         break
 
-            try:
-                chunk_json = json.loads(chunk)
-            except json.JSONDecodeError:
-                continue
+        #     try:
+        #         chunk_json = json.loads(chunk)
+        #     except json.JSONDecodeError:
+        #         continue
 
-            if "choices" not in chunk_json:
-                continue
+        #     if "choices" not in chunk_json:
+        #         continue
 
-            choice = chunk_json["choices"][0]
-            delta = choice.get("delta", {})
+        #     choice = chunk_json["choices"][0]
+        #     delta = choice.get("delta", {})
 
-            if "content" in delta:
-                token = delta["content"]
-                print(token, end="", flush=True)
-                full_response += token
+        #     if "content" in delta:
+        #         token = delta["content"]
+        #         print(token, end="", flush=True)
+        #         full_response += token
+
+        # for non-streaming use
+        full_response = response.choices[0].message.content
+        print(full_response)
 
         print()
         print("\nDone in", round(time.time() - start_time, 2), "seconds")
 
+        self.log_debug(f"Chat history input to model: {'\n'.join(str(m) for m in messages)}")
         if log: self.log_result(full_response, prompt, round(time.time() - start_time, 2))
         # log to conversation history 
         self.conversation_history_debug.append({
@@ -277,96 +255,41 @@ class DISARMClassifier:
         })
 
         return full_response
+    
+    def vllm_response(self, messages):
+        response = client.chat.completions.create(
+            model=self.LARGE_MODEL,
+            messages=messages,
+            temperature=0,
 
-    def ask_openwebui(self, prompt, system_prompt=None, temperature=0.0, model=LARGE_MODEL, log=True, messages = None):
-        start_time = time.time()
-        print(f"{model} thinking...")
+            response_format=self.response_format
+        )
+        return response
 
-        if messages is None:
-            messages = []
-
-        if system_prompt:
-            messages.append({
-                "role": "system",
-                "content": system_prompt
-            })
-
-        messages.append({
-            "role": "user",
-            "content": prompt
-        })
-
-        response = requests.post(
+    def openwebui_response(self, messages):
+        return requests.post(
             f"{OPENWEBUI_URL}/api/v1/chat/completions",
             headers={
                 "Authorization": f"Bearer {API_KEY}",
                 "Content-Type": "application/json"
             },
             json={
-                "model": model,
+                "model": self.LARGE_MODEL,
                 "messages": messages,
-                "temperature": temperature,
-                "stream": True,
+                "temperature": 0.0,
+                "stream": False,
                 "seed": 48,
                 "top_p": 1.0,
                 "top_k": 1.0,
                 "repeat_penalty": 1.0,
                 "mirostat": 0,
             },
-            stream=True,
+            stream=False,
             timeout=1500
         )
 
-        full_response = ""
-
-        for line in response.iter_lines():
-            if not line:
-                continue
-
-            decoded = line.decode("utf-8")
-
-            if not decoded.startswith("data: "):
-                continue
-
-            chunk = decoded.replace("data: ", "")
-
-            if chunk == "[DONE]":
-                break
-
-            try:
-                chunk_json = json.loads(chunk)
-            except json.JSONDecodeError:
-                continue
-
-            if "choices" not in chunk_json:
-                continue
-
-            choice = chunk_json["choices"][0]
-            delta = choice.get("delta", {})
-
-            if "content" in delta:
-                token = delta["content"]
-                print(token, end="", flush=True)
-                full_response += token
-
-        print()  # newline after streaming
-        print("\nDone in", round(time.time() - start_time, 2), "seconds")
-
-        if log: self.log_result(full_response, prompt, round(time.time() - start_time, 2))
-        # log to conversation history 
-        self.conversation_history_debug.append({
-            "role": "user",
-            "content": prompt
-        })
-        self.conversation_history_debug.append(
-        {
-            "role": "assistant",
-            "content": full_response
-        })
-        return full_response
-
     # TODO add some manual checks to parse responses into json without relying on the model
-    def prompt_valid_DISARM_response(self, prompt, system_prompt, available_classes, response_format):
+    def prompt_valid_DISARM_response(self, prompt, system_prompt):
         f_prev = self.total_failures
         start_time = time.time()
         # reset debug prompt history
@@ -374,29 +297,29 @@ class DISARMClassifier:
         classification_fix_system_prompt = f"""The agent has been designed to fix invalid json formatting into valid ones.
 The agent must ensure that the fixed json formatting adheres to the available classifications provided by the user and does not include any classifications that were not identified in the previous response.
 The agent MUST respond with the following JSON format: 
-{response_format}
+{self.response_format}
 
 RESPOND ONLY WITH VALID JSON.
 Do not add commentary or any other text.
 It is essential not to add any classes that were not identified in the previous response. You are only fixing the formatting of the previously identified classes to match the valid json format and available classes provided by the user.
 """
         attempts = 0
-        result_raw = self.ask_vllm(prompt=prompt, system_prompt=system_prompt, messages=self.conversation_history_main.copy())
+        result_raw = self.prompt_llm(prompt=prompt, system_prompt=system_prompt, messages=self.conversation_history_main.copy())
         result_parsed = self.responce_to_json(result_raw, attempts)
         # attempt to fix invalid classifications until valid ones are returned or a certain number of attempts is reached to avoid infinite loops
-        while not self.valid_classifications(result_parsed, available_classes) and attempts < MAX_FIX_ATTEMPTS:
-            error_code = f"ERROR: Model failed to return valid DISARM Classification \nThe agent MUST respond a JSON format from ONLY the list of available classifications: {available_classes}"
+        while not self.valid_classifications(result_parsed) and attempts < MAX_FIX_ATTEMPTS:
+            error_code = f"ERROR: Model failed to return valid DISARM Classification \nThe agent MUST respond a JSON format from ONLY the list of available classifications: {self.available_classes}"
             print(error_code)
-            result_raw = self.ask_vllm(prompt= error_code, system_prompt=classification_fix_system_prompt, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
+            result_raw = self.prompt_llm(prompt= error_code, system_prompt=classification_fix_system_prompt, messages=self.conversation_history_debug.copy())
             result_parsed = self.responce_to_json(result_raw, attempts)
             attempts += 1
             self.total_failures += 1
         # if not valid classification, recurse and try again. NOTE: does not work with deterministic outputs
-        if not self.valid_classifications(result_parsed, available_classes):
+        if not self.valid_classifications(result_parsed):
             print(f"ERROR: Model failed to return valid DISARM Classification after {MAX_FIX_ATTEMPTS} attempts: {result_raw}\n Recursing and trying again...")
             self.total_failures += 1
-            result_parsed, result_raw = self.prompt_valid_DISARM_response(prompt=prompt, system_prompt=system_prompt, available_classes=available_classes, response_format=response_format)
-        self.log_round(available_classes, result_parsed, round(time.time() - start_time, 2), self.total_failures - f_prev)
+            result_parsed, result_raw = self.prompt_valid_DISARM_response(prompt=prompt, system_prompt=system_prompt, available_classes=self.available_classes)
+        self.log_round(result_parsed, round(time.time() - start_time, 2), self.total_failures - f_prev)
 
         # Update conversation history 
         self.conversation_history_main.append({
@@ -425,7 +348,7 @@ It is essential not to add any classes that were not identified in the previous 
                 error_code = f"ERROR: Failed to parse JSON from model response \nModel failed to return valid JSON"
                 print(error_code)
                 fix_prompt = error_code + "\nRespond ONLY with valid JSON."
-                result_raw = self.ask_vllm(prompt=fix_prompt, system_prompt=JSON_FIX_SYSTEM_PROMPT, model=self.FAST_MODEL, messages=self.conversation_history_debug.copy())
+                result_raw = self.prompt_llm(prompt=fix_prompt, system_prompt=JSON_FIX_SYSTEM_PROMPT, messages=self.conversation_history_debug.copy())
                 try:
                     result_parsed = json.loads(result_raw)
                     parse_success = True
@@ -434,20 +357,8 @@ It is essential not to add any classes that were not identified in the previous 
                     attempts += 1
                     print(f"ERROR: Failed to parse JSON from model response: {result_raw}\nModel still failed to return valid JSON, trying again...")     
         return result_parsed
-
-    def parse_json_to_disarm(self, json, available_classes):
-        # get class name aliases from disarm
-        class_aliases = {}
-        for obj in self.disarm_json["objects"]:
-            if obj.get("type") == "x-mitre-tactic":
-                if obj.get("x_mitre_shortname") in available_classes:
-                    class_aliases[obj.get("name")] = obj.get("x_mitre_shortname")
-            elif obj.get("type") == "attack-pattern":
-                external_id = get_mitre_external_id(obj)
-                if external_id:
-                    class_aliases[obj.get("name")] = external_id
             
-    def valid_classifications(self, json_results, available_classes):
+    def valid_classifications(self, json_results):
 
         if not isinstance(json_results, dict):
             return False
@@ -466,7 +377,7 @@ It is essential not to add any classes that were not identified in the previous 
             return False
 
         # All returned items must be valid
-        if not all(v in available_classes for v in values):
+        if not all(v in self.available_classes for v in values):
             return False
 
         return True
@@ -475,9 +386,9 @@ It is essential not to add any classes that were not identified in the previous 
         with open(self.log_filename, "a", encoding="utf-8") as f:
             f.write(f"Prompt:\n{prompt}\n\nResult:\n{result}\n\nTime: {time} seconds\n\n{'-'*50}\n\n")
 
-    def log_round(self, available_classes, result, time, attempts):
+    def log_round(self, result, time, attempts):
         with open(self.log_filename, "a", encoding="utf-8") as f:
-            f.write(f"ROUND SUMMARY:\nAvailable Classes:\n{available_classes}\n\nResult:\n{result}\n\nTime: {time} seconds\nFailures: {attempts}\n\n{'-'*50}\n\n")
+            f.write(f"ROUND SUMMARY:\nAvailable Classes:\n{self.available_classes}\n\nResult:\n{result}\n\nTime: {time} seconds\nFailures: {attempts}\n\n{'-'*50}\n\n")
 
     def log_final_result(self, total_tactics, total_techniques, time, failures):
         with open(self.log_filename, "a", encoding="utf-8") as f:
@@ -489,17 +400,21 @@ It is essential not to add any classes that were not identified in the previous 
         with open(self.log_filename, "r", encoding="utf-8") as f:
             execution_log = f.read()
             prompt = f"Provide a detailed anaysis of this execution log: \n\n {execution_log}"
-            analysis = self.ask_vllm(prompt=prompt, system_prompt=ANALYSIS_SYSTEM_PROMPT, model=self.LARGE_MODEL, log=False)
+            analysis = self.prompt_llm(prompt=prompt, system_prompt=ANALYSIS_SYSTEM_PROMPT, log=False)
         with open(self.log_filename, "a", encoding="utf-8") as f:
             f.write(f"\n\nEXECUTION ANALYSIS:\n{analysis}")
+
+    def log_debug(self, message):
+        with open(self.log_filename, "a", encoding="utf-8") as f:
+            f.write(f"\n\DEBUG:\n{message}")
 
     def new_log_file(self):
         timestamp = time.strftime("%Y%m%d-%H%M%S")
         self.log_filename = f"exe_logs/DISARM_log_{timestamp}.txt"
         with open(self.log_filename, "w", encoding="utf-8") as f:
-            f.write(f"DISARM Log File - Created on {timestamp}\nSETUP:\nLarge Model: {self.LARGE_MODEL}\nFast Model: {self.FAST_MODEL}\nTemperature: 0.0\nMax Fix Attempts: {MAX_FIX_ATTEMPTS}\n\n{'='*50}\n\n")
+            f.write(f"DISARM Log File - Created on {timestamp}\nSETUP:\nLarge Model: {self.LARGE_MODEL}\nTemperature: 0.0\nMax Fix Attempts: {MAX_FIX_ATTEMPTS}\n\n{'='*50}\n\n")
             
-    def identify_tactics(self, article_content):
+    def get_tactics(self):
         tactics = []
         for obj in self.disarm_json["objects"]:
             if obj.get("type") == "x-mitre-tactic":
@@ -517,6 +432,34 @@ It is essential not to add any classes that were not identified in the previous 
             })
             available_classifications.append(tactic.get("x_mitre_shortname"))
 
+        return filtered_tactics, available_classifications
+    
+    def identify_tactics(self, article_content):
+        
+        filtered_tactics, available_classifications = self.get_tactics()
+
+        self.available_classes = available_classifications
+        ta_format = {
+            "type": "object",
+            "properties": {
+                "Tactics": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": self.available_classes
+                    }
+                }
+            },
+            "required": ["Tactics"]
+        }
+
+        self.response_format={
+            "type": "json_schema",
+            "json_schema": {
+                "name": "tactics_schema",
+                "schema": ta_format
+                }
+            }
         # print(filtered_tactics)
 
         ta_prompt = f"""
@@ -529,7 +472,7 @@ It is essential not to add any classes that were not identified in the previous 
         # print(ta_prompt)
         
         print("Identifying Tactics...")
-        ta_result_parsed, raw = self.prompt_valid_DISARM_response(prompt=ta_prompt, system_prompt=TA_SYSTEM_PROMPT, available_classes=available_classifications, response_format=TA_FORMAT)
+        ta_result_parsed, raw = self.prompt_valid_DISARM_response(prompt=ta_prompt, system_prompt=TA_SYSTEM_PROMPT)
         ta_result_list = ta_result_parsed.get("Tactics", [])    
         print("Identified Tactics: " + str(ta_result_list))
         return ta_result_list
@@ -551,13 +494,37 @@ It is essential not to add any classes that were not identified in the previous 
             techniques = self.get_all_techniques()
 
         filtered_techniques = []
-        available_classifications = []
+        available_techniques = []
         for technique in techniques:
             filtered_techniques.append({
                 "external_id": get_mitre_external_id(technique),
                 "description": technique.get("description"),
             })
-            available_classifications.append(get_mitre_external_id(technique))
+            available_techniques.append(get_mitre_external_id(technique))
+
+        self.available_classes = available_techniques
+
+        t_format = {
+            "type": "object",
+            "properties": {
+                "Techniques": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": available_techniques
+                    }
+                }
+            },
+            "required": ["Techniques"]
+        }
+
+        self.response_format={
+            "type": "json_schema",
+            "json_schema": {
+                "name": "techniques_schema",
+                "schema": t_format
+                }
+            }
         
         t_prompt = f"""
     {{
@@ -565,10 +532,8 @@ It is essential not to add any classes that were not identified in the previous 
     "Article": {json.dumps(article_content)}
     }}
 """
-        
-        # print(t_prompt)
-        
-        t_result_parsed, raw = self.prompt_valid_DISARM_response(prompt=t_prompt, system_prompt=T_SYSTEM_PROMPT, available_classes=available_classifications, response_format=T_FORMAT)
+                
+        t_result_parsed, raw = self.prompt_valid_DISARM_response(prompt=t_prompt, system_prompt=T_SYSTEM_PROMPT)
         t_result_list = t_result_parsed.get("Techniques", [])
         print("Identified Techniques: " + str(t_result_list))
         return t_result_list

@@ -1,0 +1,8 @@
+DISARM Log File - Created on 20260311-120604
+SETUP:
+Large Model: Qwen/Qwen3.5-35B-A3B
+Temperature: 0.0
+Max Fix Attempts: 10
+
+==================================================
+

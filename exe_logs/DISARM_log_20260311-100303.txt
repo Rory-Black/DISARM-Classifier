@@ -1,0 +1,1919 @@
+DISARM Log File - Created on 20260311-100303
+SETUP:
+Large Model: Qwen/Qwen3.5-35B-A3B
+Fast Model: Qwen/Qwen3.5-35B-A3B
+Temperature: 0.0
+Max Fix Attempts: 10
+
+==================================================
+
+Prompt:
+
+{
+"Tactics": [
+  {
+    "name": "plan-strategy",
+    "description": "Define the desired end state, i.e. the set of required conditions that defines achievement of all objectives."
+  },
+  {
+    "name": "plan-objectives",
+    "description": "Set clearly defined, measurable, and achievable objectives. In some cases achieving objectives ties execution of tactical tasks to reaching the desired strategic end state. In other cases, where there is no clearly defined strategic end state, the tactical objective may stand on its own. The objective statement should not specify the way and means of accomplishment but rather the goal the threat actor wishes to achieve. "
+  },
+  {
+    "name": "microtarget",
+    "description": "Actions taken which help target content to specific audiences identified and analysed as part of TA13: Target Audience Analysis."
+  },
+  {
+    "name": "develop-content",
+    "description": "Create or acquire text, images, and other content"
+  },
+  {
+    "name": "select-channels-and-affordances",
+    "description": "Selecting platforms and affordances assesses which online or offline platforms and their associated affordances maximise an influence operation\u2019s ability to reach its target audience. To select the most appropriate platform(s), an operation may assess the technological affordances including platform algorithms, terms of service, permitted content types, or other attributes that determine platform usability and accessibility. Selecting platforms includes both choosing platforms on which the operation will publish its own content and platforms on which the operation will attempt to restrict adversarial content."
+  },
+  {
+    "name": "conduct-pump-priming",
+    "description": "Release content on a targetted small scale, prior to general release, including releasing seed. Used for preparation before broader release, and as message honing. Used for preparation before broader release, and as message honing."
+  },
+  {
+    "name": "deliver-content",
+    "description": "Release content to general public or larger population"
+  },
+  {
+    "name": "drive-offline-activity",
+    "description": "Move incident/campaign from online to offline. Encouraging users to move from the platform on which they initially viewed operation content and engage in the physical information space or offline world. This may include operation-aligned rallies or protests, radio, newspaper, or billboards. An influence operation may drive to physical forums to diversify its information channels and facilitate spaces where the target audience can engage with both operation content and like-minded individuals offline."
+  },
+  {
+    "name": "persist-in-the-information-environment",
+    "description": "Persist in the Information Space refers to taking measures that allow an operation to maintain its presence and avoid takedown by an external entity. Techniques in Persist in the Information Space help campaigns operate without detection and appear legitimate to the target audience and platform monitoring services. Influence operations on social media often persist online by varying the type of information assets and platforms used throughout the campaign."
+  },
+  {
+    "name": "assess-effectiveness",
+    "description": "Assess effectiveness of action, for use in future plans"
+  },
+  {
+    "name": "target-audience-analysis",
+    "description": "Identifying and analysing the target audience examines target audience member locations, political affiliations, financial situations, and other attributes that an influence operation may incorporate into its messaging strategy. During this tactic, influence operations may also identify existing similarities and differences between target audience members to unite like groups and divide opposing groups. Identifying and analysing target audience members allows influence operations to tailor operation strategy and content to their analysis."
+  },
+  {
+    "name": "develop-narratives",
+    "description": "The promotion of beneficial master narratives is perhaps the most effective method for achieving long-term strategic narrative dominance. From a \"\"whole of society\"\" perspective the promotion of the society's core master narratives should occupy a central strategic role. From a misinformation campaign / cognitive security perpectve the tactics around master narratives centre more precisely on the day-to-day promotion and reinforcement of this messaging. In other words, beneficial, high-coverage master narratives are a central strategic goal and their promotion constitutes an ongoing tactical struggle carried out at a whole-of-society level. Tactically, their promotion covers a broad spectrum of activities both on- and offline."
+  },
+  {
+    "name": "establish-assets",
+    "description": "Establishing information assets generates messaging tools, including social media accounts, operation personnel, and organisations, including directly and indirectly managed assets. For assets under their direct control, the operation can add, change, or remove these assets at will. Establishing information assets allows an influence operation to promote messaging directly to the target audience without navigating through external entities. Many online influence operations create or compromise social media accounts as a primary vector of information dissemination.\n\nThis Tactic was previously called Establish Social Assets."
+  },
+  {
+    "name": "establish-legitimacy",
+    "description": "Establish assets that create trust"
+  },
+  {
+    "name": "maximise-exposure",
+    "description": "Maximise exposure of the target audience to incident/campaign content via flooding, amplifying, and cross-posting."
+  },
+  {
+    "name": "drive-online-harms",
+    "description": "Actions taken by an influence operation to harm their opponents in online spaces through harassment, suppression, releasing private information, and controlling the information space through offensive cyberspace operations."
+  }
+],
+"Article": "To revisit this article, visit My Profile, then View saved stories.\nIf you buy something using links in our stories, we may earn a commission. Learn more.\nIn the days leading up to the UK\u2019s general election, youths looking for love online encountered a whole new kind of Tinder nightmare. A group of young activists built a Tinder chatbot to co-opt profiles and persuade swing voters to support Labour. The bot accounts sent 30,000-40,000 messages to targeted 18-25 year olds in battleground constituencies like Dudley North, which Labour ended up winning by only 22 votes.\nThe tactic was frankly ingenious. Tinder is a dating app where users swipe right to indicate attraction and interest in a potential partner. If both people swipe right on each other\u2019s profile, a dialogue box becomes available for them to privately chat. After meeting their crowdfunding goal of only \u00a3500, the team built a tool which took over and operated the accounts of recruited Tinder-users. By upgrading the profiles to Tinder Premium, the team was able to place bots in any contested constituency across the UK. Once planted, the bots swiped right on all users in the attempt to get the largest number of matches and inquire into their voting intentions.\nRead more: Facebook teaches bots how to negotiate. They learn to lie instead\nYara Rodrigues Fowler and Charlotte Goodman, the two campaigners leading the informal GE Tinder Bot team, explained in a recent opinion piece that if \u201cthe user was voting for a right-wing party or was unsure, the bot sent a list of Labour policies, or a criticism of Tory policies,\u201d with the aim \u201cof getting voters to help oust the Conservative government.\u201d\nPieces in major media outlets like the New York Times and BBC have applauded these digital canvassers for their ingenuity and civic service. But upon closer inspection, the project reveals itself to be ethically dubious and problematic on a number of levels. How would these same outlets respond if such tactics were used to support the Tories? And what does this mean for the use of bots and other political algorithms in the future?\nThe activists maintain that the project was meant to foster democratic engagement. But screenshots of the bots\u2019 activity expose a harsher reality. Images of conversations between real users and these bots, posted on i-D, Mashable, as well as on Fowler and Goodman\u2019s public Twitter accounts, show that the bots did not identify themselves as automated accounts, instead posing as the user whose profile they had taken over. While conducting research for this story, it turned out that a number of our friends living in Oxford had interacted with the bot in the lead up to the election and had no idea that it was not a real person.\nRead more: UpVote 10: Cory Doctorow on Trump and privacy\nIt should be obvious to anyone who has ever had to receive approval from an ethics board that this was an egregious ethical violation. While sending out automated reminders to vote would be one thing, actively trying to convince people to vote for a certain party under fraudulent pretenses is invasive and sets a disturbing precedent.\nBecause they are funded by advertising and personal data, social media platforms feature specific design elements built to monopolise the attention of their users. Tinder\u2019s matching algorithm, for instance, is designed on the basis of classical gambling principles that increase emotional investment and draw users into the platform. As Goodman explains in i-D, their bot was built on the assumption that youth targeted over Tinder would be more likely to respond to notifications from matches, given that matches suggest high-value attraction or interest. This attention-grabbing ecosystem, combined with the intimate nature of the app, creates a dangerous space for automation and deception.\nPolitical bots can have either beneficial or harmful applications: they can fulfil playful, artistic, and accountability functions, but they can also help spread hate speech or disinformation. Our team at the Oxford Internet Institute, which studies the impact of bots on public and political life, has in recent research suggested that a vital future policy issue will concern ways of promoting the positive effects of bots while limiting their manipulative capabilities.\nOne laudable aspect of the Tinder Bot stunt is that it exposes the growing capacity for young, diverse, tech-savvy communities to self-organize and achieve political change through code. However, for this movement to be sustainable, we need transparent, community-based processes for determining whether these tools can be used to strengthen democracy, and if so, how.\nFor inspiration, there are examples of algorithmic interventions that resemble Fowler & Goodman\u2019s project, only with much more transparency and respect for users. An example is the Voices app, which provides users in the US with the contact information of all of their local representatives, enabling them to be contacted via phone or email directly through the app.\nRead more: Apps are dying. Long live the subservient bots ready to fulfil your every desire\nSocial media companies and politicians cannot write this case off as just another example of some rogue twenty-somethings playing with software. And we shouldn\u2019t be distracted by their na\u00efvet\u00e9 and good intentions without serious discussion about what this project means for the vulnerability of democracy.\nConsider that a few campaigners managed to pull this off with only 500 crowd-sourced pounds. Any group in the world could similarly start using Tinder to target youth anywhere, for whatever purpose they wished. Consider what would happen if political consultancies, armed with bottomless advertising budgets, were to develop even more sophisticated Tinderbots.\nAs it stands, there is little to prevent political actors from deploying bots, not just in future elections but also in daily life. If you can believe it, it is not technically illegal to use bots to interfere with political processes. We already know through interviews detailed in our recent study of political bots in the US that leading political consultants view digital campaigning as a \u2018wild west' where anything goes. And our project\u2019s research provides further evidence that bots have become an increasingly common tool used in elections around the world.\nMost concerning is the fact that the Tinder Bot team is tacitly suggesting the use of such tactics in other countries, such as the United States, as a way to \u201ctake back the White House\u201d. To be sure, there is a temptation on the Left to fight back against allegations of right-wing digital manipulation with equivalent algorithmic force. But whether these tactics are used by the Left or Right, let's not kid ourselves and pretend that their deceptive nature isn't fundamentally anti-democratic.\nOnline environments are fostering the growth of deceptive political practices, and it does not bode well for society if resorting to these kinds of tactics becomes the norm. We must develop solutions to the ways in which social media platforms wear down our social and psychological immune system, cultivating weaknesses that politicians and citizens can and do exploit. We are in the midst of a globally expanding bot war, and it\u2019s time to get serious about it.\nRobert Gorwa is a graduate student at the Oxford Internet Institute, University of Oxford. Douglas Guilbeault is a doctoral student at the Annenberg School for Communication, University of Pennsylvania. Both Rob and Doug conduct research with the ERC-funded Project on Computational Propaganda, based at the Oxford Internet Institute.\nThis article was originally published by WIRED UK\nMore From WIRED\nReviews and Guides\n\u00a9 2024 Cond\u00e9 Nast. All rights reserved. WIRED may earn a portion of sales from products that are purchased through our site as part of our Affiliate Partnerships with retailers. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\u00e9 Nast. Ad Choices"
+}
+
+
+Result:
+The user wants me to identify which Tactics from the provided list are present in the given Article.
+I need to analyze the Article text and map it to the definitions of the Tactics.
+
+**Tactics List:**
+1.  **plan-strategy**: Define desired end state.
+2.  **plan-objectives**: Set measurable objectives.
+3.  **microtarget**: Actions to target content to specific audiences (TA13).
+4.  **develop-content**: Create or acquire text, images, etc.
+5.  **select-channels-and-affordances**: Select platforms/affordances to maximize reach.
+6.  **conduct-pump-priming**: Release content on small scale prior to general release.
+7.  **deliver-content**: Release content to general public.
+8.  **drive-offline-activity**: Move from online to offline (rallies, etc.).
+9.  **persist-in-the-information-environment**: Maintain presence, avoid takedown.
+10. **assess-effectiveness**: Assess action for future plans.
+11. **target-audience-analysis**: Identify/analyze target audience attributes.
+12. **develop-narratives**: Promotion of master narratives.
+13. **establish-assets**: Create social media accounts, personnel, orgs.
+14. **establish-legitimacy**: Create trust.
+15. **maximise-exposure**: Flooding, amplifying, cross-posting.
+16. **drive-online-harms**: Harassment, suppression, releasing private info, controlling info space.
+
+**Article Analysis:**
+The article discusses a group of young activists who built a Tinder chatbot to co-opt profiles and persuade swing voters to support Labour during the UK general election.
+Key points:
+- "A group of young activists built a Tinder chatbot to co-opt profiles and persuade swing voters to support Labour." -> This involves creating a tool (develop-content/establish-assets) and targeting specific voters.
+- "The bot accounts sent 30,000-40,000 messages to targeted 18-25 year olds in battleground constituencies like Dudley North..." -> This is targeting specific audiences (microtarget, target-audience-analysis).
+- "Tinder is a dating app... If both people swipe right... dialogue box becomes available..." -> Using the platform's affordances (select-channels-and-affordances).
+- "By upgrading the profiles to Tinder Premium, the team was able to place bots in any contested constituency across the UK." -> Selecting channels/platforms.
+- "Once planted, the bots swiped right on all users in the attempt to get the largest number of matches and inquire into their voting intentions." -> This is targeting and content delivery.
+- "if 'the user was voting for a right-wing party or was unsure, the bot sent a list of Labour policies, or a criticism of Tory policies,'..." -> This is content delivery based on analysis.
+- "The bot accounts... sent 30,000-40,000 messages..." -> Delivering content.
+- "The tactic was frankly ingenious... Tinder is a dating app... designed on the basis of classical gambling principles..." -> Discussing the platform selection and affordances.
+- "Political bots can have either beneficial or harmful applications... help spread hate speech or disinformation." -> General discussion.
+- "One laudable aspect... exposes the growing capacity for young, diverse, tech-savvy communities to self-organize..."
+- "Consider that a few campaigners managed to pull this off with only 500 crowd-sourced pounds. Any group in the world could similarly start using Tinder to target youth anywhere..." -> Discussing the potential for others to use this tactic.
+
+**Mapping to Tactics:**
+
+1.  **target-audience-analysis**: The text mentions "targeted 18-25 year olds in battleground constituencies". It implies they analyzed who to target (swing voters, youth in specific areas). The description says "Identifying and analysing the target audience examines target audience member locations, political affiliations...". The article describes the activists doing this ("targeted 18-25 year olds in battleground constituencies").
+2.  **microtarget**: "Actions taken which help target content to specific audiences identified and analysed as part of TA13". The bots sent messages to "targeted 18-25 year olds in battleground constituencies". This fits microtargeting.
+3.  **select-channels-and-affordances**: "Selecting platforms and affordances assesses which online or offline platforms... maximise an influence operation's ability to reach its target audience." The article explicitly discusses choosing Tinder, its matching algorithm, and how they used Tinder Premium to place bots in contested constituencies. "Tinder is a dating app... designed on the basis of classical gambling principles...". This fits.
+4.  **develop-content**: "Create or acquire text, images, and other content". The activists "built a tool which took over and operated the accounts... sent a list of Labour policies, or a criticism of Tory policies". They created the bot and the messaging content.
+5.  **establish-assets**: "Establishing information assets generates messaging tools, including social media accounts...". The text says "bot accounts sent... messages", "took over and operated the accounts of recruited Tinder-users". They established bot accounts/assets to disseminate information.
+6.  **deliver-content**: "Release content to general public or larger population". The bots sent 30,000-40,000 messages. This is delivering the content.
+7.  **maximise-exposure**: "Maximise exposure... via flooding, amplifying, and cross-posting." The bots swiped right on *all* users to get the largest number of matches. This is an attempt to maximize exposure/reach within the platform.
+8.  **plan-objectives**: "Set clearly defined... objectives... goal the threat actor wishes to achieve." The goal was "persuade swing voters to support Labour" and "oust the Conservative government". While the article is a critique, it describes the operation's objectives.
+9.  **plan-strategy**: "Define the desired end state...". The end state was Labour winning (specifically in battleground constituencies).
+
+**Refining the selection:**
+The article is a commentary *about* an influence operation (the Tinder Bot project), not necessarily a direct instruction manual or a report *by* the operation itself. However, the task is to categorize the user input (the article) based on the tactics described *within* the text or the subject matter of the text. Usually, in these tasks, if the text describes an operation employing these tactics, those tactics are tagged.
+
+Let's look closer at the specific definitions.
+- **target-audience-analysis**: The text explicitly mentions targeting "18-25 year olds in battleground constituencies". It discusses analyzing voting intentions ("inquire into their voting intentions").
+- **microtarget**: Sending specific messages to specific groups (swing voters, 18-25s).
+- **select-channels-and-affordances**: Choosing Tinder, using Tinder Premium, leveraging the matching algorithm.
+- **develop-content**: Creating the bot, creating the policy lists/criticisms.
+- **establish-assets**: Creating bot accounts (taking over user accounts).
+- **deliver-content**: Sending the messages.
+- **maximise-exposure**: Swiping right on all users to maximize matches.
+
+Are there others?
+- **plan-objectives**: "persuade swing voters to support Labour".
+- **plan-strategy**: "oust the Conservative government".
+- **assess-effectiveness**: The article mentions "Labour ended up winning by only 22 votes" in Dudley North, implying an assessment of the outcome, though the article is written by researchers analyzing the *implications*, not the operators assessing their own effectiveness. However, the text describes the operation's success.
+- **drive-offline-activity**: No mention of moving to offline rallies.
+- **persist-in-the-information-environment**: No mention of avoiding takedown.
+- **develop-narratives**: "Labour policies, or a criticism of Tory policies". This is content, but is it "master narratives"? The text mentions "master narratives" in the definition, but the article discusses specific policy messaging. It might be a stretch, but "develop-narratives" is often used for general messaging promotion. The definition says "promotion of beneficial master narratives... day-to-day promotion and reinforcement of this messaging". The bot sent "Labour policies". This is close.
+- **establish-legitimacy**: The bots posed as real users ("did not identify themselves as automated accounts"). This is establishing legitimacy/trust to deceive.
+- **drive-online-harms**: The article discusses "harmful applications", "deceptive nature", "anti-democratic". It mentions "harassment, suppression" in the definition, but the specific operation described was persuasion, not harassment. However, the article discusses the *potential* for harm and the ethical issues. Does the article *describe* the tactic of drive-online-harms being used? The bot "inquire into their voting intentions". It didn't harass. It was deceptive.
+- **conduct-pump-priming**: No mention of small scale release before general.
+
+**Strongest Matches:**
+1.  **select-channels-and-affordances**: The article spends significant time discussing why Tinder was chosen (algorithm, matching, attention-grabbing ecosystem).
+2.  **target-audience-analysis**: Explicitly mentions targeting 18-25 year olds in battleground constituencies.
+3.  **microtarget**: Sending specific messages to these targeted groups.
+4.  **establish-assets**: Creating bot accounts (taking over profiles).
+5.  **develop-content**: Creating the bot and the messages (Labour policies).
+6.  **deliver-content**: Sending the 30,000-40,000 messages.
+7.  **maximise-exposure**: Swiping right on all users to maximize matches.
+8.  **establish-legitimacy**: Posing as real users to gain trust (deception).
+
+**Weaker/Debatable Matches:**
+- **plan-objectives/plan-strategy**: The article describes the goals, but is it defining the tactics of the operation or reporting on them? The prompt asks to categorize user input. If the input describes an operation using these tactics, the tactics are relevant.
+- **develop-narratives**: Sending policy lists is content, but "master narratives" is specific. The bot sent "Labour policies". This is likely **develop-content** rather than high-level narrative development, though they overlap.
+- **assess-effectiveness**: The article mentions the election result, but the operation itself isn't described as assessing effectiveness for future plans in the text (the researchers are assessing it).
+
+**Decision:**
+I will select the tactics that are clearly described as actions taken by the "activists" (the influence operation) within the article.
+- **target-audience-analysis**: "targeted 18-25 year olds in battleground constituencies".
+- **microtarget**: "sent 30,000-40,000 messages to targeted...".
+- **select-channels-and-affordances**: "Tinder is a dating app... designed on the basis of classical gambling principles...".
+- **establish-assets**: "bot accounts... took over and operated the accounts".
+- **develop-content**: "built a tool... sent a list of Labour policies".
+- **deliver-content**: "sent 30,000-40,000 messages".
+- **maximise-exposure**: "swiped right on all users in the attempt to get the largest number of matches".
+- **establish-legitimacy**: "did not identify themselves as automated accounts, instead posing as the user".
+
+I should check if "plan-strategy" or "plan-objectives" are appropriate. The text says "persuade swing voters to support Labour". This is an objective. "oust the Conservative government". This is a strategic end state. However, usually, if the text is a news report *about* the operation, the focus is on the execution tactics. The definitions for plan-strategy/objectives are about the *definition* of them. The article describes the *existence* of them. I will include them if the text explicitly details the planning phase. The text says "The tactic was frankly ingenious...". It describes the execution. I'll stick to the execution tactics which are more prominent.
+
+Wait, looking at the definitions again.
+**target-audience-analysis**: "Identifying and analysing the target audience...". The text says "targeted 18-25 year olds...". It implies analysis was done.
+**microtarget**: "Actions taken which help target content to specific audiences...". Sending messages to specific groups fits.
+**select-channels-and-affordances**: "Selecting platforms... Tinder...". Fits well.
+**establish-assets**: "Establishing information assets... social media accounts...". Bot accounts fit.
+**develop-content**: "Create or acquire text...". Bot messages fit.
+**deliver-content**: "Release content...". Sending messages fits.
+**maximise-exposure**: "Maximise exposure... via flooding...". Swiping right on all users to get matches fits "flooding" the matches.
+**establish-legitimacy**: "Establish assets that create trust". Posing as real people creates trust.
+
+I will prioritize the most distinct ones.
+The article is a critique *of* the operation, but it details the operation's methods.
+The most prominent tactics described are:
+1.  **select-channels-and-affordances** (Choosing Tinder, using Premium, leveraging algorithm).
+2.  **target-audience-analysis** (Targeting 18-25s in battlegrounds).
+3.  **microtarget** (Sending specific messages to these voters).
+4.  **establish-assets** (Bot accounts).
+5.  **develop-content** (Policy lists).
+6.  **deliver-content** (Sending messages).
+7.  **maximise-exposure** (Swiping right on all).
+8.  **establish-legitimacy** (Impersonation).
+
+I need to be careful not to over-tag. The prompt asks to predict tactics from the options.
+Let's review the "plan" tactics. The article mentions "The team built a tool...". It doesn't explicitly detail the strategic planning phase (e.g., "We defined the end state as..."). It describes the execution. So I will exclude plan-strategy and plan-objectives unless the text explicitly frames the goals as the primary focus of the description. The text focuses on the *method* (bots, Tinder, deception).
+
+Let's review "develop-narratives". The bot sent "Labour policies". This is content. "Master narratives" is a specific term in the definition. The article mentions "master narratives" in the definition of the tactic, but the article text itself discusses "Labour policies". I'll stick with develop-content.
+
+Let's review "drive-online-harms". The article discusses the *potential* for harm and calls the tactics "anti-democratic", but the specific operation described was persuasion, not harassment or suppression. So I will exclude this.
+
+Let's review "assess-effectiveness". The article mentions the election result ("Labour ended up winning by only 22 votes"). This is an assessment of the outcome. However, is it the operation assessing it for future plans? No, it's the article author reporting it. So I will exclude it.
+
+So the core list is:
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+I will check if "microtarget" and "target-audience-analysis" are distinct enough. TA is the analysis phase. Microtarget is the action. The text says "targeted 18-25 year olds". This implies analysis was done. The action was sending messages. Both are present.
+
+One more check: **establish-legitimacy**. "Establish assets that create trust". The bots "did not identify themselves as automated accounts, instead posing as the user". This is creating trust/legitimacy to facilitate the interaction. This fits.
+
+Final check on JSON format.
+{"Tactics": ["name1", "name2", ...]}
+
+I will list the most relevant ones.
+1. select-channels-and-affordances (Tinder selection, algorithm usage)
+2. target-audience-analysis (18-25, battlegrounds)
+3. microtarget (Targeted messages)
+4. establish-assets (Bot accounts)
+5. develop-content (Policy lists)
+6. deliver-content (Sending messages)
+7. maximise-exposure (Swiping right on all)
+8. establish-legitimacy (Impersonation)
+
+I'll condense to the most salient ones to avoid noise, but the instruction says "If the user input is not relevant to any Tactics, the assistant should print nothing". It also says "an article may have multiple Tactics associated". I should include all that apply.
+
+Wait, looking at the definitions again.
+**microtarget**: "Actions taken which help target content to specific audiences identified and analysed as part of TA13: Target Audience Analysis."
+**target-audience-analysis**: "Identifying and analysing the target audience..."
+The text says "targeted 18-25 year olds". This implies the analysis happened. The action of targeting is microtargeting.
+**select-channels-and-affordances**: "Selecting platforms... Tinder...".
+**establish-assets**: "Establishing information assets... social media accounts...".
+**develop-content**: "Create or acquire text...".
+**deliver-content**: "Release content...".
+**maximise-exposure**: "Maximise exposure... via flooding...".
+**establish-legitimacy**: "Establish assets that create trust".
+
+I will include these.
+
+One consideration: The article is a commentary *by* researchers *about* the operation. Does the article itself *perform* the tactics? No. It describes them. The task is to categorize the user input (the article) by the tactics. Usually, this means "What tactics are discussed/described in this text?".
+If the text describes an influence operation using these tactics, I should tag them.
+
+Let's refine the list to the most definitive ones.
+- **select-channels-and-affordances**: Very clear. "Tinder is a dating app... designed on the basis of classical gambling principles...".
+- **target-audience-analysis**: "targeted 18-25 year olds in battleground constituencies".
+- **microtarget**: "sent 30,000-40,000 messages to targeted...".
+- **establish-assets**: "bot accounts... took over and operated the accounts".
+- **develop-content**: "sent a list of Labour policies".
+- **deliver-content**: "sent 30,000-40,000 messages".
+- **maximise-exposure**: "swiped right on all users in the attempt to get the largest number of matches".
+- **establish-legitimacy**: "did not identify themselves as automated accounts, instead posing as the user".
+
+I will output these.
+
+Wait, I should check if "plan-objectives" is relevant. "persuade swing voters to support Labour". This is the objective. The definition says "Set clearly defined... objectives". The text describes the objective. I'll include it as it's a key part of the operation described.
+"plan-strategy": "oust the Conservative government". This is the end state. I'll include it.
+
+Actually, looking at similar tasks, usually, if the text is a news report describing an operation, the focus is on the *execution* tactics (develop, deliver, select channels, etc.) rather than the planning phase unless the text details the planning meeting. The text says "The team built a tool...". It describes the execution. I will stick to the execution tactics to be safe, as "plan" tactics are often about the *definition* of the plan, not just the existence of a goal. However, the description of the goal is explicit. I'll include **plan-objectives** because "persuade swing voters to support Labour" is a clear objective statement described in the text. **plan-strategy** is slightly more abstract ("desired end state... set of required conditions"). "Labour winning" is the end state. I'll include it.
+
+Actually, re-reading the definitions:
+**plan-strategy**: "Define the desired end state...".
+**plan-objectives**: "Set clearly defined... objectives...".
+The text says "persuade swing voters to support Labour". This is an objective.
+The text says "Labour ended up winning". This is the result.
+The text says "aim 'of getting voters to help oust the Conservative government'". This is the strategy/end state.
+So **plan-strategy** and **plan-objectives** are present in the description of the operation.
+
+However, often in these classification tasks, if the text is a critique *of* the operation, the primary focus is on the *methods* used. I will prioritize the methods.
+Let's stick to the methods that are clearly described as actions taken by the actors.
+1. select-channels-and-affordances
+2. target-audience-analysis
+3. microtarget
+4. establish-assets
+5. develop-content
+6. deliver-content
+7. maximise-exposure
+8. establish-legitimacy
+
+I will drop plan-strategy and plan-objectives because the text is reporting on the operation, not detailing the planning document or the strategic definition phase explicitly as a primary focus (it's embedded in the narrative of the operation's actions). The execution tactics are much more prominent.
+
+Wait, looking at the instruction: "When processing user input, the assistant must predict the Tactics from one of the pre-defined options specified."
+The input is the Article. The Article describes the operation.
+I will include the tactics that are clearly demonstrated by the actors described in the article.
+
+Final check on **establish-legitimacy**. "Establish assets that create trust". The bots posed as real users. This creates trust.
+Final check on **maximise-exposure**. "swiped right on all users". This is flooding the matches.
+Final check on **select-channels-and-affordances**. "Tinder... designed on the basis of classical gambling principles".
+Final check on **target-audience-analysis**. "targeted 18-25 year olds".
+Final check on **microtarget**. "sent... messages to targeted...".
+Final check on **establish-assets**. "bot accounts".
+Final check on **develop-content**. "list of Labour policies".
+Final check on **deliver-content**. "sent... messages".
+
+I will output these 8.
+Wait, I need to make sure I don't miss **develop-narratives**. "Labour policies" vs "Master narratives". The definition of develop-narratives mentions "promotion of beneficial master narratives... day-to-day promotion and reinforcement of this messaging". The bot sent "Labour policies". This is specific messaging, not necessarily a "master narrative". I'll leave it out to be precise.
+
+One more thing: **assess-effectiveness**. "Labour ended up winning by only 22 votes". This is an assessment of the outcome. But is it the tactic of the operation? The operation didn't assess it in the text (the article does). So I'll leave it out.
+
+Okay, ready to generate JSON.
+I need to ensure the JSON keys match the required format: `{"Tactics": [...]}`.
+The values must be the "name" from the Tactics list.
+
+List:
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+I will order them logically or alphabetically? The prompt doesn't specify order. I'll list them as identified.
+
+Wait, I should check if "plan-objectives" is better included. "The bot accounts... persuade swing voters to support Labour." This is the objective. The definition says "Set clearly defined... objectives". The text describes the objective. I think it's safer to include it because the text explicitly states the goal.
+"aim 'of getting voters to help oust the Conservative government'". This is the strategy.
+I will add **plan-objectives** and **plan-strategy** because the text explicitly defines the goals and end states of the operation described.
+
+Revised List:
+- plan-strategy
+- plan-objectives
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+Actually, looking at the instruction "If the user input is not relevant to any Tactics, the assistant should print nothing".
+The article is highly relevant.
+I will include the most prominent ones. The planning ones are background to the execution. The execution is the main story. I'll stick to the execution ones to be more precise about the *tactics* described in the context of the operation's actions. The "plan" tactics are about the *definition* of the plan. The article describes the *implementation*.
+Okay, I will exclude plan-strategy and plan-objectives to focus on the operational tactics which are more clearly defined by the actions (building bots, sending messages, choosing Tinder).
+
+Wait, "target-audience-analysis" is about the *analysis*. The text says "targeted 18-25 year olds". It implies analysis.
+"microtarget" is the *action* of targeting.
+"select-channels-and-affordances" is the *action* of choosing Tinder.
+"establish-assets" is the *action* of creating bot accounts.
+"develop-content" is the *action* of creating messages.
+"deliver-content" is the *action* of sending messages.
+"maximise-exposure" is the *action* of swiping right on all.
+"establish-legitimacy" is the *action* of impersonation.
+
+I'll go with these 8.
+
+Wait, I need to check the JSON format again.
+`{ "Tactics": [ "List of tactic names" ] }`
+The prompt example shows:
+`{ "Tactics": [ "List of tactic names" ] }`
+Wait, the prompt says:
+`The agent MUST respond with the following JSON format: { "Tactics": [ "List of tactic names" ] }`
+It implies a list of strings.
+I will ensure valid JSON.
+
+One final check: **drive-online-harms**. The article says "Political bots can have either beneficial or harmful applications...". It discusses the *potential* for harm. It does not say the Tinder bot *used* drive-online-harms tactics (harassment, suppression). It used deception. So I will not include it.
+
+Okay, final list:
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+I will verify the spelling of the tactic names from the input.
+"select-channels-and-affordances"
+"target-audience-analysis"
+"microtarget"
+"establish-assets"
+"develop-content"
+"deliver-content"
+"maximise-exposure"
+"establish-legitimacy"
+
+All match.
+
+One more consideration: The article is written by researchers *about* the operation. Does the article *itself* constitute the tactic? No, the article *describes* the tactic. The task is to categorize the input (the article) based on the tactics. If the article describes an operation using these tactics, the tags should reflect the content of the article.
+So yes, I tag the tactics described.
+
+I will finalize the list.
+I'll remove "establish-legitimacy" if I feel it's too close to "establish-assets". "Establish assets that create trust". The bots *are* assets. Their *deception* creates trust. The definition says "Establish assets that create trust". The act of posing as a real user is establishing the asset's legitimacy. I think it fits.
+I'll remove "plan-objectives" and "plan-strategy" as they are less explicit about the *process* of planning and more about the *content* of the goals which are secondary to the description of the bot's behavior.
+
+Wait, "target-audience-analysis" definition: "Identifying and analysing the target audience...". The text says "targeted 18-25 year olds". It doesn't explicitly describe the *analysis* process (e.g. "they surveyed voters"). It just says they targeted them. However, "microtarget" definition says "target content to specific audiences identified and analysed as part of TA13". This implies TA13 happened. So I will include **target-audience-analysis** as it is a prerequisite for **microtarget** and the text implies it ("targeted...").
+
+Okay, I'm confident in the list.
+1. select-channels-and-affordances
+2. target-audience-analysis
+3. microtarget
+4. establish-assets
+5. develop-content
+6. deliver-content
+7. maximise-exposure
+8. establish-legitimacy
+
+I will format this into the JSON.
+</think>
+
+{
+  "Tactics": [
+    "select-channels-and-affordances",
+    "target-audience-analysis",
+    "microtarget",
+    "establish-assets",
+    "develop-content",
+    "deliver-content",
+    "maximise-exposure",
+    "establish-legitimacy"
+  ]
+}
+
+Time: 266.69 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.01 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.01 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+
+{
+"Tactics": [
+  {
+    "name": "plan-strategy",
+    "description": "Define the desired end state, i.e. the set of required conditions that defines achievement of all objectives."
+  },
+  {
+    "name": "plan-objectives",
+    "description": "Set clearly defined, measurable, and achievable objectives. In some cases achieving objectives ties execution of tactical tasks to reaching the desired strategic end state. In other cases, where there is no clearly defined strategic end state, the tactical objective may stand on its own. The objective statement should not specify the way and means of accomplishment but rather the goal the threat actor wishes to achieve. "
+  },
+  {
+    "name": "microtarget",
+    "description": "Actions taken which help target content to specific audiences identified and analysed as part of TA13: Target Audience Analysis."
+  },
+  {
+    "name": "develop-content",
+    "description": "Create or acquire text, images, and other content"
+  },
+  {
+    "name": "select-channels-and-affordances",
+    "description": "Selecting platforms and affordances assesses which online or offline platforms and their associated affordances maximise an influence operation\u2019s ability to reach its target audience. To select the most appropriate platform(s), an operation may assess the technological affordances including platform algorithms, terms of service, permitted content types, or other attributes that determine platform usability and accessibility. Selecting platforms includes both choosing platforms on which the operation will publish its own content and platforms on which the operation will attempt to restrict adversarial content."
+  },
+  {
+    "name": "conduct-pump-priming",
+    "description": "Release content on a targetted small scale, prior to general release, including releasing seed. Used for preparation before broader release, and as message honing. Used for preparation before broader release, and as message honing."
+  },
+  {
+    "name": "deliver-content",
+    "description": "Release content to general public or larger population"
+  },
+  {
+    "name": "drive-offline-activity",
+    "description": "Move incident/campaign from online to offline. Encouraging users to move from the platform on which they initially viewed operation content and engage in the physical information space or offline world. This may include operation-aligned rallies or protests, radio, newspaper, or billboards. An influence operation may drive to physical forums to diversify its information channels and facilitate spaces where the target audience can engage with both operation content and like-minded individuals offline."
+  },
+  {
+    "name": "persist-in-the-information-environment",
+    "description": "Persist in the Information Space refers to taking measures that allow an operation to maintain its presence and avoid takedown by an external entity. Techniques in Persist in the Information Space help campaigns operate without detection and appear legitimate to the target audience and platform monitoring services. Influence operations on social media often persist online by varying the type of information assets and platforms used throughout the campaign."
+  },
+  {
+    "name": "assess-effectiveness",
+    "description": "Assess effectiveness of action, for use in future plans"
+  },
+  {
+    "name": "target-audience-analysis",
+    "description": "Identifying and analysing the target audience examines target audience member locations, political affiliations, financial situations, and other attributes that an influence operation may incorporate into its messaging strategy. During this tactic, influence operations may also identify existing similarities and differences between target audience members to unite like groups and divide opposing groups. Identifying and analysing target audience members allows influence operations to tailor operation strategy and content to their analysis."
+  },
+  {
+    "name": "develop-narratives",
+    "description": "The promotion of beneficial master narratives is perhaps the most effective method for achieving long-term strategic narrative dominance. From a \"\"whole of society\"\" perspective the promotion of the society's core master narratives should occupy a central strategic role. From a misinformation campaign / cognitive security perpectve the tactics around master narratives centre more precisely on the day-to-day promotion and reinforcement of this messaging. In other words, beneficial, high-coverage master narratives are a central strategic goal and their promotion constitutes an ongoing tactical struggle carried out at a whole-of-society level. Tactically, their promotion covers a broad spectrum of activities both on- and offline."
+  },
+  {
+    "name": "establish-assets",
+    "description": "Establishing information assets generates messaging tools, including social media accounts, operation personnel, and organisations, including directly and indirectly managed assets. For assets under their direct control, the operation can add, change, or remove these assets at will. Establishing information assets allows an influence operation to promote messaging directly to the target audience without navigating through external entities. Many online influence operations create or compromise social media accounts as a primary vector of information dissemination.\n\nThis Tactic was previously called Establish Social Assets."
+  },
+  {
+    "name": "establish-legitimacy",
+    "description": "Establish assets that create trust"
+  },
+  {
+    "name": "maximise-exposure",
+    "description": "Maximise exposure of the target audience to incident/campaign content via flooding, amplifying, and cross-posting."
+  },
+  {
+    "name": "drive-online-harms",
+    "description": "Actions taken by an influence operation to harm their opponents in online spaces through harassment, suppression, releasing private information, and controlling the information space through offensive cyberspace operations."
+  }
+],
+"Article": "To revisit this article, visit My Profile, then View saved stories.\nIf you buy something using links in our stories, we may earn a commission. Learn more.\nIn the days leading up to the UK\u2019s general election, youths looking for love online encountered a whole new kind of Tinder nightmare. A group of young activists built a Tinder chatbot to co-opt profiles and persuade swing voters to support Labour. The bot accounts sent 30,000-40,000 messages to targeted 18-25 year olds in battleground constituencies like Dudley North, which Labour ended up winning by only 22 votes.\nThe tactic was frankly ingenious. Tinder is a dating app where users swipe right to indicate attraction and interest in a potential partner. If both people swipe right on each other\u2019s profile, a dialogue box becomes available for them to privately chat. After meeting their crowdfunding goal of only \u00a3500, the team built a tool which took over and operated the accounts of recruited Tinder-users. By upgrading the profiles to Tinder Premium, the team was able to place bots in any contested constituency across the UK. Once planted, the bots swiped right on all users in the attempt to get the largest number of matches and inquire into their voting intentions.\nRead more: Facebook teaches bots how to negotiate. They learn to lie instead\nYara Rodrigues Fowler and Charlotte Goodman, the two campaigners leading the informal GE Tinder Bot team, explained in a recent opinion piece that if \u201cthe user was voting for a right-wing party or was unsure, the bot sent a list of Labour policies, or a criticism of Tory policies,\u201d with the aim \u201cof getting voters to help oust the Conservative government.\u201d\nPieces in major media outlets like the New York Times and BBC have applauded these digital canvassers for their ingenuity and civic service. But upon closer inspection, the project reveals itself to be ethically dubious and problematic on a number of levels. How would these same outlets respond if such tactics were used to support the Tories? And what does this mean for the use of bots and other political algorithms in the future?\nThe activists maintain that the project was meant to foster democratic engagement. But screenshots of the bots\u2019 activity expose a harsher reality. Images of conversations between real users and these bots, posted on i-D, Mashable, as well as on Fowler and Goodman\u2019s public Twitter accounts, show that the bots did not identify themselves as automated accounts, instead posing as the user whose profile they had taken over. While conducting research for this story, it turned out that a number of our friends living in Oxford had interacted with the bot in the lead up to the election and had no idea that it was not a real person.\nRead more: UpVote 10: Cory Doctorow on Trump and privacy\nIt should be obvious to anyone who has ever had to receive approval from an ethics board that this was an egregious ethical violation. While sending out automated reminders to vote would be one thing, actively trying to convince people to vote for a certain party under fraudulent pretenses is invasive and sets a disturbing precedent.\nBecause they are funded by advertising and personal data, social media platforms feature specific design elements built to monopolise the attention of their users. Tinder\u2019s matching algorithm, for instance, is designed on the basis of classical gambling principles that increase emotional investment and draw users into the platform. As Goodman explains in i-D, their bot was built on the assumption that youth targeted over Tinder would be more likely to respond to notifications from matches, given that matches suggest high-value attraction or interest. This attention-grabbing ecosystem, combined with the intimate nature of the app, creates a dangerous space for automation and deception.\nPolitical bots can have either beneficial or harmful applications: they can fulfil playful, artistic, and accountability functions, but they can also help spread hate speech or disinformation. Our team at the Oxford Internet Institute, which studies the impact of bots on public and political life, has in recent research suggested that a vital future policy issue will concern ways of promoting the positive effects of bots while limiting their manipulative capabilities.\nOne laudable aspect of the Tinder Bot stunt is that it exposes the growing capacity for young, diverse, tech-savvy communities to self-organize and achieve political change through code. However, for this movement to be sustainable, we need transparent, community-based processes for determining whether these tools can be used to strengthen democracy, and if so, how.\nFor inspiration, there are examples of algorithmic interventions that resemble Fowler & Goodman\u2019s project, only with much more transparency and respect for users. An example is the Voices app, which provides users in the US with the contact information of all of their local representatives, enabling them to be contacted via phone or email directly through the app.\nRead more: Apps are dying. Long live the subservient bots ready to fulfil your every desire\nSocial media companies and politicians cannot write this case off as just another example of some rogue twenty-somethings playing with software. And we shouldn\u2019t be distracted by their na\u00efvet\u00e9 and good intentions without serious discussion about what this project means for the vulnerability of democracy.\nConsider that a few campaigners managed to pull this off with only 500 crowd-sourced pounds. Any group in the world could similarly start using Tinder to target youth anywhere, for whatever purpose they wished. Consider what would happen if political consultancies, armed with bottomless advertising budgets, were to develop even more sophisticated Tinderbots.\nAs it stands, there is little to prevent political actors from deploying bots, not just in future elections but also in daily life. If you can believe it, it is not technically illegal to use bots to interfere with political processes. We already know through interviews detailed in our recent study of political bots in the US that leading political consultants view digital campaigning as a \u2018wild west' where anything goes. And our project\u2019s research provides further evidence that bots have become an increasingly common tool used in elections around the world.\nMost concerning is the fact that the Tinder Bot team is tacitly suggesting the use of such tactics in other countries, such as the United States, as a way to \u201ctake back the White House\u201d. To be sure, there is a temptation on the Left to fight back against allegations of right-wing digital manipulation with equivalent algorithmic force. But whether these tactics are used by the Left or Right, let's not kid ourselves and pretend that their deceptive nature isn't fundamentally anti-democratic.\nOnline environments are fostering the growth of deceptive political practices, and it does not bode well for society if resorting to these kinds of tactics becomes the norm. We must develop solutions to the ways in which social media platforms wear down our social and psychological immune system, cultivating weaknesses that politicians and citizens can and do exploit. We are in the midst of a globally expanding bot war, and it\u2019s time to get serious about it.\nRobert Gorwa is a graduate student at the Oxford Internet Institute, University of Oxford. Douglas Guilbeault is a doctoral student at the Annenberg School for Communication, University of Pennsylvania. Both Rob and Doug conduct research with the ERC-funded Project on Computational Propaganda, based at the Oxford Internet Institute.\nThis article was originally published by WIRED UK\nMore From WIRED\nReviews and Guides\n\u00a9 2024 Cond\u00e9 Nast. All rights reserved. WIRED may earn a portion of sales from products that are purchased through our site as part of our Affiliate Partnerships with retailers. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except with the prior written permission of Cond\u00e9 Nast. Ad Choices"
+}
+
+
+Result:
+The user wants me to identify which Tactics from the provided list are present in the given Article.
+I need to analyze the Article text and map it to the definitions of the Tactics.
+
+**Tactics List:**
+1.  **plan-strategy**: Define desired end state.
+2.  **plan-objectives**: Set measurable objectives.
+3.  **microtarget**: Actions to target content to specific audiences (TA13).
+4.  **develop-content**: Create or acquire text, images, etc.
+5.  **select-channels-and-affordances**: Select platforms/affordances to maximize reach.
+6.  **conduct-pump-priming**: Release content on small scale prior to general release.
+7.  **deliver-content**: Release content to general public.
+8.  **drive-offline-activity**: Move from online to offline (rallies, etc.).
+9.  **persist-in-the-information-environment**: Maintain presence, avoid takedown.
+10. **assess-effectiveness**: Assess action for future plans.
+11. **target-audience-analysis**: Identify/analyze target audience attributes.
+12. **develop-narratives**: Promotion of master narratives.
+13. **establish-assets**: Create social media accounts, personnel, orgs.
+14. **establish-legitimacy**: Create trust.
+15. **maximise-exposure**: Flooding, amplifying, cross-posting.
+16. **drive-online-harms**: Harassment, suppression, releasing private info, controlling info space.
+
+**Article Analysis:**
+The article discusses a group of young activists who built a Tinder chatbot to co-opt profiles and persuade swing voters to support Labour during the UK general election.
+Key points:
+- "A group of young activists built a Tinder chatbot to co-opt profiles and persuade swing voters to support Labour." -> This involves creating a tool (develop-content/establish-assets) and targeting specific voters.
+- "The bot accounts sent 30,000-40,000 messages to targeted 18-25 year olds in battleground constituencies like Dudley North..." -> This is targeting specific audiences (microtarget, target-audience-analysis).
+- "Tinder is a dating app... If both people swipe right... dialogue box becomes available..." -> Using the platform's affordances (select-channels-and-affordances).
+- "By upgrading the profiles to Tinder Premium, the team was able to place bots in any contested constituency across the UK." -> Selecting channels/platforms.
+- "Once planted, the bots swiped right on all users in the attempt to get the largest number of matches and inquire into their voting intentions." -> This is targeting and content delivery.
+- "if 'the user was voting for a right-wing party or was unsure, the bot sent a list of Labour policies, or a criticism of Tory policies,'..." -> This is content delivery based on analysis.
+- "The bot accounts... sent 30,000-40,000 messages..." -> Delivering content.
+- "The tactic was frankly ingenious... Tinder is a dating app... designed on the basis of classical gambling principles..." -> Discussing the platform selection and affordances.
+- "Political bots can have either beneficial or harmful applications... help spread hate speech or disinformation." -> General discussion.
+- "One laudable aspect... exposes the growing capacity for young, diverse, tech-savvy communities to self-organize..."
+- "Consider that a few campaigners managed to pull this off with only 500 crowd-sourced pounds. Any group in the world could similarly start using Tinder to target youth anywhere..." -> Discussing the potential for others to use this tactic.
+
+**Mapping to Tactics:**
+
+1.  **target-audience-analysis**: The text mentions "targeted 18-25 year olds in battleground constituencies". It implies they analyzed who to target (swing voters, youth in specific areas). The description says "Identifying and analysing the target audience examines target audience member locations, political affiliations...". The article describes the activists doing this ("targeted 18-25 year olds in battleground constituencies").
+2.  **microtarget**: "Actions taken which help target content to specific audiences identified and analysed as part of TA13". The bots sent messages to "targeted 18-25 year olds in battleground constituencies". This fits microtargeting.
+3.  **select-channels-and-affordances**: "Selecting platforms and affordances assesses which online or offline platforms... maximise an influence operation's ability to reach its target audience." The article explicitly discusses choosing Tinder, its matching algorithm, and how they used Tinder Premium to place bots in contested constituencies. "Tinder is a dating app... designed on the basis of classical gambling principles...". This fits.
+4.  **develop-content**: "Create or acquire text, images, and other content". The activists "built a tool which took over and operated the accounts... sent a list of Labour policies, or a criticism of Tory policies". They created the bot and the messaging content.
+5.  **establish-assets**: "Establishing information assets generates messaging tools, including social media accounts...". The text says "bot accounts sent... messages", "took over and operated the accounts of recruited Tinder-users". They established bot accounts/assets to disseminate information.
+6.  **deliver-content**: "Release content to general public or larger population". The bots sent 30,000-40,000 messages. This is delivering the content.
+7.  **maximise-exposure**: "Maximise exposure... via flooding, amplifying, and cross-posting." The bots swiped right on *all* users to get the largest number of matches. This is an attempt to maximize exposure/reach within the platform.
+8.  **plan-objectives**: "Set clearly defined... objectives... goal the threat actor wishes to achieve." The goal was "persuade swing voters to support Labour" and "oust the Conservative government". While the article is a critique, it describes the operation's objectives.
+9.  **plan-strategy**: "Define the desired end state...". The end state was Labour winning (specifically in battleground constituencies).
+
+**Refining the selection:**
+The article is a commentary *about* an influence operation (the Tinder Bot project), not necessarily a direct instruction manual or a report *by* the operation itself. However, the task is to categorize the user input (the article) based on the tactics described *within* the text or the subject matter of the text. Usually, in these tasks, if the text describes an operation employing these tactics, those tactics are tagged.
+
+Let's look closer at the specific definitions.
+- **target-audience-analysis**: The text explicitly mentions targeting "18-25 year olds in battleground constituencies". It discusses analyzing voting intentions ("inquire into their voting intentions").
+- **microtarget**: Sending specific messages to specific groups (swing voters, 18-25s).
+- **select-channels-and-affordances**: Choosing Tinder, using Tinder Premium, leveraging the matching algorithm.
+- **develop-content**: Creating the bot, creating the policy lists/criticisms.
+- **establish-assets**: Creating bot accounts (taking over user accounts).
+- **deliver-content**: Sending the messages.
+- **maximise-exposure**: Swiping right on all users to maximize matches.
+
+Are there others?
+- **plan-objectives**: "persuade swing voters to support Labour".
+- **plan-strategy**: "oust the Conservative government".
+- **assess-effectiveness**: The article mentions "Labour ended up winning by only 22 votes" in Dudley North, implying an assessment of the outcome, though the article is written by researchers analyzing the *implications*, not the operators assessing their own effectiveness. However, the text describes the operation's success.
+- **drive-offline-activity**: No mention of moving to offline rallies.
+- **persist-in-the-information-environment**: No mention of avoiding takedown.
+- **develop-narratives**: "Labour policies, or a criticism of Tory policies". This is content, but is it "master narratives"? The text mentions "master narratives" in the definition, but the article discusses specific policy messaging. It might be a stretch, but "develop-narratives" is often used for general messaging promotion. The definition says "promotion of beneficial master narratives... day-to-day promotion and reinforcement of this messaging". The bot sent "Labour policies". This is close.
+- **establish-legitimacy**: The bots posed as real users ("did not identify themselves as automated accounts"). This is establishing legitimacy/trust to deceive.
+- **drive-online-harms**: The article discusses "harmful applications", "deceptive nature", "anti-democratic". It mentions "harassment, suppression" in the definition, but the specific operation described was persuasion, not harassment. However, the article discusses the *potential* for harm and the ethical issues. Does the article *describe* the tactic of drive-online-harms being used? The bot "inquire into their voting intentions". It didn't harass. It was deceptive.
+- **conduct-pump-priming**: No mention of small scale release before general.
+
+**Strongest Matches:**
+1.  **select-channels-and-affordances**: The article spends significant time discussing why Tinder was chosen (algorithm, matching, attention-grabbing ecosystem).
+2.  **target-audience-analysis**: Explicitly mentions targeting 18-25 year olds in battleground constituencies.
+3.  **microtarget**: Sending specific messages to these targeted groups.
+4.  **establish-assets**: Creating bot accounts (taking over profiles).
+5.  **develop-content**: Creating the bot and the messages (Labour policies).
+6.  **deliver-content**: Sending the 30,000-40,000 messages.
+7.  **maximise-exposure**: Swiping right on all users to maximize matches.
+8.  **establish-legitimacy**: Posing as real users to gain trust (deception).
+
+**Weaker/Debatable Matches:**
+- **plan-objectives/plan-strategy**: The article describes the goals, but is it defining the tactics of the operation or reporting on them? The prompt asks to categorize user input. If the input describes an operation using these tactics, the tactics are relevant.
+- **develop-narratives**: Sending policy lists is content, but "master narratives" is specific. The bot sent "Labour policies". This is likely **develop-content** rather than high-level narrative development, though they overlap.
+- **assess-effectiveness**: The article mentions the election result, but the operation itself isn't described as assessing effectiveness for future plans in the text (the researchers are assessing it).
+
+**Decision:**
+I will select the tactics that are clearly described as actions taken by the "activists" (the influence operation) within the article.
+- **target-audience-analysis**: "targeted 18-25 year olds in battleground constituencies".
+- **microtarget**: "sent 30,000-40,000 messages to targeted...".
+- **select-channels-and-affordances**: "Tinder is a dating app... designed on the basis of classical gambling principles...".
+- **establish-assets**: "bot accounts... took over and operated the accounts".
+- **develop-content**: "built a tool... sent a list of Labour policies".
+- **deliver-content**: "sent 30,000-40,000 messages".
+- **maximise-exposure**: "swiped right on all users in the attempt to get the largest number of matches".
+- **establish-legitimacy**: "did not identify themselves as automated accounts, instead posing as the user".
+
+I should check if "plan-strategy" or "plan-objectives" are appropriate. The text says "persuade swing voters to support Labour". This is an objective. "oust the Conservative government". This is a strategic end state. However, usually, if the text is a news report *about* the operation, the focus is on the execution tactics. The definitions for plan-strategy/objectives are about the *definition* of them. The article describes the *existence* of them. I will include them if the text explicitly details the planning phase. The text says "The tactic was frankly ingenious...". It describes the execution. I'll stick to the execution tactics which are more prominent.
+
+Wait, looking at the definitions again.
+**target-audience-analysis**: "Identifying and analysing the target audience...". The text says "targeted 18-25 year olds...". It implies analysis was done.
+**microtarget**: "Actions taken which help target content to specific audiences...". Sending messages to specific groups fits.
+**select-channels-and-affordances**: "Selecting platforms... Tinder...". Fits well.
+**establish-assets**: "Establishing information assets... social media accounts...". Bot accounts fit.
+**develop-content**: "Create or acquire text...". Bot messages fit.
+**deliver-content**: "Release content...". Sending messages fits.
+**maximise-exposure**: "Maximise exposure... via flooding...". Swiping right on all users to get matches fits "flooding" the matches.
+**establish-legitimacy**: "Establish assets that create trust". Posing as real people creates trust.
+
+I will prioritize the most distinct ones.
+The article is a critique *of* the operation, but it details the operation's methods.
+The most prominent tactics described are:
+1.  **select-channels-and-affordances** (Choosing Tinder, using Premium, leveraging algorithm).
+2.  **target-audience-analysis** (Targeting 18-25s in battlegrounds).
+3.  **microtarget** (Sending specific messages to these voters).
+4.  **establish-assets** (Bot accounts).
+5.  **develop-content** (Policy lists).
+6.  **deliver-content** (Sending messages).
+7.  **maximise-exposure** (Swiping right on all).
+8.  **establish-legitimacy** (Impersonation).
+
+I need to be careful not to over-tag. The prompt asks to predict tactics from the options.
+Let's review the "plan" tactics. The article mentions "The team built a tool...". It doesn't explicitly detail the strategic planning phase (e.g., "We defined the end state as..."). It describes the execution. So I will exclude plan-strategy and plan-objectives unless the text explicitly frames the goals as the primary focus of the description. The text focuses on the *method* (bots, Tinder, deception).
+
+Let's review "develop-narratives". The bot sent "Labour policies". This is content. "Master narratives" is a specific term in the definition. The article mentions "master narratives" in the definition of the tactic, but the article text itself discusses "Labour policies". I'll stick with develop-content.
+
+Let's review "drive-online-harms". The article discusses the *potential* for harm and calls the tactics "anti-democratic", but the specific operation described was persuasion, not harassment or suppression. So I will exclude this.
+
+Let's review "assess-effectiveness". The article mentions the election result ("Labour ended up winning by only 22 votes"). This is an assessment of the outcome. However, is it the operation assessing it for future plans? No, it's the article author reporting it. So I will exclude it.
+
+So the core list is:
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+I will check if "microtarget" and "target-audience-analysis" are distinct enough. TA is the analysis phase. Microtarget is the action. The text says "targeted 18-25 year olds". This implies analysis was done. The action was sending messages. Both are present.
+
+One more check: **establish-legitimacy**. "Establish assets that create trust". The bots "did not identify themselves as automated accounts, instead posing as the user". This is creating trust/legitimacy to facilitate the interaction. This fits.
+
+Final check on JSON format.
+{"Tactics": ["name1", "name2", ...]}
+
+I will list the most relevant ones.
+1. select-channels-and-affordances (Tinder selection, algorithm usage)
+2. target-audience-analysis (18-25, battlegrounds)
+3. microtarget (Targeted messages)
+4. establish-assets (Bot accounts)
+5. develop-content (Policy lists)
+6. deliver-content (Sending messages)
+7. maximise-exposure (Swiping right on all)
+8. establish-legitimacy (Impersonation)
+
+I'll condense to the most salient ones to avoid noise, but the instruction says "If the user input is not relevant to any Tactics, the assistant should print nothing". It also says "an article may have multiple Tactics associated". I should include all that apply.
+
+Wait, looking at the definitions again.
+**microtarget**: "Actions taken which help target content to specific audiences identified and analysed as part of TA13: Target Audience Analysis."
+**target-audience-analysis**: "Identifying and analysing the target audience..."
+The text says "targeted 18-25 year olds". This implies the analysis happened. The action of targeting is microtargeting.
+**select-channels-and-affordances**: "Selecting platforms... Tinder...".
+**establish-assets**: "Establishing information assets... social media accounts...".
+**develop-content**: "Create or acquire text...".
+**deliver-content**: "Release content...".
+**maximise-exposure**: "Maximise exposure... via flooding...".
+**establish-legitimacy**: "Establish assets that create trust".
+
+I will include these.
+
+One consideration: The article is a commentary *by* researchers *about* the operation. Does the article itself *perform* the tactics? No. It describes them. The task is to categorize the user input (the article) by the tactics. Usually, this means "What tactics are discussed/described in this text?".
+If the text describes an influence operation using these tactics, I should tag them.
+
+Let's refine the list to the most definitive ones.
+- **select-channels-and-affordances**: Very clear. "Tinder is a dating app... designed on the basis of classical gambling principles...".
+- **target-audience-analysis**: "targeted 18-25 year olds in battleground constituencies".
+- **microtarget**: "sent 30,000-40,000 messages to targeted...".
+- **establish-assets**: "bot accounts... took over and operated the accounts".
+- **develop-content**: "sent a list of Labour policies".
+- **deliver-content**: "sent 30,000-40,000 messages".
+- **maximise-exposure**: "swiped right on all users in the attempt to get the largest number of matches".
+- **establish-legitimacy**: "did not identify themselves as automated accounts, instead posing as the user".
+
+I will output these.
+
+Wait, I should check if "plan-objectives" is relevant. "persuade swing voters to support Labour". This is the objective. The definition says "Set clearly defined... objectives". The text describes the objective. I'll include it as it's a key part of the operation described.
+"plan-strategy": "oust the Conservative government". This is the end state. I'll include it.
+
+Actually, looking at similar tasks, usually, if the text is a news report describing an operation, the focus is on the *execution* tactics (develop, deliver, select channels, etc.) rather than the planning phase unless the text details the planning meeting. The text says "The team built a tool...". It describes the execution. I will stick to the execution tactics to be safe, as "plan" tactics are often about the *definition* of the plan, not just the existence of a goal. However, the description of the goal is explicit. I'll include **plan-objectives** because "persuade swing voters to support Labour" is a clear objective statement described in the text. **plan-strategy** is slightly more abstract ("desired end state... set of required conditions"). "Labour winning" is the end state. I'll include it.
+
+Actually, re-reading the definitions:
+**plan-strategy**: "Define the desired end state...".
+**plan-objectives**: "Set clearly defined... objectives...".
+The text says "persuade swing voters to support Labour". This is an objective.
+The text says "Labour ended up winning". This is the result.
+The text says "aim 'of getting voters to help oust the Conservative government'". This is the strategy/end state.
+So **plan-strategy** and **plan-objectives** are present in the description of the operation.
+
+However, often in these classification tasks, if the text is a critique *of* the operation, the primary focus is on the *methods* used. I will prioritize the methods.
+Let's stick to the methods that are clearly described as actions taken by the actors.
+1. select-channels-and-affordances
+2. target-audience-analysis
+3. microtarget
+4. establish-assets
+5. develop-content
+6. deliver-content
+7. maximise-exposure
+8. establish-legitimacy
+
+I will drop plan-strategy and plan-objectives because the text is reporting on the operation, not detailing the planning document or the strategic definition phase explicitly as a primary focus (it's embedded in the narrative of the operation's actions). The execution tactics are much more prominent.
+
+Wait, looking at the instruction: "When processing user input, the assistant must predict the Tactics from one of the pre-defined options specified."
+The input is the Article. The Article describes the operation.
+I will include the tactics that are clearly demonstrated by the actors described in the article.
+
+Final check on **establish-legitimacy**. "Establish assets that create trust". The bots posed as real users. This creates trust.
+Final check on **maximise-exposure**. "swiped right on all users". This is flooding the matches.
+Final check on **select-channels-and-affordances**. "Tinder... designed on the basis of classical gambling principles".
+Final check on **target-audience-analysis**. "targeted 18-25 year olds".
+Final check on **microtarget**. "sent... messages to targeted...".
+Final check on **establish-assets**. "bot accounts".
+Final check on **develop-content**. "list of Labour policies".
+Final check on **deliver-content**. "sent... messages".
+
+I will output these 8.
+Wait, I need to make sure I don't miss **develop-narratives**. "Labour policies" vs "Master narratives". The definition of develop-narratives mentions "promotion of beneficial master narratives... day-to-day promotion and reinforcement of this messaging". The bot sent "Labour policies". This is specific messaging, not necessarily a "master narrative". I'll leave it out to be precise.
+
+One more thing: **assess-effectiveness**. "Labour ended up winning by only 22 votes". This is an assessment of the outcome. But is it the tactic of the operation? The operation didn't assess it in the text (the article does). So I'll leave it out.
+
+Okay, ready to generate JSON.
+I need to ensure the JSON keys match the required format: `{"Tactics": [...]}`.
+The values must be the "name" from the Tactics list.
+
+List:
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+I will order them logically or alphabetically? The prompt doesn't specify order. I'll list them as identified.
+
+Wait, I should check if "plan-objectives" is better included. "The bot accounts... persuade swing voters to support Labour." This is the objective. The definition says "Set clearly defined... objectives". The text describes the objective. I think it's safer to include it because the text explicitly states the goal.
+"aim 'of getting voters to help oust the Conservative government'". This is the strategy.
+I will add **plan-objectives** and **plan-strategy** because the text explicitly defines the goals and end states of the operation described.
+
+Revised List:
+- plan-strategy
+- plan-objectives
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+Actually, looking at the instruction "If the user input is not relevant to any Tactics, the assistant should print nothing".
+The article is highly relevant.
+I will include the most prominent ones. The planning ones are background to the execution. The execution is the main story. I'll stick to the execution ones to be more precise about the *tactics* described in the context of the operation's actions. The "plan" tactics are about the *definition* of the plan. The article describes the *implementation*.
+Okay, I will exclude plan-strategy and plan-objectives to focus on the operational tactics which are more clearly defined by the actions (building bots, sending messages, choosing Tinder).
+
+Wait, "target-audience-analysis" is about the *analysis*. The text says "targeted 18-25 year olds". It implies analysis.
+"microtarget" is the *action* of targeting.
+"select-channels-and-affordances" is the *action* of choosing Tinder.
+"establish-assets" is the *action* of creating bot accounts.
+"develop-content" is the *action* of creating messages.
+"deliver-content" is the *action* of sending messages.
+"maximise-exposure" is the *action* of swiping right on all.
+"establish-legitimacy" is the *action* of impersonation.
+
+I'll go with these 8.
+
+Wait, I need to check the JSON format again.
+`{ "Tactics": [ "List of tactic names" ] }`
+The prompt example shows:
+`{ "Tactics": [ "List of tactic names" ] }`
+Wait, the prompt says:
+`The agent MUST respond with the following JSON format: { "Tactics": [ "List of tactic names" ] }`
+It implies a list of strings.
+I will ensure valid JSON.
+
+One final check: **drive-online-harms**. The article says "Political bots can have either beneficial or harmful applications...". It discusses the *potential* for harm. It does not say the Tinder bot *used* drive-online-harms tactics (harassment, suppression). It used deception. So I will not include it.
+
+Okay, final list:
+- select-channels-and-affordances
+- target-audience-analysis
+- microtarget
+- establish-assets
+- develop-content
+- deliver-content
+- maximise-exposure
+- establish-legitimacy
+
+I will verify the spelling of the tactic names from the input.
+"select-channels-and-affordances"
+"target-audience-analysis"
+"microtarget"
+"establish-assets"
+"develop-content"
+"deliver-content"
+"maximise-exposure"
+"establish-legitimacy"
+
+All match.
+
+One more consideration: The article is written by researchers *about* the operation. Does the article *itself* constitute the tactic? No, the article *describes* the tactic. The task is to categorize the input (the article) based on the tactics. If the article describes an operation using these tactics, the tags should reflect the content of the article.
+So yes, I tag the tactics described.
+
+I will finalize the list.
+I'll remove "establish-legitimacy" if I feel it's too close to "establish-assets". "Establish assets that create trust". The bots *are* assets. Their *deception* creates trust. The definition says "Establish assets that create trust". The act of posing as a real user is establishing the asset's legitimacy. I think it fits.
+I'll remove "plan-objectives" and "plan-strategy" as they are less explicit about the *process* of planning and more about the *content* of the goals which are secondary to the description of the bot's behavior.
+
+Wait, "target-audience-analysis" definition: "Identifying and analysing the target audience...". The text says "targeted 18-25 year olds". It doesn't explicitly describe the *analysis* process (e.g. "they surveyed voters"). It just says they targeted them. However, "microtarget" definition says "target content to specific audiences identified and analysed as part of TA13". This implies TA13 happened. So I will include **target-audience-analysis** as it is a prerequisite for **microtarget** and the text implies it ("targeted...").
+
+Okay, I'm confident in the list.
+1. select-channels-and-affordances
+2. target-audience-analysis
+3. microtarget
+4. establish-assets
+5. develop-content
+6. deliver-content
+7. maximise-exposure
+8. establish-legitimacy
+
+I will format this into the JSON.
+</think>
+
+{
+  "Tactics": [
+    "select-channels-and-affordances",
+    "target-audience-analysis",
+    "microtarget",
+    "establish-assets",
+    "develop-content",
+    "deliver-content",
+    "maximise-exposure",
+    "establish-legitimacy"
+  ]
+}
+
+Time: 216.94 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.01 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Model failed to return valid DISARM Classification 
+The agent MUST respond a JSON format from ONLY the list of available classifications: ['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.0 seconds
+
+--------------------------------------------------
+
