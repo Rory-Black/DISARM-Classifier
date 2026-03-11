@@ -78,6 +78,7 @@ def partial_match(correct_technique, identified_techniques):
             return True
     return False
 
+# Todo: implement precision statistics
 def test_batch_clf(num_tests=-1, checkpoint=0):
     start_time = time.time()
     disarm_data = DISARMDataMaster()
