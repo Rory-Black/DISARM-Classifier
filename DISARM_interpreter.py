@@ -137,25 +137,19 @@ The agent MUST respond with the following JSON format:
 {
 “Tactics”: [“List of tactic names”]
 }
-
-Respond only with valid JSON.
-Do not add commentary.
 """
 
 T_SYSTEM_PROMPT = """
 The AI assistant has been designed to understand and categorize user input by the given techniques. When processing user input, the assistant must predict the techniques from one of the pre-defined options specified. It is essential to note that an article may have multiple Techniques associated. If the user input is not relevant to any techniques, the assistant should print nothing, indicating that the input does not align with the available categories. 
 The user input will be in the following format:
 {
-Techniques: [{'external_id': "external_id"}, 'name': "technique name", 'description': "technique description"],
 Article: "article text"
+Techniques: [{'external_id': "external_id"}, 'name': "technique name", 'description': "technique description"],
 }
 The agent MUST respond with the following JSON format: 
 {
 “Techniques”: [“List of external_id”]
 }
-
-Respond only with valid JSON.
-Do not add commentary.
 """
 ANALYSIS_SYSTEM_PROMPT = """
 The Agent is designed to provide an analysis of the execution log of a DISARM batch classification of an article.
@@ -322,10 +316,11 @@ class DISARMClassifier:
         with open(self.log_filename, "a", encoding="utf-8") as f:
             f.write(f"ROUND SUMMARY:\nAvailable Classes:\n{self.available_classes}\n\nResult:\n{result}\n\nTime: {time} seconds\nFailures: {attempts}\n\n{'-'*50}\n\n")
 
-    def log_final_result(self, total_tactics, total_techniques, time):
+    def log_final_result(self, total_tactics, total_techniques, time, do_analysis=False):
         with open(self.log_filename, "a", encoding="utf-8") as f:
             f.write(f"EXECUTION SUMMARY:\nTotal Identified Tactics: {total_tactics}\nTotal Identified Techniques: {total_techniques}\n\nTotal execution time: {time}")
-        self.log_analysis()
+        if do_analysis:
+            self.log_analysis()
 
     def log_analysis(self):
         # retrieve the execution log
@@ -397,8 +392,8 @@ class DISARMClassifier:
 
         ta_prompt = f"""
 {{
-"Tactics": {json.dumps(filtered_tactics, indent=2)},
-"Article": {json.dumps(self.article_content)}
+"Article": {json.dumps(self.article_content)},
+"Tactics": {json.dumps(filtered_tactics, indent=2)}
 }}
 """
 
@@ -460,10 +455,10 @@ class DISARMClassifier:
             }
         
         t_prompt = f"""
-    {{
-    "Techniques": {json.dumps(filtered_techniques, indent=2)},
-    "Article": {json.dumps(self.article_content)}
-    }}
+{{
+"Article": {json.dumps(self.article_content)},
+"Techniques": {json.dumps(filtered_techniques, indent=2)}
+}}
 """
                 
         t_result_parsed = self.prompt_valid_DISARM_response(prompt=t_prompt, system_prompt=T_SYSTEM_PROMPT)
@@ -479,11 +474,14 @@ class DISARMClassifier:
         return techniques
 
     # MAIN EXECUTION
-    def batch_clf(self):
+    def batch_clf(self, fast=False):
         start_time = time.time()
 
         #TACTICS
-        tactics = self.identify_tactics()
+        if fast:
+            tactics = self.identify_tactics()
+        else:
+            f, tactics = self.get_tactics()
         # reset conversation history for freshness
         # TODO change history reset to remove article from the prompt, and instead store as initial chat history
         self.conversation_history_main = []
@@ -496,6 +494,7 @@ class DISARMClassifier:
         print("Total Identified Techniques: " + str(total_techniques))
         print("\nTotal execution time: " + str(round(time.time() - start_time, 2)) + " seconds")
         self.log_final_result(tactics,total_techniques, round(time.time() - start_time, 2))
+        return tactics, total_techniques
 
     def select_all_clf(self):
         start_time = time.time() 
@@ -505,6 +504,19 @@ class DISARMClassifier:
         print("Total Identified Techniques: " + str(total_techniques))
         print("\nTotal execution time: " + str(round(time.time() - start_time, 2)) + " seconds")
         self.log_final_result(None,total_techniques, round(time.time() - start_time, 2))
+        return total_techniques
+
+    def single_clf(self):
+        start_time = time.time() 
+        available_techniques = self.get_all_techniques()
+        total_techniques = []
+        for technique in available_techniques:
+            total_techniques += self.identify_techniques(techniques=[technique])
+
+        print("Total Identified Techniques: " + str(total_techniques))
+        print("\nTotal execution time: " + str(round(time.time() - start_time, 2)) + " seconds")
+        self.log_final_result(None,total_techniques, round(time.time() - start_time, 2))
+        return total_techniques
 
 def get_mitre_external_id(obj):
     for ref in obj.get("external_references", []):
@@ -514,7 +526,7 @@ def get_mitre_external_id(obj):
 
 def main():
     interpreter = DISARMClassifier()
-    interpreter.batch_clf()
+    interpreter.batch_clf(fast=False)
 
 if __name__ == "__main__":
     main()

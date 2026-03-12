@@ -1,5 +1,0 @@
-DISARM Log File - Created on 20260312-142458
-SETUP:
-Large Model: gpt-oss:latest
-Temperature: 0.0
-

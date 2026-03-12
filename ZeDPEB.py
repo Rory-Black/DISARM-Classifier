@@ -18,7 +18,9 @@ from DISARM_interpreter import DISARMClassifier, get_mitre_external_id
 
 class ClfMode(Enum):
     SELECT_ALL = "SelectAll"
-    BATCH = "Batch"
+    BATCH_FAST = "FastBatch"
+    BATCH_FULL = "FullBatch"
+    SINGLE = "Single"
 
 def get_related_tactic(technique_external_id):
         with open("DISARM.json", "r", encoding="utf-8") as f:
@@ -67,18 +69,16 @@ def log_to_file(message):
     with open(log_filename, "a", encoding="utf-8") as f:
         f.write(message)
 
-def new_log_file():
+def new_log_file(mode, model, enbl_precision):
     global log_filename
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    log_filename = f"ZeDPEB_logs/log_{timestamp}.txt"
-    log_to_file(f"ZeDPEB Log File - Created on {timestamp}\n\n{'='*50}\n\n")
-
-def log_setup(mode, model):
+    log_filename = f"ZeDPEB_logs/log_{mode.value}_{timestamp}.txt"
+    log_to_file(f"ZeDPEB Log File - Created on {timestamp}\n\n{'='*50}")
     setup_str = f"""
-{'='*50}
 SETUP
 mode  - {mode}
 model - {model}
+test  - Recall {"& Precision" if enbl_precision else "only (Expect Deviations Technique recall for FastBatchClf)"}
 {'='*50}
 """
     log_to_file(setup_str)
@@ -102,13 +102,12 @@ def precision(n_pos, n_false):
 
 
 # Todo: implement more statistics
-def test_clf(model, mode=ClfMode.BATCH, num_tests=-1, checkpoint=0):
-    is_batch = mode == ClfMode.BATCH
+def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_precision=True):
+    is_fast_batch = mode == ClfMode.BATCH_FAST 
 
     start_time = time.time()
     disarm_data = DISARMDataMaster()
-    new_log_file()
-    log_setup(mode, model)
+    new_log_file(mode, model, enbl_precision)
 
     incident_ids = disarm_data.get_incident_ids()
     # variables to keep track of overall performance
@@ -140,27 +139,40 @@ def test_clf(model, mode=ClfMode.BATCH, num_tests=-1, checkpoint=0):
         t_total += len(article_techniques)
         
         disarm_classifer = DISARMClassifier(article_content=article_content, large_model=model)
-        print_log(f"Testing for incident with ID: {incident_id} \n{f"Tactics: {article_tactics}\n" if is_batch else ""}Techniques: {article_techniques}\n")
+        print_log(f"Testing for incident with ID: {incident_id} \n{f"Required Tactics: {article_tactics}\n" if is_fast_batch else ""}Required Techniques: {article_techniques}\n")
         print_log(f"Classifier log created in: {disarm_classifer.log_filename}\n")
         print_log(f"Article Character Length: {len(article_content)}\n")
 
         identified_techniques = []
         identified_tactics = []
 
-        if is_batch:
-            # Perform Tactic classifications:
-            identified_tactics = disarm_classifer.identify_tactics()
-            # reset chat history for techniques (to emulate normal execution of batchCLF loop)
-            disarm_classifer.conversation_history_main = []
-        
-            print(f"Tactics identified by model: {identified_tactics}")
-            for required_tactic in article_tactics:
-                if required_tactic in identified_tactics:
-                    tactic_positives+=1
-                # Perform nested technique classifications (ONLY for relevant tactics, no need to do full batchClf):
-                identified_techniques += disarm_classifer.identify_techniques_for_tactic(required_tactic)
+        if mode == ClfMode.BATCH_FAST or mode == ClfMode.BATCH_FULL:
+            if enbl_precision or mode == ClfMode.BATCH_FULL:
+                identified_tactics, identified_techniques = disarm_classifer.batch_clf(mode == ClfMode.BATCH_FAST)
+                for required_tactic in article_tactics:
+                    if required_tactic in identified_tactics:
+                        tactic_positives+=1
+            else:
+                # classify ONLY for relevant tactics, no need to do full batchClf
+                # Perform Tactic classifications:
+                identified_tactics = disarm_classifer.identify_tactics()
+                # reset chat history for techniques (to emulate normal execution of batchCLF loop)
+                disarm_classifer.conversation_history_main = []
+                print(f"Tactics identified by model: {identified_tactics}")
+                for required_tactic in article_tactics:
+                    if required_tactic in identified_tactics:
+                        tactic_positives+=1
+                    # Perform nested technique classifications (ONLY for relevant tactics, no need to do full batchClf):
+                    identified_techniques += disarm_classifer.identify_techniques_for_tactic(required_tactic)
         elif mode == ClfMode.SELECT_ALL:
-            identified_techniques = disarm_classifer.identify_techniques()
+            identified_techniques = disarm_classifer.select_all_clf()
+        elif mode == ClfMode.SINGLE:
+            if enbl_precision:
+                identified_techniques = disarm_classifer.single_clf()
+            else:
+                # only check relevant techniques, no need to do full clf
+                for required_technique in article_techniques:
+                    identified_techniques += disarm_classifer.identify_techniques(techniques=[required_technique])
 
         print(f"Techniques identified by model: {identified_techniques}")
         for required_technique in article_techniques:
@@ -184,17 +196,17 @@ def test_clf(model, mode=ClfMode.BATCH, num_tests=-1, checkpoint=0):
         t_abs_false_total += t_abs_false
 
         results_log = f"""Results:
-{f"Identified tactics({len(identified_tactics)}): {identified_tactics}" if is_batch else ""}
+{f"Identified tactics({len(identified_tactics)}): {identified_tactics}" if is_fast_batch else ""}
 Identified techniques({(len(identified_techniques))}): {identified_techniques}
 
 Recall:
-{f"Correct Tactics: {tactic_positives}/{len(article_tactics)}" if is_batch else ""}
+{f"Correct Tactics: {tactic_positives}/{len(article_tactics)}" if is_fast_batch else ""}
 Correct Techniques: {technique_positives}/{len(article_techniques)}
     Absolute technique matches: {technique_abs_positives}
     Partial technique matches: {technique_partial_positives}
 
 Precision:
-{f"Tactics: {precision(tactic_positives, ta_false)}" if is_batch else ""}
+{f"Tactics: {precision(tactic_positives, ta_false)}" if is_fast_batch else ""}
 Techniques: {precision(technique_positives, t_false)}
     Absolute Techniques: {precision(technique_abs_positives, t_abs_false)}
 {'-'*50}"""
@@ -205,13 +217,13 @@ Techniques: {precision(technique_positives, t_false)}
 Final Results:
 {'-'*50}
 Recall:
-{f"Correct Tactics: {ta_mtchs_total}/{ta_total} \t ({(ta_mtchs_total/ta_total)*100}%)" if is_batch else ""}
+{f"Correct Tactics: {ta_mtchs_total}/{ta_total} \t ({(ta_mtchs_total/ta_total)*100}%)" if is_fast_batch else ""}
 Correct Techniques: {t_mtchs_total}/{t_total} \t ({((t_mtchs_total)/t_total)*100}%)
     Absolute technique matches: {t_abs_mtchs_total} \t ({(t_abs_mtchs_total/t_total)*100}%)
     Partial technique matches: {t_prt_mtchs_total} \t ({(t_prt_mtchs_total/t_total)*100}%)
 {'-'*50}
 Precision:
-{f"Tactics: {precision(ta_mtchs_total, ta_false_total)}" if is_batch else ""}
+{f"Tactics: {precision(ta_mtchs_total, ta_false_total)}" if is_fast_batch else ""}
 Techniques: {precision(t_mtchs_total, t_false_total)}
     Absolute Techniques: {precision(t_abs_mtchs_total, t_abs_false_total)}
 {'-'*50}
@@ -225,7 +237,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH,num_tests=1, checkpoint=0)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=1, checkpoint=0, enbl_precision=True)
 
 if __name__ == "__main__":
     main()
