@@ -367,7 +367,7 @@ class DISARMClassifier:
 
         return filtered_tactics, available_classifications
     
-    def identify_tactics(self, article_content):
+    def identify_tactics(self):
         
         filtered_tactics, available_classifications = self.get_tactics()
 
@@ -398,7 +398,7 @@ class DISARMClassifier:
         ta_prompt = f"""
 {{
 "Tactics": {json.dumps(filtered_tactics, indent=2)},
-"Article": {json.dumps(article_content)}
+"Article": {json.dumps(self.article_content)}
 }}
 """
 
@@ -410,7 +410,7 @@ class DISARMClassifier:
         print("Identified Tactics: " + str(ta_result_list))
         return ta_result_list
 
-    def identify_techniques_for_tactic(self, tactic, article_content):
+    def identify_techniques_for_tactic(self, tactic):
         print("Testing for tactic: " + tactic)
         techniques = []
         for obj in self.disarm_json["objects"]:
@@ -420,9 +420,9 @@ class DISARMClassifier:
                         techniques.append(obj)
                         # print(obj["name"])
 
-        return self.identify_techniques(article_content, techniques)
+        return self.identify_techniques(techniques)
 
-    def identify_techniques(self, article_content, techniques=None):
+    def identify_techniques(self, techniques=None):
         if techniques is None:
             techniques = self.get_all_techniques()
 
@@ -462,7 +462,7 @@ class DISARMClassifier:
         t_prompt = f"""
     {{
     "Techniques": {json.dumps(filtered_techniques, indent=2)},
-    "Article": {json.dumps(article_content)}
+    "Article": {json.dumps(self.article_content)}
     }}
 """
                 
@@ -479,28 +479,28 @@ class DISARMClassifier:
         return techniques
 
     # MAIN EXECUTION
-    def batch_clf(self, article_content):
+    def batch_clf(self):
         start_time = time.time()
 
         #TACTICS
-        tactics = self.identify_tactics(article_content)
+        tactics = self.identify_tactics()
         # reset conversation history for freshness
         # TODO change history reset to remove article from the prompt, and instead store as initial chat history
         self.conversation_history_main = []
         #TECHNIQUES LOOP
         total_techniques = []
         for tactic in tactics:
-            techniques = self.identify_techniques_for_tactic(tactic, article_content)
+            techniques = self.identify_techniques_for_tactic(tactic)
             total_techniques.extend(techniques)
 
         print("Total Identified Techniques: " + str(total_techniques))
         print("\nTotal execution time: " + str(round(time.time() - start_time, 2)) + " seconds")
         self.log_final_result(tactics,total_techniques, round(time.time() - start_time, 2))
 
-    def select_all_clf(self, article_content):
+    def select_all_clf(self):
         start_time = time.time() 
 
-        total_techniques = self.identify_techniques(article_content=article_content)
+        total_techniques = self.identify_techniques()
 
         print("Total Identified Techniques: " + str(total_techniques))
         print("\nTotal execution time: " + str(round(time.time() - start_time, 2)) + " seconds")
@@ -514,7 +514,7 @@ def get_mitre_external_id(obj):
 
 def main():
     interpreter = DISARMClassifier()
-    interpreter.batch_clf(article_content=TEST_DATA)
+    interpreter.batch_clf()
 
 if __name__ == "__main__":
     main()

@@ -135,3 +135,55 @@ Tactics: ['establish-legitimacy']
 Techniques: ['T0143.004']
 Classifier log created in: exe_logs/DISARM_log_20260312-121946.txt
 Article Character Length: 34029
+Results:
+Identified tactics(15): ['develop-content', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms', 'persist-in-the-information-environment', 'microtarget', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'plan-strategy', 'plan-objectives']
+Identified techniques(8): ['T0097.102', 'T0097.202', 'T0098.001', 'T0098.002', 'T0100.001', 'T0143.002', 'T0143.003', 'T0143.004']
+
+Recall:
+Correct Tactics: 1/1
+Correct Techniques: 1/1
+    Absolute technique matches: 1
+    Partial technique matches: 0
+
+Precision:
+Tactics: 0.06666666666666667
+Techniques: 0.125
+    Absolute Techniques: 0.125
+----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240619143325/https://blog.lastpass.com/posts/2024/04/attempted-audio-deepfake-call-targets-lastpass-employee
+Testing for incident with ID: I00068 
+Tactics: ['develop-content', 'establish-legitimacy', 'select-channels-and-affordances']
+Techniques: ['T0088.001', 'T0097.100', 'T0143.003', 'T0151.004', 'T0155.007']
+Classifier log created in: exe_logs/DISARM_log_20260312-122002.txt
+Article Character Length: 3229
+Results:
+Identified tactics(0): []
+Identified techniques(5): ['T0086.002', 'T0087.001', 'T0088.001', 'T0143.003', 'T0154.002']
+
+Recall:
+Correct Tactics: 0/3
+Correct Techniques: 2/5
+    Absolute technique matches: 2
+    Partial technique matches: 0
+
+Precision:
+Tactics: 0
+Techniques: 0.4
+    Absolute Techniques: 0.4
+--------------------------------------------------
+==================================================
+Final Results:
+--------------------------------------------------
+Recall:
+Correct Tactics: 5/9 	 (55.55555555555556%)
+Correct Techniques: 9/12 	 (75.0%)
+    Absolute technique matches: 7 	 (58.333333333333336%)
+    Partial technique matches: 2 	 (16.666666666666664%)
+--------------------------------------------------
+Precision:
+Tactics: 0.125
+Techniques: 0.15254237288135594
+    Absolute Techniques: 0.11864406779661017
+--------------------------------------------------
+Time Taken: 1.25 minuites
+==================================================

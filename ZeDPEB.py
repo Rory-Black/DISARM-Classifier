@@ -73,6 +73,16 @@ def new_log_file():
     log_filename = f"ZeDPEB_logs/log_{timestamp}.txt"
     log_to_file(f"ZeDPEB Log File - Created on {timestamp}\n\n{'='*50}\n\n")
 
+def log_setup(mode, model):
+    setup_str = f"""
+{'='*50}
+SETUP
+mode  - {mode}
+model - {model}
+{'='*50}
+"""
+    log_to_file(setup_str)
+
 # gets the part of the technique string that prepends the '.' 
 def technique_partial(technique):
     return technique.split('.')[0]
@@ -91,13 +101,15 @@ def precision(n_pos, n_false):
     return p
 
 
-# Todo: implement precision statistics
-def test_clf(mode=ClfMode.BATCH,num_tests=-1, checkpoint=0):
+# Todo: implement more statistics
+def test_clf(model, mode=ClfMode.BATCH, num_tests=-1, checkpoint=0):
     is_batch = mode == ClfMode.BATCH
 
     start_time = time.time()
     disarm_data = DISARMDataMaster()
     new_log_file()
+    log_setup(mode, model)
+
     incident_ids = disarm_data.get_incident_ids()
     # variables to keep track of overall performance
     ta_total = t_total = ta_mtchs_total = t_mtchs_total = t_abs_mtchs_total = t_prt_mtchs_total = 0
@@ -127,7 +139,7 @@ def test_clf(mode=ClfMode.BATCH,num_tests=-1, checkpoint=0):
         ta_total += len(article_tactics)
         t_total += len(article_techniques)
         
-        disarm_classifer = DISARMClassifier()
+        disarm_classifer = DISARMClassifier(article_content=article_content, large_model=model)
         print_log(f"Testing for incident with ID: {incident_id} \n{f"Tactics: {article_tactics}\n" if is_batch else ""}Techniques: {article_techniques}\n")
         print_log(f"Classifier log created in: {disarm_classifer.log_filename}\n")
         print_log(f"Article Character Length: {len(article_content)}\n")
@@ -137,7 +149,7 @@ def test_clf(mode=ClfMode.BATCH,num_tests=-1, checkpoint=0):
 
         if is_batch:
             # Perform Tactic classifications:
-            identified_tactics = disarm_classifer.identify_tactics(article_content)
+            identified_tactics = disarm_classifer.identify_tactics()
             # reset chat history for techniques (to emulate normal execution of batchCLF loop)
             disarm_classifer.conversation_history_main = []
         
@@ -146,9 +158,9 @@ def test_clf(mode=ClfMode.BATCH,num_tests=-1, checkpoint=0):
                 if required_tactic in identified_tactics:
                     tactic_positives+=1
                 # Perform nested technique classifications (ONLY for relevant tactics, no need to do full batchClf):
-                identified_techniques += disarm_classifer.identify_techniques_for_tactic(required_tactic, article_content)
+                identified_techniques += disarm_classifer.identify_techniques_for_tactic(required_tactic)
         elif mode == ClfMode.SELECT_ALL:
-            identified_techniques = disarm_classifer.identify_techniques(article_content)
+            identified_techniques = disarm_classifer.identify_techniques()
 
         print(f"Techniques identified by model: {identified_techniques}")
         for required_technique in article_techniques:
@@ -212,9 +224,8 @@ def print_log(str):
     log_to_file(str)
 
 def main():
-    large_model = "gpt-oss:latest"
-    fast_model = "gpt-oss:latest"
-    test_clf(mode=ClfMode.BATCH,num_tests=5, checkpoint=0)
+    large_model = "Qwen/Qwen3.5-35B-A3B"
+    test_clf(model=large_model, mode=ClfMode.BATCH,num_tests=1, checkpoint=0)
 
 if __name__ == "__main__":
     main()
