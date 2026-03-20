@@ -1,9 +1,0 @@
-DISARM Log File - Created on 20260309-133941
-SETUP:
-Large Model: qwen3-coder:30b
-Fast Model: qwen3-coder:30b
-Temperature: 0.0
-Max Fix Attempts: 2
-
-==================================================
-

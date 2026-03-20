@@ -1,0 +1,5 @@
+.exe_logs/*
+!.exe_logs/.gitkeep
+
+.ZeDPEB_logs/*
+!.ZeDPEB_logs/.gitkeep

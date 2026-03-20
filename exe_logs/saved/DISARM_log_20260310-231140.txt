@@ -1,9 +1,0 @@
-DISARM Log File - Created on 20260310-231140
-SETUP:
-Large Model: TeichAI/Qwen3-14B-Claude-4.5-Opus-High-Reasoning-Distill-GGUF
-Fast Model: TeichAI/Qwen3-14B-Claude-4.5-Opus-High-Reasoning-Distill-GGUF
-Temperature: 0.0
-Max Fix Attempts: 10
-
-==================================================
-
