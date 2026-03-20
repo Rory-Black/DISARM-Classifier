@@ -184,6 +184,9 @@ class DISARMClassifier:
             {"role": "user", "content": prompt}
         ]
 
+        self.log_debug(f"\nChat history input to model: {'\n'.join(str(m) for m in messages)}\n")
+        self.log_to_file(f"\nPrompt: {prompt}\n")
+
         response = self.vllm_response(messages=messages)
 
         full_response = ""
@@ -226,8 +229,7 @@ class DISARMClassifier:
         print()
         print("\nDone in", round(time.time() - start_time, 2), "seconds")
 
-        self.log_debug(f"Chat history input to model: {'\n'.join(str(m) for m in messages)}")
-        if log: self.log_result(full_response, prompt, round(time.time() - start_time, 2))
+        if log: self.log_result(full_response, round(time.time() - start_time, 2))
         # log to conversation history 
         self.conversation_history_debug.append({
             "role": "user",
@@ -246,6 +248,7 @@ class DISARMClassifier:
             model=self.LARGE_MODEL,
             messages=messages,
             temperature=0,
+                        
 
             response_format=self.response_format
         )
@@ -308,19 +311,21 @@ class DISARMClassifier:
 
         return True
 
-    def log_result(self, result, prompt, time):
-        with open(self.log_filename, "a", encoding="utf-8") as f:
-            f.write(f"Prompt:\n{prompt}\n\nResult:\n{result}\n\nTime: {time} seconds\n\n{'-'*50}\n\n")
+    def log_result(self, result, time):
+        self.log_to_file(f"\nResult:\n{result}\n\nTime: {time} seconds\n\n{'-'*50}\n\n")
 
     def log_round(self, result, time, attempts):
-        with open(self.log_filename, "a", encoding="utf-8") as f:
-            f.write(f"ROUND SUMMARY:\nAvailable Classes:\n{self.available_classes}\n\nResult:\n{result}\n\nTime: {time} seconds\nFailures: {attempts}\n\n{'-'*50}\n\n")
+        self.log_to_file(f"ROUND SUMMARY:\nAvailable Classes:\n{self.available_classes}\n\nResult:\n{result}\n\nTime: {time} seconds\nFailures: {attempts}\n\n{'-'*50}\n\n")
 
     def log_final_result(self, total_tactics, total_techniques, time, do_analysis=False):
-        with open(self.log_filename, "a", encoding="utf-8") as f:
-            f.write(f"EXECUTION SUMMARY:\nTotal Identified Tactics: {total_tactics}\nTotal Identified Techniques: {total_techniques}\n\nTotal execution time: {time}")
+        self.log_to_file("EXECUTION SUMMARY:\nTotal Identified Tactics: {total_tactics}\nTotal Identified Techniques: {total_techniques}\n\nTotal execution time: {time}")
         if do_analysis:
             self.log_analysis()
+
+    def log_to_file(self, message):
+        with open(self.log_filename, "a", encoding="utf-8") as f:
+            f.write(message)
+
 
     def log_analysis(self):
         # retrieve the execution log
@@ -338,7 +343,7 @@ class DISARMClassifier:
 
     def new_log_file(self):
         timestamp = time.strftime("%Y%m%d-%H%M%S")
-        self.log_filename = f"exe_logs/DISARM_log_{timestamp}.txt"
+        self.log_filename = f".exe_logs/DISARM_log_{timestamp}.txt"
         with open(self.log_filename, "w", encoding="utf-8") as f:
             f.write(f"DISARM Log File - Created on {timestamp}\nSETUP:\nLarge Model: {self.LARGE_MODEL}\nTemperature: 0.0\n\n")
             

@@ -69,10 +69,10 @@ def log_to_file(message):
     with open(log_filename, "a", encoding="utf-8") as f:
         f.write(message)
 
-def new_log_file(mode, model, enbl_precision):
+def new_log_file(mode, model, enbl_precision, num_tests):
     global log_filename
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    log_filename = f"ZeDPEB_logs/log_{mode.value}_{timestamp}.txt"
+    log_filename = f".ZeDPEB_logs/log_{timestamp}_{mode.value}_{num_tests}.txt"
     log_to_file(f"ZeDPEB Log File - Created on {timestamp}\n\n{'='*50}")
     setup_str = f"""
 SETUP
@@ -107,7 +107,7 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
 
     start_time = time.time()
     disarm_data = DISARMDataMaster()
-    new_log_file(mode, model, enbl_precision)
+    new_log_file(mode, model, enbl_precision, num_tests)
 
     incident_ids = disarm_data.get_incident_ids()
     # variables to keep track of overall performance
@@ -135,6 +135,10 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
             checkpoint -= 1
             continue
         article_content, article_tactics, article_techniques = result
+        if len(article_content) < 100:
+            print_log(f"Skipping incident {incident_id} - insignificant amount of article content retrieved ({len(article_content)})\n")
+            continue
+
         ta_total += len(article_tactics)
         t_total += len(article_techniques)
         
@@ -147,22 +151,14 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
         identified_tactics = []
 
         if mode == ClfMode.BATCH_FAST or mode == ClfMode.BATCH_FULL:
-            if enbl_precision or mode == ClfMode.BATCH_FULL:
+            if enbl_precision or mode == ClfMode.BATCH_FAST:
                 identified_tactics, identified_techniques = disarm_classifer.batch_clf(mode == ClfMode.BATCH_FAST)
                 for required_tactic in article_tactics:
                     if required_tactic in identified_tactics:
                         tactic_positives+=1
             else:
-                # classify ONLY for relevant tactics, no need to do full batchClf
-                # Perform Tactic classifications:
-                identified_tactics = disarm_classifer.identify_tactics()
-                # reset chat history for techniques (to emulate normal execution of batchCLF loop)
-                disarm_classifer.conversation_history_main = []
-                print(f"Tactics identified by model: {identified_tactics}")
                 for required_tactic in article_tactics:
-                    if required_tactic in identified_tactics:
-                        tactic_positives+=1
-                    # Perform nested technique classifications (ONLY for relevant tactics, no need to do full batchClf):
+                    # perform technique classifications (ONLY for relevant tactics, no need to do full batchClf):
                     identified_techniques += disarm_classifer.identify_techniques_for_tactic(required_tactic)
         elif mode == ClfMode.SELECT_ALL:
             identified_techniques = disarm_classifer.select_all_clf()
