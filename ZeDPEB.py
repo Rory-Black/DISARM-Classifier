@@ -104,37 +104,43 @@ def calc_precision(n_pos, n_false):
 def calc_f1(precision, recall):
     return (2 * precision * recall) / (precision + recall)
 
-def test_rationale(identified_techniques, incident_id, article_content, disarm_classifer, mode):
-    model_rationales, comprehensiveness, sufficiency = get_model_rationales(identified_techniques, disarm_classifer, mode)
-    ave_recall, ave_precision, f1 = rationale_plausability(identified_techniques, model_rationales, incident_id, article_content)
+def test_rationale(technique_positives, incident_id, article_content, disarm_classifer, mode):
+    # get rationales with faithfullness checks
+    model_rationales, comprehensiveness, sufficiency = get_model_rationales(incident_id, article_content, technique_positives, disarm_classifer, mode)
+    return
+    ave_recall, ave_precision, f1 = rationale_plausability(technique_positives, model_rationales, incident_id, article_content)
     log_rationale_stats(comprehensiveness, sufficiency, ave_recall, ave_precision, f1)
     return comprehensiveness, sufficiency, ave_recall, ave_precision, f1
 
-def get_model_rationales(techniques, disarm_classifer, mode):
+def get_model_rationales(incident_id, article_content, external_ids, disarm_classifer, mode):
     # extracts the models rationales and checks how faithfull they are
     # depends on classificaton mode
     match mode:
         case ClfMode.SELECT_ALL:
-            pass
+            # rationales stored as JSON object list with external_ids linked to lists of quotes (rationales)
+            rationales = disarm_classifer.identify_rationales(external_ids)
         case ClfMode.BATCH_FAST:
             pass
         case ClfMode.BATCH_FULL:
             pass
         case ClfMode.SINGLE:
             pass
-    pass
+    comprehensiveess = rationale_comprehensiveness(incident_id, article_content, rationales, disarm_classifer, mode)
+    sufficiency = rationale_sufficiency(incident_id, article_content, rationales, disarm_classifer, mode)
+    
+    return rationales, comprehensiveess, sufficiency 
 
 def log_rationale_stats(comp, suff, recall, prec, f1):
     pass
     
 # Faithfullness metrics
-def rationale_comprehensiveness(techniques, incident_id, article_content, model_rationales, disarm_classifer, mode):
+def rationale_comprehensiveness(incident_id, article_content, model_rationales, disarm_classifer, mode):
     # check if removing model rationale from the model input changes the classification 
-    pass
+    return 0
 
-def rationale_sufficiency(techniques, incident_id, article_content, model_rationales, disarm_classifer, mode):
+def rationale_sufficiency(incident_id, article_content, model_rationales, disarm_classifer, mode):
     # check if removing everything except the model rationale from the model input changes the classification
-    pass
+    return 0
 
 
 def rationale_plausability(techniques, model_rationales, incident_id, article_content):
@@ -152,15 +158,15 @@ def rationale_plausability(techniques, model_rationales, incident_id, article_co
 
     return ave_recall, ave_precision, f1
 
-def get_gold_rationales(technique):
+def get_gold_rationales(technique, incident_id, article_content):
     pass
 
 def word_overlap(gold_rationales, model_rationales):
-    pass
+    return None, None
 
 
 # Todo: implement more statistics
-def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_precision=True):
+def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_precision=True, enbl_rationale=False):
     is_fast_batch = mode == ClfMode.BATCH_FAST 
 
     start_time = time.time()
@@ -179,6 +185,7 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
             break
         tactic_positives = 0
         technique_abs_positives = 0
+        technique_abs_positives_list = []
         technique_partial_positives = 0
 
         # get the incident data
@@ -232,6 +239,7 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
         for required_technique in article_techniques:
             if required_technique in identified_techniques:
                 technique_abs_positives+=1
+                technique_abs_positives_list.append(required_technique)
             elif partial_match(required_technique, identified_techniques):
                 technique_partial_positives+=1
         # record results
@@ -265,6 +273,9 @@ Techniques: {calc_precision(technique_positives, t_false)}
     Absolute Techniques: {calc_precision(technique_abs_positives, t_abs_false)}
 {'-'*50}"""
         print_log(results_log)
+        
+        # test and log model rationale
+        test_rationale(technique_abs_positives_list, incident_id, article_content, disarm_classifer, mode) 
         num_tests-=1
     final_log = f"""
 {'='*50}
@@ -291,7 +302,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=1, checkpoint=0, enbl_precision=True)
+    test_clf(model=large_model, mode=ClfMode.SELECT_ALL,num_tests=1, checkpoint=0, enbl_precision=True)
 
 if __name__ == "__main__":
     main()

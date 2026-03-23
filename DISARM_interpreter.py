@@ -506,6 +506,7 @@ class DISARMClassifier:
                                 "external_id": ref.get("external_id"),
                                 "description": obj.get("description"),
                             })
+        return filtered_techniques
 
     def identify_rationales(self, external_ids):
 
@@ -563,7 +564,7 @@ class DISARMClassifier:
             print("Error: Model Failed to return valid JSON")
 
         result_list = result_parsed.get("results", [])
-        print("Rationales: " + str(result_list))
+        print("Result: " + str(result_list))
         return result_list
 
     def get_all_techniques(self):
