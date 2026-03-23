@@ -159,7 +159,32 @@ The user will input the execution log.
 The agent MUST respond with a text analysis of the execution, focusing on the identified tactics and techniques, any inconsistencies in the results, and the errors that occurred during execution along with how effectively the model corrected them.
 Respond only with the analysis.
 """
-
+T_RAT_SYSTEM_PROMPT = """
+The AI assistant has been designed to understand and categorize user input by the given techniques. 
+When processing user input, for each technique given by the user, the assistant must select quotes from the article that represent the rationale behind each technique classification. 
+It is essential to note that an article may have multiple Techniques associated. 
+The user input will be in the following format:
+{
+Article: "article text"
+Techniques: [{'external_id': "external_id"}, 'name': "technique name", 'description': "technique description"],
+}
+The agent MUST respond with the following JSON format: 
+{
+  "results": [
+    {
+      "technique": "external_id",
+      "quotes": [
+        "quote 1",
+        "quote 2"
+      ]
+    }
+  ]
+}
+The agent MUST 
+- return one object per technique
+- include at least one quote per technique
+- ensure quotes are direct substrings of the article
+"""
 class DISARMClassifier:
     def __init__(self,
                  article_content=TEST_DATA,
@@ -175,7 +200,9 @@ class DISARMClassifier:
         with open("DISARM.json", "r", encoding="utf-8") as f:
             self.disarm_json = json.load(f)
 
-    def prompt_llm_response(self, prompt, system_prompt=None, log=True, messages = None):
+    def prompt_llm_response(self, prompt, system_prompt=None, log=True, messages = None, response_format=None):
+        if response_format == None:
+            response_format = self.response_format
         start_time = time.time()
         print(f"{self.LARGE_MODEL} thinking...")
 
@@ -187,7 +214,7 @@ class DISARMClassifier:
         self.log_debug(f"\nChat history input to model: {'\n'.join(str(m) for m in messages)}\n")
         self.log_to_file(f"\nPrompt: {prompt}\n")
 
-        response = self.vllm_response(messages=messages)
+        response = self.vllm_response(messages=messages, response_format=response_format)
 
         full_response = ""
 
@@ -243,14 +270,12 @@ class DISARMClassifier:
 
         return full_response
     
-    def vllm_response(self, messages):
+    def vllm_response(self, messages, response_format):
         response = client.chat.completions.create(
             model=self.LARGE_MODEL,
             messages=messages,
             temperature=0,
-                        
-
-            response_format=self.response_format
+            response_format=response_format
         )
         return response
 
@@ -418,7 +443,6 @@ class DISARMClassifier:
                 for phase in obj.get("kill_chain_phases", []):
                     if phase.get("phase_name") == tactic:
                         techniques.append(obj)
-                        # print(obj["name"])
 
         return self.identify_techniques(techniques)
 
@@ -427,15 +451,15 @@ class DISARMClassifier:
             techniques = self.get_all_techniques()
 
         filtered_techniques = []
-        available_techniques = []
+        external_ids = []
         for technique in techniques:
             filtered_techniques.append({
                 "external_id": get_mitre_external_id(technique),
                 "description": technique.get("description"),
             })
-            available_techniques.append(get_mitre_external_id(technique))
+            external_ids.append(get_mitre_external_id(technique))
 
-        self.available_classes = available_techniques
+        self.available_classes = external_ids
 
         t_format = {
             "type": "object",
@@ -444,20 +468,20 @@ class DISARMClassifier:
                     "type": "array",
                     "items": {
                         "type": "string",
-                        "enum": available_techniques
+                        "enum": external_ids
                     }
                 }
             },
             "required": ["Techniques"]
         }
-
+        system_prompt = T_SYSTEM_PROMPT
         self.response_format={
-            "type": "json_schema",
-            "json_schema": {
-                "name": "techniques_schema",
-                "schema": t_format
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "techniques_schema",
+                    "schema": t_format
+                    }
                 }
-            }
         
         t_prompt = f"""
 {{
@@ -466,10 +490,81 @@ class DISARMClassifier:
 }}
 """
                 
-        t_result_parsed = self.prompt_valid_DISARM_response(prompt=t_prompt, system_prompt=T_SYSTEM_PROMPT)
+        t_result_parsed = self.prompt_valid_DISARM_response(prompt=t_prompt, system_prompt=system_prompt)
         t_result_list = t_result_parsed.get("Techniques", [])
         print("Identified Techniques: " + str(t_result_list))
         return t_result_list
+    
+    def get_t_desc_from_id(self, external_ids):
+        filtered_techniques = []
+        for obj in self.disarm_json["objects"]:
+            if obj.get("type") == "attack-pattern":
+                for ref in obj.get("external_references", []):
+                    if ref.get("source_name") == "mitre-attack":
+                        if ref.get("external_id") in external_ids:
+                            filtered_techniques.append({
+                                "external_id": ref.get("external_id"),
+                                "description": obj.get("description"),
+                            })
+
+    def identify_rationales(self, external_ids):
+
+        filtered_techniques = self.get_t_desc_from_id(external_ids)
+
+        t_format = {
+            "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties":{
+                                "technique": {
+                                    "type": "string",
+                                    "enum": external_ids
+                                },
+                                "rationales": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "minItems": 1
+                                }
+                            },
+                            "required": ["technique", "rationales"]
+                        },
+                        "minItems": len(external_ids),
+                        "maxItems": len(external_ids)
+                    }
+                },
+                "required": ["results"]
+        }
+        system_prompt = T_RAT_SYSTEM_PROMPT
+        
+        self.response_format={
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "techniques_schema",
+                    "schema": t_format
+                    }
+                }
+        
+        t_prompt = f"""
+{{
+"Article": {json.dumps(self.article_content)},
+"Techniques": {json.dumps(filtered_techniques, indent=2)}
+}}
+"""
+
+        result_raw = self.prompt_llm_response(prompt=t_prompt, system_prompt=system_prompt)
+        try:
+            result_parsed = json.loads(result_raw)              
+        except json.JSONDecodeError:
+            print("Error: Model Failed to return valid JSON")
+
+        result_list = result_parsed.get("results", [])
+        print("Rationales: " + str(result_list))
+        return result_list
 
     def get_all_techniques(self):
         techniques = []
@@ -531,7 +626,8 @@ def get_mitre_external_id(obj):
 
 def main():
     interpreter = DISARMClassifier()
-    interpreter.batch_clf(fast=False)
+    # interpreter.batch_clf(fast=False)
+    interpreter.identify_rationales(["T0023", "T0085.003"])
 
 if __name__ == "__main__":
     main()

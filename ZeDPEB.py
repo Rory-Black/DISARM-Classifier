@@ -12,6 +12,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from enum import Enum
+import numpy as np
 
 from DISARM_DATA_MASTER import DISARMDataMaster
 from DISARM_interpreter import DISARMClassifier, get_mitre_external_id
@@ -93,12 +94,69 @@ def partial_match(correct_technique, identified_techniques):
             return True
     return False
 
-def precision(n_pos, n_false):
+def calc_precision(n_pos, n_false):
     try:
         p = n_pos / (n_pos + n_false)
     except ZeroDivisionError:
         return 0
     return p
+
+def calc_f1(precision, recall):
+    return (2 * precision * recall) / (precision + recall)
+
+def test_rationale(identified_techniques, incident_id, article_content, disarm_classifer, mode):
+    model_rationales, comprehensiveness, sufficiency = get_model_rationales(identified_techniques, disarm_classifer, mode)
+    ave_recall, ave_precision, f1 = rationale_plausability(identified_techniques, model_rationales, incident_id, article_content)
+    log_rationale_stats(comprehensiveness, sufficiency, ave_recall, ave_precision, f1)
+    return comprehensiveness, sufficiency, ave_recall, ave_precision, f1
+
+def get_model_rationales(techniques, disarm_classifer, mode):
+    # extracts the models rationales and checks how faithfull they are
+    # depends on classificaton mode
+    match mode:
+        case ClfMode.SELECT_ALL:
+            pass
+        case ClfMode.BATCH_FAST:
+            pass
+        case ClfMode.BATCH_FULL:
+            pass
+        case ClfMode.SINGLE:
+            pass
+    pass
+
+def log_rationale_stats(comp, suff, recall, prec, f1):
+    pass
+    
+# Faithfullness metrics
+def rationale_comprehensiveness(techniques, incident_id, article_content, model_rationales, disarm_classifer, mode):
+    # check if removing model rationale from the model input changes the classification 
+    pass
+
+def rationale_sufficiency(techniques, incident_id, article_content, model_rationales, disarm_classifer, mode):
+    # check if removing everything except the model rationale from the model input changes the classification
+    pass
+
+
+def rationale_plausability(techniques, model_rationales, incident_id, article_content):
+    # actually scores how similar the models rationale is to the 'gold' rationale
+    total_recall = []
+    total_precision = []
+    for technique in techniques:
+        gold_rationales = get_gold_rationales(technique, incident_id, article_content)
+        recall, precision = word_overlap(gold_rationales, model_rationales)
+        total_recall.append(recall)
+        total_precision.append(precision)
+    ave_recall = np.average(total_recall)
+    ave_precision = np.average(total_precision)
+    f1 = calc_f1(ave_precision, ave_recall)
+
+    return ave_recall, ave_precision, f1
+
+def get_gold_rationales(technique):
+    pass
+
+def word_overlap(gold_rationales, model_rationales):
+    pass
 
 
 # Todo: implement more statistics
@@ -202,9 +260,9 @@ Correct Techniques: {technique_positives}/{len(article_techniques)}
     Partial technique matches: {technique_partial_positives}
 
 Precision:
-{f"Tactics: {precision(tactic_positives, ta_false)}" if is_fast_batch else ""}
-Techniques: {precision(technique_positives, t_false)}
-    Absolute Techniques: {precision(technique_abs_positives, t_abs_false)}
+{f"Tactics: {calc_precision(tactic_positives, ta_false)}" if is_fast_batch else ""}
+Techniques: {calc_precision(technique_positives, t_false)}
+    Absolute Techniques: {calc_precision(technique_abs_positives, t_abs_false)}
 {'-'*50}"""
         print_log(results_log)
         num_tests-=1
@@ -219,9 +277,9 @@ Correct Techniques: {t_mtchs_total}/{t_total} \t ({((t_mtchs_total)/t_total)*100
     Partial technique matches: {t_prt_mtchs_total} \t ({(t_prt_mtchs_total/t_total)*100}%)
 {'-'*50}
 Precision:
-{f"Tactics: {precision(ta_mtchs_total, ta_false_total)}" if is_fast_batch else ""}
-Techniques: {precision(t_mtchs_total, t_false_total)}
-    Absolute Techniques: {precision(t_abs_mtchs_total, t_abs_false_total)}
+{f"Tactics: {calc_precision(ta_mtchs_total, ta_false_total)}" if is_fast_batch else ""}
+Techniques: {calc_precision(t_mtchs_total, t_false_total)}
+    Absolute Techniques: {calc_precision(t_abs_mtchs_total, t_abs_false_total)}
 {'-'*50}
 Time Taken: {round((time.time() - start_time)/60, 2)} minuites
 {'='*50}"""
