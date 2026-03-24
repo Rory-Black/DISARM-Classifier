@@ -150,3 +150,15 @@ class DISARMDataMaster:
             techniques.append(row['disarm_id_technique'])
         return techniques
     
+    def get_incident_techniques_with_desc(self, incidentid):
+        techniques = []
+
+        techlist = self.it[self.it['disarm_id_incident'] == incidentid]
+        for index, row in techlist.sort_values('disarm_id_technique').iterrows():
+            techniques.append((
+                row['disarm_id_technique'],
+                row['name']
+            ))
+
+        return techniques
+    

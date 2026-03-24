@@ -13,6 +13,7 @@ import requests
 from bs4 import BeautifulSoup
 from enum import Enum
 import numpy as np
+import re
 
 from DISARM_DATA_MASTER import DISARMDataMaster
 from DISARM_interpreter import DISARMClassifier, get_mitre_external_id
@@ -158,8 +159,17 @@ def rationale_plausability(techniques, model_rationales, incident_id, article_co
 
     return ave_recall, ave_precision, f1
 
-def get_gold_rationales(technique, incident_id, article_content):
-    pass
+def get_gold_rationales(incident_id):
+    incident_data = DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064')
+    rationales = []
+    for d in incident_data:
+        #split descriptions into quotes
+        (external_id, desc) = d
+        quotes = re.findall(r"<i>(.*?)</i>", desc, re.IGNORECASE)
+        if quotes == []:
+            quotes = re.findall(r"\_(.*?)\_", desc, re.IGNORECASE)
+        rationales.append((external_id, quotes))
+    return rationales
 
 def word_overlap(gold_rationales, model_rationales):
     return None, None
@@ -303,6 +313,8 @@ def print_log(str):
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
     test_clf(model=large_model, mode=ClfMode.SELECT_ALL,num_tests=1, checkpoint=0, enbl_precision=True)
+    # print(DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064'))
+    # print(get_gold_rationales('I00064'))
 
 if __name__ == "__main__":
     main()

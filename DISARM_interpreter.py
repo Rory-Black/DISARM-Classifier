@@ -563,7 +563,11 @@ class DISARMClassifier:
         except json.JSONDecodeError:
             print("Error: Model Failed to return valid JSON")
 
-        result_list = result_parsed.get("results", [])
+        result_list = [
+            (item["technique"], item["rationales"])
+            for item in result_parsed["results"]
+        ]
+
         print("Result: " + str(result_list))
         return result_list
 
