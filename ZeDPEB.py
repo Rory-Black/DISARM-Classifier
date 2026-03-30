@@ -15,6 +15,7 @@ from enum import Enum
 import numpy as np
 import re
 
+from rouge_score import rouge_scorer
 from DISARM_DATA_MASTER import DISARMDataMaster
 from DISARM_interpreter import DISARMClassifier, get_mitre_external_id
 
@@ -106,13 +107,14 @@ def calc_f1(precision, recall):
     return (2 * precision * recall) / (precision + recall)
 
 def test_rationale(technique_positives, incident_id, article_content, disarm_classifer, mode):
+    print_log(f"\nRationale Test for incident {incident_id}\n")
     # get rationales with faithfullness checks
     model_rationales, comprehensiveness, sufficiency = get_model_rationales(incident_id, article_content, technique_positives, disarm_classifer, mode)
-    return
-    ave_recall, ave_precision, f1 = rationale_plausability(technique_positives, model_rationales, incident_id, article_content)
+    ave_recall, ave_precision, f1 = rationale_plausability(model_rationales, incident_id)
     log_rationale_stats(comprehensiveness, sufficiency, ave_recall, ave_precision, f1)
     return comprehensiveness, sufficiency, ave_recall, ave_precision, f1
 
+# TODO add methods for each mode
 def get_model_rationales(incident_id, article_content, external_ids, disarm_classifer, mode):
     # extracts the models rationales and checks how faithfull they are
     # depends on classificaton mode
@@ -123,6 +125,7 @@ def get_model_rationales(incident_id, article_content, external_ids, disarm_clas
         case ClfMode.BATCH_FAST:
             pass
         case ClfMode.BATCH_FULL:
+            rationales = disarm_classifer.identify_rationales(external_ids)
             pass
         case ClfMode.SINGLE:
             pass
@@ -132,7 +135,17 @@ def get_model_rationales(incident_id, article_content, external_ids, disarm_clas
     return rationales, comprehensiveess, sufficiency 
 
 def log_rationale_stats(comp, suff, recall, prec, f1):
-    pass
+    log = f"""{'.'*50}
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: {comp}
+        Sufficiency:       {suff}
+    Plausability (Rouge Scores):
+        Recall:    {recall}
+        Precision: {prec} 
+        F1:        {f1}
+{'.'*50}"""
+    print_log(log)
     
 # Faithfullness metrics
 def rationale_comprehensiveness(incident_id, article_content, model_rationales, disarm_classifer, mode):
@@ -143,24 +156,44 @@ def rationale_sufficiency(incident_id, article_content, model_rationales, disarm
     # check if removing everything except the model rationale from the model input changes the classification
     return 0
 
-
-def rationale_plausability(techniques, model_rationales, incident_id, article_content):
+# TODO
+def rationale_plausability(model_rationales, incident_id):
     # actually scores how similar the models rationale is to the 'gold' rationale
     total_recall = []
     total_precision = []
-    for technique in techniques:
-        gold_rationales = get_gold_rationales(technique, incident_id, article_content)
-        recall, precision = word_overlap(gold_rationales, model_rationales)
+    total_f1 = []
+    print_log(f"\nRationale Plausability test for incident: {incident_id}")
+    # returns a list of tuples (technique, quotes)
+    gold_rationales = get_gold_rationales(incident_id=incident_id)
+    for gold in gold_rationales:
+        technique, gold_quotes = gold
+        # get the model rationale for the associated gold technique rationale
+        model = next((m for m in model_rationales if m[0] == technique), None)
+        if model is None:
+            # skip if not identified by model
+            continue
+        _, model_quotes = model
+        recall, precision, f1 = rationale_rouge(model_quotes, gold_quotes)
+        log = f"""
+Rationale score for technique: {technique}
+    Recall: {recall}
+    Precision: {precision}
+    F1: {f1}
+"""
+        print_log(log)
         total_recall.append(recall)
         total_precision.append(precision)
+        total_f1.append(f1)
+
+    #calculate average scores
     ave_recall = np.average(total_recall)
     ave_precision = np.average(total_precision)
-    f1 = calc_f1(ave_precision, ave_recall)
+    ave_f1 = np.average(total_f1)
 
-    return ave_recall, ave_precision, f1
+    return ave_recall, ave_precision, ave_f1
 
 def get_gold_rationales(incident_id):
-    incident_data = DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064')
+    incident_data = DISARMDataMaster().get_incident_techniques_with_desc(incidentid=incident_id)
     rationales = []
     for d in incident_data:
         #split descriptions into quotes
@@ -171,9 +204,20 @@ def get_gold_rationales(incident_id):
         rationales.append((external_id, quotes))
     return rationales
 
-def word_overlap(gold_rationales, model_rationales):
-    return None, None
+def normalise_rationale(quotes):
+    full_rationale = ""
+    for q in quotes:
+        full_rationale += q
+    return full_rationale
 
+def rationale_rouge(model_quotes, gold_quotes):
+    model_quotes = normalise_rationale(model_quotes)
+    gold_quotes = normalise_rationale(gold_quotes)
+
+    scorer = rouge_scorer.RougeScorer(['rouge1'], use_stemmer=True)
+    scores = scorer.score(model_quotes, gold_quotes)
+
+    return scores['rouge1']
 
 # Todo: implement more statistics
 def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_precision=True, enbl_rationale=False):
@@ -187,6 +231,12 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
     # variables to keep track of overall performance
     ta_total = t_total = ta_mtchs_total = t_mtchs_total = t_abs_mtchs_total = t_prt_mtchs_total = 0
     ta_false_total = t_false_total = t_abs_false_total = 0
+    #rationales
+    r_comp = []
+    r_suff = []
+    r_rec = [] 
+    r_prec = [] 
+    r_f1 = []
     
     # incident loop
     for incident_id in incident_ids:
@@ -281,11 +331,21 @@ Precision:
 {f"Tactics: {calc_precision(tactic_positives, ta_false)}" if is_fast_batch else ""}
 Techniques: {calc_precision(technique_positives, t_false)}
     Absolute Techniques: {calc_precision(technique_abs_positives, t_abs_false)}
-{'-'*50}"""
+"""
         print_log(results_log)
         
-        # test and log model rationale
-        test_rationale(technique_abs_positives_list, incident_id, article_content, disarm_classifer, mode) 
+        if enbl_rationale and technique_abs_positives > 0:
+            # test and log model rationale
+            c, s, r, p, f = test_rationale(technique_abs_positives_list, incident_id, article_content, disarm_classifer, mode) 
+            r_comp.append(c)
+            r_suff.append(s)
+            r_rec.append(r)
+            r_prec.append(p)
+            r_f1.append(f)
+        elif technique_abs_positives <= 0:
+            print_log(f"\nUnable to test for rationales - no absolute technique matches\n")
+        
+        print_log('-'*50)
         num_tests-=1
     final_log = f"""
 {'='*50}
@@ -301,7 +361,19 @@ Precision:
 {f"Tactics: {calc_precision(ta_mtchs_total, ta_false_total)}" if is_fast_batch else ""}
 Techniques: {calc_precision(t_mtchs_total, t_false_total)}
     Absolute Techniques: {calc_precision(t_abs_mtchs_total, t_abs_false_total)}
-{'-'*50}
+"""
+    if enbl_rationale:
+        final_log += f"""{'-'*50}
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: {np.average(r_comp)}
+        Sufficiency:       {np.average(r_suff)}
+    Plausability (Rouge Scores):
+        Recall:    {np.average(r_rec)}
+        Precision: {np.average(r_prec)} 
+        F1:        {np.average(r_f1)}
+{'-'*50}"""
+    final_log += f"""
 Time Taken: {round((time.time() - start_time)/60, 2)} minuites
 {'='*50}"""
     print_log(final_log)
@@ -312,7 +384,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.SELECT_ALL,num_tests=1, checkpoint=0, enbl_precision=True)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=5, checkpoint=0, enbl_precision=True, enbl_rationale=True)
     # print(DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064'))
     # print(get_gold_rationales('I00064'))
 
