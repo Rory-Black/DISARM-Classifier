@@ -12,6 +12,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from enum import Enum
+from suffix_trees import STree
 import numpy as np
 import re
 
@@ -25,7 +26,15 @@ class ClfMode(Enum):
     BATCH_FULL = "FullBatch"
     SINGLE = "Single"
 
-def get_related_tactic(technique_external_id):
+def get_related_tactics(technique_external_id):
+    if type(technique_external_id) == list:
+        article_tactics = []
+        for tech in technique_external_id:
+            tac = get_related_tactics(tech)
+            if tac not in article_tactics:
+                article_tactics.append(tac)
+        return article_tactics
+    else:
         with open("DISARM.json", "r", encoding="utf-8") as f:
             disarm_json = json.load(f)
             for obj in disarm_json["objects"]:
@@ -34,18 +43,15 @@ def get_related_tactic(technique_external_id):
                         for phase in obj.get("kill_chain_phases", []):
                             return phase.get("phase_name")
             return None
+    
 
 # retrieve the incident data from the disarm xlsx file
-def retrieve_incident_data(disarm_data, incident_id):
+def retrieve_incident_data(disarm_data :DISARMDataMaster, incident_id):
     #fetch incident data
     article_techniques = disarm_data.get_incident_techniques(incident_id)
     #break if no techniques
     if len(article_techniques) <= 0: return None
-    article_tactics = []
-    for tech in article_techniques:
-        tac = get_related_tactic(tech)
-        if tac not in article_tactics:
-            article_tactics.append(tac)
+    article_tactics = get_related_tactics(article_techniques)
     #fetch the incident url content
     urls = disarm_data.get_incident_urls(incident_id)
     if urls == []: 
@@ -106,16 +112,16 @@ def calc_precision(n_pos, n_false):
 def calc_f1(precision, recall):
     return (2 * precision * recall) / (precision + recall)
 
-def test_rationale(technique_positives, incident_id, article_content, disarm_classifer, mode):
+def test_rationale(technique_positives, incident_id, disarm_classifer: DISARMClassifier, mode):
     print_log(f"\nRationale Test for incident {incident_id}\n")
     # get rationales with faithfullness checks
-    model_rationales, comprehensiveness, sufficiency = get_model_rationales(incident_id, article_content, technique_positives, disarm_classifer, mode)
+    model_rationales, comprehensiveness, sufficiency = get_model_rationales(incident_id, technique_positives, disarm_classifer, mode)
     ave_recall, ave_precision, f1 = rationale_plausability(model_rationales, incident_id)
     log_rationale_stats(comprehensiveness, sufficiency, ave_recall, ave_precision, f1)
     return comprehensiveness, sufficiency, ave_recall, ave_precision, f1
 
 # TODO add methods for each mode
-def get_model_rationales(incident_id, article_content, external_ids, disarm_classifer, mode):
+def get_model_rationales(incident_id, external_ids, disarm_classifer: DISARMClassifier, mode):
     # extracts the models rationales and checks how faithfull they are
     # depends on classificaton mode
     match mode:
@@ -129,8 +135,9 @@ def get_model_rationales(incident_id, article_content, external_ids, disarm_clas
             pass
         case ClfMode.SINGLE:
             pass
-    comprehensiveess = rationale_comprehensiveness(incident_id, article_content, rationales, disarm_classifer, mode)
-    sufficiency = rationale_sufficiency(incident_id, article_content, rationales, disarm_classifer, mode)
+    article_content = disarm_classifer.get_article_content()
+    comprehensiveess = rationale_comprehensiveness(article_content, external_ids, rationales, disarm_classifer, mode)
+    sufficiency = rationale_sufficiency(article_content, rationales, external_ids, disarm_classifer, mode)
     
     return rationales, comprehensiveess, sufficiency 
 
@@ -148,15 +155,39 @@ Rationale test results:
     print_log(log)
     
 # Faithfullness metrics
-def rationale_comprehensiveness(incident_id, article_content, model_rationales, disarm_classifer, mode):
-    # check if removing model rationale from the model input changes the classification 
+def rationale_comprehensiveness(article_content: str, required_classifications: list, model_rationales, disarm_classifer: DISARMClassifier, mode):
+    # check if removing model rationale from the model input removes the classification 
+    for rationale in model_rationales:
+        _, quotes = rationale
+        for quote in quotes:
+            # remove the largest common substring from the article content
+            lcs = STree.STree([quote, article_content]).lcs()
+            article_content.replace(lcs, "", 1)
+            print(f"Replaced '{lcs}' in article content")
+    # reclassify
+    disarm_classifer.set_article_content(article_content)
+    match mode:
+        case ClfMode.SELECT_ALL:
+            identified_techniques = disarm_classifer.select_all_clf()
+        case ClfMode.BATCH_FAST:
+            _, identified_techniques = disarm_classifer.batch_clf(fast=True)
+        case ClfMode.BATCH_FULL:
+            identified_techniques = reduced_full_batch_clf(article_tactics=get_related_tactics(required_classifications), disarm_classifer=disarm_classifer)
+        case ClfMode.SINGLE:
+            identified_techniques = reduced_single_clf(required_classifications, disarm_classifer)
+    # measure difference
+    diff = 0
+    for technique in identified_techniques:
+        if technique not in required_classifications:
+            diff += 1
+    return diff / len(required_classifications)
+
+            
+
+def rationale_sufficiency(article_content, required_classifications,  model_rationales, disarm_classifer: DISARMClassifier, mode):
+    # check if removing everything except the model rationale from the model input keeps the classification
     return 0
 
-def rationale_sufficiency(incident_id, article_content, model_rationales, disarm_classifer, mode):
-    # check if removing everything except the model rationale from the model input changes the classification
-    return 0
-
-# TODO
 def rationale_plausability(model_rationales, incident_id):
     # actually scores how similar the models rationale is to the 'gold' rationale
     total_recall = []
@@ -219,7 +250,20 @@ def rationale_rouge(model_quotes, gold_quotes):
 
     return scores['rouge1']
 
-# Todo: implement more statistics
+def reduced_full_batch_clf(article_tactics, disarm_classifer: DISARMClassifier):
+    identified_techniques = []
+    for required_tactic in article_tactics:
+        # perform technique classifications (ONLY for relevant tactics, no need to do full batchClf):
+        identified_techniques += disarm_classifer.identify_techniques_for_tactic(required_tactic)
+    return identified_techniques
+
+def reduced_single_clf(article_techniques, disarm_classifer: DISARMClassifier):
+    identified_techniques = []
+    for required_technique in article_techniques:
+        identified_techniques += disarm_classifer.identify_techniques(external_ids=[required_technique]) #TODO fix this, incorrect type
+    return identified_techniques
+
+# TODO: implement more statistics
 def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_precision=True, enbl_rationale=False):
     is_fast_batch = mode == ClfMode.BATCH_FAST 
 
@@ -281,19 +325,17 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
                 for required_tactic in article_tactics:
                     if required_tactic in identified_tactics:
                         tactic_positives+=1
-            else:
-                for required_tactic in article_tactics:
-                    # perform technique classifications (ONLY for relevant tactics, no need to do full batchClf):
-                    identified_techniques += disarm_classifer.identify_techniques_for_tactic(required_tactic)
+            else: # if precision is dissabled and doing full batch, then unnessasary batches can be ignored 
+                identified_techniques = reduced_full_batch_clf(article_tactics, disarm_classifer)
         elif mode == ClfMode.SELECT_ALL:
             identified_techniques = disarm_classifer.select_all_clf()
         elif mode == ClfMode.SINGLE:
             if enbl_precision:
                 identified_techniques = disarm_classifer.single_clf()
             else:
-                # only check relevant techniques, no need to do full clf
-                for required_technique in article_techniques:
-                    identified_techniques += disarm_classifer.identify_techniques(techniques=[required_technique])
+                # only check relevant techniques, no need to do full clf if precision is dissabled
+                identified_techniques = reduced_single_clf(article_techniques, disarm_classifer)
+                
 
         print(f"Techniques identified by model: {identified_techniques}")
         for required_technique in article_techniques:
@@ -336,7 +378,7 @@ Techniques: {calc_precision(technique_positives, t_false)}
         
         if enbl_rationale and technique_abs_positives > 0:
             # test and log model rationale
-            c, s, r, p, f = test_rationale(technique_abs_positives_list, incident_id, article_content, disarm_classifer, mode) 
+            c, s, r, p, f = test_rationale(technique_abs_positives_list, incident_id, disarm_classifer, mode) 
             r_comp.append(c)
             r_suff.append(s)
             r_rec.append(r)
@@ -384,7 +426,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=5, checkpoint=0, enbl_precision=True, enbl_rationale=True)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=1, checkpoint=0, enbl_precision=False, enbl_rationale=True)
     # print(DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064'))
     # print(get_gold_rationales('I00064'))
 

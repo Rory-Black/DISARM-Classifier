@@ -200,6 +200,12 @@ class DISARMClassifier:
         with open("DISARM.json", "r", encoding="utf-8") as f:
             self.disarm_json = json.load(f)
 
+    def set_article_content(self, article_content):
+        self.article_content=article_content
+
+    def get_article_content(self):
+        return self.article_content
+
     def prompt_llm_response(self, prompt, system_prompt=None, log=True, messages = None, response_format=None):
         if response_format == None:
             response_format = self.response_format
@@ -446,18 +452,19 @@ class DISARMClassifier:
 
         return self.identify_techniques(techniques)
 
-    def identify_techniques(self, techniques=None):
-        if techniques is None:
-            techniques = self.get_all_techniques()
+    def identify_techniques(self, techniques=None, external_ids = None):
+        if external_ids is None:
+            if techniques is None:
+                techniques = self.get_all_techniques()
 
-        filtered_techniques = []
-        external_ids = []
-        for technique in techniques:
-            filtered_techniques.append({
-                "external_id": get_mitre_external_id(technique),
-                "description": technique.get("description"),
-            })
-            external_ids.append(get_mitre_external_id(technique))
+            filtered_techniques = []
+            external_ids = []
+            for technique in techniques:
+                filtered_techniques.append({
+                    "external_id": get_mitre_external_id(technique),
+                    "description": technique.get("description"),
+                })
+                external_ids.append(get_mitre_external_id(technique))
 
         self.available_classes = external_ids
 
