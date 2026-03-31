@@ -137,7 +137,7 @@ def get_model_rationales(incident_id, external_ids, disarm_classifer: DISARMClas
             pass
     article_content = disarm_classifer.get_article_content()
     comprehensiveess = rationale_comprehensiveness(article_content, external_ids, rationales, disarm_classifer, mode)
-    sufficiency = rationale_sufficiency(article_content, rationales, external_ids, disarm_classifer, mode)
+    sufficiency = rationale_sufficiency(external_ids, rationales, disarm_classifer, mode)
     
     return rationales, comprehensiveess, sufficiency 
 
@@ -177,16 +177,38 @@ def rationale_comprehensiveness(article_content: str, required_classifications: 
             identified_techniques = reduced_single_clf(required_classifications, disarm_classifer)
     # measure difference
     diff = 0
-    for technique in identified_techniques:
-        if technique not in required_classifications:
+    for technique in required_classifications:
+        if technique not in identified_techniques:
             diff += 1
     return diff / len(required_classifications)
 
             
 
-def rationale_sufficiency(article_content, required_classifications,  model_rationales, disarm_classifer: DISARMClassifier, mode):
+def rationale_sufficiency(required_classifications, model_rationales, disarm_classifer: DISARMClassifier, mode):
     # check if removing everything except the model rationale from the model input keeps the classification
-    return 0
+    article_content = ""
+    for rationale in model_rationales:
+        _, quotes = rationale
+        for quote in quotes:
+            if quote not in article_content:
+                article_content += quote
+    # reclassify
+    disarm_classifer.set_article_content(article_content)
+    match mode:
+        case ClfMode.SELECT_ALL:
+            identified_techniques = disarm_classifer.select_all_clf()
+        case ClfMode.BATCH_FAST:
+            _, identified_techniques = disarm_classifer.batch_clf(fast=True)
+        case ClfMode.BATCH_FULL:
+            identified_techniques = reduced_full_batch_clf(article_tactics=get_related_tactics(required_classifications), disarm_classifer=disarm_classifer)
+        case ClfMode.SINGLE:
+            identified_techniques = reduced_single_clf(required_classifications, disarm_classifer)
+    # measure difference
+    match = 0
+    for technique in required_classifications:
+        if technique in identified_techniques:
+            match += 1
+    return match / len(required_classifications)
 
 def rationale_plausability(model_rationales, incident_id):
     # actually scores how similar the models rationale is to the 'gold' rationale
@@ -426,7 +448,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=1, checkpoint=0, enbl_precision=False, enbl_rationale=True)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=15, checkpoint=0, enbl_precision=False, enbl_rationale=True)
     # print(DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064'))
     # print(get_gold_rationales('I00064'))
 
