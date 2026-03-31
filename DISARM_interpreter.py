@@ -526,67 +526,84 @@ class DISARMClassifier:
                             })
         return filtered_techniques
 
-    def identify_rationales(self, external_ids):
+    # TODO, fix for prompt overfitting by classifying article in batches
+    def identify_rationales(self, external_ids, article_content=None):
+        if article_content is None:
+            article_content = self.article_content
 
-        filtered_techniques = self.get_t_desc_from_id(external_ids)
+        l = len(article_content)
+        print(f"identifying rationales of article with length: {l}")
 
-        t_format = {
-            "type": "object",
-                "properties": {
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties":{
-                                "technique": {
-                                    "type": "string",
-                                    "enum": external_ids
-                                },
-                                "rationales": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string"
+        # if the article is too large, it must be processed in batches with 1/3 overlap
+        if l > 10000:
+            print("Warning, article too large, splitting and extracting rationales in batches")
+            split1 = article_content[0:int(l*0.65)]
+            split2 = article_content[int(l*0.35):l-1]
+
+            result_list = []
+            result_list.extend(self.identify_rationales(external_ids, split1))
+            result_list.extend(self.identify_rationales(external_ids, split2))
+
+        else:
+            filtered_techniques = self.get_t_desc_from_id(external_ids)
+
+            t_format = {
+                "type": "object",
+                    "properties": {
+                        "results": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties":{
+                                    "technique": {
+                                        "type": "string",
+                                        "enum": external_ids
                                     },
-                                    "minItems": 1
-                                }
+                                    "rationales": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "minItems": 1
+                                    }
+                                },
+                                "required": ["technique", "rationales"]
                             },
-                            "required": ["technique", "rationales"]
-                        },
-                        "minItems": len(external_ids),
-                        "maxItems": len(external_ids)
+                            "minItems": len(external_ids),
+                            "maxItems": len(external_ids)
+                        }
+                    },
+                    "required": ["results"]
+            }
+            system_prompt = T_RAT_SYSTEM_PROMPT
+            
+            self.response_format={
+                    "type": "json_schema",
+                    "json_schema": {
+                        "name": "techniques_schema",
+                        "schema": t_format
+                        }
                     }
-                },
-                "required": ["results"]
-        }
-        system_prompt = T_RAT_SYSTEM_PROMPT
-        
-        self.response_format={
-                "type": "json_schema",
-                "json_schema": {
-                    "name": "techniques_schema",
-                    "schema": t_format
-                    }
-                }
-        
-        t_prompt = f"""
-{{
-"Article": {json.dumps(self.article_content)},
-"Techniques": {json.dumps(filtered_techniques, indent=2)}
-}}
-"""
+            
+            t_prompt = f"""
+    {{
+    "Article": {json.dumps(article_content)},
+    "Techniques": {json.dumps(filtered_techniques, indent=2)}
+    }}
+    """
 
-        result_raw = self.prompt_llm_response(prompt=t_prompt, system_prompt=system_prompt)
-        try:
-            result_parsed = json.loads(result_raw)              
-        except json.JSONDecodeError:
-            print("Error: Model Failed to return valid JSON")
+            result_raw = self.prompt_llm_response(prompt=t_prompt, system_prompt=system_prompt)
+            try:
+                result_parsed = json.loads(result_raw)              
+            except json.JSONDecodeError:
+                print("Error: Model Failed to return valid JSON")
 
-        result_list = [
-            (item["technique"], item["rationales"])
-            for item in result_parsed["results"]
-        ]
+            result_list = [
+                (item["technique"], item["rationales"])
+                for item in result_parsed["results"]
+            ]
 
-        print("Result: " + str(result_list))
+            print("Result: " + str(result_list))
         return result_list
 
     def get_all_techniques(self):

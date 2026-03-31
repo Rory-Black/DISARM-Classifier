@@ -15,6 +15,7 @@ from enum import Enum
 from suffix_trees import STree
 import numpy as np
 import re
+import uuid
 
 from rouge_score import rouge_scorer
 from DISARM_DATA_MASTER import DISARMDataMaster
@@ -137,8 +138,8 @@ def get_model_rationales(incident_id, external_ids, disarm_classifer: DISARMClas
         case ClfMode.SINGLE:
             rationales = disarm_classifer.identify_rationales(external_ids)
     article_content = disarm_classifer.get_article_content()
-    comprehensiveess = rationale_comprehensiveness(article_content, external_ids, rationales, disarm_classifer, mode)
     sufficiency = rationale_sufficiency(external_ids, rationales, disarm_classifer, mode)
+    comprehensiveess = rationale_comprehensiveness(article_content, external_ids, rationales, disarm_classifer, mode)
     
     return rationales, comprehensiveess, sufficiency 
 
@@ -165,8 +166,8 @@ def rationale_comprehensiveness(article_content: str, required_classifications: 
             lcs = STree.STree([quote, article_content]).lcs()
             article_content = article_content.replace(lcs, "", 1)
             print(f"Replaced '{lcs}' in article content")
-    # reclassify
-    disarm_classifer.set_article_content(article_content)
+    # reclassify (using a unique id at the front to ensure no prefix caching)
+    disarm_classifer.set_article_content(f"ID: {uuid.uuid4()} " + article_content)
     match mode:
         case ClfMode.SELECT_ALL:
             identified_techniques = disarm_classifer.select_all_clf()
@@ -451,7 +452,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=3, checkpoint=0, enbl_precision=False, enbl_rationale=True)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=15, checkpoint=0, enbl_precision=False, enbl_rationale=True)
     # print(DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064'))
     # print(get_gold_rationales('I00064'))
 
