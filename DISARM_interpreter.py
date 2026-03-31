@@ -184,6 +184,7 @@ The agent MUST
 - return one object per technique
 - include at least one quote per technique
 - ensure quotes are direct substrings of the article
+The agent should be greedy in it's quote selection: quote anything that would support the classification
 """
 class DISARMClassifier:
     def __init__(self,
@@ -304,7 +305,7 @@ class DISARMClassifier:
                 "mirostat": 0,
             },
             stream=False,
-            timeout=1500
+            timeout=2000
         )
     
     def prompt_valid_DISARM_response(self, prompt, system_prompt):
@@ -452,19 +453,29 @@ class DISARMClassifier:
 
         return self.identify_techniques(techniques)
 
-    def identify_techniques(self, techniques=None, external_ids = None):
-        if external_ids is None:
-            if techniques is None:
-                techniques = self.get_all_techniques()
+    def identify_techniques(self, techniques=None, filter_ids=None):
+        if techniques is None:
+            techniques = self.get_all_techniques()
 
-            filtered_techniques = []
-            external_ids = []
-            for technique in techniques:
+        filtered_techniques = []
+
+        external_ids = []
+        for technique in techniques:
+            ex_id = get_mitre_external_id(technique)
+            if filter_ids is None:
                 filtered_techniques.append({
-                    "external_id": get_mitre_external_id(technique),
+                    "external_id": ex_id,
                     "description": technique.get("description"),
                 })
-                external_ids.append(get_mitre_external_id(technique))
+                external_ids.append(ex_id)
+            elif ex_id in filter_ids:
+                # filtering for use within reduced single clf in the ZeDPEB benchmark
+                filtered_techniques.append({
+                    "external_id": ex_id,
+                    "description": technique.get("description"),
+                })
+                external_ids.append(ex_id)
+
 
         self.available_classes = external_ids
 

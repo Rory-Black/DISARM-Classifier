@@ -114,10 +114,11 @@ def calc_f1(precision, recall):
 
 def test_rationale(technique_positives, incident_id, disarm_classifer: DISARMClassifier, mode):
     print_log(f"\nRationale Test for incident {incident_id}\n")
+    
     # get rationales with faithfullness checks
     model_rationales, comprehensiveness, sufficiency = get_model_rationales(incident_id, technique_positives, disarm_classifer, mode)
     ave_recall, ave_precision, f1 = rationale_plausability(model_rationales, incident_id)
-    log_rationale_stats(comprehensiveness, sufficiency, ave_recall, ave_precision, f1)
+    log_rationale_stats(len(technique_positives), comprehensiveness, sufficiency, ave_recall, ave_precision, f1)
     return comprehensiveness, sufficiency, ave_recall, ave_precision, f1
 
 # TODO add methods for each mode
@@ -129,24 +130,24 @@ def get_model_rationales(incident_id, external_ids, disarm_classifer: DISARMClas
             # rationales stored as JSON object list with external_ids linked to lists of quotes (rationales)
             rationales = disarm_classifer.identify_rationales(external_ids)
         case ClfMode.BATCH_FAST:
-            pass
+            rationales = disarm_classifer.identify_rationales(external_ids)
         case ClfMode.BATCH_FULL:
             rationales = disarm_classifer.identify_rationales(external_ids)
             pass
         case ClfMode.SINGLE:
-            pass
+            rationales = disarm_classifer.identify_rationales(external_ids)
     article_content = disarm_classifer.get_article_content()
     comprehensiveess = rationale_comprehensiveness(article_content, external_ids, rationales, disarm_classifer, mode)
     sufficiency = rationale_sufficiency(external_ids, rationales, disarm_classifer, mode)
     
     return rationales, comprehensiveess, sufficiency 
 
-def log_rationale_stats(comp, suff, recall, prec, f1):
+def log_rationale_stats(n_pos, comp, suff, recall, prec, f1):
     log = f"""{'.'*50}
 Rationale test results:
     Faithfullness:
-        Comprehensiveness: {comp}
-        Sufficiency:       {suff}
+        Comprehensiveness: {comp}/{n_pos}
+        Sufficiency:       {suff}/{n_pos}
     Plausability (Rouge Scores):
         Recall:    {recall}
         Precision: {prec} 
@@ -162,7 +163,7 @@ def rationale_comprehensiveness(article_content: str, required_classifications: 
         for quote in quotes:
             # remove the largest common substring from the article content
             lcs = STree.STree([quote, article_content]).lcs()
-            article_content.replace(lcs, "", 1)
+            article_content = article_content.replace(lcs, "", 1)
             print(f"Replaced '{lcs}' in article content")
     # reclassify
     disarm_classifer.set_article_content(article_content)
@@ -180,7 +181,7 @@ def rationale_comprehensiveness(article_content: str, required_classifications: 
     for technique in required_classifications:
         if technique not in identified_techniques:
             diff += 1
-    return diff / len(required_classifications)
+    return diff
 
             
 
@@ -208,7 +209,7 @@ def rationale_sufficiency(required_classifications, model_rationales, disarm_cla
     for technique in required_classifications:
         if technique in identified_techniques:
             match += 1
-    return match / len(required_classifications)
+    return match
 
 def rationale_plausability(model_rationales, incident_id):
     # actually scores how similar the models rationale is to the 'gold' rationale
@@ -282,7 +283,7 @@ def reduced_full_batch_clf(article_tactics, disarm_classifer: DISARMClassifier):
 def reduced_single_clf(article_techniques, disarm_classifer: DISARMClassifier):
     identified_techniques = []
     for required_technique in article_techniques:
-        identified_techniques += disarm_classifer.identify_techniques(external_ids=[required_technique]) #TODO fix this, incorrect type
+        identified_techniques += disarm_classifer.identify_techniques(filter_ids=[required_technique]) 
     return identified_techniques
 
 # TODO: implement more statistics
@@ -298,8 +299,7 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
     ta_total = t_total = ta_mtchs_total = t_mtchs_total = t_abs_mtchs_total = t_prt_mtchs_total = 0
     ta_false_total = t_false_total = t_abs_false_total = 0
     #rationales
-    r_comp = []
-    r_suff = []
+    r_comp_total = r_suff_total = 0
     r_rec = [] 
     r_prec = [] 
     r_f1 = []
@@ -390,8 +390,9 @@ Recall:
 Correct Techniques: {technique_positives}/{len(article_techniques)}
     Absolute technique matches: {technique_abs_positives}
     Partial technique matches: {technique_partial_positives}
-
-Precision:
+"""
+        if enbl_precision:
+            results_log += f"""Precision:
 {f"Tactics: {calc_precision(tactic_positives, ta_false)}" if is_fast_batch else ""}
 Techniques: {calc_precision(technique_positives, t_false)}
     Absolute Techniques: {calc_precision(technique_abs_positives, t_abs_false)}
@@ -401,8 +402,8 @@ Techniques: {calc_precision(technique_positives, t_false)}
         if enbl_rationale and technique_abs_positives > 0:
             # test and log model rationale
             c, s, r, p, f = test_rationale(technique_abs_positives_list, incident_id, disarm_classifer, mode) 
-            r_comp.append(c)
-            r_suff.append(s)
+            r_comp_total += c
+            r_suff_total += s
             r_rec.append(r)
             r_prec.append(p)
             r_f1.append(f)
@@ -420,7 +421,9 @@ Recall:
 Correct Techniques: {t_mtchs_total}/{t_total} \t ({((t_mtchs_total)/t_total)*100}%)
     Absolute technique matches: {t_abs_mtchs_total} \t ({(t_abs_mtchs_total/t_total)*100}%)
     Partial technique matches: {t_prt_mtchs_total} \t ({(t_prt_mtchs_total/t_total)*100}%)
-{'-'*50}
+"""
+    if enbl_precision:
+        final_log += f"""{'-'*50}
 Precision:
 {f"Tactics: {calc_precision(ta_mtchs_total, ta_false_total)}" if is_fast_batch else ""}
 Techniques: {calc_precision(t_mtchs_total, t_false_total)}
@@ -430,8 +433,8 @@ Techniques: {calc_precision(t_mtchs_total, t_false_total)}
         final_log += f"""{'-'*50}
 Rationale test results:
     Faithfullness:
-        Comprehensiveness: {np.average(r_comp)}
-        Sufficiency:       {np.average(r_suff)}
+        Comprehensiveness: {(r_comp_total/t_abs_mtchs_total)*100}%
+        Sufficiency:       {(r_suff_total/t_abs_mtchs_total)*100}%
     Plausability (Rouge Scores):
         Recall:    {np.average(r_rec)}
         Precision: {np.average(r_prec)} 
@@ -448,7 +451,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=15, checkpoint=0, enbl_precision=False, enbl_rationale=True)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=3, checkpoint=0, enbl_precision=False, enbl_rationale=True)
     # print(DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064'))
     # print(get_gold_rationales('I00064'))
 
