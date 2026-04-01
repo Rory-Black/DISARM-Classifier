@@ -281,7 +281,8 @@ class DISARMClassifier:
         response = client.chat.completions.create(
             model=self.LARGE_MODEL,
             messages=messages,
-            temperature=0,
+            temperature=0.1, #needs a small temperature to be able to escape invalid paths
+            seed=48,
             response_format=response_format
         )
         return response
@@ -535,7 +536,7 @@ class DISARMClassifier:
         print(f"identifying rationales of article with length: {l}")
 
         # if the article is too large, it must be processed in batches with 1/3 overlap
-        if l > 10000:
+        if l > 35000:
             print("Warning, article too large, splitting and extracting rationales in batches")
             split1 = article_content[0:int(l*0.65)]
             split2 = article_content[int(l*0.35):l-1]

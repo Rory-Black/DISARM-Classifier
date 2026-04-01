@@ -82,7 +82,7 @@ def log_to_file(message):
 def new_log_file(mode, model, enbl_precision, num_tests):
     global log_filename
     timestamp = time.strftime("%Y%m%d-%H%M%S")
-    log_filename = f".ZeDPEB_logs/log_{timestamp}_{mode.value}_{num_tests}.txt"
+    log_filename = f".ZeDPEB_logs/log_{timestamp}_{mode.value}_{num_tests if num_tests>0 else "COMPLETE"}.txt"
     log_to_file(f"ZeDPEB Log File - Created on {timestamp}\n\n{'='*50}")
     setup_str = f"""
 SETUP
@@ -288,7 +288,7 @@ def reduced_single_clf(article_techniques, disarm_classifer: DISARMClassifier):
     return identified_techniques
 
 # TODO: implement more statistics
-def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_precision=True, enbl_rationale=False):
+def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, skip_to_id=0, enbl_precision=True, enbl_rationale=False):
     is_fast_batch = mode == ClfMode.BATCH_FAST 
 
     start_time = time.time()
@@ -306,7 +306,9 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
     r_f1 = []
     
     # incident loop
-    for incident_id in incident_ids:
+    for i, incident_id in enumerate(incident_ids):
+        if i+1 < skip_to_id:
+            continue
         # break loop if number of tests reached
         if num_tests == 0:
             break
@@ -322,13 +324,13 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, enbl_pr
         if result is None:
             print_log(f"Skipping incident {incident_id} - missing data\n")
             continue
-        if checkpoint > 0:
-            print_log(f"Skipping incident {incident_id} by user request\n")
-            checkpoint -= 1
-            continue
         article_content, article_tactics, article_techniques = result
         if len(article_content) < 100:
             print_log(f"Skipping incident {incident_id} - insignificant amount of article content retrieved ({len(article_content)})\n")
+            continue
+        if checkpoint > 0:
+            print_log(f"Skipping incident {incident_id} by user request\n")
+            checkpoint -= 1
             continue
 
         ta_total += len(article_tactics)
@@ -452,9 +454,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=15, checkpoint=0, enbl_precision=False, enbl_rationale=True)
-    # print(DISARMDataMaster().get_incident_techniques_with_desc(incidentid='I00064'))
-    # print(get_gold_rationales('I00064'))
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=-1, checkpoint=0, skip_to_id=0, enbl_precision=False, enbl_rationale=True)
 
 if __name__ == "__main__":
     main()
