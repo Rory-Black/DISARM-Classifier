@@ -71,6 +71,7 @@ def retrieve_incident_data(disarm_data :DISARMDataMaster, incident_id):
         print_log(f"{'-'*50}\nRetrieved article from {urls[0]}\n")
     else:
         print_log(f"\nError when attempting to fetch incident url content. Code: {response.status_code}\n")
+        return None
     
     return article_content, article_tactics, article_techniques
     
@@ -454,7 +455,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=-1, checkpoint=0, skip_to_id=0, enbl_precision=False, enbl_rationale=True)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=-1, checkpoint=0, skip_to_id=111, enbl_precision=True, enbl_rationale=True)
 
 if __name__ == "__main__":
     main()
