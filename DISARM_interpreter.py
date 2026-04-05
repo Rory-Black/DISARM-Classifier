@@ -277,14 +277,16 @@ class DISARMClassifier:
 
         return full_response
     
-    def vllm_response(self, messages, response_format):
+    def vllm_response(self, messages, response_format, seed=44):
         response = client.chat.completions.create(
             model=self.LARGE_MODEL,
             messages=messages,
             #needs to escape invalid paths
-            
-            seed=44,
-            response_format=response_format
+            # temperature=0,
+            top_p=0.8,
+            seed=seed,
+            response_format=response_format,
+            timeout=120
         )
         return response
 
@@ -480,6 +482,8 @@ class DISARMClassifier:
 
 
         self.available_classes = external_ids
+
+        print(f"Available Classes: {self.available_classes}")
 
         t_format = {
             "type": "object",

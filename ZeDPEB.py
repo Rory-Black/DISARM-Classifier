@@ -12,7 +12,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from enum import Enum
-from suffix_trees import STree
+from difflib import SequenceMatcher
 import numpy as np
 import re
 import uuid
@@ -80,7 +80,7 @@ def log_to_file(message):
     with open(log_filename, "a", encoding="utf-8") as f:
         f.write(message)
 
-def new_log_file(mode, model, enbl_precision, num_tests):
+def new_log_file(mode, model, enbl_precision, enbl_rationale, num_tests):
     global log_filename
     timestamp = time.strftime("%Y%m%d-%H%M%S")
     log_filename = f".ZeDPEB_logs/log_{timestamp}_{mode.value}_{num_tests if num_tests>0 else "COMPLETE"}.txt"
@@ -89,7 +89,7 @@ def new_log_file(mode, model, enbl_precision, num_tests):
 SETUP
 mode  - {mode}
 model - {model}
-test  - Recall {"& Precision" if enbl_precision else "only (Expect Deviations Technique recall for FastBatchClf)"}
+test  - Recall {"& Precision" if enbl_precision else ""} {"& Rationale" if enbl_rationale else ""}
 {'='*50}
 """
     log_to_file(setup_str)
@@ -164,7 +164,8 @@ def rationale_comprehensiveness(article_content: str, required_classifications: 
         _, quotes = rationale
         for quote in quotes:
             # remove the largest common substring from the article content
-            lcs = STree.STree([quote, article_content]).lcs()
+            match = SequenceMatcher(None, quote, article_content).find_longest_match(0, len(quote), len(article_content))
+            lcs = quote[match.a: match.a + match.size]
             article_content = article_content.replace(lcs, "", 1)
             print(f"Replaced '{lcs}' in article content")
     # reclassify (using a unique id at the front to ensure no prefix caching)
@@ -294,7 +295,7 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, skip_to
 
     start_time = time.time()
     disarm_data = DISARMDataMaster()
-    new_log_file(mode, model, enbl_precision, num_tests)
+    new_log_file(mode, model, enbl_precision, enbl_rationale, num_tests)
 
     incident_ids = disarm_data.get_incident_ids()
     # variables to keep track of overall performance
@@ -308,114 +309,152 @@ def test_clf(model, mode=ClfMode.BATCH_FULL, num_tests=-1, checkpoint=0, skip_to
     
     # incident loop
     for i, incident_id in enumerate(incident_ids):
-        if i+1 < skip_to_id:
-            continue
-        # break loop if number of tests reached
-        if num_tests == 0:
-            break
-        tactic_positives = 0
-        technique_abs_positives = 0
-        technique_abs_positives_list = []
-        technique_partial_positives = 0
+        try:
+            if i+1 < skip_to_id:
+                continue
+            # break loop if number of tests reached
+            if num_tests == 0:
+                break
+            tactic_positives = 0
+            technique_abs_positives = 0
+            technique_abs_positives_list = []
+            technique_partial_positives = 0
 
-        # get the incident data
-        result = retrieve_incident_data(disarm_data, incident_id)
+            # get the incident data
+            result = retrieve_incident_data(disarm_data, incident_id)
 
-        # skip if no url/data is available
-        if result is None:
-            print_log(f"Skipping incident {incident_id} - missing data\n")
-            continue
-        article_content, article_tactics, article_techniques = result
-        if len(article_content) < 100:
-            print_log(f"Skipping incident {incident_id} - insignificant amount of article content retrieved ({len(article_content)})\n")
-            continue
-        if checkpoint > 0:
-            print_log(f"Skipping incident {incident_id} by user request\n")
-            checkpoint -= 1
-            continue
+            # skip if no url/data is available
+            if result is None:
+                print_log(f"Skipping incident {incident_id} - missing data\n")
+                continue
+            article_content, article_tactics, article_techniques = result
+            if len(article_content) < 100:
+                print_log(f"Skipping incident {incident_id} - insignificant amount of article content retrieved: ({len(article_content)})\n")
+                continue
+            if len(article_content) > 50000:
+                print_log(f"Skipping incident {incident_id} - excessive amount of article content retrieved: ({len(article_content)})\n")
+                continue
+            if checkpoint > 0:
+                print_log(f"Skipping incident {incident_id} by user request\n")
+                checkpoint -= 1
+                continue
 
-        ta_total += len(article_tactics)
-        t_total += len(article_techniques)
-        
-        disarm_classifer = DISARMClassifier(article_content=article_content, large_model=model)
-        print_log(f"Testing for incident with ID: {incident_id} \n{f"Required Tactics: {article_tactics}\n" if is_fast_batch else ""}Required Techniques: {article_techniques}\n")
-        print_log(f"Classifier log created in: {disarm_classifer.log_filename}\n")
-        print_log(f"Article Character Length: {len(article_content)}\n")
+            ta_total += len(article_tactics)
+            t_total += len(article_techniques)
+            
+            disarm_classifer = DISARMClassifier(article_content=article_content, large_model=model)
+            print_log(f"Testing for incident with ID: {incident_id} \n{f"Required Tactics: {article_tactics}\n" if is_fast_batch else ""}Required Techniques: {article_techniques}\n")
+            print_log(f"Classifier log created in: {disarm_classifer.log_filename}\n")
+            print_log(f"Article Character Length: {len(article_content)}\n")
 
-        identified_techniques = []
-        identified_tactics = []
+            identified_techniques = []
+            identified_tactics = []
 
-        if mode == ClfMode.BATCH_FAST or mode == ClfMode.BATCH_FULL:
-            if enbl_precision or mode == ClfMode.BATCH_FAST:
-                identified_tactics, identified_techniques = disarm_classifer.batch_clf(mode == ClfMode.BATCH_FAST)
-                for required_tactic in article_tactics:
-                    if required_tactic in identified_tactics:
-                        tactic_positives+=1
-            else: # if precision is dissabled and doing full batch, then unnessasary batches can be ignored 
-                identified_techniques = reduced_full_batch_clf(article_tactics, disarm_classifer)
-        elif mode == ClfMode.SELECT_ALL:
-            identified_techniques = disarm_classifer.select_all_clf()
-        elif mode == ClfMode.SINGLE:
+            if mode == ClfMode.BATCH_FAST or mode == ClfMode.BATCH_FULL:
+                if enbl_precision or mode == ClfMode.BATCH_FAST:
+                    identified_tactics, identified_techniques = disarm_classifer.batch_clf(mode == ClfMode.BATCH_FAST)
+                    for required_tactic in article_tactics:
+                        if required_tactic in identified_tactics:
+                            tactic_positives+=1
+                else: # if precision is dissabled and doing full batch, then unnessasary batches can be ignored 
+                    identified_techniques = reduced_full_batch_clf(article_tactics, disarm_classifer)
+            elif mode == ClfMode.SELECT_ALL:
+                identified_techniques = disarm_classifer.select_all_clf()
+            elif mode == ClfMode.SINGLE:
+                if enbl_precision:
+                    identified_techniques = disarm_classifer.single_clf()
+                else:
+                    # only check relevant techniques, no need to do full clf if precision is dissabled
+                    identified_techniques = reduced_single_clf(article_techniques, disarm_classifer)
+                    
+
+            print(f"Techniques identified by model: {identified_techniques}")
+            for required_technique in article_techniques:
+                if required_technique in identified_techniques:
+                    technique_abs_positives+=1
+                    technique_abs_positives_list.append(required_technique)
+                elif partial_match(required_technique, identified_techniques):
+                    technique_partial_positives+=1
+            # record results
+            technique_positives = technique_abs_positives + technique_partial_positives
+            ta_false = len(identified_tactics) - tactic_positives
+            t_false = len(identified_techniques) - (technique_positives)
+            t_abs_false = len(identified_techniques) - (technique_abs_positives)
+            # update totals
+            ta_mtchs_total += tactic_positives
+            t_mtchs_total += technique_positives
+            t_abs_mtchs_total += technique_abs_positives
+            t_prt_mtchs_total += technique_partial_positives
+
+            ta_false_total += ta_false
+            t_false_total += t_false
+            t_abs_false_total += t_abs_false
+
+            results_log = f"""Results:
+    {f"Identified tactics({len(identified_tactics)}): {identified_tactics}" if is_fast_batch else ""}
+    Identified techniques({(len(identified_techniques))}): {identified_techniques}
+
+    Recall:
+    {f"Correct Tactics: {tactic_positives}/{len(article_tactics)}" if is_fast_batch else ""}
+    Correct Techniques: {technique_positives}/{len(article_techniques)}
+        Absolute technique matches: {technique_abs_positives}
+        Partial technique matches: {technique_partial_positives}
+    """
             if enbl_precision:
-                identified_techniques = disarm_classifer.single_clf()
-            else:
-                # only check relevant techniques, no need to do full clf if precision is dissabled
-                identified_techniques = reduced_single_clf(article_techniques, disarm_classifer)
-                
-
-        print(f"Techniques identified by model: {identified_techniques}")
-        for required_technique in article_techniques:
-            if required_technique in identified_techniques:
-                technique_abs_positives+=1
-                technique_abs_positives_list.append(required_technique)
-            elif partial_match(required_technique, identified_techniques):
-                technique_partial_positives+=1
-        # record results
-        technique_positives = technique_abs_positives + technique_partial_positives
-        ta_false = len(identified_tactics) - tactic_positives
-        t_false = len(identified_techniques) - (technique_positives)
-        t_abs_false = len(identified_techniques) - (technique_abs_positives)
-        # update totals
-        ta_mtchs_total += tactic_positives
-        t_mtchs_total += technique_positives
-        t_abs_mtchs_total += technique_abs_positives
-        t_prt_mtchs_total += technique_partial_positives
-
-        ta_false_total += ta_false
-        t_false_total += t_false
-        t_abs_false_total += t_abs_false
-
-        results_log = f"""Results:
-{f"Identified tactics({len(identified_tactics)}): {identified_tactics}" if is_fast_batch else ""}
-Identified techniques({(len(identified_techniques))}): {identified_techniques}
-
+                results_log += f"""Precision:
+    {f"Tactics: {calc_precision(tactic_positives, ta_false)}" if is_fast_batch else ""}
+    Techniques: {calc_precision(technique_positives, t_false)}
+        Absolute Techniques: {calc_precision(technique_abs_positives, t_abs_false)}
+    """
+            print_log(results_log)
+            
+            if enbl_rationale and technique_abs_positives > 0:
+                # test and log model rationale
+                c, s, r, p, f = test_rationale(technique_abs_positives_list, incident_id, disarm_classifer, mode) 
+                r_comp_total += c
+                r_suff_total += s
+                r_rec.append(r)
+                r_prec.append(p)
+                r_f1.append(f)
+            elif technique_abs_positives <= 0:
+                print_log(f"\nUnable to test for rationales - no absolute technique matches\n")
+            
+            print_log('-'*50)
+            num_tests-=1
+        except Exception:
+            print_log(f"Failed at incident with id {incident_id}, results until failure were:")
+            final_log = f"""
+{'='*50}
+Final Results:
+{'-'*50}
 Recall:
-{f"Correct Tactics: {tactic_positives}/{len(article_tactics)}" if is_fast_batch else ""}
-Correct Techniques: {technique_positives}/{len(article_techniques)}
-    Absolute technique matches: {technique_abs_positives}
-    Partial technique matches: {technique_partial_positives}
+{f"Correct Tactics: {ta_mtchs_total}/{ta_total} \t ({(ta_mtchs_total/ta_total)*100}%)" if is_fast_batch else ""}
+Correct Techniques: {t_mtchs_total}/{t_total} \t ({((t_mtchs_total)/t_total)*100}%)
+    Absolute technique matches: {t_abs_mtchs_total} \t ({(t_abs_mtchs_total/t_total)*100}%)
+    Partial technique matches: {t_prt_mtchs_total} \t ({(t_prt_mtchs_total/t_total)*100}%)
 """
-        if enbl_precision:
-            results_log += f"""Precision:
-{f"Tactics: {calc_precision(tactic_positives, ta_false)}" if is_fast_batch else ""}
-Techniques: {calc_precision(technique_positives, t_false)}
-    Absolute Techniques: {calc_precision(technique_abs_positives, t_abs_false)}
-"""
-        print_log(results_log)
-        
-        if enbl_rationale and technique_abs_positives > 0:
-            # test and log model rationale
-            c, s, r, p, f = test_rationale(technique_abs_positives_list, incident_id, disarm_classifer, mode) 
-            r_comp_total += c
-            r_suff_total += s
-            r_rec.append(r)
-            r_prec.append(p)
-            r_f1.append(f)
-        elif technique_abs_positives <= 0:
-            print_log(f"\nUnable to test for rationales - no absolute technique matches\n")
-        
-        print_log('-'*50)
-        num_tests-=1
+            if enbl_precision:
+                final_log += f"""{'-'*50}
+        Precision:
+        {f"Tactics: {calc_precision(ta_mtchs_total, ta_false_total)}" if is_fast_batch else ""}
+        Techniques: {calc_precision(t_mtchs_total, t_false_total)}
+            Absolute Techniques: {calc_precision(t_abs_mtchs_total, t_abs_false_total)}
+        """
+            if enbl_rationale:
+                final_log += f"""{'-'*50}
+        Rationale test results:
+            Faithfullness:
+                Comprehensiveness: {(r_comp_total/t_abs_mtchs_total)*100}%
+                Sufficiency:       {(r_suff_total/t_abs_mtchs_total)*100}%
+            Plausability (Rouge Scores):
+                Recall:    {np.average(r_rec)}
+                Precision: {np.average(r_prec)} 
+                F1:        {np.average(r_f1)}
+        {'-'*50}"""
+            final_log += f"""
+        Time Taken: {round((time.time() - start_time)/60, 2)} minuites
+        {'='*50}"""
+            print_log(final_log)
     final_log = f"""
 {'='*50}
 Final Results:
@@ -455,7 +494,7 @@ def print_log(str):
 
 def main():
     large_model = "Qwen/Qwen3.5-35B-A3B"
-    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=-1, checkpoint=0, skip_to_id=111, enbl_precision=True, enbl_rationale=True)
+    test_clf(model=large_model, mode=ClfMode.BATCH_FULL,num_tests=-1, checkpoint=0, skip_to_id=0, enbl_precision=True, enbl_rationale=True)
 
 if __name__ == "__main__":
     main()

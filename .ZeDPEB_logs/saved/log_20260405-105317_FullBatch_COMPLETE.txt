@@ -1,0 +1,2276 @@
+ZeDPEB Log File - Created on 20260405-105317
+
+==================================================
+SETUP
+mode  - ClfMode.BATCH_FULL
+model - Qwen/Qwen3.5-35B-A3B
+test  - Recall & Precision
+==================================================
+Skipping incident I00001 - missing data
+Skipping incident I00002 - missing data
+Skipping incident I00003 - missing data
+Skipping incident I00004 - missing data
+Skipping incident I00005 - missing data
+Skipping incident I00006 - missing data
+Skipping incident I00007 - missing data
+Skipping incident I00008 - missing data
+Skipping incident I00009 - missing data
+Skipping incident I00010 - missing data
+Skipping incident I00011 - missing data
+Skipping incident I00012 - missing data
+Skipping incident I00013 - missing data
+Skipping incident I00014 - missing data
+Skipping incident I00015 - missing data
+Skipping incident I00016 - missing data
+Skipping incident I00017 - missing data
+Skipping incident I00018 - missing data
+Skipping incident I00019 - missing data
+Skipping incident I00020 - missing data
+Skipping incident I00021 - missing data
+Skipping incident I00022 - missing data
+Skipping incident I00023 - missing data
+Skipping incident I00024 - missing data
+Skipping incident I00025 - missing data
+Skipping incident I00026 - missing data
+Skipping incident I00027 - missing data
+Skipping incident I00028 - missing data
+Skipping incident I00029 - missing data
+Skipping incident I00030 - missing data
+Skipping incident I00031 - missing data
+Skipping incident I00032 - missing data
+Skipping incident I00033 - missing data
+Skipping incident I00034 - missing data
+Skipping incident I00035 - missing data
+Skipping incident I00036 - missing data
+Skipping incident I00037 - missing data
+Skipping incident I00038 - missing data
+Skipping incident I00039 - missing data
+Skipping incident I00040 - missing data
+Skipping incident I00041 - missing data
+Skipping incident I00042 - missing data
+Skipping incident I00043 - missing data
+Skipping incident I00044 - missing data
+Skipping incident I00045 - missing data
+Skipping incident I00046 - missing data
+Skipping incident I00047 - missing data
+Skipping incident I00048 - missing data
+Skipping incident I00049 - missing data
+Skipping incident I00050 - missing data
+Skipping incident I00051 - missing data
+Skipping incident I00052 - missing data
+Skipping incident I00053 - missing data
+Skipping incident I00054 - missing data
+Skipping incident I00055 - missing data
+Skipping incident I00056 - missing data
+Skipping incident I00057 - missing data
+Skipping incident I00058 - missing data
+Skipping incident I00059 - missing data
+Skipping incident I00060 - missing data
+Skipping incident I00061 - missing data
+Skipping incident I00062 - missing data
+Skipping incident I00063 - missing data
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240715171942/https://www.wired.com/story/tinder-political-bots-jeremy-corbyn-labour/
+Testing for incident with ID: I00064 
+Required Techniques: ['T0097.109', 'T0143.003', 'T0150.007', 'T0151.017']
+Classifier log created in: .exe_logs/DISARM_log_20260405-105320.txt
+Article Character Length: 8080
+Results:
+    
+    Identified techniques(29): ['T0073', 'T0074.002', 'T0138.001', 'T0136.004', 'T0018', 'T0085.001', 'T0151.017', 'T0153.007', 'T0042', 'T0114.001', 'T0116.001', 'T0017.001', 'T0128.001', 'T0128.004', 'T0134.001', 'T0134.002', 'T0072.001', 'T0072.002', 'T0072.005', 'T0082', 'T0091.002', 'T0093.002', 'T0094', 'T0146.007', 'T0148.006', 'T0097.109', 'T0143.002', 'T0049.003', 'T0121']
+
+    Recall:
+    
+    Correct Techniques: 3/4
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.10344827586206896
+        Absolute Techniques: 0.06896551724137931
+    
+Rationale Test for incident I00064
+
+Rationale Plausability test for incident: I00064
+Rationale score for technique: T0097.109
+    Recall: 0.5904255319148937
+    Precision: 0.6379310344827587
+    F1: 0.6132596685082874
+
+Rationale score for technique: T0151.017
+    Recall: 0.39344262295081966
+    Precision: 0.6371681415929203
+    F1: 0.48648648648648646
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       1/2
+    Plausability (Rouge Scores):
+        Recall:    0.49193407743285666
+        Precision: 0.6375495880378395 
+        F1:        0.5498730774973869
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240621162043/https://cloud.google.com/blog/topics/threat-intelligence/ghostwriter-influence-campaign/
+Testing for incident with ID: I00065 
+Required Techniques: ['T0097.110']
+Classifier log created in: .exe_logs/DISARM_log_20260405-105439.txt
+Article Character Length: 2380
+Results:
+    
+    Identified techniques(36): ['T0074.001', 'T0074.004', 'T0002', 'T0135.001', 'T0136.005', 'T0101', 'T0085.003', 'T0085.006', 'T0152.001', 'T0152.002', 'T0152.004', 'T0042', 'T0045', 'T0115', 'T0059', 'T0128.001', 'T0134.001', 'T0134.002', 'T0072.001', 'T0003', 'T0083', 'T0091.001', 'T0091.002', 'T0093.001', 'T0094', 'T0094.001', 'T0096.002', 'T0150.004', 'T0097.101', 'T0097.102', 'T0097.107', 'T0097.108', 'T0143.002', 'T0049.007', 'T0119', 'T0123']
+
+    Recall:
+    
+    Correct Techniques: 1/1
+        Absolute technique matches: 0
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.027777777777777776
+        Absolute Techniques: 0.0
+    
+Unable to test for rationales - no absolute technique matches
+----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20180605001510/https://www.bbc.com/news/blogs-trending-44294826
+Testing for incident with ID: I00066 
+Required Techniques: ['T0150.005']
+Classifier log created in: .exe_logs/DISARM_log_20260405-105518.txt
+Article Character Length: 7808
+Results:
+    
+    Identified techniques(52): ['T0074.001', 'T0074.004', 'T0002', 'T0066', 'T0135.001', 'T0136.005', 'T0016', 'T0102', 'T0102.001', 'T0102.002', 'T0015.002', 'T0023', 'T0086.001', 'T0151.008', 'T0111.001', 'T0153.007', 'T0042', 'T0044', 'T0114.001', 'T0115.001', 'T0116.001', 'T0059', 'T0060', 'T0128.001', 'T0129.006', 'T0129.007', 'T0134.001', 'T0134.002', 'T0080.003', 'T0081.003', 'T0081.004', 'T0081.006', 'T0081.007', 'T0004', 'T0022', 'T0022.001', 'T0040', 'T0068', 'T0083', 'T0092.002', 'T0092.003', 'T0093.002', 'T0091.003', 'T0065', 'T0097.100', 'T0097.202', 'T0143.002', 'T0049', 'T0049.003', 'T0049.002', 'T0118', 'T0123']
+
+    Recall:
+    
+    Correct Techniques: 0/1
+        Absolute technique matches: 0
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.0
+        Absolute Techniques: 0.0
+    
+Unable to test for rationales - no absolute technique matches
+----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20210330030913/https://firstdraftnews.org/long-form-article/understanding-information-disorder/
+Testing for incident with ID: I00067 
+Required Techniques: ['T0143.004']
+Classifier log created in: .exe_logs/DISARM_log_20260405-105609.txt
+Article Character Length: 34029
+Results:
+    
+    Identified techniques(84): ['T0074.002', 'T0074.004', 'T0075.001', 'T0076', 'T0135.001', 'T0136.001', 'T0137.001', 'T0138.002', 'T0139.001', 'T0016', 'T0018', 'T0101', 'T0023.001', 'T0086.003', 'T0087.002', 'T0088.002', 'T0086.002', 'T0087.001', 'T0088.001', 'T0085.003', 'T0151.001', 'T0151.008', 'T0151.012', 'T0151.014', 'T0152.004', 'T0152.006', 'T0152.008', 'T0153.005', 'T0042', 'T0114.001', 'T0115.001', 'T0115.003', 'T0128.001', 'T0129.007', 'T0131.002', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.005', 'T0081.006', 'T0081.008', 'T0003', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0068', 'T0082', 'T0083', 'T0091.001', 'T0091.002', 'T0091.003', 'T0092', 'T0092.001', 'T0092.003', 'T0093.001', 'T0094', 'T0094.002', 'T0095', 'T0096', 'T0096.001', 'T0096.002', 'T0145', 'T0145.001', 'T0146', 'T0146.005', 'T0149', 'T0149.003', 'T0149.006', 'T0097.102', 'T0097.202', 'T0098.001', 'T0143.002', 'T0143.003', 'T0143.004', 'T0049.001', 'T0049.003', 'T0049.007', 'T0119', 'T0121', 'T0124.001', 'T0124.002', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 1/1
+        Absolute technique matches: 1
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.011904761904761904
+        Absolute Techniques: 0.011904761904761904
+    
+Rationale Test for incident I00067
+
+Rationale Plausability test for incident: I00067
+Rationale score for technique: T0143.004
+    Recall: 0.7283236994219653
+    Precision: 0.5
+    F1: 0.5929411764705882
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.7283236994219653
+        Precision: 0.5 
+        F1:        0.5929411764705882
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240619143325/https://blog.lastpass.com/posts/2024/04/attempted-audio-deepfake-call-targets-lastpass-employee
+Testing for incident with ID: I00068 
+Required Techniques: ['T0088.001', 'T0097.100', 'T0143.003', 'T0151.004', 'T0155.007']
+Classifier log created in: .exe_logs/DISARM_log_20260405-105913.txt
+Article Character Length: 3229
+Results:
+    
+    Identified techniques(14): ['T0137.002', 'T0088.001', 'T0087.001', 'T0086.002', 'T0154.002', 'T0151.004', 'T0042', 'T0115', 'T0091.003', 'T0096.002', 'T0145.002', 'T0097.100', 'T0097.205', 'T0143.003']
+
+    Recall:
+    
+    Correct Techniques: 4/5
+        Absolute technique matches: 4
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.2857142857142857
+        Absolute Techniques: 0.2857142857142857
+    
+Rationale Test for incident I00068
+
+Rationale Plausability test for incident: I00068
+Rationale score for technique: T0088.001
+    Recall: 0.2689655172413793
+    Precision: 0.6190476190476191
+    F1: 0.375
+
+Rationale score for technique: T0097.100
+    Recall: 0.1793103448275862
+    Precision: 1.0
+    F1: 0.304093567251462
+
+Rationale score for technique: T0143.003
+    Recall: 0.2689655172413793
+    Precision: 0.639344262295082
+    F1: 0.3786407766990291
+
+Rationale score for technique: T0151.004
+    Recall: 0.25517241379310346
+    Precision: 0.5285714285714286
+    F1: 0.34418604651162793
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/4
+        Sufficiency:       3/4
+    Plausability (Rouge Scores):
+        Recall:    0.24310344827586206
+        Precision: 0.6967408274785324 
+        F1:        0.3504800976155298
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240619195456/https://cloud.google.com/blog/topics/threat-intelligence/untangling-iran-apt42-operations/
+Testing for incident with ID: I00069 
+Required Techniques: ['T0097.100', 'T0097.103', 'T0097.107', 'T0097.207', 'T0143.002', 'T0143.003']
+Classifier log created in: .exe_logs/DISARM_log_20260405-110025.txt
+Article Character Length: 21706
+Results:
+    
+    Identified techniques(22): ['T0073', 'T0074', 'T0074.001', 'T0085.004', 'T0089.001', 'T0151.008', 'T0153.002', 'T0153.007', 'T0128.001', 'T0129.002', 'T0129.007', 'T0130.002', 'T0147.003', 'T0149.003', 'T0146.005', 'T0097.102', 'T0097.202', 'T0097.207', 'T0143.002', 'T0143.003', 'T0049.004', 'T0049.008']
+
+    Recall:
+    
+    Correct Techniques: 6/6
+        Absolute technique matches: 3
+        Partial technique matches: 3
+    Precision:
+    
+    Techniques: 0.2727272727272727
+        Absolute Techniques: 0.13636363636363635
+    
+Rationale Test for incident I00069
+
+Rationale Plausability test for incident: I00069
+Rationale score for technique: T0097.207
+    Recall: 0.23243243243243245
+    Precision: 0.22279792746113988
+    F1: 0.22751322751322753
+
+Rationale score for technique: T0143.002
+    Recall: 0.2608695652173913
+    Precision: 0.14754098360655737
+    F1: 0.18848167539267013
+
+Rationale score for technique: T0143.003
+    Recall: 0.2810810810810811
+    Precision: 0.4262295081967213
+    F1: 0.33876221498371334
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/3
+        Sufficiency:       0/3
+    Plausability (Rouge Scores):
+        Recall:    0.25812769291030163
+        Precision: 0.2655228064214728 
+        F1:        0.2515857059632037
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20221127024348/https://www.forbes.com/sites/marisadellatto/2022/11/10/eli-lilly-clarifies-its-not-offering-free-insulin-after-tweet-from-fake-verified-account-as-chaos-unfolds-on-twitter/
+Testing for incident with ID: I00070 
+Required Techniques: ['T0097.205', 'T0143.003', 'T0145.001']
+Classifier log created in: .exe_logs/DISARM_log_20260405-110242.txt
+Article Character Length: 3225
+Results:
+    
+    Identified techniques(24): ['T0074.004', 'T0137.002', 'T0135.003', 'T0016', 'T0085', 'T0151.008', 'T0042', 'T0114.001', 'T0128.001', 'T0129.007', 'T0133.001', 'T0134.001', 'T0134.002', 'T0081.008', 'T0082', 'T0145.001', 'T0146.002', 'T0146.003', 'T0097.205', 'T0143.003', 'T0143.004', 'T0039', 'T0124.002', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 3
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.125
+        Absolute Techniques: 0.125
+    
+Rationale Test for incident I00070
+
+Rationale Plausability test for incident: I00070
+Rationale score for technique: T0097.205
+    Recall: 0.1885245901639344
+    Precision: 0.4423076923076923
+    F1: 0.26436781609195403
+
+Rationale score for technique: T0143.003
+    Recall: 0.45901639344262296
+    Precision: 0.9824561403508771
+    F1: 0.6256983240223464
+
+Rationale score for technique: T0145.001
+    Recall: 0.45901639344262296
+    Precision: 0.9824561403508771
+    F1: 0.6256983240223464
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/3
+        Sufficiency:       3/3
+    Plausability (Rouge Scores):
+        Recall:    0.36885245901639346
+        Precision: 0.8024066576698156 
+        F1:        0.5052548213788822
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240111203524/https://medium.com/dfrlab/russia-aligned-hacktivists-stir-up-anti-ukrainian-sentiments-in-poland-f2d6660cf09a
+Testing for incident with ID: I00071 
+Required Techniques: ['T0085.004', 'T0097.101', 'T0097.111', 'T0097.206', 'T0143.003', 'T0150.005']
+Classifier log created in: .exe_logs/DISARM_log_20260405-110350.txt
+Article Character Length: 14326
+Results:
+    
+    Identified techniques(80): ['T0074.001', 'T0074.004', 'T0002', 'T0079', 'T0135.003', 'T0140.001', 'T0101', 'T0085.004', 'T0089.003', 'T0151.004', 'T0151.001', 'T0153.004', 'T0042', 'T0115.001', 'T0115.003', 'T0116.001', 'T0128.005', 'T0129.007', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.005', 'T0082', 'T0083', 'T0092', 'T0096', 'T0096.001', 'T0093', 'T0093.001', 'T0150.005', 'T0150.001', 'T0097.100', 'T0097.101', 'T0097.102', 'T0097.103', 'T0097.104', 'T0097.105', 'T0097.106', 'T0097.107', 'T0097.108', 'T0097.109', 'T0097.110', 'T0097.111', 'T0097.112', 'T0097.200', 'T0097.201', 'T0097.202', 'T0097.203', 'T0097.204', 'T0097.205', 'T0097.206', 'T0097.207', 'T0097.208', 'T0098', 'T0098.001', 'T0098.002', 'T0100', 'T0100.001', 'T0100.002', 'T0100.003', 'T0143', 'T0143.001', 'T0143.002', 'T0143.003', 'T0143.004', 'T0144', 'T0144.001', 'T0144.002', 'T0049.003', 'T0119', 'T0119.002', 'T0123.001', 'T0123.002', 'T0123.003', 'T0123.004', 'T0124.001', 'T0124.002', 'T0124.003', 'T0125']
+
+    Recall:
+    
+    Correct Techniques: 6/6
+        Absolute technique matches: 6
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.075
+        Absolute Techniques: 0.075
+    
+Rationale Test for incident I00071
+Failed at incident with id I00071, results until failure were:
+==================================================
+Final Results:
+--------------------------------------------------
+Recall:
+
+Correct Techniques: 24/27 	 (88.88888888888889%)
+    Absolute technique matches: 19 	 (70.37037037037037%)
+    Partial technique matches: 5 	 (18.51851851851852%)
+--------------------------------------------------
+        Precision:
+        
+        Techniques: 0.07038123167155426
+            Absolute Techniques: 0.05571847507331378
+        --------------------------------------------------
+        Rationale test results:
+            Faithfullness:
+                Comprehensiveness: 0.0%
+                Sufficiency:       42.10526315789473%
+            Plausability (Rouge Scores):
+                Recall:    0.41806827541147584
+                Precision: 0.5804439759215321 
+                F1:        0.45002697578511813
+        --------------------------------------------------
+        Time Taken: 17.88 minuites
+        ==================================================--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240527150851/https://www.bellingcat.com/news/uk-and-europe/2016/04/03/azov-video/
+Testing for incident with ID: I00072 
+Required Techniques: ['T0097.204', 'T0149.004', 'T0150.004', 'T0155.004']
+Classifier log created in: .exe_logs/DISARM_log_20260405-111108.txt
+Article Character Length: 27434
+Results:
+    
+    Identified techniques(71): ['T0074.004', 'T0002', 'T0066', 'T0076', 'T0077', 'T0135', 'T0135.001', 'T0135.002', 'T0138.002', 'T0102.001', 'T0101', 'T0084.001', 'T0085', 'T0086', 'T0087', 'T0087.002', 'T0151.001', 'T0151.002', 'T0151.009', 'T0151.014', 'T0152.004', 'T0152.006', 'T0042', 'T0114.001', 'T0115.001', 'T0115.002', 'T0115.003', 'T0116.001', 'T0128.001', 'T0129.004', 'T0129.007', 'T0129.010', 'T0130.001', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.006', 'T0081.007', 'T0003', 'T0004', 'T0022.002', 'T0040', 'T0082', 'T0083', 'T0091.001', 'T0091.003', 'T0092', 'T0094', 'T0094.002', 'T0096.001', 'T0096.002', 'T0145.001', 'T0150.001', 'T0150.008', 'T0097.100', 'T0097.101', 'T0097.102', 'T0097.103', 'T0097.202', 'T0143.002', 'T0144.001', 'T0144.002', 'T0049.001', 'T0049.003', 'T0049.005', 'T0119', 'T0119.001', 'T0119.002', 'T0049.007', 'T0124.001', 'T0123.001']
+
+    Recall:
+    
+    Correct Techniques: 2/4
+        Absolute technique matches: 0
+        Partial technique matches: 2
+    Precision:
+    
+    Techniques: 0.028169014084507043
+        Absolute Techniques: 0.0
+    
+Unable to test for rationales - no absolute technique matches
+--------------------------------------------------Skipping incident I00073 - missing data
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240529025902/https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1003&context=senatedocs
+Skipping incident I00074 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240625161319/https://www.nytimes.com/2019/11/11/world/africa/russia-madagascar-election.html
+Testing for incident with ID: I00075 
+Required Techniques: ['T0097.110', 'T0129.006', 'T0137', 'T0143.003']
+Classifier log created in: .exe_logs/DISARM_log_20260405-111245.txt
+Article Character Length: 23299
+Results:
+    
+    Identified techniques(57): ['T0074.002', 'T0074.003', 'T0002', 'T0075.001', 'T0135.001', 'T0136.006', 'T0137', 'T0101', 'T0085.003', 'T0089.001', 'T0111.001', 'T0111.002', 'T0151.001', 'T0151.014', 'T0153.005', 'T0042', 'T0114.002', 'T0114.001', 'T0115.003', 'T0057', 'T0057.001', 'T0126', 'T0128.001', 'T0129.006', 'T0130.003', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.004', 'T0003', 'T0004', 'T0022', 'T0022.001', 'T0083', 'T0010', 'T0091', 'T0091.001', 'T0093', 'T0093.001', 'T0065', 'T0092', 'T0097.100', 'T0097.102', 'T0097.103', 'T0097.105', 'T0097.110', 'T0097.202', 'T0100.001', 'T0143.002', 'T0049', 'T0049.001', 'T0119', 'T0119.001', 'T0119.002', 'T0047', 'T0123', 'T0124']
+
+    Recall:
+    
+    Correct Techniques: 4/4
+        Absolute technique matches: 3
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.07017543859649122
+        Absolute Techniques: 0.05263157894736842
+    
+Rationale Test for incident I00075
+
+Rationale Plausability test for incident: I00075
+Rationale score for technique: T0097.110
+    Recall: 0.3870967741935484
+    Precision: 0.20224719101123595
+    F1: 0.2656826568265683
+
+Rationale score for technique: T0129.006
+    Recall: 0.24157303370786518
+    Precision: 0.38392857142857145
+    F1: 0.29655172413793107
+
+Rationale score for technique: T0137
+    Recall: 0.5801526717557252
+    Precision: 0.8260869565217391
+    F1: 0.6816143497757847
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/3
+        Sufficiency:       3/3
+    Plausability (Rouge Scores):
+        Recall:    0.40294082655237956
+        Precision: 0.4707542396538488 
+        F1:        0.4146162435800947
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20190529020105/https://www.fireeye.com/blog/threat-research/2019/05/social-media-network-impersonates-us-political-candidates-supports-iranian-interests.html
+Testing for incident with ID: I00076 
+Required Techniques: ['T0097.101', 'T0097.102', 'T0097.110', 'T0097.202', 'T0143.002', 'T0143.003', 'T0145.001']
+Classifier log created in: .exe_logs/DISARM_log_20260405-111515.txt
+Article Character Length: 28005
+Results:
+    
+    Identified techniques(52): ['T0074.002', 'T0074.004', 'T0002', 'T0075.001', 'T0135.001', 'T0136.005', 'T0138.001', 'T0101', 'T0084.001', 'T0084.002', 'T0085.006', 'T0151.008', 'T0111.002', 'T0042', 'T0114.001', 'T0115.003', 'T0116.001', 'T0117', 'T0128.001', 'T0128.005', 'T0129.002', 'T0129.007', 'T0130.001', 'T0081.008', 'T0081.004', 'T0081.003', 'T0003', 'T0004', 'T0082', 'T0083', 'T0091.003', 'T0092', 'T0145.001', 'T0146.001', 'T0150.001', 'T0150.008', 'T0094', 'T0097.100', 'T0097.101', 'T0097.102', 'T0097.103', 'T0097.110', 'T0143.002', 'T0143.003', 'T0144.002', 'T0049.001', 'T0049.003', 'T0049.007', 'T0119', 'T0119.001', 'T0119.002', 'T0118']
+
+    Recall:
+    
+    Correct Techniques: 7/7
+        Absolute technique matches: 6
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.1346153846153846
+        Absolute Techniques: 0.11538461538461539
+    
+Rationale Test for incident I00076
+
+Rationale Plausability test for incident: I00076
+Rationale score for technique: T0097.101
+    Recall: 0.3509933774834437
+    Precision: 1.0
+    F1: 0.5196078431372549
+
+Rationale score for technique: T0097.102
+    Recall: 0.21224489795918366
+    Precision: 0.65
+    F1: 0.31999999999999995
+
+Rationale score for technique: T0097.110
+    Recall: 0.125
+    Precision: 1.0
+    F1: 0.2222222222222222
+
+Rationale score for technique: T0143.002
+    Recall: 0.25165562913907286
+    Precision: 0.6785714285714286
+    F1: 0.3671497584541063
+
+Rationale score for technique: T0143.003
+    Recall: 0.5677083333333334
+    Precision: 1.0
+    F1: 0.7242524916943521
+
+Rationale score for technique: T0145.001
+    Recall: 0.53125
+    Precision: 0.6455696202531646
+    F1: 0.5828571428571429
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/6
+        Sufficiency:       6/6
+    Plausability (Rouge Scores):
+        Recall:    0.3398087063191723
+        Precision: 0.8290235081374321 
+        F1:        0.456014909727513
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20231227044952/https://stacks.stanford.edu/file/druid:jv674ss6714/russia_twitter_takedown_feb_23_2021.pdf
+Skipping incident I00077 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240604043118/https://about.fb.com/news/2020/09/removing-coordinated-inauthentic-behavior-russia/
+Testing for incident with ID: I00078 
+Required Techniques: ['T0097.204', 'T0143.001', 'T0143.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-111845.txt
+Article Character Length: 9177
+Results:
+    
+    Identified techniques(72): ['T0074.001', 'T0074.002', 'T0074.004', 'T0002', 'T0136.005', 'T0136.006', 'T0101', 'T0085.003', 'T0089.001', 'T0151.001', 'T0151.002', 'T0151.003', 'T0042', 'T0114.001', 'T0115', 'T0115.003', 'T0116', 'T0116.001', 'T0128.001', 'T0129.002', 'T0130.001', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.005', 'T0081.006', 'T0081.008', 'T0003', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0068', 'T0082', 'T0083', 'T0091.001', 'T0091.002', 'T0091.003', 'T0092', 'T0092.001', 'T0092.003', 'T0093.001', 'T0094', 'T0094.001', 'T0095', 'T0096.001', 'T0145.003', 'T0145.004', 'T0145.005', 'T0145.006', 'T0145.007', 'T0146', 'T0146.001', 'T0146.007', 'T0149', 'T0149.001', 'T0150.001', 'T0150.008', 'T0097.101', 'T0097.102', 'T0097.104', 'T0097.106', 'T0097.107', 'T0097.202', 'T0097.204', 'T0143.002', 'T0049.003', 'T0119', 'T0119.002', 'T0122', 'T0047']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.041666666666666664
+        Absolute Techniques: 0.027777777777777776
+    
+Rationale Test for incident I00078
+
+Rationale Plausability test for incident: I00078
+Rationale score for technique: T0097.204
+    Recall: 0.08396946564885496
+    Precision: 1.0
+    F1: 0.15492957746478872
+
+Rationale score for technique: T0143.002
+    Recall: 0.3053435114503817
+    Precision: 0.46511627906976744
+    F1: 0.36866359447004604
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.1946564885496183
+        Precision: 0.7325581395348837 
+        F1:        0.2617965859674174
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240527191455/https://medium.com/@DFRLab/three-thousand-fake-tanks-575410c4f64d
+Testing for incident with ID: I00079 
+Required Techniques: ['T0016', 'T0023', 'T0084.002', 'T0097.108', 'T0097.202', 'T0097.204', 'T0143.001']
+Classifier log created in: .exe_logs/DISARM_log_20260405-112012.txt
+Article Character Length: 13122
+Results:
+    
+    Identified techniques(45): ['T0074.004', 'T0066', 'T0076', 'T0135.001', 'T0016', 'T0102.001', 'T0023', 'T0084', 'T0085', 'T0152.004', 'T0111.002', 'T0111.003', 'T0151.001', 'T0151.014', 'T0042', 'T0114.001', 'T0115.003', 'T0117', 'T0059', 'T0129.009', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.008', 'T0003', 'T0022', 'T0022.002', 'T0040', 'T0082', 'T0083', 'T0091.002', 'T0093.001', 'T0095', 'T0149.001', 'T0097.202', 'T0097.204', 'T0098.001', 'T0098.002', 'T0100.001', 'T0049.007', 'T0119', 'T0119.001', 'T0119.002', 'T0118', 'T0125']
+
+    Recall:
+    
+    Correct Techniques: 6/7
+        Absolute technique matches: 4
+        Partial technique matches: 2
+    Precision:
+    
+    Techniques: 0.13333333333333333
+        Absolute Techniques: 0.08888888888888889
+    
+Rationale Test for incident I00079
+
+Rationale Plausability test for incident: I00079
+Rationale score for technique: T0016
+    Recall: 0.3085399449035813
+    Precision: 1.0
+    F1: 0.47157894736842104
+
+Rationale score for technique: T0023
+    Recall: 0.27040816326530615
+    Precision: 0.6309523809523809
+    F1: 0.3785714285714286
+
+Rationale score for technique: T0097.202
+    Recall: 0.3826530612244898
+    Precision: 0.3232758620689655
+    F1: 0.3504672897196261
+
+Rationale score for technique: T0097.204
+    Recall: 0.9281045751633987
+    Precision: 1.0
+    F1: 0.9627118644067797
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 1/4
+        Sufficiency:       3/4
+    Plausability (Rouge Scores):
+        Recall:    0.472426436139194
+        Precision: 0.7385570607553367 
+        F1:        0.5408323825165638
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240221110457/https://www.buzzfeednews.com/article/janelytvynenko/uae-propaganda
+Testing for incident with ID: I00080 
+Required Techniques: ['T0097.102', 'T0097.103', 'T0143.002', 'T0145.007']
+Classifier log created in: .exe_logs/DISARM_log_20260405-112212.txt
+Article Character Length: 12916
+Results:
+    
+    Identified techniques(88): ['T0073', 'T0074', 'T0074.001', 'T0002', 'T0066', 'T0135.001', 'T0136.004', 'T0138.001', 'T0016', 'T0101', 'T0084.001', 'T0085.003', 'T0151.001', 'T0151.002', 'T0151.003', 'T0151.004', 'T0151.005', 'T0151.006', 'T0151.007', 'T0151.008', 'T0151.009', 'T0151.010', 'T0151.011', 'T0151.012', 'T0151.013', 'T0151.014', 'T0151.015', 'T0151.016', 'T0151.017', 'T0152.001', 'T0152.002', 'T0152.003', 'T0152.004', 'T0152.005', 'T0152.006', 'T0152.007', 'T0152.008', 'T0152.009', 'T0152.010', 'T0152.011', 'T0152.012', 'T0153.001', 'T0153.002', 'T0153.003', 'T0153.004', 'T0153.005', 'T0153.006', 'T0153.007', 'T0154.001', 'T0154.002', 'T0155', 'T0155.001', 'T0155.002', 'T0155.003', 'T0155.004', 'T0155.005', 'T0155.006', 'T0155.007', 'T0042', 'T0114.001', 'T0115', 'T0116.001', 'T0128.001', 'T0129.002', 'T0129.007', 'T0130.001', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.007', 'T0082', 'T0091.001', 'T0091.003', 'T0096.002', 'T0145.007', 'T0150.008', 'T0097.102', 'T0097.202', 'T0098.001', 'T0143.002', 'T0144.002', 'T0049', 'T0049.003', 'T0049.007', 'T0119', 'T0119.002', 'T0124']
+
+    Recall:
+    
+    Correct Techniques: 4/4
+        Absolute technique matches: 3
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.045454545454545456
+        Absolute Techniques: 0.03409090909090909
+    
+Rationale Test for incident I00080
+
+Rationale Plausability test for incident: I00080
+Rationale score for technique: T0097.102
+    Recall: 0.1986754966887417
+    Precision: 0.75
+    F1: 0.3141361256544502
+
+Rationale score for technique: T0143.002
+    Recall: 0.1456953642384106
+    Precision: 0.3793103448275862
+    F1: 0.21052631578947367
+
+Rationale score for technique: T0145.007
+    Recall: 0.2251655629139073
+    Precision: 0.6666666666666666
+    F1: 0.3366336633663366
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/3
+        Sufficiency:       3/3
+    Plausability (Rouge Scores):
+        Recall:    0.18984547461368653
+        Precision: 0.5986590038314176 
+        F1:        0.28709870160342016
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20211202114247/https://www.washingtonpost.com/world/europe/meta-belarus-kgb-poland-facebook/2021/12/02/ffaa73f8-534d-11ec-83d2-d9dab0e23b7e_story.html
+Testing for incident with ID: I00081 
+Required Techniques: ['T0097.101', 'T0143.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-112401.txt
+Article Character Length: 4733
+Results:
+    
+    Identified techniques(36): ['T0074', 'T0074.001', 'T0002', 'T0076', 'T0077', 'T0135.001', 'T0138.001', 'T0101', 'T0085.001', 'T0086.002', 'T0151.001', 'T0151.002', 'T0154.002', 'T0042', 'T0115', 'T0115.001', 'T0057', 'T0128.001', 'T0129.007', 'T0081.003', 'T0081.004', 'T0081.006', 'T0082', 'T0003', 'T0004', 'T0091.003', 'T0092', 'T0145.002', 'T0097.102', 'T0097.103', 'T0097.202', 'T0143.002', 'T0049.001', 'T0049.003', 'T0119.002', 'T0124']
+
+    Recall:
+    
+    Correct Techniques: 2/2
+        Absolute technique matches: 1
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.05555555555555555
+        Absolute Techniques: 0.027777777777777776
+    
+Rationale Test for incident I00081
+
+Rationale Plausability test for incident: I00081
+Rationale score for technique: T0143.002
+    Recall: 0.4523809523809524
+    Precision: 0.5757575757575758
+    F1: 0.5066666666666667
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.4523809523809524
+        Precision: 0.5757575757575758 
+        F1:        0.5066666666666667
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240521154735/https://about.fb.com/wp-content/uploads/2021/12/Metas-Adversarial-Threat-Report.pdf
+Skipping incident I00082 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240705093231/https://www.wired.com/2017/01/fake-think-tanks-fuel-fake-news-presidents-tweets/
+Testing for incident with ID: I00083 
+Required Techniques: ['T0097.204']
+Classifier log created in: .exe_logs/DISARM_log_20260405-112514.txt
+Article Character Length: 10281
+Results:
+    
+    Identified techniques(52): ['T0074.002', 'T0074.004', 'T0075.001', 'T0135.001', 'T0136.004', 'T0137.001', 'T0138.001', 'T0140.003', 'T0102.001', 'T0102.003', 'T0085.007', 'T0023.001', 'T0084.002', 'T0151.008', 'T0153.006', 'T0042', 'T0045', 'T0114.001', 'T0116.001', 'T0059', 'T0128', 'T0128.001', 'T0129', 'T0130', 'T0130.003', 'T0131', 'T0134.001', 'T0134.002', 'T0081.001', 'T0081.003', 'T0081.004', 'T0081.006', 'T0081.008', 'T0003', 'T0004', 'T0022.002', 'T0040', 'T0083', 'T0091.001', 'T0091.002', 'T0093.001', 'T0096.001', 'T0096.002', 'T0097.204', 'T0097.200', 'T0097.107', 'T0097.108', 'T0143.002', 'T0049', 'T0049.003', 'T0118', 'T0121']
+
+    Recall:
+    
+    Correct Techniques: 1/1
+        Absolute technique matches: 1
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.019230769230769232
+        Absolute Techniques: 0.019230769230769232
+    
+Rationale Test for incident I00083
+
+Rationale Plausability test for incident: I00083
+Rationale score for technique: T0097.204
+    Recall: 0.5336134453781513
+    Precision: 0.396875
+    F1: 0.4551971326164875
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.5336134453781513
+        Precision: 0.396875 
+        F1:        0.4551971326164875
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240528043057/https://www.politico.eu/article/russia-diplomats-disinformation-war-ukraine/
+Testing for incident with ID: I00084 
+Required Techniques: ['T0097.111', 'T0097.203', 'T0131', 'T0143.001', 'T0151.004', 'T0151.004']
+Classifier log created in: .exe_logs/DISARM_log_20260405-112641.txt
+Article Character Length: 8589
+Results:
+    
+    Identified techniques(66): ['T0074.001', 'T0074.004', 'T0066', 'T0075', 'T0075.001', 'T0076', 'T0077', 'T0135.001', 'T0136.001', 'T0136.004', 'T0136.005', 'T0101', 'T0015.002', 'T0023', 'T0084.002', 'T0086', 'T0151.008', 'T0151.004', 'T0152.004', 'T0042', 'T0114.001', 'T0115.003', 'T0116.001', 'T0128.001', 'T0129.002', 'T0129.005', 'T0134.001', 'T0134.002', 'T0080.001', 'T0080.003', 'T0081.005', 'T0003', 'T0004', 'T0022', 'T0022.001', 'T0082', 'T0091.003', 'T0092', 'T0092.003', 'T0093.001', 'T0094', 'T0094.001', 'T0095', 'T0096', 'T0096.001', 'T0096.002', 'T0145', 'T0146', 'T0146.001', 'T0146.007', 'T0149', 'T0149.001', 'T0150', 'T0150.001', 'T0150.008', 'T0097.111', 'T0097.206', 'T0097.202', 'T0097.203', 'T0143.002', 'T0049', 'T0049.003', 'T0119', 'T0119.002', 'T0121', 'T0047']
+
+    Recall:
+    
+    Correct Techniques: 5/6
+        Absolute technique matches: 4
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.07575757575757576
+        Absolute Techniques: 0.06060606060606061
+    
+Rationale Test for incident I00084
+
+Rationale Plausability test for incident: I00084
+Rationale score for technique: T0097.111
+    Recall: 0.6935483870967742
+    Precision: 0.24431818181818182
+    F1: 0.36134453781512604
+
+Rationale score for technique: T0097.203
+    Recall: 0.6990291262135923
+    Precision: 0.6101694915254238
+    F1: 0.6515837104072398
+
+Rationale score for technique: T0151.004
+    Recall: 0.5339805825242718
+    Precision: 0.47413793103448276
+    F1: 0.502283105022831
+
+Rationale score for technique: T0151.004
+    Recall: 0.5339805825242718
+    Precision: 0.47413793103448276
+    F1: 0.502283105022831
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/4
+        Sufficiency:       4/4
+    Plausability (Rouge Scores):
+        Recall:    0.6151346695897275
+        Precision: 0.4506908838531427 
+        F1:        0.504373614567007
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240408034525/https://www.svt.se/nyheter/inrikes/china-s-large-scale-media-push-attempts-to-influence-swedish-media
+Testing for incident with ID: I00085 
+Required Techniques: ['T0097.111', 'T0139.002', 'T0143.001']
+Classifier log created in: .exe_logs/DISARM_log_20260405-112839.txt
+Article Character Length: 2881
+Results:
+    
+    Identified techniques(26): ['T0074', 'T0074.001', 'T0074.004', 'T0075', 'T0075.001', 'T0078', 'T0135', 'T0135.001', 'T0139', 'T0139.002', 'T0139.003', 'T0110', 'T0111', 'T0042', 'T0117', 'T0059', 'T0080.002', 'T0081.008', 'T0082', 'T0091.001', 'T0091.002', 'T0093.001', 'T0097.111', 'T0097.206', 'T0039', 'T0047']
+
+    Recall:
+    
+    Correct Techniques: 2/3
+        Absolute technique matches: 2
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.07692307692307693
+        Absolute Techniques: 0.07692307692307693
+    
+Rationale Test for incident I00085
+
+Rationale Plausability test for incident: I00085
+Rationale score for technique: T0097.111
+    Recall: 0.6866666666666666
+    Precision: 0.569060773480663
+    F1: 0.622356495468278
+
+Rationale score for technique: T0139.002
+    Recall: 0.7133333333333334
+    Precision: 0.6772151898734177
+    F1: 0.6948051948051948
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 1/2
+        Sufficiency:       1/2
+    Plausability (Rouge Scores):
+        Recall:    0.7
+        Precision: 0.6231379816770404 
+        F1:        0.6585808451367363
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240528220853/https://ict.org.il/post-0ctober-7th-disinformation-network-operates-on-israeli-social-media/
+Testing for incident with ID: I00086 
+Required Techniques: ['T0015', 'T0085.008', 'T0097.101', 'T0143.002', 'T0144.002', 'T0144.002', 'T0145.001', 'T0145.006']
+Classifier log created in: .exe_logs/DISARM_log_20260405-112951.txt
+Article Character Length: 26240
+Results:
+    
+    Identified techniques(68): ['T0073', 'T0074', 'T0074.002', 'T0074.004', 'T0002', 'T0066', 'T0075.001', 'T0076', 'T0077', 'T0079', 'T0135.001', 'T0135.004', 'T0136.001', 'T0138.001', 'T0139.001', 'T0101', 'T0015.002', 'T0023.001', 'T0085.008', 'T0086.003', 'T0084.002', 'T0151.001', 'T0151.008', 'T0151.014', 'T0042', 'T0115.001', 'T0116.001', 'T0128.001', 'T0129.002', 'T0129.007', 'T0130.001', 'T0131.001', 'T0132.002', 'T0133.002', 'T0133.005', 'T0134.002', 'T0072.002', 'T0080.003', 'T0081.004', 'T0081.006', 'T0081.007', 'T0003', 'T0004', 'T0022.002', 'T0040', 'T0083', 'T0091.003', 'T0092', 'T0092.001', 'T0145.001', 'T0146.001', 'T0150.008', 'T0097.100', 'T0097.101', 'T0097.102', 'T0097.103', 'T0097.105', 'T0097.109', 'T0143.002', 'T0144.001', 'T0144.002', 'T0049', 'T0049.003', 'T0049.005', 'T0119', 'T0119.002', 'T0121', 'T0124']
+
+    Recall:
+    
+    Correct Techniques: 8/8
+        Absolute technique matches: 6
+        Partial technique matches: 2
+    Precision:
+    
+    Techniques: 0.11764705882352941
+        Absolute Techniques: 0.08823529411764706
+    
+Rationale Test for incident I00086
+
+Rationale Plausability test for incident: I00086
+Rationale score for technique: T0085.008
+    Recall: 0.40860215053763443
+    Precision: 1.0
+    F1: 0.5801526717557252
+
+Rationale score for technique: T0097.101
+    Recall: 0.0
+    Precision: 0.0
+    F1: 0.0
+
+Rationale score for technique: T0143.002
+    Recall: 0.06666666666666667
+    Precision: 0.3333333333333333
+    F1: 0.1111111111111111
+
+Rationale score for technique: T0144.002
+    Recall: 0.5733333333333334
+    Precision: 1.0
+    F1: 0.728813559322034
+
+Rationale score for technique: T0144.002
+    Recall: 0.5733333333333334
+    Precision: 1.0
+    F1: 0.728813559322034
+
+Rationale score for technique: T0145.001
+    Recall: 0.14184397163120568
+    Precision: 1.0
+    F1: 0.24844720496894412
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/6
+        Sufficiency:       6/6
+    Plausability (Rouge Scores):
+        Recall:    0.2939632425836956
+        Precision: 0.7222222222222222 
+        F1:        0.39955635107997467
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240621104749/https://demtech.oii.ox.ac.uk/wp-content/uploads/sites/12/2018/07/ct_appendix.pdf
+Skipping incident I00087 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240711220741/https://www.fdd.org/analysis/2024/03/27/much-ado-about-somethings/
+Testing for incident with ID: I00088 
+Required Techniques: ['T0085.008', 'T0145.002', 'T0145.003', 'T0145.007']
+Classifier log created in: .exe_logs/DISARM_log_20260405-113231.txt
+Article Character Length: 18665
+Results:
+    
+    Identified techniques(70): ['T0074.001', 'T0074.002', 'T0074.004', 'T0002', 'T0075', 'T0077', 'T0079', 'T0135', 'T0135.001', 'T0135.002', 'T0135.004', 'T0136', 'T0138', 'T0139', 'T0140', 'T0140.001', 'T0102.001', 'T0102', 'T0084.001', 'T0085.008', 'T0086.002', 'T0151.001', 'T0151.003', 'T0154.002', 'T0042', 'T0115.001', 'T0116.001', 'T0128.001', 'T0128.004', 'T0129.002', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.006', 'T0003', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0068', 'T0082', 'T0083', 'T0092', 'T0092.003', 'T0094', 'T0094.001', 'T0145', 'T0145.002', 'T0145.003', 'T0145.007', 'T0146', 'T0146.001', 'T0147', 'T0149', 'T0150', 'T0150.002', 'T0150.004', 'T0150.005', 'T0150.006', 'T0150.008', 'T0097.100', 'T0097.200', 'T0143.002', 'T0049', 'T0049.003', 'T0049.004', 'T0119', 'T0121', 'T0124']
+
+    Recall:
+    
+    Correct Techniques: 4/4
+        Absolute technique matches: 4
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.05714285714285714
+        Absolute Techniques: 0.05714285714285714
+    
+Rationale Test for incident I00088
+
+Rationale Plausability test for incident: I00088
+Rationale score for technique: T0085.008
+    Recall: 0.25252525252525254
+    Precision: 0.36231884057971014
+    F1: 0.2976190476190476
+
+Rationale score for technique: T0145.002
+    Recall: 0.3103448275862069
+    Precision: 0.28125
+    F1: 0.2950819672131148
+
+Rationale score for technique: T0145.003
+    Recall: 0.042682926829268296
+    Precision: 1.0
+    F1: 0.08187134502923978
+
+Rationale score for technique: T0145.007
+    Recall: 0.25252525252525254
+    Precision: 0.35714285714285715
+    F1: 0.2958579881656805
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/4
+        Sufficiency:       3/4
+    Plausability (Rouge Scores):
+        Recall:    0.2145195648664951
+        Precision: 0.5001779244306418 
+        F1:        0.24260758700677065
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240116034006/https://www.newsweek.com/hackers-use-fake-profiles-attractive-women-facebook-spread-viruses-814293
+Testing for incident with ID: I00089 
+Required Techniques: ['T0097.109', 'T0143.002', 'T0145.006']
+Classifier log created in: .exe_logs/DISARM_log_20260405-113429.txt
+Article Character Length: 4295
+Results:
+    
+    Identified techniques(23): ['T0073', 'T0137.002', 'T0135.003', 'T0101', 'T0084.002', 'T0086.003', 'T0151.001', 'T0151.004', 'T0114.001', 'T0128.001', 'T0129.007', 'T0072.001', 'T0081.003', 'T0082', 'T0094', 'T0145.001', 'T0146.001', 'T0147.003', 'T0147.004', 'T0097.109', 'T0143.002', 'T0049.001', 'T0119']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.13043478260869565
+        Absolute Techniques: 0.08695652173913043
+    
+Rationale Test for incident I00089
+
+Rationale Plausability test for incident: I00089
+Rationale score for technique: T0097.109
+    Recall: 0.3465909090909091
+    Precision: 0.8840579710144928
+    F1: 0.4979591836734695
+
+Rationale score for technique: T0143.002
+    Recall: 0.375
+    Precision: 0.6111111111111112
+    F1: 0.4647887323943662
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.3607954545454546
+        Precision: 0.7475845410628019 
+        F1:        0.4813739580339178
+..................................................--------------------------------------------------Skipping incident I00090 - missing data
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240709132111/https://www.bbc.com/news/world-asia-china-59456548
+Testing for incident with ID: I00091 
+Required Techniques: ['T0097.106', 'T0143.002', 'T0145.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-113528.txt
+Article Character Length: 3515
+Results:
+    
+    Identified techniques(42): ['T0073', 'T0074', 'T0074.004', 'T0002', 'T0135.001', 'T0101', 'T0085.007', 'T0086.002', 'T0151.001', 'T0151.003', 'T0151.008', 'T0111.002', 'T0154.002', 'T0045', 'T0114.001', 'T0115.003', 'T0117', 'T0128.001', 'T0129.007', 'T0130.001', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.007', 'T0022.002', 'T0082', 'T0083', 'T0091.001', 'T0092', 'T0145.002', 'T0149.007', 'T0150.001', 'T0150.008', 'T0097.100', 'T0097.108', 'T0143.002', 'T0049.003', 'T0119.002', 'T0121.001', 'T0124.001', 'T0124.002', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.07142857142857142
+        Absolute Techniques: 0.047619047619047616
+    
+Rationale Test for incident I00091
+
+Rationale Plausability test for incident: I00091
+Rationale score for technique: T0143.002
+    Recall: 0.8674698795180723
+    Precision: 0.6127659574468085
+    F1: 0.7182044887780548
+
+Rationale score for technique: T0145.002
+    Recall: 0.1746987951807229
+    Precision: 0.725
+    F1: 0.2815533980582524
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.5210843373493976
+        Precision: 0.6688829787234043 
+        F1:        0.4998789434181536
+..................................................--------------------------------------------------Skipping incident I00092 - missing data
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20231027191359/https://www.polygraph.info/a/fact-check-china-falsely-denies-disinformation-campaign-targeting-canada-s-prime-minister/7326349.html
+Testing for incident with ID: I00093 
+Required Techniques: ['T0097.111', 'T0129.006', 'T0143.001']
+Classifier log created in: .exe_logs/DISARM_log_20260405-113647.txt
+Article Character Length: 5377
+Results:
+    
+    Identified techniques(41): ['T0074.002', 'T0074.004', 'T0077', 'T0135.001', 'T0136.001', 'T0101', 'T0085.001', 'T0084.002', 'T0151.001', 'T0151.008', 'T0151.010', 'T0151.014', 'T0154.002', 'T0042', 'T0114.001', 'T0116.001', 'T0128.001', 'T0129.006', 'T0130.001', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.008', 'T0004', 'T0022', 'T0022.002', 'T0040', 'T0082', 'T0092.002', 'T0093.002', 'T0096.002', 'T0146.007', 'T0150.008', 'T0097.100', 'T0097.200', 'T0143.002', 'T0049', 'T0049.003', 'T0119', 'T0119.002', 'T0123']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 1
+        Partial technique matches: 2
+    Precision:
+    
+    Techniques: 0.07317073170731707
+        Absolute Techniques: 0.024390243902439025
+    
+Rationale Test for incident I00093
+
+Rationale Plausability test for incident: I00093
+Rationale score for technique: T0129.006
+    Recall: 0.04926108374384237
+    Precision: 0.25
+    F1: 0.0823045267489712
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.04926108374384237
+        Precision: 0.25 
+        F1:        0.0823045267489712
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240221225110/https://thereadable.co/a-glimpse-inside-a-chinese-influence-campaign-how-bogus-news-websites-blur-the-line-between-true-and-false/
+Testing for incident with ID: I00094 
+Required Techniques: ['T0097.201', 'T0097.202', 'T0143.003']
+Classifier log created in: .exe_logs/DISARM_log_20260405-113745.txt
+Article Character Length: 11989
+Results:
+    
+    Identified techniques(31): ['T0074.004', 'T0002', 'T0075.001', 'T0136.004', 'T0101', 'T0084.002', 'T0085.003', 'T0152.004', 'T0111.002', 'T0042', 'T0115', 'T0128.005', 'T0129.002', 'T0130.001', 'T0134.001', 'T0134.002', 'T0072.001', 'T0081.008', 'T0082', 'T0083', 'T0092.001', 'T0096.002', 'T0149.003', 'T0097.101', 'T0097.202', 'T0098.001', 'T0143.002', 'T0143.003', 'T0049.007', 'T0119', 'T0123.002']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.0967741935483871
+        Absolute Techniques: 0.06451612903225806
+    
+Rationale Test for incident I00094
+Failed at incident with id I00094, results until failure were:
+==================================================
+Final Results:
+--------------------------------------------------
+Recall:
+
+Correct Techniques: 84/92 	 (91.30434782608695%)
+    Absolute technique matches: 62 	 (67.3913043478261%)
+    Partial technique matches: 22 	 (23.91304347826087%)
+--------------------------------------------------
+        Precision:
+        
+        Techniques: 0.07112616426756986
+            Absolute Techniques: 0.05249788314987299
+        --------------------------------------------------
+        Rationale test results:
+            Faithfullness:
+                Comprehensiveness: 3.225806451612903%
+                Sufficiency:       74.19354838709677%
+            Plausability (Rouge Scores):
+                Recall:    0.39109326629837615
+                Precision: 0.5898474178551267 
+                F1:        0.42321228039975184
+        --------------------------------------------------
+        Time Taken: 51.32 minuites
+        ==================================================--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240120161445/https://therecord.media/china-disinformation-meta-london-new-media-europe
+Testing for incident with ID: I00095 
+Required Techniques: ['T0097.106', 'T0097.205', 'T0143.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-114434.txt
+Article Character Length: 3905
+Results:
+    
+    Identified techniques(34): ['T0074', 'T0074.001', 'T0074.004', 'T0002', 'T0135.001', 'T0136.004', 'T0101', 'T0085.003', 'T0085.008', 'T0151.001', 'T0151.003', 'T0152.004', 'T0042', 'T0114.001', 'T0128.001', 'T0128', 'T0129.006', 'T0130.001', 'T0130.003', 'T0081.003', 'T0081.004', 'T0082', 'T0091.001', 'T0091.003', 'T0096.002', 'T0146.007', 'T0150.008', 'T0097', 'T0097.106', 'T0097.205', 'T0143.002', 'T0049', 'T0119', 'T0047']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 3
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.08823529411764706
+        Absolute Techniques: 0.08823529411764706
+    
+Rationale Test for incident I00095
+
+Rationale Plausability test for incident: I00095
+Rationale score for technique: T0097.106
+    Recall: 0.3119266055045872
+    Precision: 0.9444444444444444
+    F1: 0.4689655172413793
+
+Rationale score for technique: T0097.205
+    Recall: 0.5045871559633027
+    Precision: 0.4435483870967742
+    F1: 0.4721030042918455
+
+Rationale score for technique: T0143.002
+    Recall: 0.25688073394495414
+    Precision: 0.42424242424242425
+    F1: 0.32
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/3
+        Sufficiency:       3/3
+    Plausability (Rouge Scores):
+        Recall:    0.3577981651376147
+        Precision: 0.6040784185945477 
+        F1:        0.4203561738444083
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240405154259/https://www.computerweekly.com/news/366579820/China-ramps-up-use-of-AI-misinformation
+Testing for incident with ID: I00096 
+Required Techniques: ['T0088.001', 'T0097.110', 'T0152.006']
+Classifier log created in: .exe_logs/DISARM_log_20260405-114542.txt
+Article Character Length: 7815
+Results:
+    
+    Identified techniques(102): ['T0073', 'T0074', 'T0074.001', 'T0074.002', 'T0074.004', 'T0002', 'T0076', 'T0079', 'T0135.001', 'T0136.006', 'T0016', 'T0102.001', 'T0084.002', 'T0085.001', 'T0086.001', 'T0087.001', 'T0088.001', 'T0029', 'T0151.001', 'T0152.006', 'T0154.001', 'T0154.002', 'T0042', 'T0114.001', 'T0115.001', 'T0116.001', 'T0128.001', 'T0129.007', 'T0132.002', 'T0133.001', 'T0133.002', 'T0133.003', 'T0134.001', 'T0134.002', 'T0072.005', 'T0080.001', 'T0081.004', 'T0081.005', 'T0081.006', 'T0003', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0068', 'T0082', 'T0083', 'T0091.003', 'T0092', 'T0096.002', 'T0146.007', 'T0149.007', 'T0097.100', 'T0097.101', 'T0097.102', 'T0097.103', 'T0097.104', 'T0097.105', 'T0097.106', 'T0097.107', 'T0097.108', 'T0097.109', 'T0097.110', 'T0097.111', 'T0097.112', 'T0097.200', 'T0097.201', 'T0097.202', 'T0097.203', 'T0097.204', 'T0097.205', 'T0097.206', 'T0097.207', 'T0097.208', 'T0098', 'T0098.001', 'T0098.002', 'T0100', 'T0100.001', 'T0100.002', 'T0100.003', 'T0143', 'T0143.001', 'T0143.002', 'T0143.003', 'T0143.004', 'T0144', 'T0144.001', 'T0144.002', 'T0049.001', 'T0049.003', 'T0049.004', 'T0119', 'T0119.002', 'T0121', 'T0047', 'T0048', 'T0048.003', 'T0123', 'T0123.001', 'T0124', 'T0124.001']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 3
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.029411764705882353
+        Absolute Techniques: 0.029411764705882353
+    
+Rationale Test for incident I00096
+
+Rationale Plausability test for incident: I00096
+Rationale score for technique: T0088.001
+    Recall: 0.7456140350877193
+    Precision: 0.551948051948052
+    F1: 0.6343283582089553
+
+Rationale score for technique: T0097.110
+    Recall: 0.6666666666666666
+    Precision: 0.6333333333333333
+    F1: 0.6495726495726496
+
+Rationale score for technique: T0152.006
+    Recall: 0.6578947368421053
+    Precision: 1.0
+    F1: 0.7936507936507937
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/3
+        Sufficiency:       2/3
+    Plausability (Rouge Scores):
+        Recall:    0.6900584795321638
+        Precision: 0.7284271284271284 
+        F1:        0.6925172671441328
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240527135516/https://au.reset.tech/news/report-not-just-algorithms/
+Testing for incident with ID: I00097 
+Required Techniques: ['T0018', 'T0151.001', 'T0151.008', 'T0153.005', 'T0153.006']
+Classifier log created in: .exe_logs/DISARM_log_20260405-114802.txt
+Article Character Length: 3187
+Results:
+    
+    Identified techniques(19): ['T0018', 'T0102', 'T0102.001', 'T0102.002', 'T0151.008', 'T0153.005', 'T0153.006', 'T0020', 'T0114', 'T0114.001', 'T0131', 'T0072.005', 'T0081.003', 'T0091.003', 'T0092', 'T0092.003', 'T0146', 'T0146.001', 'T0124']
+
+    Recall:
+    
+    Correct Techniques: 5/5
+        Absolute technique matches: 4
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.2631578947368421
+        Absolute Techniques: 0.21052631578947367
+    
+Rationale Test for incident I00097
+
+Rationale Plausability test for incident: I00097
+Rationale score for technique: T0018
+    Recall: 0.08823529411764706
+    Precision: 1.0
+    F1: 0.1621621621621622
+
+Rationale score for technique: T0151.008
+    Recall: 0.061946902654867256
+    Precision: 0.4375
+    F1: 0.10852713178294573
+
+Rationale score for technique: T0153.005
+    Recall: 0.10294117647058823
+    Precision: 1.0
+    F1: 0.18666666666666665
+
+Rationale score for technique: T0153.006
+    Recall: 0.22123893805309736
+    Precision: 1.0
+    F1: 0.36231884057971014
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/4
+        Sufficiency:       4/4
+    Plausability (Rouge Scores):
+        Recall:    0.11859057782404997
+        Precision: 0.859375 
+        F1:        0.20491870029787118
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240912223613/https://bhr.stern.nyu.edu/wp-content/uploads/2024/01/NYUCBHRGaming_ONLINEUPDATEDMay16.pdf
+Skipping incident I00098 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20230515171651/https://www.vogue.co.uk/news/article/stop-deepfakes-campaign
+Testing for incident with ID: I00099 
+Required Techniques: ['T0086.002', 'T0152.004', 'T0154.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-114904.txt
+Article Character Length: 8006
+Results:
+    
+    Identified techniques(33): ['T0066', 'T0076', 'T0137', 'T0139', 'T0140', 'T0086.002', 'T0087.001', 'T0088.001', 'T0154.002', 'T0151.008', 'T0151.010', 'T0151.012', 'T0152.006', 'T0114.001', 'T0115.001', 'T0115.002', 'T0115.003', 'T0116.001', 'T0128.001', 'T0129.006', 'T0081.003', 'T0081.004', 'T0082', 'T0091.003', 'T0092.003', 'T0096.002', 'T0145.002', 'T0146.001', 'T0049.003', 'T0119', 'T0048.002', 'T0048.003', 'T0048.004']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.09090909090909091
+        Absolute Techniques: 0.06060606060606061
+    
+Rationale Test for incident I00099
+
+Rationale Plausability test for incident: I00099
+Rationale score for technique: T0086.002
+    Recall: 0.16034985422740525
+    Precision: 0.6179775280898876
+    F1: 0.25462962962962965
+
+Rationale score for technique: T0154.002
+    Recall: 0.21865889212827988
+    Precision: 0.5244755244755245
+    F1: 0.308641975308642
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.18950437317784258
+        Precision: 0.5712265262827061 
+        F1:        0.28163580246913583
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240822125555/https://venturebeat.com/media/why-thispersondoesnotexist-and-its-copycats-need-to-be-restricted/
+Testing for incident with ID: I00100 
+Required Techniques: ['T0086.002', 'T0146.006', 'T0154.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-115027.txt
+Article Character Length: 4526
+Results:
+    
+    Identified techniques(9): ['T0137.002', 'T0086.002', 'T0154.002', 'T0042', 'T0128.001', 'T0129.009', 'T0082', 'T0096.002', 'T0145.002']
+
+    Recall:
+    
+    Correct Techniques: 2/3
+        Absolute technique matches: 2
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.2222222222222222
+        Absolute Techniques: 0.2222222222222222
+    
+Rationale Test for incident I00100
+
+Rationale Plausability test for incident: I00100
+Rationale score for technique: T0086.002
+    Recall: 0.27450980392156865
+    Precision: 0.7
+    F1: 0.3943661971830986
+
+Rationale score for technique: T0154.002
+    Recall: 0.17254901960784313
+    Precision: 0.7096774193548387
+    F1: 0.27760252365930593
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.2235294117647059
+        Precision: 0.7048387096774194 
+        F1:        0.3359843604212023
+..................................................--------------------------------------------------
+Error when attempting to fetch incident url content. Code: 404
+Skipping incident I00101 - missing data
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240929180218/https://www.bellingcat.com/news/americas/2019/04/28/ignore-the-poway-synagogue-shooters-manifesto-pay-attention-to-8chans-pol-board/
+Testing for incident with ID: I00102 
+Required Techniques: ['T0101', 'T0146.006', 'T0151.012']
+Classifier log created in: .exe_logs/DISARM_log_20260405-115124.txt
+Article Character Length: 9360
+Results:
+    
+    Identified techniques(54): ['T0074.004', 'T0075.001', 'T0077', 'T0136.001', 'T0136.003', 'T0138.001', 'T0138.002', 'T0140.002', 'T0140.003', 'T0102.001', 'T0084.003', 'T0085.004', 'T0151.012', 'T0152.005', 'T0042', 'T0044', 'T0115.001', 'T0115.003', 'T0116.001', 'T0127.002', 'T0127', 'T0059', 'T0060', 'T0128.001', 'T0129.006', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.005', 'T0003', 'T0004', 'T0022', 'T0022.001', 'T0040', 'T0068', 'T0083', 'T0091.002', 'T0092', 'T0092.003', 'T0094', 'T0094.001', 'T0146', 'T0146.006', 'T0095', 'T0097.100', 'T0097.200', 'T0049.001', 'T0119', 'T0119.001', 'T0119.002', 'T0121', 'T0048.003', 'T0048.004']
+
+    Recall:
+    
+    Correct Techniques: 2/3
+        Absolute technique matches: 2
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.037037037037037035
+        Absolute Techniques: 0.037037037037037035
+    
+Rationale Test for incident I00102
+
+Rationale Plausability test for incident: I00102
+Rationale score for technique: T0146.006
+    Recall: 0.15031645569620253
+    Precision: 1.0
+    F1: 0.2613480055020633
+
+Rationale score for technique: T0151.012
+    Recall: 0.2088607594936709
+    Precision: 0.9565217391304348
+    F1: 0.34285714285714286
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       1/2
+    Plausability (Rouge Scores):
+        Recall:    0.17958860759493672
+        Precision: 0.9782608695652174 
+        F1:        0.30210257417960307
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241009114904/https://www.bbc.com/news/articles/ckg9k5dv1zdo
+Testing for incident with ID: I00103 
+Required Techniques: ['T0088.001', 'T0149.005', 'T0154.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-115257.txt
+Article Character Length: 8600
+Results:
+    
+    Identified techniques(34): ['T0074.002', 'T0066', 'T0135.001', 'T0140.001', 'T0140.002', 'T0140.003', 'T0101', 'T0088.001', 'T0154.002', 'T0151.008', 'T0153.006', 'T0042', 'T0114.001', 'T0117', 'T0059', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.005', 'T0003', 'T0083', 'T0091.001', 'T0091.002', 'T0096.002', 'T0149.005', 'T0150.004', 'T0097.102', 'T0097.202', 'T0098.002', 'T0049.003', 'T0119', 'T0119.002', 'T0048']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 3
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.08823529411764706
+        Absolute Techniques: 0.08823529411764706
+    
+Rationale Test for incident I00103
+
+Rationale Plausability test for incident: I00103
+Rationale score for technique: T0088.001
+    Recall: 0.31988472622478387
+    Precision: 0.4220532319391635
+    F1: 0.3639344262295082
+
+Rationale score for technique: T0149.005
+    Recall: 0.09798270893371758
+    Precision: 1.0
+    F1: 0.1784776902887139
+
+Rationale score for technique: T0154.002
+    Recall: 0.14985590778097982
+    Precision: 0.6933333333333334
+    F1: 0.24644549763033174
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 1/3
+        Sufficiency:       3/3
+    Plausability (Rouge Scores):
+        Recall:    0.1892411143131604
+        Precision: 0.7051288550908322 
+        F1:        0.26295253804951796
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240628030952/https://www.motherjones.com/politics/2017/05/emmanuel-macron-hacking-email-leak-france/
+Testing for incident with ID: I00104 
+Required Techniques: ['T0146.007', 'T0151.012', 'T0152.005']
+Classifier log created in: .exe_logs/DISARM_log_20260405-115430.txt
+Article Character Length: 7154
+Results:
+    
+    Identified techniques(36): ['T0074.002', 'T0066', 'T0135', 'T0135.001', 'T0135.003', 'T0016', 'T0089', 'T0089.001', 'T0089.003', 'T0151.012', 'T0152.005', 'T0153.007', 'T0042', 'T0017', 'T0128.001', 'T0129.006', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.008', 'T0003', 'T0004', 'T0022', 'T0022.001', 'T0068', 'T0091.003', 'T0092', 'T0146.006', 'T0097.100', 'T0097.200', 'T0097.202', 'T0143.002', 'T0143.003', 'T0049.008', 'T0049', 'T0123']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.08333333333333333
+        Absolute Techniques: 0.05555555555555555
+    
+Rationale Test for incident I00104
+
+Rationale Plausability test for incident: I00104
+Rationale score for technique: T0151.012
+    Recall: 0.1991701244813278
+    Precision: 1.0
+    F1: 0.33217993079584773
+
+Rationale score for technique: T0152.005
+    Recall: 0.12033195020746888
+    Precision: 1.0
+    F1: 0.21481481481481482
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.15975103734439833
+        Precision: 1.0 
+        F1:        0.27349737280533126
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241009034732/https://gnet-research.org/2024/06/10/gaming-the-system-the-use-of-gaming-adjacent-communication-game-and-mod-platforms-by-extremist-actors/
+Testing for incident with ID: I00105 
+Required Techniques: ['T0147.001', 'T0147.002', 'T0151.002', 'T0151.009', 'T0152.009', 'T0152.009', 'T0155.003']
+Classifier log created in: .exe_logs/DISARM_log_20260405-115535.txt
+Article Character Length: 18566
+Results:
+    
+    Identified techniques(65): ['T0074.004', 'T0140.003', 'T0136.008', 'T0138.002', 'T0102.001', 'T0086.001', 'T0085.001', 'T0151.005', 'T0151.009', 'T0151.010', 'T0151.015', 'T0152.009', 'T0114.001', 'T0115.001', 'T0116.001', 'T0129.005', 'T0131.002', 'T0134', 'T0080.001', 'T0081.003', 'T0081.004', 'T0003', 'T0022', 'T0022.001', 'T0083', 'T0092.003', 'T0094', 'T0147.002', 'T0146', 'T0097.100', 'T0097.103', 'T0097.104', 'T0097.105', 'T0097.106', 'T0097.107', 'T0097.108', 'T0097.109', 'T0097.110', 'T0097.111', 'T0097.112', 'T0097.200', 'T0097.201', 'T0097.202', 'T0097.203', 'T0097.204', 'T0097.205', 'T0097.206', 'T0097.207', 'T0097.208', 'T0098', 'T0098.001', 'T0098.002', 'T0100', 'T0100.001', 'T0100.002', 'T0100.003', 'T0143', 'T0143.001', 'T0143.002', 'T0143.003', 'T0143.004', 'T0144', 'T0144.001', 'T0144.002', 'T0118']
+
+    Recall:
+    
+    Correct Techniques: 6/7
+        Absolute technique matches: 4
+        Partial technique matches: 2
+    Precision:
+    
+    Techniques: 0.09230769230769231
+        Absolute Techniques: 0.06153846153846154
+    
+Rationale Test for incident I00105
+
+Rationale Plausability test for incident: I00105
+Rationale score for technique: T0147.002
+    Recall: 0.47761194029850745
+    Precision: 0.9696969696969697
+    F1: 0.64
+
+Rationale score for technique: T0151.009
+    Recall: 0.37142857142857144
+    Precision: 0.6008403361344538
+    F1: 0.4590690208667737
+
+Rationale score for technique: T0152.009
+    Recall: 0.30952380952380953
+    Precision: 0.5416666666666666
+    F1: 0.3939393939393939
+
+Rationale score for technique: T0152.009
+    Recall: 0.23880597014925373
+    Precision: 0.5555555555555556
+    F1: 0.33402922755741127
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/4
+        Sufficiency:       4/4
+    Plausability (Rouge Scores):
+        Recall:    0.34934257285003556
+        Precision: 0.6669398820134114 
+        F1:        0.45675941059089475
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241007213926/https://futurism.com/hurricane-scam-ai-slop
+Testing for incident with ID: I00106 
+Required Techniques: ['T0086.002', 'T0151.001', 'T0151.003']
+Classifier log created in: .exe_logs/DISARM_log_20260405-115741.txt
+Article Character Length: 3746
+Results:
+    
+    Identified techniques(30): ['T0137.004', 'T0137.001', 'T0016', 'T0102.003', 'T0086', 'T0151.001', 'T0153.006', 'T0044', 'T0114.001', 'T0061', 'T0128.005', 'T0129.002', 'T0134.002', 'T0133.002', 'T0081.001', 'T0081.002', 'T0003', 'T0068', 'T0096.001', 'T0096.002', 'T0145.002', 'T0148.007', 'T0150.001', 'T0097.101', 'T0097.201', 'T0097.205', 'T0143.002', 'T0049.008', 'T0121', 'T0122']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 1
+        Partial technique matches: 2
+    Precision:
+    
+    Techniques: 0.1
+        Absolute Techniques: 0.03333333333333333
+    
+Rationale Test for incident I00106
+
+Rationale Plausability test for incident: I00106
+Rationale score for technique: T0151.001
+    Recall: 0.7443946188340808
+    Precision: 0.5236593059936908
+    F1: 0.6148148148148148
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       0/1
+    Plausability (Rouge Scores):
+        Recall:    0.7443946188340808
+        Precision: 0.5236593059936908 
+        F1:        0.6148148148148148
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241009145602/https://www.foreignaffairs.com/russia/lies-russia-tells-itself
+Testing for incident with ID: I00107 
+Required Techniques: ['T0143.003', 'T0149.003', 'T0152.003']
+Classifier log created in: .exe_logs/DISARM_log_20260405-115846.txt
+Article Character Length: 22739
+Results:
+    
+    Identified techniques(56): ['T0073', 'T0074', 'T0074.002', 'T0074.004', 'T0002', 'T0075.001', 'T0135.003', 'T0136.005', 'T0138.001', 'T0016', 'T0101', 'T0085.003', 'T0086.001', 'T0085.004', 'T0151.001', 'T0151.008', 'T0152.004', 'T0042', 'T0114.001', 'T0115.001', 'T0116.001', 'T0128.001', 'T0129.002', 'T0130.003', 'T0132.001', 'T0132.002', 'T0133.002', 'T0133.005', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0081.005', 'T0081.006', 'T0081.008', 'T0083', 'T0003', 'T0082', 'T0091.001', 'T0092.001', 'T0096.001', 'T0149.003', 'T0150.001', 'T0097.102', 'T0097.202', 'T0098.001', 'T0143.002', 'T0143.003', 'T0049', 'T0049.003', 'T0049.007', 'T0119', 'T0119.002', 'T0124.001', 'T0124.002', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.05357142857142857
+        Absolute Techniques: 0.03571428571428571
+    
+Rationale Test for incident I00107
+
+Rationale Plausability test for incident: I00107
+Rationale score for technique: T0143.003
+    Recall: 0.1076923076923077
+    Precision: 0.358974358974359
+    F1: 0.16568047337278105
+
+Rationale score for technique: T0149.003
+    Recall: 0.4076923076923077
+    Precision: 1.0
+    F1: 0.5792349726775957
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       1/2
+    Plausability (Rouge Scores):
+        Recall:    0.25769230769230766
+        Precision: 0.6794871794871795 
+        F1:        0.37245772302518837
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240525113912/https://www.disinfo.eu/publications/suavelos-white-supremacists-funded-through-facebook/
+Testing for incident with ID: I00108 
+Required Techniques: ['T0092', 'T0151.001', 'T0153.006']
+Classifier log created in: .exe_logs/DISARM_log_20260405-120044.txt
+Article Character Length: 7588
+Results:
+    
+    Identified techniques(63): ['T0073', 'T0074.002', 'T0074.004', 'T0076', 'T0136', 'T0137', 'T0138', 'T0140', 'T0016', 'T0018', 'T0101', 'T0102.001', 'T0102.003', 'T0023.001', 'T0084.002', 'T0085.003', 'T0151.003', 'T0151.004', 'T0152.004', 'T0153.005', 'T0153.006', 'T0042', 'T0114', 'T0114.001', 'T0115', 'T0115.003', 'T0017', 'T0017.001', 'T0057', 'T0061', 'T0126', 'T0126.001', 'T0128.005', 'T0129.002', 'T0131.002', 'T0134.001', 'T0134.002', 'T0081.003', 'T0081.004', 'T0072.005', 'T0003', 'T0083', 'T0092', 'T0095', 'T0096.001', 'T0148.003', 'T0148.004', 'T0148.006', 'T0148.007', 'T0097.208', 'T0097.200', 'T0098.001', 'T0143.002', 'T0144.001', 'T0049.003', 'T0119', 'T0119.002', 'T0120', 'T0121', 'T0122', 'T0124.001', 'T0124.002', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 3/3
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.047619047619047616
+        Absolute Techniques: 0.031746031746031744
+    
+Rationale Test for incident I00108
+
+Rationale Plausability test for incident: I00108
+Rationale score for technique: T0092
+    Recall: 0.11165048543689321
+    Precision: 0.4107142857142857
+    F1: 0.17557251908396945
+
+Rationale score for technique: T0153.006
+    Recall: 0.08737864077669903
+    Precision: 0.72
+    F1: 0.15584415584415587
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       0/2
+    Plausability (Rouge Scores):
+        Recall:    0.09951456310679613
+        Precision: 0.5653571428571429 
+        F1:        0.16570833746406266
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20221214105547/https://www.disinfo.eu/wp-content/uploads/2019/09/20190911_Disinformation_HateSpeechFunding.pdf
+Skipping incident I00109 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240910182937/https://www.disinfo.eu/publications/how-covid-19-conspiracists-and-extremists-use-crowdfunding-platforms-to-fund-their-activities
+Testing for incident with ID: I00110 
+Required Techniques: ['T0017', 'T0087', 'T0121.001', 'T0148.006', 'T0148.007', 'T0152.012']
+Classifier log created in: .exe_logs/DISARM_log_20260405-120216.txt
+Article Character Length: 11462
+Results:
+    
+    Identified techniques(39): ['T0074.004', 'T0137', 'T0137.003', 'T0137.004', 'T0136.008', 'T0138.001', 'T0016', 'T0102.001', 'T0102.003', 'T0085.005', 'T0085.003', 'T0152.006', 'T0152.012', 'T0155.006', 'T0042', 'T0114.001', 'T0115.002', 'T0017', 'T0017.001', 'T0131.001', 'T0131.002', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.008', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0068', 'T0014', 'T0097.102', 'T0097.202', 'T0097.103', 'T0097.108', 'T0097.207', 'T0122', 'T0124.003', 'T0123.001']
+
+    Recall:
+    
+    Correct Techniques: 2/6
+        Absolute technique matches: 2
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.05128205128205128
+        Absolute Techniques: 0.05128205128205128
+    
+Rationale Test for incident I00110
+
+Rationale Plausability test for incident: I00110
+Rationale score for technique: T0017
+    Recall: 0.6744186046511628
+    Precision: 0.5686274509803921
+    F1: 0.6170212765957446
+
+Rationale score for technique: T0152.012
+    Recall: 0.29069767441860467
+    Precision: 0.37037037037037035
+    F1: 0.32573289902280134
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.4825581395348837
+        Precision: 0.46949891067538124 
+        F1:        0.47137708780927295
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20251205095002/https://www.vice.com/en/article/patreon-is-bankrolling-climate-change-deniers-while-we-all-burn/
+Testing for incident with ID: I00111 
+Required Techniques: ['T0085', 'T0087', 'T0088', 'T0151.014', 'T0152.012']
+Classifier log created in: .exe_logs/DISARM_log_20260405-120344.txt
+Article Character Length: 4600
+Results:
+    
+    Identified techniques(25): ['T0074.004', 'T0137', 'T0136.007', 'T0136.008', 'T0016', 'T0023', 'T0152.012', 'T0155.006', 'T0042', 'T0114', 'T0114.001', 'T0017', 'T0017.001', 'T0131.002', 'T0081.005', 'T0081.008', 'T0022', 'T0022.001', 'T0083', 'T0014', 'T0097.100', 'T0097.208', 'T0143.002', 'T0039', 'T0118']
+
+    Recall:
+    
+    Correct Techniques: 1/5
+        Absolute technique matches: 1
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.04
+        Absolute Techniques: 0.04
+    
+Rationale Test for incident I00111
+
+Rationale Plausability test for incident: I00111
+Rationale score for technique: T0152.012
+    Recall: 0.3181818181818182
+    Precision: 0.9381443298969072
+    F1: 0.47519582245430814
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.3181818181818182
+        Precision: 0.9381443298969072 
+        F1:        0.47519582245430814
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20201218092320/https://www.disinfo.eu/publications/patreon-allows-disinformation-and-conspiracies-to-be-monetised-in-spain/
+Testing for incident with ID: I00112 
+Required Techniques: ['T0121.001', 'T0148.003', 'T0152.012']
+Classifier log created in: .exe_logs/DISARM_log_20260405-120440.txt
+Article Character Length: 8441
+Results:
+    
+    Identified techniques(37): ['T0074.004', 'T0137', 'T0137.003', 'T0016', 'T0102', 'T0102.001', 'T0102.002', 'T0084.002', 'T0085.003', 'T0152.012', 'T0155.006', 'T0042', 'T0114.001', 'T0115.003', 'T0017', 'T0017.001', 'T0131', 'T0131.001', 'T0131.002', 'T0134.001', 'T0134.002', 'T0081.005', 'T0081.008', 'T0022', 'T0022.001', 'T0083', 'T0014', 'T0097.100', 'T0097.103', 'T0097.207', 'T0119.002', 'T0119', 'T0118', 'T0120', 'T0121', 'T0124.003', 'T0123.001']
+
+    Recall:
+    
+    Correct Techniques: 2/3
+        Absolute technique matches: 1
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.05405405405405406
+        Absolute Techniques: 0.02702702702702703
+    
+Rationale Test for incident I00112
+
+Rationale Plausability test for incident: I00112
+Rationale score for technique: T0152.012
+    Recall: 0.35135135135135137
+    Precision: 0.39661016949152544
+    F1: 0.37261146496815284
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.35135135135135137
+        Precision: 0.39661016949152544 
+        F1:        0.37261146496815284
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240927031830/https://assets.mofoprod.net/network/documents/Report_Inside_the_shadowy_world_of_disinformation_for_hire_in_Kenya_5._hcc.pdf
+Skipping incident I00113 - excessive amount of article content retrieved: (1282905)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20211022224129/https://www.nbcnews.com/tech/tech-news/facebook-knew-radicalized-users-rcna3581
+Testing for incident with ID: I00114 
+Required Techniques: ['T0114', 'T0151.001', 'T0151.002', 'T0153.005', 'T0153.006']
+Classifier log created in: .exe_logs/DISARM_log_20260405-120603.txt
+Article Character Length: 14319
+Results:
+    
+    Identified techniques(46): ['T0074.004', 'T0135.001', 'T0136.001', 'T0136.004', 'T0138.001', 'T0138.002', 'T0102', 'T0102.001', 'T0102.002', 'T0089.001', 'T0089.003', 'T0151.001', 'T0151.002', 'T0151.003', 'T0153.006', 'T0153.005', 'T0042', 'T0114.001', 'T0115.003', 'T0057', 'T0126', 'T0127', 'T0131.002', 'T0132.001', 'T0132.002', 'T0133.001', 'T0133.002', 'T0134.001', 'T0134.002', 'T0081.001', 'T0081.005', 'T0081.007', 'T0022', 'T0022.001', 'T0083', 'T0091.003', 'T0092', 'T0092.003', 'T0146', 'T0146.001', 'T0097.100', 'T0143.002', 'T0049.001', 'T0049.003', 'T0121', 'T0124']
+
+    Recall:
+    
+    Correct Techniques: 5/5
+        Absolute technique matches: 4
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.10869565217391304
+        Absolute Techniques: 0.08695652173913043
+    
+Rationale Test for incident I00114
+
+Rationale Plausability test for incident: I00114
+Rationale score for technique: T0151.001
+    Recall: 0.20053835800807537
+    Precision: 1.0
+    F1: 0.33408071748878926
+
+Rationale score for technique: T0151.002
+    Recall: 0.20592193808882908
+    Precision: 0.864406779661017
+    F1: 0.3326086956521739
+
+Rationale score for technique: T0153.005
+    Recall: 0.04576043068640646
+    Precision: 1.0
+    F1: 0.0875160875160875
+
+Rationale score for technique: T0153.006
+    Recall: 0.23418573351278602
+    Precision: 0.9405405405405406
+    F1: 0.375
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/4
+        Sufficiency:       3/4
+    Plausability (Rouge Scores):
+        Recall:    0.17160161507402424
+        Precision: 0.9512368300503894 
+        F1:        0.2823013751642627
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20211026142012/https://www.washingtonpost.com/technology/interactive/2021/how-facebook-algorithm-works/
+Testing for incident with ID: I00115 
+Required Techniques: ['T0151.001', 'T0153.006']
+Classifier log created in: .exe_logs/DISARM_log_20260405-120753.txt
+Article Character Length: 11473
+Results:
+    
+    Identified techniques(101): ['T0074.004', 'T0079', 'T0136.001', 'T0136.004', 'T0016', 'T0102', 'T0102.001', 'T0102.002', 'T0089.001', 'T0089', 'T0151.001', 'T0153.006', 'T0020', 'T0114.001', 'T0115.001', 'T0132.002', 'T0133.002', 'T0133.005', 'T0134.002', 'T0081.001', 'T0081.003', 'T0081.004', 'T0081.006', 'T0081.005', 'T0003', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0068', 'T0082', 'T0083', 'T0091.001', 'T0091.002', 'T0091.003', 'T0092', 'T0092.001', 'T0092.002', 'T0092.003', 'T0093', 'T0093.001', 'T0094', 'T0094.001', 'T0094.002', 'T0095', 'T0096', 'T0096.001', 'T0096.002', 'T0113', 'T0145', 'T0145.001', 'T0145.002', 'T0145.003', 'T0145.004', 'T0145.005', 'T0145.006', 'T0145.007', 'T0146', 'T0146.001', 'T0146.002', 'T0146.003', 'T0146.004', 'T0146.005', 'T0146.006', 'T0146.007', 'T0147', 'T0147.001', 'T0147.002', 'T0147.003', 'T0147.004', 'T0148', 'T0148.001', 'T0148.002', 'T0148.003', 'T0148.004', 'T0148.005', 'T0148.006', 'T0148.007', 'T0148.008', 'T0148.009', 'T0149', 'T0149.001', 'T0149.002', 'T0149.003', 'T0149.004', 'T0149.005', 'T0149.006', 'T0149.007', 'T0149.008', 'T0149.009', 'T0150', 'T0150.001', 'T0150.002', 'T0150.003', 'T0150.004', 'T0150.005', 'T0150.006', 'T0150.007', 'T0150.008', 'T0121', 'T0123']
+
+    Recall:
+    
+    Correct Techniques: 2/2
+        Absolute technique matches: 2
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.019801980198019802
+        Absolute Techniques: 0.019801980198019802
+    
+Rationale Test for incident I00115
+Failed at incident with id I00115, results until failure were:
+==================================================
+Final Results:
+--------------------------------------------------
+Recall:
+
+Correct Techniques: 135/155 	 (87.09677419354838%)
+    Absolute technique matches: 102 	 (65.80645161290323%)
+    Partial technique matches: 33 	 (21.29032258064516%)
+--------------------------------------------------
+        Precision:
+        
+        Techniques: 0.06873727087576374
+            Absolute Techniques: 0.051934826883910386
+        --------------------------------------------------
+        Rationale test results:
+            Faithfullness:
+                Comprehensiveness: 2.941176470588235%
+                Sufficiency:       75.49019607843137%
+            Plausability (Rouge Scores):
+                Recall:    0.35181345179952334
+                Precision: 0.6442677199243111 
+                F1:        0.4007492615170698
+        --------------------------------------------------
+        Time Taken: 82.03 minuites
+        ==================================================--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20230827142858/https://www.theguardian.com/technology/2023/aug/27/consumers-complaining-x-targeted-scammers-verification-changes-twitter
+Testing for incident with ID: I00116 
+Required Techniques: ['T0122', 'T0143.003', 'T0146.002', 'T0146.003', 'T0146.005', 'T0150.001']
+Classifier log created in: .exe_logs/DISARM_log_20260405-121516.txt
+Article Character Length: 4095
+Results:
+    
+    Identified techniques(18): ['T0137.002', 'T0151.008', 'T0151.004', 'T0153.007', 'T0114.001', 'T0128.001', 'T0129.002', 'T0081', 'T0082', 'T0146.003', 'T0146.005', 'T0148.004', 'T0147.004', 'T0150.001', 'T0097.205', 'T0143.003', 'T0049.008', 'T0049.004']
+
+    Recall:
+    
+    Correct Techniques: 5/6
+        Absolute technique matches: 4
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.2777777777777778
+        Absolute Techniques: 0.2222222222222222
+    
+Rationale Test for incident I00116
+
+Rationale Plausability test for incident: I00116
+Rationale score for technique: T0143.003
+    Recall: 0.3092105263157895
+    Precision: 0.912621359223301
+    F1: 0.46191646191646196
+
+Rationale score for technique: T0146.003
+    Recall: 0.2894736842105263
+    Precision: 0.8627450980392157
+    F1: 0.43349753694581283
+
+Rationale score for technique: T0146.005
+    Recall: 0.23026315789473684
+    Precision: 0.7777777777777778
+    F1: 0.3553299492385787
+
+Rationale score for technique: T0150.001
+    Recall: 0.08552631578947369
+    Precision: 0.8125
+    F1: 0.15476190476190477
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 1/4
+        Sufficiency:       4/4
+    Plausability (Rouge Scores):
+        Recall:    0.22861842105263158
+        Precision: 0.8414110587600736 
+        F1:        0.3513764632156896
+..................................................--------------------------------------------------Skipping incident I00117 - missing data
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241116165206/https://taskandpurpose.com/news/war-thunder-forum-military-technology-leaks/
+Testing for incident with ID: I00118 
+Required Techniques: ['T0089.001', 'T0097.105', 'T0143.001', 'T0146', 'T0151.009']
+Classifier log created in: .exe_logs/DISARM_log_20260405-121633.txt
+Article Character Length: 4317
+Results:
+    
+    Identified techniques(17): ['T0135.003', 'T0136.008', 'T0089.001', 'T0151.009', 'T0151.015', 'T0114.001', 'T0115.002', 'T0116.001', 'T0128.001', 'T0131', 'T0091.003', 'T0094', 'T0146.001', 'T0097.105', 'T0097.100', 'T0124.001', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 4/5
+        Absolute technique matches: 3
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.23529411764705882
+        Absolute Techniques: 0.17647058823529413
+    
+Rationale Test for incident I00118
+
+Rationale Plausability test for incident: I00118
+Rationale score for technique: T0089.001
+    Recall: 0.29347826086956524
+    Precision: 0.49390243902439024
+    F1: 0.3681818181818183
+
+Rationale score for technique: T0097.105
+    Recall: 0.17391304347826086
+    Precision: 0.6575342465753424
+    F1: 0.27507163323782235
+
+Rationale score for technique: T0151.009
+    Recall: 0.213768115942029
+    Precision: 0.4573643410852713
+    F1: 0.291358024691358
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/3
+        Sufficiency:       3/3
+    Plausability (Rouge Scores):
+        Recall:    0.22705314009661837
+        Precision: 0.5362670088950013 
+        F1:        0.3115371587036662
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240927013805/https://www.nbcnews.com/tech/security/ken-klippenstein-publishes-irans-hacked-trump-campaign-document-substa-rcna172902
+Testing for incident with ID: I00119 
+Required Techniques: ['T0089', 'T0097.100', 'T0143.001', 'T0150.003', 'T0152.001', 'T0153.001']
+Classifier log created in: .exe_logs/DISARM_log_20260405-121757.txt
+Article Character Length: 5377
+Results:
+    
+    Identified techniques(42): ['T0074.002', 'T0074.004', 'T0066', 'T0135', 'T0135.001', 'T0075.001', 'T0102.001', 'T0089.001', 'T0089', 'T0152.001', 'T0152.002', 'T0153.001', 'T0151.008', 'T0111.001', 'T0042', 'T0115', 'T0117', 'T0128.001', 'T0129.006', 'T0134.001', 'T0134.002', 'T0081.008', 'T0003', 'T0004', 'T0022', 'T0022.001', 'T0040', 'T0068', 'T0083', 'T0091.001', 'T0091.002', 'T0093.001', 'T0149.002', 'T0150.001', 'T0097.100', 'T0097.202', 'T0100.001', 'T0039', 'T0119', 'T0124', 'T0124.001', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 5/6
+        Absolute technique matches: 4
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.11904761904761904
+        Absolute Techniques: 0.09523809523809523
+    
+Rationale Test for incident I00119
+
+Rationale Plausability test for incident: I00119
+Rationale score for technique: T0089
+    Recall: 0.24324324324324326
+    Precision: 0.7974683544303798
+    F1: 0.37278106508875747
+
+Rationale score for technique: T0097.100
+    Recall: 0.1583011583011583
+    Precision: 1.0
+    F1: 0.2733333333333333
+
+Rationale score for technique: T0152.001
+    Recall: 0.14671814671814673
+    Precision: 0.6666666666666666
+    F1: 0.24050632911392408
+
+Rationale score for technique: T0153.001
+    Recall: 0.2702702702702703
+    Precision: 1.0
+    F1: 0.4255319148936171
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/4
+        Sufficiency:       3/4
+    Plausability (Rouge Scores):
+        Recall:    0.20463320463320464
+        Precision: 0.8660337552742616 
+        F1:        0.328038160607408
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20220208165928/https://wp.lancs.ac.uk/drclaireh/2019/11/21/factcheckuk-or-fakecheckuk-reinventing-the-political-faction-as-the-impartial-factchecker/
+Testing for incident with ID: I00120 
+Required Techniques: ['T0097.203', 'T0146.003', 'T0150.003', 'T0151.008']
+Classifier log created in: .exe_logs/DISARM_log_20260405-121924.txt
+Article Character Length: 32414
+Results:
+    
+    Identified techniques(45): ['T0074.002', 'T0074.004', 'T0066', 'T0076', 'T0135.001', 'T0136.004', 'T0016', 'T0102.002', 'T0102.003', 'T0087.002', 'T0086.001', 'T0023.001', 'T0151.008', 'T0111.001', 'T0153.005', 'T0042', 'T0044', 'T0114.001', 'T0115', 'T0115.001', 'T0115.003', 'T0117', 'T0128.005', 'T0129.006', 'T0134.001', 'T0134.002', 'T0081.008', 'T0081.007', 'T0081.006', 'T0082', 'T0091.001', 'T0092.001', 'T0095', 'T0145', 'T0146', 'T0146.003', 'T0150.004', 'T0097.203', 'T0143.002', 'T0049.005', 'T0049.008', 'T0049.002', 'T0124.001', 'T0124.002', 'T0124.003']
+
+    Recall:
+    
+    Correct Techniques: 4/4
+        Absolute technique matches: 3
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.08888888888888889
+        Absolute Techniques: 0.06666666666666667
+    
+Rationale Test for incident I00120
+Failed at incident with id I00120, results until failure were:
+==================================================
+Final Results:
+--------------------------------------------------
+Recall:
+
+Correct Techniques: 153/176 	 (86.93181818181817%)
+    Absolute technique matches: 116 	 (65.9090909090909%)
+    Partial technique matches: 37 	 (21.022727272727273%)
+--------------------------------------------------
+        Precision:
+        
+        Techniques: 0.07334611697027804
+            Absolute Techniques: 0.05560882070949185
+        --------------------------------------------------
+        Rationale test results:
+            Faithfullness:
+                Comprehensiveness: 3.4482758620689653%
+                Sufficiency:       75.0%
+            Plausability (Rouge Scores):
+                Recall:    0.34141514680962554
+                Precision: 0.6524495268494797 
+                F1:        0.39518884041116337
+        --------------------------------------------------
+        Time Taken: 95.67 minuites
+        ==================================================--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240928205427/https://checkfirst.network/wp-content/uploads/2024/06/Operation_Overload_WEB.pdf
+Skipping incident I00121 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240528231254/https://www.isdglobal.org/wp-content/uploads/2021/08/04-gaming-report-discord.pdf
+Skipping incident I00122 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240912223614/https://www.isdglobal.org/wp-content/uploads/2021/08/02-revised-gaming-report-steam.pdf
+Skipping incident I00123 - insignificant amount of article content retrieved: (0)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240520215840/https://www.mpf.se/publikationer/publikationer/2023-12-01-malign-foreign-interference-and-information-influence-on-video-game-platforms-understanding-the-adversarial-playbook
+Testing for incident with ID: I00124 
+Required Techniques: ['T0152.008']
+Classifier log created in: .exe_logs/DISARM_log_20260405-122906.txt
+Article Character Length: 917
+Results:
+    
+    Identified techniques(25): ['T0002', 'T0101', 'T0085.004', 'T0089.001', 'T0151.015', 'T0151.016', 'T0042', 'T0059', 'T0080', 'T0081', 'T0003', 'T0004', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0068', 'T0082', 'T0083', 'T0091.003', 'T0092', 'T0092.003', 'T0147.001', 'T0149', 'T0097']
+
+    Recall:
+    
+    Correct Techniques: 0/1
+        Absolute technique matches: 0
+        Partial technique matches: 0
+    Precision:
+    
+    Techniques: 0.0
+        Absolute Techniques: 0.0
+    
+Unable to test for rationales - no absolute technique matches
+----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241007172237/https://www.nytimes.com/2015/06/07/magazine/the-agency.html
+Skipping incident I00125 - excessive amount of article content retrieved: (50493)
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241009175500/https://www.volexity.com/blog/2023/06/28/charming-kitten-updates-powerstar-with-an-interplanetary-twist/
+Testing for incident with ID: I00126 
+Required Techniques: ['T0085.004', 'T0097.102', 'T0097.202', 'T0143.003', 'T0149.002']
+Classifier log created in: .exe_logs/DISARM_log_20260405-122940.txt
+Article Character Length: 12697
+Results:
+    
+    Identified techniques(17): ['T0074.001', 'T0135.001', 'T0135.003', 'T0085.004', 'T0151.001', 'T0153.001', 'T0152.010', 'T0128.001', 'T0129.002', 'T0130.002', 'T0147.003', 'T0149.005', 'T0149.007', 'T0097.102', 'T0097.202', 'T0143.002', 'T0049.004']
+
+    Recall:
+    
+    Correct Techniques: 5/5
+        Absolute technique matches: 3
+        Partial technique matches: 2
+    Precision:
+    
+    Techniques: 0.29411764705882354
+        Absolute Techniques: 0.17647058823529413
+    
+Rationale Test for incident I00126
+
+Rationale Plausability test for incident: I00126
+Rationale score for technique: T0085.004
+    Recall: 0.2048780487804878
+    Precision: 0.875
+    F1: 0.33201581027667987
+
+Rationale score for technique: T0097.102
+    Recall: 0.5902439024390244
+    Precision: 0.9166666666666666
+    F1: 0.7181008902077152
+
+Rationale score for technique: T0097.202
+    Recall: 0.47804878048780486
+    Precision: 0.7967479674796748
+    F1: 0.5975609756097561
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 1/3
+        Sufficiency:       2/3
+    Plausability (Rouge Scores):
+        Recall:    0.42439024390243896
+        Precision: 0.8628048780487805 
+        F1:        0.5492258920313837
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240221113558/https://www.darkreading.com/threat-intelligence/iranian-apts-dress-up-as-hacktivists-for-disruption-influence-ops
+Testing for incident with ID: I00127 
+Required Techniques: ['T0097.104', 'T0143.003']
+Classifier log created in: .exe_logs/DISARM_log_20260405-123058.txt
+Article Character Length: 5857
+Results:
+    
+    Identified techniques(26): ['T0074.001', 'T0074.004', 'T0002', 'T0066', 'T0135.003', 'T0136.003', 'T0136.004', 'T0101', 'T0085.003', 'T0084', 'T0151.008', 'T0111', 'T0042', 'T0128.001', 'T0129.006', 'T0081.005', 'T0081.008', 'T0082', 'T0091.001', 'T0091.003', 'T0093.001', 'T0097.104', 'T0143.002', 'T0049', 'T0118', 'T0123.003']
+
+    Recall:
+    
+    Correct Techniques: 2/2
+        Absolute technique matches: 1
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.07692307692307693
+        Absolute Techniques: 0.038461538461538464
+    
+Rationale Test for incident I00127
+
+Rationale Plausability test for incident: I00127
+Rationale score for technique: T0097.104
+    Recall: 0.7652173913043478
+    Precision: 0.48753462603878117
+    F1: 0.5956006768189509
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.7652173913043478
+        Precision: 0.48753462603878117 
+        F1:        0.5956006768189509
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240618014243/https://medium.com/dfrlab/trolltracker-outward-influence-operation-from-iran-cc4539684c8d
+Testing for incident with ID: I00128 
+Required Techniques: ['T0097.208', 'T0151.001', 'T0151.002', 'T0152.004', 'T0153.004']
+Classifier log created in: .exe_logs/DISARM_log_20260405-123209.txt
+Article Character Length: 10334
+Results:
+    
+    Identified techniques(56): ['T0073', 'T0074', 'T0074.001', 'T0074.004', 'T0002', 'T0066', 'T0135.001', 'T0136.005', 'T0138.001', 'T0101', 'T0084.002', 'T0086.001', 'T0085.003', 'T0151.001', 'T0151.003', 'T0151.008', 'T0042', 'T0114.001', 'T0115', 'T0115.001', 'T0115.003', 'T0116.001', 'T0059', 'T0128.005', 'T0130.001', 'T0134.001', 'T0134.002', 'T0080.001', 'T0081.003', 'T0081.004', 'T0081.005', 'T0081.006', 'T0003', 'T0022', 'T0022.001', 'T0022.002', 'T0040', 'T0083', 'T0092', 'T0095', 'T0096.002', 'T0146', 'T0150.008', 'T0097.202', 'T0097.208', 'T0097.207', 'T0143.002', 'T0097.205', 'T0049', 'T0049.003', 'T0118', 'T0119', 'T0119.001', 'T0119.002', 'T0121', 'T0047']
+
+    Recall:
+    
+    Correct Techniques: 3/5
+        Absolute technique matches: 2
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.05357142857142857
+        Absolute Techniques: 0.03571428571428571
+    
+Rationale Test for incident I00128
+
+Rationale Plausability test for incident: I00128
+Rationale score for technique: T0097.208
+    Recall: 0.3130434782608696
+    Precision: 0.3302752293577982
+    F1: 0.3214285714285715
+
+Rationale score for technique: T0151.001
+    Recall: 0.45217391304347826
+    Precision: 0.29545454545454547
+    F1: 0.35738831615120276
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.3826086956521739
+        Precision: 0.3128648874061718 
+        F1:        0.3394084437898871
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240920230915/https://www.theguardian.com/technology/2021/mar/16/florida-teen-sentenced-twitter-bitcoin-hack
+Testing for incident with ID: I00129 
+Required Techniques: ['T0146.004', 'T0148.009', 'T0150.005', 'T0150.005', 'T0151.008']
+Classifier log created in: .exe_logs/DISARM_log_20260405-123345.txt
+Article Character Length: 2374
+Results:
+    
+    Identified techniques(13): ['T0137.002', 'T0151.008', 'T0115', 'T0128.004', 'T0129.007', 'T0091.003', 'T0094', 'T0146.003', 'T0148.009', 'T0150.005', 'T0143.003', 'T0097.100', 'T0039']
+
+    Recall:
+    
+    Correct Techniques: 5/5
+        Absolute technique matches: 4
+        Partial technique matches: 1
+    Precision:
+    
+    Techniques: 0.38461538461538464
+        Absolute Techniques: 0.3076923076923077
+    
+Rationale Test for incident I00129
+
+Rationale Plausability test for incident: I00129
+Rationale score for technique: T0148.009
+    Recall: 0.10967741935483871
+    Precision: 1.0
+    F1: 0.19767441860465118
+
+Rationale score for technique: T0150.005
+    Recall: 0.18064516129032257
+    Precision: 1.0
+    F1: 0.3060109289617486
+
+Rationale score for technique: T0150.005
+    Recall: 0.18064516129032257
+    Precision: 1.0
+    F1: 0.3060109289617486
+
+Rationale score for technique: T0151.008
+    Recall: 0.45161290322580644
+    Precision: 0.7777777777777778
+    F1: 0.5714285714285714
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 1/4
+        Sufficiency:       4/4
+    Plausability (Rouge Scores):
+        Recall:    0.2306451612903226
+        Precision: 0.9444444444444444 
+        F1:        0.34528121198917994
+..................................................--------------------------------------------------Skipping incident  - missing data
+Skipping incident  - missing data
+Skipping incident  - missing data
+Skipping incident  - missing data
+
+==================================================
+Final Results:
+--------------------------------------------------
+Recall:
+
+Correct Techniques: 168/194 	 (86.5979381443299%)
+    Absolute technique matches: 126 	 (64.94845360824742%)
+    Partial technique matches: 42 	 (21.649484536082475%)
+--------------------------------------------------
+Precision:
+
+Techniques: 0.07557354925775979
+    Absolute Techniques: 0.05668016194331984
+--------------------------------------------------
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 4.761904761904762%
+        Sufficiency:       76.19047619047619%
+    Plausability (Rouge Scores):
+        Recall:    0.3518246921646441
+        Precision: 0.6523983537194857 
+        F1:        0.40111171810127644
+--------------------------------------------------
+Time Taken: 101.52 minuites
+==================================================

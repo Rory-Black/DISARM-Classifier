@@ -1,0 +1,150 @@
+ZeDPEB Log File - Created on 20260404-132341
+
+==================================================
+SETUP
+mode  - ClfMode.BATCH_FULL
+model - Qwen/Qwen3.5-35B-A3B
+test  - Recall & Precision
+==================================================
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20211026142012/https://www.washingtonpost.com/technology/interactive/2021/how-facebook-algorithm-works/
+Testing for incident with ID: I00115 
+Required Techniques: ['T0151.001', 'T0153.006']
+Classifier log created in: .exe_logs/DISARM_log_20260404-132343.txt
+Article Character Length: 11473
+Results:
+
+Identified techniques(27): ['T0079', 'T0138.001', 'T0138.002', 'T0140.001', 'T0016', 'T0102', 'T0102.001', 'T0102.002', 'T0151.001', 'T0151.006', 'T0153.006', 'T0020', 'T0114.001', 'T0134', 'T0134.001', 'T0134.002', 'T0072', 'T0072.005', 'T0080', 'T0080.001', 'T0081', 'T0081.001', 'T0081.003', 'T0081.004', 'T0081.005', 'T0081.006', 'T0121']
+
+Recall:
+
+Correct Techniques: 2/2
+    Absolute technique matches: 2
+    Partial technique matches: 0
+Precision:
+
+Techniques: 0.07407407407407407
+    Absolute Techniques: 0.07407407407407407
+
+Rationale Test for incident I00115
+
+Rationale Plausability test for incident: I00115
+Rationale score for technique: T0151.001
+    Recall: 0.054945054945054944
+    Precision: 0.45454545454545453
+    F1: 0.09803921568627451
+
+Rationale score for technique: T0153.006
+    Recall: 0.4926739926739927
+    Precision: 0.6932989690721649
+    F1: 0.576017130620985
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/2
+        Sufficiency:       2/2
+    Plausability (Rouge Scores):
+        Recall:    0.27380952380952384
+        Precision: 0.5739222118088098 
+        F1:        0.33702817315362976
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20230827142858/https://www.theguardian.com/technology/2023/aug/27/consumers-complaining-x-targeted-scammers-verification-changes-twitter
+Testing for incident with ID: I00116 
+Required Techniques: ['T0122', 'T0143.003', 'T0146.002', 'T0146.003', 'T0146.005', 'T0150.001']
+Classifier log created in: .exe_logs/DISARM_log_20260404-132512.txt
+Article Character Length: 4095
+Results:
+
+Identified techniques(20): ['T0137.002', 'T0151.008', 'T0151.004', 'T0151.006', 'T0114.001', 'T0128', 'T0128.001', 'T0091.003', 'T0145.003', 'T0145.004', 'T0145.005', 'T0145.006', 'T0145.007', 'T0146.002', 'T0146.003', 'T0146.005', 'T0148.003', 'T0150.001', 'T0097.205', 'T0143.003']
+
+Recall:
+
+Correct Techniques: 5/6
+    Absolute technique matches: 5
+    Partial technique matches: 0
+Precision:
+
+Techniques: 0.25
+    Absolute Techniques: 0.25
+
+Rationale Test for incident I00116
+
+Rationale Plausability test for incident: I00116
+Rationale score for technique: T0143.003
+    Recall: 0.3026315789473684
+    Precision: 0.9108910891089109
+    F1: 0.454320987654321
+
+Rationale score for technique: T0146.002
+    Recall: 0.1875
+    Precision: 0.9827586206896551
+    F1: 0.3149171270718232
+
+Rationale score for technique: T0146.003
+    Recall: 0.22697368421052633
+    Precision: 0.9857142857142858
+    F1: 0.3689839572192513
+
+Rationale score for technique: T0146.005
+    Recall: 0.09539473684210527
+    Precision: 1.0
+    F1: 0.17417417417417416
+
+Rationale score for technique: T0150.001
+    Recall: 0.02631578947368421
+    Precision: 1.0
+    F1: 0.05128205128205127
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 3/5
+        Sufficiency:       3/5
+    Plausability (Rouge Scores):
+        Recall:    0.16776315789473684
+        Precision: 0.9758727991025704 
+        F1:        0.2727356594803242
+..................................................--------------------------------------------------Skipping incident I00117 - missing data
+--------------------------------------------------
+Retrieved article from https://web.archive.org/web/20241116165206/https://taskandpurpose.com/news/war-thunder-forum-military-technology-leaks/
+Testing for incident with ID: I00118 
+Required Techniques: ['T0089.001', 'T0097.105', 'T0143.001', 'T0146', 'T0151.009']
+Classifier log created in: .exe_logs/DISARM_log_20260404-132626.txt
+Article Character Length: 4317
+Results:
+
+Identified techniques(2): ['T0151.009', 'T0124']
+
+Recall:
+
+Correct Techniques: 1/5
+    Absolute technique matches: 1
+    Partial technique matches: 0
+Precision:
+
+Techniques: 0.5
+    Absolute Techniques: 0.5
+
+Rationale Test for incident I00118
+
+Rationale Plausability test for incident: I00118
+Rationale score for technique: T0151.009
+    Recall: 0.38768115942028986
+    Precision: 0.3890909090909091
+    F1: 0.38838475499092556
+..................................................
+Rationale test results:
+    Faithfullness:
+        Comprehensiveness: 0/1
+        Sufficiency:       1/1
+    Plausability (Rouge Scores):
+        Recall:    0.38768115942028986
+        Precision: 0.3890909090909091 
+        F1:        0.38838475499092556
+..................................................----------------------------------------------------------------------------------------------------
+Retrieved article from https://web.archive.org/web/20240927013805/https://www.nbcnews.com/tech/security/ken-klippenstein-publishes-irans-hacked-trump-campaign-document-substa-rcna172902
+Testing for incident with ID: I00119 
+Required Techniques: ['T0089', 'T0097.100', 'T0143.001', 'T0150.003', 'T0152.001', 'T0153.001']
+Classifier log created in: .exe_logs/DISARM_log_20260404-132719.txt
+Article Character Length: 5377
+
+Model failed here because it generated an invalid classification. It was able to do this because of a high temperature value meaning it could escape the enum enforcement. Also, the enum enforcement only works at a token level, so the suffix after the '.' in the technique id was not enforced. Solution -> change to '_' instead of '.' to keep as one token

@@ -1,0 +1,481 @@
+DISARM Log File - Created on 20260309-224428
+SETUP:
+Large Model: Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8
+Fast Model: Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8
+Temperature: 0.0
+Max Fix Attempts: 10
+
+==================================================
+
+Prompt:
+
+{
+"Tactics": [
+  {
+    "name": "plan-strategy",
+    "description": "Define the desired end state, i.e. the set of required conditions that defines achievement of all objectives."
+  },
+  {
+    "name": "plan-objectives",
+    "description": "Set clearly defined, measurable, and achievable objectives. In some cases achieving objectives ties execution of tactical tasks to reaching the desired strategic end state. In other cases, where there is no clearly defined strategic end state, the tactical objective may stand on its own. The objective statement should not specify the way and means of accomplishment but rather the goal the threat actor wishes to achieve. "
+  },
+  {
+    "name": "microtarget",
+    "description": "Actions taken which help target content to specific audiences identified and analysed as part of TA13: Target Audience Analysis."
+  },
+  {
+    "name": "develop-content",
+    "description": "Create or acquire text, images, and other content"
+  },
+  {
+    "name": "select-channels-and-affordances",
+    "description": "Selecting platforms and affordances assesses which online or offline platforms and their associated affordances maximise an influence operation\u2019s ability to reach its target audience. To select the most appropriate platform(s), an operation may assess the technological affordances including platform algorithms, terms of service, permitted content types, or other attributes that determine platform usability and accessibility. Selecting platforms includes both choosing platforms on which the operation will publish its own content and platforms on which the operation will attempt to restrict adversarial content."
+  },
+  {
+    "name": "conduct-pump-priming",
+    "description": "Release content on a targetted small scale, prior to general release, including releasing seed. Used for preparation before broader release, and as message honing. Used for preparation before broader release, and as message honing."
+  },
+  {
+    "name": "deliver-content",
+    "description": "Release content to general public or larger population"
+  },
+  {
+    "name": "drive-offline-activity",
+    "description": "Move incident/campaign from online to offline. Encouraging users to move from the platform on which they initially viewed operation content and engage in the physical information space or offline world. This may include operation-aligned rallies or protests, radio, newspaper, or billboards. An influence operation may drive to physical forums to diversify its information channels and facilitate spaces where the target audience can engage with both operation content and like-minded individuals offline."
+  },
+  {
+    "name": "persist-in-the-information-environment",
+    "description": "Persist in the Information Space refers to taking measures that allow an operation to maintain its presence and avoid takedown by an external entity. Techniques in Persist in the Information Space help campaigns operate without detection and appear legitimate to the target audience and platform monitoring services. Influence operations on social media often persist online by varying the type of information assets and platforms used throughout the campaign."
+  },
+  {
+    "name": "assess-effectiveness",
+    "description": "Assess effectiveness of action, for use in future plans"
+  },
+  {
+    "name": "target-audience-analysis",
+    "description": "Identifying and analysing the target audience examines target audience member locations, political affiliations, financial situations, and other attributes that an influence operation may incorporate into its messaging strategy. During this tactic, influence operations may also identify existing similarities and differences between target audience members to unite like groups and divide opposing groups. Identifying and analysing target audience members allows influence operations to tailor operation strategy and content to their analysis."
+  },
+  {
+    "name": "develop-narratives",
+    "description": "The promotion of beneficial master narratives is perhaps the most effective method for achieving long-term strategic narrative dominance. From a \"\"whole of society\"\" perspective the promotion of the society's core master narratives should occupy a central strategic role. From a misinformation campaign / cognitive security perpectve the tactics around master narratives centre more precisely on the day-to-day promotion and reinforcement of this messaging. In other words, beneficial, high-coverage master narratives are a central strategic goal and their promotion constitutes an ongoing tactical struggle carried out at a whole-of-society level. Tactically, their promotion covers a broad spectrum of activities both on- and offline."
+  },
+  {
+    "name": "establish-assets",
+    "description": "Establishing information assets generates messaging tools, including social media accounts, operation personnel, and organisations, including directly and indirectly managed assets. For assets under their direct control, the operation can add, change, or remove these assets at will. Establishing information assets allows an influence operation to promote messaging directly to the target audience without navigating through external entities. Many online influence operations create or compromise social media accounts as a primary vector of information dissemination.\n\nThis Tactic was previously called Establish Social Assets."
+  },
+  {
+    "name": "establish-legitimacy",
+    "description": "Establish assets that create trust"
+  },
+  {
+    "name": "maximise-exposure",
+    "description": "Maximise exposure of the target audience to incident/campaign content via flooding, amplifying, and cross-posting."
+  },
+  {
+    "name": "drive-online-harms",
+    "description": "Actions taken by an influence operation to harm their opponents in online spaces through harassment, suppression, releasing private information, and controlling the information space through offensive cyberspace operations."
+  }
+],
+"Article": "Through the Chinese ambassador in Sweden, the Chinese government has been in contact with media companies in Sweden on several occasions, in an attempt to influence publications, according to a survey made by SVT Nyheter (Swedish national television).\nVia a survey made by SVT Nyheter, eight of Sweden\u2019s largest media organizations were asked if they had ever been contacted by the Chinese embassy, and if such contacts included attempts to pressure the media company. Four media companies \u2013 Svenska Dagbladet, Expressen, Sveriges Radio, and Sveriges Television \u2013 stated that they had been contacted by the Chinese embassy on several occasions, and that they, for instance, had been criticized on their publications, both by letters and e-mails.\nThe media company Svenska Dagbladet, had been contacted on several occasions in the past two years, including via e-mails directly from the Chinese ambassador to Sweden. Several times, China and the Chinese ambassador had criticized the media company\u2019s publications regarding the conditions in China. Individual reporters also reported having been subjected to criticism.\nThe tabloid Expressen had received several letters and e-mails from the embassy, e-mails containing criticism and threatening formulations regarding the coverage of the Swedish book publisher Gui Minhai, who has been imprisoned in China since 2015. Formulations such as \u201cmedia tyranny\u201d could be found in the e-mails.\nMeetings and lunches\nSeveral of the news companies consider the contacts as attempts to unduly influence the media. The Chinese ambassador has also invited several of the reporters at Aftonbladet, Sveriges Television, and Svenska Dagbladet to personal meetings and lunches. During such meetings, the Chinese ambassador has commented on the journalistic coverage of China.\nTowards the end of November, Sveriges Radio noticed that the Chinese embassy, on it\u2019s website, in the past year, had published 74 negative notations on mainly Swedish media, but also on politicians and scientific reports. The comments were mostly made in relation to publications containing some form of criticism against China.\nHungarian criticism\nTwo of the eight media companies that received the survey have not answered. Only one of the approached media companies, the newspaper Sydsvenska Dagbladet, said that it is unaware of any contacts made by the Chinese ambassador. However, the paper was recently approached by the Hungarian ambassador to Sweden, who had comments on one of the paper\u2019s columns about Hungary. \u00a0\u00a0\u00a0\nUppdaterad20 januari 2020 kl 10:38\nPublicerad19 januari 2020 kl 17:13\nSVT:s nyheter ska st\u00e5 f\u00f6r saklighet och opartiskhet. Det vi publicerar ska vara sant och relevant. Vid akuta nyhetsl\u00e4gen kan det vara sv\u00e5rt att f\u00e5 alla fakta bekr\u00e4ftade, d\u00e5 ska vi ber\u00e4tta vad vi vet \u2013 och inte vet. L\u00e4s mer om hur vi arbetar.\nTipsa SVT Nyheter p\u00e5 ett s\u00e4kert s\u00e4tt"
+}
+
+
+Result:
+{
+  "Tactics": ["establish-assets", "develop-content", "select-channels-and-affordances", "target-audience-analysis", "assess-effectiveness"]
+}
+
+Time: 0.96 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+{'Tactics': ['establish-assets', 'develop-content', 'select-channels-and-affordances', 'target-audience-analysis', 'assess-effectiveness']}
+
+Time: 0.96 seconds
+Failures: 0
+
+--------------------------------------------------
+
+Prompt:
+
+    {
+    "Techniques": [
+  {
+    "external_id": "T0097",
+    "description": "This Technique contains different types of personas commonly taken on by threat actors during influence operations.<br><br>Analysts should use T0097\u2019s sub-techniques to document the type of persona which an account is presenting. For example, an account which describes itself as being a journalist can be tagged with T0097.102: Journalist Persona.<br><br>Personas presented by individuals include:<br><br>T0097.100: Individual Persona<br>T0097.101: Local Persona<br>T0097.102: Journalist Persona<br>T0097.103: Activist Persona<br>T0097.104: Hacktivist Persona<br>T0097.105: Military Personnel Persona<br>T0097.106: Recruiter Persona<br>T0097.107: Researcher Persona<br>T0097.108: Expert Persona<br>T0097.109: Romantic Suitor Persona<br>T0097.110: Party Official Persona<br>T0097.111: Government Official Persona<br>T0097.112: Government Employee Persona<br><br>This Technique also houses institutional personas commonly taken on by threat actors:<br><br>T0097.200: Institutional Persona<br>T0097.201: Local Institution Persona<br>T0097.202: News Outlet Persona<br>T0097.203: Fact Checking Organisation Persona<br>T0097.204: Think Tank Persona<br>T0097.205: Business Persona<br>T0097.206: Government Institution Persona<br>T0097.207: NGO Persona<br>T0097.208: Social Cause Persona<br><br>By using a persona, a threat actor is adding the perceived legitimacy of the persona to their narratives and activities."
+  },
+  {
+    "external_id": "T0097.100",
+    "description": "This sub-technique can be used to indicate that an entity is presenting itself as an individual. If the person is presenting themselves as having one of the personas listed below then these sub-techniques should be used instead, as they indicate both the type of persona they presented and that the entity presented itself as an individual:<br><br>T0097.101: Local Persona<br>T0097.102: Journalist Persona<br>T0097.103: Activist Persona<br>T0097.104: Hacktivist Persona<br>T0097.105: Military Personnel Persona<br>T0097.106: Recruiter Persona<br>T0097.107: Researcher Persona<br>T0097.108: Expert Persona<br>T0097.109: Romantic Suitor Persona<br>T0097.110: Party Official Persona<br>T0097.111: Government Official Persona<br>T0097.112: Government Employee Persona"
+  },
+  {
+    "external_id": "T0097.101",
+    "description": "A person with a local persona presents themselves as living in a particular geography or having local knowledge relevant to a narrative.<br><br>While presenting as a local is not an indication of inauthentic behaviour,\u00a0 an influence operation may have its narratives amplified by people presenting as local to a target area. Threat actors can fabricate locals (T0143.002: Fabricated Persona, T0097.101: Local Persona) to add credibility to their narratives, or to misrepresent the real opinions of locals in the area.<br><br>People who are legitimate locals (T0143.001: Authentic Persona, T0097.101: Local Persona) can use their persona for malicious purposes, or be exploited by threat actors. For example, someone could take money for using their position as a local to provide legitimacy to a false narrative or be tricked into doing so without their knowledge.<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.201: Local Institution Persona:</b> Analysts should use this sub-technique to catalogue cases where an institution is presenting as a local, such as a local news organisation or local business."
+  },
+  {
+    "external_id": "T0097.102",
+    "description": "A person with a journalist persona presents themselves as a reporter or journalist delivering news, conducting interviews, investigations etc.<br><br>While presenting as a journalist is not an indication of inauthentic behaviour, an influence operation may have its narratives amplified by people presenting as journalists. Threat actors can fabricate journalists to give the appearance of legitimacy, justifying the actor\u2019s requests for interviews, etc (T0143.002: Fabricated Persona, T0097.102: Journalist Persona).<br><br>People who have legitimately developed a persona as a journalist (T0143.001: Authentic Persona, T0097.102: Journalist Persona) can use it for malicious purposes, or be exploited by threat actors. For example, someone could take money for using their position as a trusted journalist to provide legitimacy to a false narrative or be tricked into doing so without the journalist\u2019s knowledge.<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.202: News Organisation Persona:</b> People with a journalist persona may present as being part of a news organisation.<br><b>T0097.101: Local Persona:</b> People with a journalist persona may present themselves as local reporters."
+  },
+  {
+    "external_id": "T0097.103",
+    "description": "A person with an activist persona presents themselves as an activist; an individual who campaigns for a political cause, organises related events, etc.<br><br>While presenting as an activist is not an indication of inauthentic behaviour, an influence operation may have its narratives amplified by people presenting as activists. Threat actors can fabricate activists to give the appearance of popular support for an evolving grassroots movement (see T0143.002: Fabricated Persona, T0097.103: Activist Persona).<br><br>People who are legitimate activists can use this persona for malicious purposes, or be exploited by threat actors. For example, someone could take money for using their position as an activist to provide visibility to a false narrative or be tricked into doing so without their knowledge (T0143.001: Authentic Persona, T0097.103: Activist Persona).<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.104: Hacktivist Persona:</b> Analysts should use this sub-technique to catalogue cases where an individual is presenting themselves as someone engaged in activism who uses technical tools and methods, including building technical infrastructure and conducting offensive cyber operations, to achieve their goals.<br><b>T0097.207: NGO Persona:</b> People with an activist persona may present as being part of an NGO.<br><b>T0097.208: Social Cause Persona:</b> Analysts should use this sub-technique to catalogue cases where an online account is presenting as posting content related to a particular social cause, while not presenting as an individual."
+  },
+  {
+    "external_id": "T0097.104",
+    "description": "A person with a hacktivist persona presents themselves as an activist who conducts offensive cyber operations or builds technical infrastructure for political purposes, rather than the financial motivations commonly attributed to hackers; hacktivists are hacker activists who use their technical knowledge to take political action.<br><br>Hacktivists can build technical infrastructure to support other activists, including secure communication channels and surveillance and censorship circumvention. They can also conduct DDOS attacks and other offensive cyber operations, aiming to take down digital assets or gain access to proprietary information. An influence operation may use hacktivist personas to support their operational narratives and legitimise their operational activities.<br><br>Fabricated Hacktivists are sometimes referred to as \u201cFaketivists\u201d.<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.103: Activist Persona:</b> Analysts should use this sub-technique to catalogue cases where an individual is presenting themselves as someone engaged in activism but doesn\u2019t present themselves as using technical tools and methods to achieve their goals."
+  },
+  {
+    "external_id": "T0097.105",
+    "description": "A person with a military personnel persona presents themselves as a serving member or veteran of a military organisation operating in an official capacity on behalf of a government.<br><br>While presenting as military personnel is not an indication of inauthentic behaviour,\u00a0 an influence operation may have its narratives amplified by people presenting as military personnel. Threat actors can fabricate military personnel (T0143.002: Fabricated Persona, T0097.105: Military Personnel Persona) to pose as experts on military topics, or to discredit geopolitical adversaries by pretending to be one of their military personnel and spreading discontent.<br><br>People who have legitimately developed a military persona (T0143.001: Authentic Persona, T0097.105: Military Personnel Persona) can use it for malicious purposes, or be exploited by threat actors. For example, someone could take money for using their position as a member of the military to provide legitimacy to a false narrative or be tricked into doing so without their knowledge."
+  },
+  {
+    "external_id": "T0097.106",
+    "description": "A person with a recruiter persona presents themselves as a potential employer or provider of freelance work.<br><br>While presenting as a recruiter is not an indication of inauthentic behaviour, threat actors fabricate recruiters (T0143.002: Fabricated Persona, T0097.106: Recruiter Persona) to justify asking for personal information from their targets or to trick targets into working for the threat actors (without revealing who they are).<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.205: Business Persona:</b> People with a recruiter persona may present as being part of a business which they are recruiting for."
+  },
+  {
+    "external_id": "T0097.107",
+    "description": "A person with a researcher persona presents themselves as conducting research (e.g. for academic institutions, or think tanks), or having previously conducted research.<br><br>While presenting as a researcher is not an indication of inauthentic behaviour,\u00a0 an influence operation may have its narratives amplified by people presenting as researchers. Threat actors can fabricate researchers (T0143.002: Fabricated Persona, T0097.107: Researcher Persona) to add credibility to their narratives.<br><br>People who are legitimate researchers (T0143.001: Authentic Persona, T0097.107: Researcher Persona) can use their persona for malicious purposes, or be exploited by threat actors. For example, someone could take money for using their position as a Researcher to provide legitimacy to a false narrative or be tricked into doing so without their knowledge.<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.204: Think Tank Persona:</b> People with a researcher persona may present as being part of a think tank.<br><b>T0097.108: Expert Persona:</b> People who present as researching a given topic are likely to also present as having expertise in the area."
+  },
+  {
+    "external_id": "T0097.108",
+    "description": "A person with an expert persona presents themselves as having expertise or experience in a field. Commonly the persona\u2019s expertise will be called upon to add credibility to a given narrative.<br><br>While presenting as an expert is not an indication of inauthentic behaviour,\u00a0 an influence operation may have its narratives amplified by people presenting as experts. Threat actors can fabricate experts (T0143.002: Fabricated Persona, T0097.107: Researcher Persona) to add credibility to their narratives.<br><br>People who are legitimate experts (T0143.001: Authentic Persona, T0097.107: Researcher Persona) can make mistakes, use their persona for malicious purposes, or be exploited by threat actors. For example, someone could take money for using their position as an expert to provide legitimacy to a false narrative or be tricked into doing so without their knowledge.<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.107: Researcher Persona:</b> People who present as experts may also present as conducting or having conducted research into their specialist subject.<br><b>T0097.204: Think Tank Persona:</b> People with an expert persona may present as being part of a think tank."
+  },
+  {
+    "external_id": "T0097.109",
+    "description": "A person with a romantic suitor persona presents themselves as seeking a romantic or physical connection with another person.<br><br>While presenting as seeking a romantic or physical connection is not an indication of inauthentic behaviour, threat actors can use dating apps, social media channels or dating websites to fabricate romantic suitors to lure targets they can blackmail, extract information from, deceive or trick into giving them money (T0143.002: Fabricated Persona, T0097.109: Romantic Suitor Persona).<br><br>Honeypotting in espionage and Big Butchering in scamming are commonly associated with romantic suitor personas.<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0151.017: Dating Platform:</b> Analysts can use this sub-technique for tagging cases where an account has been identified as using a dating platform."
+  },
+  {
+    "external_id": "T0097.110",
+    "description": "A person who presents as an official member of a political party, such as leaders of political parties, candidates standing to represent constituents, and campaign staff.<br><br>Presenting as an official of a political party is not an indication of inauthentic behaviour, however threat actors may fabricate individuals who work in political parties to add credibility to their narratives (T0143.002: Fabricated Persona, T0097.110: Party Official Persona). They may also impersonate existing officials of political parties (T0143.003: Impersonated Persona, T0097.110: Party Official Persona).<br><br>Legitimate members of political parties could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.110: Party Official Persona). For example, an electoral candidate could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge.<br><br><b>Associated Techniques and Sub-techniques</b><br><b>T0097.111: Government Official Persona:</b> Analysts should use this sub-technique to catalogue cases where an individual is presenting as a member of a government.\u00a0<br><br>Some party officials will also be government officials. For example, in the United Kingdom the head of government is commonly also the head of their political party.<br><br>Some party officials won\u2019t be government officials. For example, members of a party standing in an election, or party officials who work outside of government (e.g. campaign staff)."
+  },
+  {
+    "external_id": "T0097.111",
+    "description": "A person who presents as an active or previous government official has the government official persona. These are officials serving in government, such as heads of government departments, leaders of countries, and members of government selected to represent constituents.<br><br> Presenting as a government official is not an indication of inauthentic behaviour, however threat actors may fabricate individuals who work in government to add credibility to their narratives (T0143.002: Fabricated Persona, T0097.111: Government Official Persona). They may also impersonate existing members of government (T0143.003: Impersonated Persona, T0097.111: Government Official Persona).<br><br> Legitimate government officials could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.111: Government Official Persona). For example, a government official could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0097.110: Party Official Persona:</b> Analysts should use this sub-technique to catalogue cases where an individual is presenting as a member of a political party.\u00a0<br><br> Not all government officials are political party officials (such as outside experts brought into government) and not all political party officials are government officials (such as people standing for office who are not yet working in government).<br><br> <b>T0097.206: Government Institution Persona:</b> People presenting as members of a government may also represent a government institution which they are associated with.<br><br> <b>T0097.112: Government Employee Persona:</b> Analysts should use this sub-technique to document people presenting as professionals hired to serve in government institutions and departments, not officials selected to represent constituents, or assigned official roles in government (such as heads of departments)."
+  },
+  {
+    "external_id": "T0097.112",
+    "description": "A person who presents as an active or previous civil servant has the government employee persona. These are professionals hired to serve in government institutions and departments, not officials selected to represent constituents, or assigned official roles in government (such as heads of departments).<br><br> Presenting as a government employee is not an indication of inauthentic behaviour, however threat actors may fabricate individuals who work in government to add credibility to their narratives (T0143.002: Fabricated Persona, T0097.112: Government Employee Persona). They may also impersonate existing government employees (T0143.003: Impersonated Persona, T0097.112: Government Employee Persona).<br><br> Legitimate government employees could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.112: Government Employee Persona). For example, a government employee could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0097.111: Government Official Persona:</b> Analysts should use this technique to document people who present as an active or previous government official, such as heads of government departments, leaders of countries, and members of government selected to represent constituents.<br> <b>T0097.206: Government Institution Persona:</b> People presenting as members of a government may also present a government institution which they are associated with."
+  },
+  {
+    "external_id": "T0097.200",
+    "description": "This Technique can be used to indicate that an entity is presenting itself as an institution. If the organisation is presenting itself as having one of the personas listed below then these Techniques should be used instead, as they indicate both that the entity presented itself as an institution, and the type of persona they presented:<br><br> T0097.201: Local Institution Persona<br> T0097.202: News Outlet Persona<br> T0097.203: Fact Checking Organisation Persona<br> T0097.204: Think Tank Persona<br> T0097.205: Business Persona<br> T0097.206: Government Institution Persona<br> T0097.207: NGO Persona<br> T0097.208: Social Cause Persona"
+  },
+  {
+    "external_id": "T0097.201",
+    "description": "Institutions which present themselves as operating in a particular geography, or as having local knowledge relevant to a narrative, are presenting a local institution persona.<br><br> While presenting as a local institution is not an indication of inauthentic behaviour, threat actors may present themselves as such (T0143.002: Fabricated Persona, T0097.201: Local Institution Persona) to add credibility to their narratives, or misrepresent the real opinions of locals in the area.<br><br> Legitimate local institutions could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.201: Local Institution Persona). For example, a local institution could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0097.101: Local Persona:</b> Institutions presenting as local may also present locals working within the organisation."
+  },
+  {
+    "external_id": "T0097.202",
+    "description": "An institution with a news outlet persona presents itself as an organisation which delivers new information to its target audience.<br><br> While presenting as a news outlet is not an indication of inauthentic behaviour, an influence operation may have its narratives amplified by news organisations. Threat actors can fabricate news organisations (T0143.002: Fabricated Persona, T0097.202: News Outlet Persona), or they can impersonate existing news outlets (T0143.003: Impersonated Persona, T0097.202: News Outlet Persona).<br><br> Legitimate news organisations could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.202: News Outlet Persona).<br><br> <b>Associated Techniques and Sub-techniques</b></br> <b>T0097.102: Journalist Persona:</b> Institutions presenting as news outlets may also present journalists working within the organisation.<br> <b>T0097.201: Local Institution Persona:</b> Institutions presenting as news outlets may present as being a local news outlet.<br> <b>T0097.203: Fact Checking Organisation Persona:</b> Institutions presenting as news outlets may also deliver a fact checking service (e.g. The UK\u2019s BBC News has the fact checking service BBC Verify). When an actor presents as the fact checking arm of a news outlet, they are presenting both a News Outlet Persona and a Fact Checking Organisation Persona."
+  },
+  {
+    "external_id": "T0097.203",
+    "description": "An institution with a fact checking organisation persona presents itself as an organisation which produces reports which assess the validity of others\u2019 reporting / statements.<br><br> While presenting as a fact checking organisation is not an indication of inauthentic behaviour, an influence operation may have its narratives amplified by fact checking organisations. Threat actors can fabricate fact checking organisations (T0143.002: Fabricated Persona, T0097.202: News Outlet Persona), or they can impersonate existing fact checking outlets (T0143.003: Impersonated Persona, T0097.202: News Outlet Persona).<br><br> Legitimate fact checking organisations could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.202: News Outlet Persona).<br><br> <b>Associated Techniques and Sub-techniques</b></br> <b>T0097.102: Journalist Persona:</b> Institutions presenting as fact checking organisations may also present journalists working within the organisation.<br> <b>T0097.202: News Outlet Persona:</b> Fact checking organisations may present as operating as part of a larger news outlet (e.g. The UK\u2019s BBC News has the fact checking service BBC Verify). When an actor presents as the fact checking arm of a news outlet, they are presenting both a News Outlet Persona and a Fact Checking Organisation Persona."
+  },
+  {
+    "external_id": "T0097.204",
+    "description": "An institution with a think tank persona presents itself as a think tank; an organisation that aims to conduct original research and propose new policies or solutions, especially for social and scientific problems.<br><br> While presenting as a think tank is not an indication of inauthentic behaviour, think tank personas are commonly used by threat actors as a front for their operational activity (T0143.002: Fabricated Persona, T0097.204: Think Tank Persona). They may be created to give legitimacy to narratives and allow them to suggest politically beneficial solutions to societal issues.<br><br> Legitimate think tanks could have a political bias that they may not be transparent about, they could use their persona for malicious purposes, or they could be exploited by threat actors (T0143.001: Authentic Persona, T0097.204: Think Tank Persona). For example, a think tank could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0097.107: Researcher Persona:</b> Institutions presenting as think tanks may also present researchers working within the organisation."
+  },
+  {
+    "external_id": "T0097.205",
+    "description": "An institution with a business persona presents itself as a for-profit organisation which provides goods or services for a price.<br><br> While presenting as a business is not an indication of inauthentic behaviour, business personas may be used by threat actors as a front for their operational activity (T0143.002: Fabricated Persona, T0097.205: Business Persona).<br><br> Threat actors may also impersonate existing businesses (T0143.003: Impersonated Persona, T0097.205: Business Persona) to exploit their brand or cause reputational damage.<br><br> Legitimate businesses could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.205: Business Persona). For example, a business could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge."
+  },
+  {
+    "external_id": "T0097.206",
+    "description": "Institutions which present themselves as governments, or government ministries, are presenting a government institution persona.<br><br> While presenting as a government institution is not an indication of inauthentic behaviour, threat actors may impersonate existing government institutions as part of their operation (T0143.003: Impersonated Persona, T0097.206: Government Institution Persona), to add legitimacy to their narratives, or discredit the government.<br><br> Legitimate government institutions could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.206: Government Institution Persona). For example, a government institution could be used by elected officials to spread inauthentic narratives.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0097.111: Government Official Persona:</b> Institutions presenting as governments may also present officials working within the organisation.<br> <b>T0097.112: Government Employee Persona:</b> Institutions presenting as governments may also present employees working within the organisation."
+  },
+  {
+    "external_id": "T0097.207",
+    "description": "Institutions which present themselves as an NGO (Non-Governmental Organisation), an organisation which provides services or advocates for public policy (while not being directly affiliated with any government), are presenting an NGO persona.<br><br> While presenting as an NGO is not an indication of inauthentic behaviour, NGO personas are commonly used by threat actors (such as intelligence services) as a front for their operational activity (T0143.002: Fabricated Persona, T0097.207: NGO Persona). They are created to give legitimacy to the influence operation and potentially infiltrate grassroots movements<br><br> Legitimate NGOs could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.207: NGO Persona). For example, an NGO could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge.<br><br> <b>Associated Techniques and Sub-techniques:</b><br> <b>T0097.103: Activist Persona:</b> Institutions presenting as activist groups may also present activists working within the organisation."
+  },
+  {
+    "external_id": "T0097.208",
+    "description": "Online accounts which present themselves as focusing on a social cause are presenting the Social Cause Persona. Examples include accounts which post about current affairs, such as discrimination faced by minorities.<br><br> While presenting as an account invested in a social cause is not an indication of inauthentic behaviour, such personas have been used by threat actors to exploit peoples\u2019 legitimate emotional investment regarding social causes that matter to them (T0143.002: Fabricated Persona, T0097.208: Social Cause Persona).<br><br> Legitimate accounts focused on a social cause could use their persona for malicious purposes, or be exploited by threat actors (T0143.001: Authentic Persona, T0097.208: Social Cause Persona). For example, the account holders could take money for using their position to provide legitimacy to a false narrative, or be tricked into doing so without their knowledge.<br><br> <b>Associated Techniques and Sub-techniques:</b><br> <b>T0097.103: Activist Persona:</b> Analysts should use this sub-technique to catalogue cases where an individual is presenting themselves as an activist related to a social cause. Accounts with social cause personas do not present themselves as individuals, but may have activists controlling the accounts."
+  },
+  {
+    "external_id": "T0098",
+    "description": "Modern computational propaganda makes use of a cadre of imposter news sites spreading globally. These sites, sometimes motivated by concerns other than propaganda--for instance, click-based revenue--often have some superficial markers of authenticity, such as naming and site-design. But many can be quickly exposed with reference to their owenership, reporting history and adverstising details."
+  },
+  {
+    "external_id": "T0098.001",
+    "description": "Create Inauthentic News Sites"
+  },
+  {
+    "external_id": "T0098.002",
+    "description": "Leverage Existing Inauthentic News Sites"
+  },
+  {
+    "external_id": "T0100",
+    "description": "An influence operation may co-opt trusted sources by infiltrating or repurposing a source to reach a target audience through existing, previously reliable networks. Co-opted trusted sources may include: - National or local new outlets - Research or academic publications - Online blogs or websites"
+  },
+  {
+    "external_id": "T0100.001",
+    "description": "Co-Opt Trusted Individuals"
+  },
+  {
+    "external_id": "T0100.002",
+    "description": "Co-Opt Grassroots Groups"
+  },
+  {
+    "external_id": "T0100.003",
+    "description": "Co-opt Influencers"
+  },
+  {
+    "external_id": "T0143",
+    "description": "This Technique contains sub-techniques which analysts can use to assert whether an account is presenting an authentic, fabricated, or parody persona:<br><br> T0143.001: Authentic Persona<br> T0143.002: Fabricated Persona<br> T0143.003: Impersonated Persona<br> T0143.004: Parody Persona"
+  },
+  {
+    "external_id": "T0143.001",
+    "description": "An individual or institution presenting a persona that legitimately matches who or what they are is presenting an authentic persona.<br><br> For example, an account which presents as being managed by a member of a country\u2019s military, and is legitimately managed by that person, would be presenting an authentic persona (T0143.001: Authentic Persona, T0097.105: Military Personnel).<br><br> Sometimes people can authentically present themselves as who they are while still participating in malicious/inauthentic activity; a legitimate journalist (T0143.001: Authentic Persona, T0097.102: Journalist Persona) may accept bribes to promote products, or they could be tricked by threat actors into sharing an operation\u2019s narrative."
+  },
+  {
+    "external_id": "T0143.002",
+    "description": "An individual or institution pretending to have a persona without any legitimate claim to that persona is presenting a fabricated persona, such as a person who presents themselves as a member of a country\u2019s military without having worked in any capacity with the military (T0143.002: Fabricated Persona, T0097.105: Military Personnel).<br><br> Sometimes real people can present entirely fabricated personas; they can use real names and photos on social media while also pretending to have credentials or traits they don\u2019t have in real life."
+  },
+  {
+    "external_id": "T0143.003",
+    "description": "Threat actors may impersonate existing individuals or institutions to conceal their network identity, add legitimacy to content, or harm the impersonated target\u2019s reputation. This Technique covers situations where an actor presents themselves as another existing individual or institution.<br><br> This Technique was previously called Prepare Assets Impersonating Legitimate Entities and used the ID T0099.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0097: Presented Persona:</b> Analysts can use the sub-techniques of T0097: Presented Persona to categorise the type of impersonation. For example, a document developed by a threat actor which falsely presented as a letter from a government department could be documented using T0085.004: Develop Document, T0143.003: Impersonated Persona, and T0097.206: Government Institution Persona.<br> <b>T0145.001: Copy Account Imagery:</b> Actors may take existing accounts\u2019 profile pictures as part of their impersonation efforts."
+  },
+  {
+    "external_id": "T0143.004",
+    "description": "Parody is a form of artistic expression that imitates the style or characteristics of a particular work, genre, or individual in a humorous or satirical way, often to comment on or critique the original work or subject matter. People may present as parodies to create humour or make a point by exaggerating or altering elements of the original, while still maintaining recognizable elements.<br><br> The use of parody is not an indication of inauthentic or malicious behaviour; parody allows people to present ideas or criticisms in a comedic or exaggerated manner, softening the impact of sensitive or contentious topics. Because parody is often protected as a form of free speech or artistic expression, it provides a legal and social framework for discussing controversial issues.<br><br> However, parody personas may be perceived as authentic personas, leading to people mistakenly believing that a parody account\u2019s statements represent the real opinions of a parodied target. Threat actors may also use the guise of parody to spread campaign content. Parody personas may disclaim that they are operating as a parody, however this is not always the case, and is not always given prominence.<br><br> <b>Associated Techniques and Sub-techniques</b> <b>T0097: Presented Persona: </b>Analysts can use the sub-techniques of T0097: Presented Persona to categorise the type of parody.\u00a0For example, an account presenting as a parody of a business could be documented using T0097.205: Business Persona and T0143.003: Parody Persona.<br> <b>T0145.001: Copy Account Imagery:</b> Actors may take existing accounts\u2019 profile pictures as part of their parody efforts."
+  },
+  {
+    "external_id": "T0144",
+    "description": "This Technique contains behaviours which might indicate whether a persona is legitimate, a fabrication, or a parody.<br><br> For example, the same persona being consistently presented across platforms is consistent with how authentic users behave on social media. However, threat actors have also displayed this behaviour as a way to increase the perceived legitimacy of their fabricated personas (aka \u201cbackstopping\u201d)."
+  },
+  {
+    "external_id": "T0144.001",
+    "description": "This sub-technique covers situations where analysts have identified the same persona being presented across multiple platforms.<br><br> Having multiple accounts presenting the same persona is not an indicator of inauthentic behaviour; many people create accounts and present as themselves on multiple platforms. However, threat actors are known to present the same persona across multiple platforms, benefiting from an increase in perceived legitimacy."
+  },
+  {
+    "external_id": "T0144.002",
+    "description": "Threat actors have been observed following a template when filling their accounts\u2019 online profiles. This may be done to enable account holders to quickly present themselves as a real person with a targeted persona.<br><br> For example, an actor may be instructed to create many fabricated local accounts for use in an operation using a template of \u201c[flag emojis], [location], [personal quote], [political party] supporter\u201d in their account\u2019s description.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0143.002: Fabricated Persona:</b> The use of a templated account biography in a collection of accounts may be an indicator that the personas have been fabricated."
+  }
+],
+    "Article": "Through the Chinese ambassador in Sweden, the Chinese government has been in contact with media companies in Sweden on several occasions, in an attempt to influence publications, according to a survey made by SVT Nyheter (Swedish national television).\nVia a survey made by SVT Nyheter, eight of Sweden\u2019s largest media organizations were asked if they had ever been contacted by the Chinese embassy, and if such contacts included attempts to pressure the media company. Four media companies \u2013 Svenska Dagbladet, Expressen, Sveriges Radio, and Sveriges Television \u2013 stated that they had been contacted by the Chinese embassy on several occasions, and that they, for instance, had been criticized on their publications, both by letters and e-mails.\nThe media company Svenska Dagbladet, had been contacted on several occasions in the past two years, including via e-mails directly from the Chinese ambassador to Sweden. Several times, China and the Chinese ambassador had criticized the media company\u2019s publications regarding the conditions in China. Individual reporters also reported having been subjected to criticism.\nThe tabloid Expressen had received several letters and e-mails from the embassy, e-mails containing criticism and threatening formulations regarding the coverage of the Swedish book publisher Gui Minhai, who has been imprisoned in China since 2015. Formulations such as \u201cmedia tyranny\u201d could be found in the e-mails.\nMeetings and lunches\nSeveral of the news companies consider the contacts as attempts to unduly influence the media. The Chinese ambassador has also invited several of the reporters at Aftonbladet, Sveriges Television, and Svenska Dagbladet to personal meetings and lunches. During such meetings, the Chinese ambassador has commented on the journalistic coverage of China.\nTowards the end of November, Sveriges Radio noticed that the Chinese embassy, on it\u2019s website, in the past year, had published 74 negative notations on mainly Swedish media, but also on politicians and scientific reports. The comments were mostly made in relation to publications containing some form of criticism against China.\nHungarian criticism\nTwo of the eight media companies that received the survey have not answered. Only one of the approached media companies, the newspaper Sydsvenska Dagbladet, said that it is unaware of any contacts made by the Chinese ambassador. However, the paper was recently approached by the Hungarian ambassador to Sweden, who had comments on one of the paper\u2019s columns about Hungary. \u00a0\u00a0\u00a0\nUppdaterad20 januari 2020 kl 10:38\nPublicerad19 januari 2020 kl 17:13\nSVT:s nyheter ska st\u00e5 f\u00f6r saklighet och opartiskhet. Det vi publicerar ska vara sant och relevant. Vid akuta nyhetsl\u00e4gen kan det vara sv\u00e5rt att f\u00e5 alla fakta bekr\u00e4ftade, d\u00e5 ska vi ber\u00e4tta vad vi vet \u2013 och inte vet. L\u00e4s mer om hur vi arbetar.\nTipsa SVT Nyheter p\u00e5 ett s\u00e4kert s\u00e4tt"
+    }
+
+
+Result:
+{
+  "Techniques": ["T0097", "T0097.111", "T0097.206", "T0143.003"]
+}
+
+
+Time: 1.41 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['T0097', 'T0097.100', 'T0097.101', 'T0097.102', 'T0097.103', 'T0097.104', 'T0097.105', 'T0097.106', 'T0097.107', 'T0097.108', 'T0097.109', 'T0097.110', 'T0097.111', 'T0097.112', 'T0097.200', 'T0097.201', 'T0097.202', 'T0097.203', 'T0097.204', 'T0097.205', 'T0097.206', 'T0097.207', 'T0097.208', 'T0098', 'T0098.001', 'T0098.002', 'T0100', 'T0100.001', 'T0100.002', 'T0100.003', 'T0143', 'T0143.001', 'T0143.002', 'T0143.003', 'T0143.004', 'T0144', 'T0144.001', 'T0144.002']
+
+Result:
+{'Techniques': ['T0097', 'T0097.111', 'T0097.206', 'T0143.003']}
+
+Time: 1.41 seconds
+Failures: 0
+
+--------------------------------------------------
+
+Prompt:
+
+    {
+    "Techniques": [
+  {
+    "external_id": "T0002",
+    "description": "Organise citizens around pro-state messaging. Coordinate paid or volunteer groups to push state propaganda."
+  },
+  {
+    "external_id": "T0066",
+    "description": "Plan to degrade an adversary\u2019s image or ability to act. This could include preparation and use of harmful information about the adversary\u2019s actions or reputation."
+  },
+  {
+    "external_id": "T0075",
+    "description": "Push back against criticism by dismissing your critics. This might be arguing that the critics use a different standard for you than with other actors or themselves; or arguing that their criticism is biassed."
+  },
+  {
+    "external_id": "T0075.001",
+    "description": "Plan to delegitimize the media landscape and degrade public trust in reporting, by discrediting credible sources. This makes it easier to promote influence operation content."
+  },
+  {
+    "external_id": "T0076",
+    "description": "Twist the narrative. Take information, or artefacts like images, and change the framing around them."
+  },
+  {
+    "external_id": "T0077",
+    "description": "Shift attention to a different narrative or actor, for instance by accusing critics of the same activity that they\u2019ve accused you of (e.g. police brutality)."
+  },
+  {
+    "external_id": "T0078",
+    "description": "Threaten the critic or narrator of events. For instance, threaten journalists or news outlets reporting on a story."
+  },
+  {
+    "external_id": "T0079",
+    "description": "Create conflict between subgroups, to widen divisions in a community"
+  },
+  {
+    "external_id": "T0135",
+    "description": "Weaken, debilitate, or subvert a target or their actions. An influence operation may be designed to disparage an opponent; sabotage an opponent\u2019s systems or processes; compromise an opponent\u2019s relationships or support system; impair an opponent\u2019s capability; or thwart an opponent\u2019s initiative.   "
+  },
+  {
+    "external_id": "T0135.001",
+    "description": "Denigrate, disparage, or discredit an opponent. This is a common tactical objective in political campaigns with a larger strategic goal. It differs from efforts to harm a target through defamation. If there is no ulterior motive and the sole aim is to cause harm to the target, then choose sub-technique \u201cDefame\u201d of technique \u201cCause Harm\u201d instead."
+  },
+  {
+    "external_id": "T0135.002",
+    "description": "Prevent the successful outcome of a policy, operation, or initiative. Actors conduct influence operations to stymie or foil proposals, plans, or courses of action which are not in their interest.  "
+  },
+  {
+    "external_id": "T0135.003",
+    "description": "Sabotage, destroy, or damage a system, process, or relationship. The classic example is the Soviet strategy of \u201cactive measures\u201d involving deniable covert activities such as political influence, the use of front organisations, the orchestration of domestic unrest, and the spread of disinformation.  "
+  },
+  {
+    "external_id": "T0135.004",
+    "description": "To cause a target audience to divide into two completely opposing groups. This is a special case of subversion. To divide and conquer is an age-old approach to subverting and overcoming an enemy."
+  },
+  {
+    "external_id": "T0136",
+    "description": "Grow or maintain the base of support for the actor, ally, or action. This includes hard core recruitment, managing alliances, and generating or maintaining sympathy among a wider audience, including reputation management and public relations.  Sub-techniques assume support for actor (self) unless otherwise specified. "
+  },
+  {
+    "external_id": "T0136.001",
+    "description": "Preserve a positive perception in the public\u2019s mind following an accusation or adverse event. When accused of a wrongful act, an actor may engage in denial, counter accusations, whataboutism, or conspiracy theories to distract public attention and attempt to maintain a positive image. "
+  },
+  {
+    "external_id": "T0136.002",
+    "description": "To convince others to exonerate you of a perceived wrongdoing. When an actor finds it untenable to deny doing something, they may attempt to exonerate themselves with disinformation which claims the action was reasonable. This is a special case of \u201cDefend Reputation\u201d. "
+  },
+  {
+    "external_id": "T0136.003",
+    "description": "Raise the morale of those who support the organisation or group. Invigorate constituents with zeal for the mission or activity. Terrorist groups, political movements, and cults may indoctrinate their supporters with ideologies that are based on warped versions of religion or cause harm to others.   "
+  },
+  {
+    "external_id": "T0136.004",
+    "description": "Elevate the estimation of the actor in the public\u2019s mind. Improve their image or standing. Public relations professionals use persuasive overt communications to achieve this goal; manipulators use covert disinformation. "
+  },
+  {
+    "external_id": "T0136.005",
+    "description": "Elevate or fortify the public backing for a policy, operation, or idea. Domestic and foreign actors can use artificial means to fabricate or amplify public support for a proposal or action.   "
+  },
+  {
+    "external_id": "T0136.006",
+    "description": "Elevate or fortify the public backing for a partner. Governments may interfere in other countries\u2019 elections by covertly favouring a party or candidate aligned with their interests. They may also mount an influence operation to bolster the reputation of an ally under attack.    "
+  },
+  {
+    "external_id": "T0136.007",
+    "description": "Motivate followers to join or subscribe as members of the team. Organisations may mount recruitment drives that use propaganda to entice sympathisers to sign up.   "
+  },
+  {
+    "external_id": "T0136.008",
+    "description": "Improve personal standing within a community. Gain fame, approbation, or notoriety. Conspiracy theorists, those with special access, and ideologues can gain prominence in a community by propagating disinformation, leaking confidential documents, or spreading hate. "
+  },
+  {
+    "external_id": "T0137",
+    "description": "Profit from disinformation, conspiracy theories, or online harm. In some cases, the sole objective is financial gain, in other cases the objective is both financial and political. Making money may also be a way to sustain a political campaign. "
+  },
+  {
+    "external_id": "T0137.001",
+    "description": "Earn income from digital advertisements published alongside inauthentic content. Conspiratorial, false, or provocative content drives internet traffic. Content owners earn money from impressions of, or clicks on, or conversions of ads published on their websites, social media profiles, or streaming services, or ads published when their content appears in search engine results. Fraudsters simulate impressions, clicks, and conversions, or they spin up inauthentic sites or social media profiles just to generate ad revenue. Conspiracy theorists and political operators generate ad revenue as a byproduct of their operation or as a means of sustaining their campaign.    "
+  },
+  {
+    "external_id": "T0137.002",
+    "description": "Defraud a target or trick a target into doing something that benefits the attacker. A typical scam is where a fraudster convinces a target to pay for something without the intention of ever delivering anything in return. Alternatively, the fraudster may promise benefits which never materialise, such as a fake cure. Criminals often exploit a fear or crisis or generate a sense of urgency. They may use deepfakes to impersonate authority figures or individuals in distress.    "
+  },
+  {
+    "external_id": "T0137.003",
+    "description": "Solicit donations for a cause. Popular conspiracy theorists can attract financial contributions from their followers. Fighting back against the establishment is a popular crowdfunding narrative. "
+  },
+  {
+    "external_id": "T0137.004",
+    "description": "Offer products for sale under false pretences. Campaigns may hijack or create causes built on disinformation to sell promotional merchandise. Or charlatans may amplify victims\u2019 unfounded fears to sell them items of questionable utility such as supplements or survival gear.  "
+  },
+  {
+    "external_id": "T0137.005",
+    "description": "Coerce money or favours from a target by threatening to expose or corrupt information. Ransomware criminals typically demand money. Intelligence agencies demand national secrets. Sexual predators demand favours. The leverage may be critical, sensitive, or embarrassing information.    "
+  },
+  {
+    "external_id": "T0137.006",
+    "description": "Artificially inflate or deflate the price of stocks or other financial instruments and then trade on these to make profit. The most common securities fraud schemes are called \u201cpump and dump\u201d and \u201cpoop and scoop\u201d. "
+  },
+  {
+    "external_id": "T0138",
+    "description": "Persuade, impel, or provoke the target to behave in a specific manner favourable to the attacker. Some common behaviours are joining, subscribing, voting, buying, demonstrating, fighting, retreating, resigning, boycotting."
+  },
+  {
+    "external_id": "T0138.001",
+    "description": "Inspire, animate, or exhort a target to act. An actor can use propaganda, disinformation, or conspiracy theories to stimulate a target to act in its interest.   "
+  },
+  {
+    "external_id": "T0138.002",
+    "description": "Instigate, incite, or arouse a target to act. Social media manipulators exploit moral outrage to propel targets to spread hate, take to the streets to protest, or engage in acts of violence.  "
+  },
+  {
+    "external_id": "T0138.003",
+    "description": "Force target to take an action or to stop taking an action it has already started. Actors can use the threat of reputational damage alongside military or economic threats to compel a target."
+  },
+  {
+    "external_id": "T0139",
+    "description": "Discourage, deter, or inhibit the target from actions which would be unfavourable to the attacker. The actor may want the target to refrain from voting, buying, fighting, or supplying. "
+  },
+  {
+    "external_id": "T0139.001",
+    "description": "To make a target disinclined or reluctant to act. Manipulators use disinformation to cause targets to question the utility, legality, or morality of taking an action. "
+  },
+  {
+    "external_id": "T0139.002",
+    "description": "Intimidate or incentivise target into remaining silent or prevent target from speaking out. A threat actor may cow a target into silence as a special case of deterrence. Or they may buy the target\u2019s silence. Or they may repress or restrict the target\u2019s speech.   "
+  },
+  {
+    "external_id": "T0139.003",
+    "description": "Prevent target from taking an action for fear of the consequences. Deterrence occurs in the mind of the target, who fears they will be worse off if they take an action than if they don\u2019t. When making threats, aggressors may bluff, feign irrationality, or engage in brinksmanship."
+  },
+  {
+    "external_id": "T0140",
+    "description": "Persecute, malign, or inflict pain upon a target. The objective of a campaign may be to cause fear or emotional distress in a target. In some cases, harm is instrumental to achieving a primary objective, as in coercion, repression, or intimidation. In other cases, harm may be inflicted for the satisfaction of the perpetrator, as in revenge or sadistic cruelty. "
+  },
+  {
+    "external_id": "T0140.001",
+    "description": "Attempt to damage the target\u2019s personal reputation by impugning their character. This can range from subtle attempts to misrepresent or insinuate, to obvious attempts to denigrate or disparage, to blatant attempts to malign or vilify. Slander applies to oral expression. Libel applies to written or pictorial material. Defamation is often carried out by online trolls. The sole aim here is to cause harm to the target. If the threat actor uses defamation as a means of undermining the target, then choose sub-technique \u201cSmear\u201d of technique \u201cUndermine\u201d instead.  "
+  },
+  {
+    "external_id": "T0140.002",
+    "description": "Coerce, bully, or frighten the target. An influence operation may use intimidation to compel the target to act against their will. Or the goal may be to frighten or even terrify the target into silence or submission. In some cases, the goal is simply to make the victim suffer.   "
+  },
+  {
+    "external_id": "T0140.003",
+    "description": "Publish and/or propagate demeaning, derisive, or humiliating content targeting an individual or group of individuals with the intent to cause emotional, psychological, or physical distress. Hate speech can cause harm directly or incite others to harm the target. It often aims to stigmatise the target by singling out immutable characteristics such as colour, race, religion, national or ethnic origin, gender, gender identity, sexual orientation, age, disease, or mental or physical disability. Thus, promoting hatred online may involve racism, antisemitism, Islamophobia, xenophobia, sexism, misogyny, homophobia, transphobia, ageism, ableism, or any combination thereof. Motivations for hate speech range from group preservation to ideological superiority to the unbridled infliction of suffering.       "
+  }
+],
+    "Article": "Through the Chinese ambassador in Sweden, the Chinese government has been in contact with media companies in Sweden on several occasions, in an attempt to influence publications, according to a survey made by SVT Nyheter (Swedish national television).\nVia a survey made by SVT Nyheter, eight of Sweden\u2019s largest media organizations were asked if they had ever been contacted by the Chinese embassy, and if such contacts included attempts to pressure the media company. Four media companies \u2013 Svenska Dagbladet, Expressen, Sveriges Radio, and Sveriges Television \u2013 stated that they had been contacted by the Chinese embassy on several occasions, and that they, for instance, had been criticized on their publications, both by letters and e-mails.\nThe media company Svenska Dagbladet, had been contacted on several occasions in the past two years, including via e-mails directly from the Chinese ambassador to Sweden. Several times, China and the Chinese ambassador had criticized the media company\u2019s publications regarding the conditions in China. Individual reporters also reported having been subjected to criticism.\nThe tabloid Expressen had received several letters and e-mails from the embassy, e-mails containing criticism and threatening formulations regarding the coverage of the Swedish book publisher Gui Minhai, who has been imprisoned in China since 2015. Formulations such as \u201cmedia tyranny\u201d could be found in the e-mails.\nMeetings and lunches\nSeveral of the news companies consider the contacts as attempts to unduly influence the media. The Chinese ambassador has also invited several of the reporters at Aftonbladet, Sveriges Television, and Svenska Dagbladet to personal meetings and lunches. During such meetings, the Chinese ambassador has commented on the journalistic coverage of China.\nTowards the end of November, Sveriges Radio noticed that the Chinese embassy, on it\u2019s website, in the past year, had published 74 negative notations on mainly Swedish media, but also on politicians and scientific reports. The comments were mostly made in relation to publications containing some form of criticism against China.\nHungarian criticism\nTwo of the eight media companies that received the survey have not answered. Only one of the approached media companies, the newspaper Sydsvenska Dagbladet, said that it is unaware of any contacts made by the Chinese ambassador. However, the paper was recently approached by the Hungarian ambassador to Sweden, who had comments on one of the paper\u2019s columns about Hungary. \u00a0\u00a0\u00a0\nUppdaterad20 januari 2020 kl 10:38\nPublicerad19 januari 2020 kl 17:13\nSVT:s nyheter ska st\u00e5 f\u00f6r saklighet och opartiskhet. Det vi publicerar ska vara sant och relevant. Vid akuta nyhetsl\u00e4gen kan det vara sv\u00e5rt att f\u00e5 alla fakta bekr\u00e4ftade, d\u00e5 ska vi ber\u00e4tta vad vi vet \u2013 och inte vet. L\u00e4s mer om hur vi arbetar.\nTipsa SVT Nyheter p\u00e5 ett s\u00e4kert s\u00e4tt"
+    }
+
+
+Result:
+{
+  "Techniques": ["T0135.001", "T0135.002", "T0135.003", "T0136.004", "T0139.002"]
+}
+
+
+Time: 2.98 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['T0002', 'T0066', 'T0075', 'T0075.001', 'T0076', 'T0077', 'T0078', 'T0079', 'T0135', 'T0135.001', 'T0135.002', 'T0135.003', 'T0135.004', 'T0136', 'T0136.001', 'T0136.002', 'T0136.003', 'T0136.004', 'T0136.005', 'T0136.006', 'T0136.007', 'T0136.008', 'T0137', 'T0137.001', 'T0137.002', 'T0137.003', 'T0137.004', 'T0137.005', 'T0137.006', 'T0138', 'T0138.001', 'T0138.002', 'T0138.003', 'T0139', 'T0139.001', 'T0139.002', 'T0139.003', 'T0140', 'T0140.001', 'T0140.002', 'T0140.003']
+
+Result:
+{'Techniques': ['T0135.001', 'T0135.002', 'T0135.003', 'T0136.004', 'T0139.002']}
+
+Time: 2.98 seconds
+Failures: 0
+
+--------------------------------------------------
+

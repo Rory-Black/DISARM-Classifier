@@ -1,0 +1,519 @@
+DISARM Log File - Created on 20260220-210048
+SETUP:
+Large Model: gpt-oss:latest
+Fast Model: gpt-oss:latest
+Temperature: 0.0
+Max Fix Attempts: 2
+
+==================================================
+
+Prompt:
+
+{
+"Tactics": [
+  {
+    "name": "plan-strategy",
+    "description": "Define the desired end state, i.e. the set of required conditions that defines achievement of all objectives."
+  },
+  {
+    "name": "plan-objectives",
+    "description": "Set clearly defined, measurable, and achievable objectives. In some cases achieving objectives ties execution of tactical tasks to reaching the desired strategic end state. In other cases, where there is no clearly defined strategic end state, the tactical objective may stand on its own. The objective statement should not specify the way and means of accomplishment but rather the goal the threat actor wishes to achieve. "
+  },
+  {
+    "name": "microtarget",
+    "description": "Actions taken which help target content to specific audiences identified and analysed as part of TA13: Target Audience Analysis."
+  },
+  {
+    "name": "develop-content",
+    "description": "Create or acquire text, images, and other content"
+  },
+  {
+    "name": "select-channels-and-affordances",
+    "description": "Selecting platforms and affordances assesses which online or offline platforms and their associated affordances maximise an influence operation\u2019s ability to reach its target audience. To select the most appropriate platform(s), an operation may assess the technological affordances including platform algorithms, terms of service, permitted content types, or other attributes that determine platform usability and accessibility. Selecting platforms includes both choosing platforms on which the operation will publish its own content and platforms on which the operation will attempt to restrict adversarial content."
+  },
+  {
+    "name": "conduct-pump-priming",
+    "description": "Release content on a targetted small scale, prior to general release, including releasing seed. Used for preparation before broader release, and as message honing. Used for preparation before broader release, and as message honing."
+  },
+  {
+    "name": "deliver-content",
+    "description": "Release content to general public or larger population"
+  },
+  {
+    "name": "drive-offline-activity",
+    "description": "Move incident/campaign from online to offline. Encouraging users to move from the platform on which they initially viewed operation content and engage in the physical information space or offline world. This may include operation-aligned rallies or protests, radio, newspaper, or billboards. An influence operation may drive to physical forums to diversify its information channels and facilitate spaces where the target audience can engage with both operation content and like-minded individuals offline."
+  },
+  {
+    "name": "persist-in-the-information-environment",
+    "description": "Persist in the Information Space refers to taking measures that allow an operation to maintain its presence and avoid takedown by an external entity. Techniques in Persist in the Information Space help campaigns operate without detection and appear legitimate to the target audience and platform monitoring services. Influence operations on social media often persist online by varying the type of information assets and platforms used throughout the campaign."
+  },
+  {
+    "name": "assess-effectiveness",
+    "description": "Assess effectiveness of action, for use in future plans"
+  },
+  {
+    "name": "target-audience-analysis",
+    "description": "Identifying and analysing the target audience examines target audience member locations, political affiliations, financial situations, and other attributes that an influence operation may incorporate into its messaging strategy. During this tactic, influence operations may also identify existing similarities and differences between target audience members to unite like groups and divide opposing groups. Identifying and analysing target audience members allows influence operations to tailor operation strategy and content to their analysis."
+  },
+  {
+    "name": "develop-narratives",
+    "description": "The promotion of beneficial master narratives is perhaps the most effective method for achieving long-term strategic narrative dominance. From a \"\"whole of society\"\" perspective the promotion of the society's core master narratives should occupy a central strategic role. From a misinformation campaign / cognitive security perpectve the tactics around master narratives centre more precisely on the day-to-day promotion and reinforcement of this messaging. In other words, beneficial, high-coverage master narratives are a central strategic goal and their promotion constitutes an ongoing tactical struggle carried out at a whole-of-society level. Tactically, their promotion covers a broad spectrum of activities both on- and offline."
+  },
+  {
+    "name": "establish-assets",
+    "description": "Establishing information assets generates messaging tools, including social media accounts, operation personnel, and organisations, including directly and indirectly managed assets. For assets under their direct control, the operation can add, change, or remove these assets at will. Establishing information assets allows an influence operation to promote messaging directly to the target audience without navigating through external entities. Many online influence operations create or compromise social media accounts as a primary vector of information dissemination.\n\nThis Tactic was previously called Establish Social Assets."
+  },
+  {
+    "name": "establish-legitimacy",
+    "description": "Establish assets that create trust"
+  },
+  {
+    "name": "maximise-exposure",
+    "description": "Maximise exposure of the target audience to incident/campaign content via flooding, amplifying, and cross-posting."
+  },
+  {
+    "name": "drive-online-harms",
+    "description": "Actions taken by an influence operation to harm their opponents in online spaces through harassment, suppression, releasing private information, and controlling the information space through offensive cyberspace operations."
+  }
+],
+"Article": "\n\nShare this with\nEmail\nFacebook\nMessenger\nMessenger\nTwitter\nPinterest\nWhatsApp\nLinkedIn\nCopy this link\nThese are external links and will open in a new window\n A year-long political conflict between the tiny, wealthy state of Qatar and its larger neighbours - including Saudi Arabia and the United Arab Emirates - has been fought with a new arsenal of weapons: bots, fake news and hacking. \nIn the early hours of 24 May 2017, a news story appeared on the website of Qatar's official news agency, QNA, reporting that the country's emir, Sheikh Tamim bin Hamad al-Thani, had made an astonishing speech. \nThe quotes then appeared on the QNA's social media accounts and on the news ticker running along the bottom of the screen on videos uploaded to the agency's YouTube channel.\nThe emir was quoted praising Islamist groups Hamas, Hezbollah and the Muslim Brotherhood. And perhaps most controversially of all, Iran, Saudi Arabia's arch-rival. \nBut the story soon disappeared from the QNA website, and Qatar's foreign ministry issued a statement denying the speech had ever taken place. No video footage has ever emerged of the emir actually saying the words supposedly attributed to him.\nQatar claimed that the QNA had been hacked. And they said the hack was designed to deliberately spread fake news about the country's leader and its foreign policies. The Qataris specifically blamed UAE, an allegation later repeated by a Washington Post report which cited US intelligence sources. The UAE categorically denied those reports.\nBut the story of the emir's speech unleashed a media free-for-all. Within minutes, Saudi and UAE-owned TV networks - Al Arabiya and Sky News Arabia - picked up on the comments attributed to al-Thani. Both networks accused Qatar of funding extremist groups and of destabilising the region.\nAnd soon after there was another alleged hacking - this time, targeted at the UAE. Youssef al-Otaiba, the UAE's ambassador to the US was hacked. His emails were leaked to the press. This led to long, lurid articles about his private life in international media.\nOn 5 June 2017, Saudi Arabia, the United Arab Emirates, Bahrain, Egypt and their allies - nine governments in total - cut ties with Qatar. They expelled Qatari citizens, suspended diplomatic ties, closed Qatar's only land border, shut down their airspace and halted all trade. \nThe self-styled \"Anti-terror Quartet\", led by Saudi Arabia's new crown prince, Mohammed bin Salman, issued 13 wide-ranging demands for Qatar to meet in 10 days. These included closing down its main TV channel Al Jazeera and ceasing cooperation with Iran.\nUS President Donald Trump, fresh from his first presidential visit abroad - to Saudi Arabia - welcomed the move in a series of tweets the following day. He said it was evidence of his anti-terror policies in action. \nSo good to see the Saudi Arabia visit with the King and 50 countries already paying off. They said they would take a hard line on funding...\nEnd of Twitter post  by @realDonaldTrump\n...extremism, and all reference was pointing to Qatar. Perhaps this will be the beginning of the end to the horror of terrorism!\nEnd of Twitter post 2 by @realDonaldTrump\nHis comments fuelled the propaganda battle that had already begun on Twitter. The platform was flooded with hashtags both for and against Qatar. \nOn the Qatar side, hashtags \"Tamim The Glorious\" and \"Qatar Is Not Alone\" appeared on Twitter's homepage in the Gulf, supposedly showing they were popular sentiments for the region's social media users. Meanwhile, The Saudi and UAE side accused Sheikh Tamim of being the \"Gaddafi of the Gulf\", a reference to the late Libyan leader Muammar Gaddafi.\nHowever, a BBC Arabic investigation has revealed that the majority of tweets using these hashtags were pushed by fake accounts known as \"bots\". Bots are automated accounts which attempt to manipulate public opinion by artificially boosting the popularity of social media posts.\nBen Nimmo, a senior fellow at the Atlantic Council, took a deep dive into some of the most consistently trending hashtags in the conflict and establish the source of their popularity.\nHe detected Twitter bots using a number of methods, such as looking for sudden \"spikes\" in the traffic on a hashtag, which suggests automated posting. \n\"On #Tamim_The_Glorious, this post by an account @sabaqksa had 201 retweets in the space of a couple of seconds, that's not a normal pattern of behaviour,\" Nimmo says. The @sabaqksa account has been suspended by Twitter and BBC Arabic has not been able to contact its owner for comment.\nAnother massive surge of traffic on this hashtag came from one hundred accounts posting 1,410 times in a five hour period. Nimmo says it is \"utterly implausible\" that human operated accounts would post this frequently.\nWhen a number of bot accounts work together like this, it is called a bot net.\nBut Nimmo found bots on the anti-Qatar side too, pushing out offensive tweets including images of Qatar's emir as a dog barking orders and another in which he is depicted as cross-eyed.\nMany of the anti-Qatar bots seemed to be boosting tweets that were originally posted by one specific account, @saudq1978.\nThe @saudq1978 account belongs to Saud al-Qahtani, a prominent member of the Saudi Royal Court and advisor to Prince Mohammed bin Salman. With more than a million followers online, he has a significant presence on Twitter. \nThe top 5 tweets on the \"Gaddafi Of The Gulf\" hashtag were all from this account, which along with retweets made up 66% of the total traffic. The account accused Qatar of killing people in the Libyan civil war, and blamed it for funding terrorism and extremism. \nBBC Arabic made repeated attempts to contact Saud al-Qahtani for comment, but without success.\nMeanwhile, the \"boycott\" or \"blockade\" of Qatar - depending on which side you talk to - looks unlikely to be over soon, despite recent US efforts at mediation.\nHashtags about the conflict are still trending, and the hacking war has continued well into 2018.  And the region's satellite TV channels are still trading accusations.\nThey have also presented very different pictures of the impact of the crisis on life in Qatar. Al Arabiya, which is owned by Saudi interests, has shown footage of supermarkets with empty shelves. But reports on Al-Jazeera, which is funded by the Qatari state, tend to show people on their streets living their lives as normal.\nAccording to Dina Matar, a senior lecturer in Arab media and political communication at SOAS: \"It's not only a political battle, it's also a media battle. We have a huge problem in the Arab world just as you do in the West. Fake news is everywhere.\"\n\"Arab politicians and leaders are completely aware that the media is important and that the media is an important weapon. It is a weapon for propaganda, a weapon for private and public interests,\" she says.\nRecently, a hashtag which translates as #Anniversary_Of_The_Midnight_Fabrications trended in Qatar. It commemorates the first anniversary of the alleged hacking of the Qatar News Agency. Twelve months on from that original incident there is a little sign of the tensions abating between the two sides.\nYou may also be interested in:\nMore on this story\nDo you have a story for us? Email BBC Trending.\nMore from Trending: \nPolitical parties in Mexico are using bots and fake accounts in an attempt to influence voter behaviour and in some cases spread false stories ahead of the country's presidential elections on 1 July, according to researchers, journalists and activists. READ NOW\nYou can follow BBC Trending on Twitter @BBCtrending, and find us on Facebook.  All our stories are at bbc.com/trending.\nOur radio show airs every Saturday on BBC World Service\nAnswering life\u2019s questions through daily features, quizzes and opinions."
+}
+
+
+Result:
+```json
+{
+  "Tactics": [
+    "develop-content",
+    "select-channels-and-affordances",
+    "establish-assets",
+    "maximise-exposure",
+    "drive-online-harms",
+    "persist-in-the-information-environment"
+  ]
+}
+```
+
+Time: 277.66 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response: ```json
+{
+  "Tactics": [
+    "develop-content",
+    "select-channels-and-affordances",
+    "establish-assets",
+    "maximise-exposure",
+    "drive-online-harms",
+    "persist-in-the-information-environment"
+  ]
+}
+```
+Model failed to return valid JSON
+ Respond ONLY with valid JSON.
+
+Result:
+{"error":"No user query provided"}
+
+Time: 89.94 seconds
+
+--------------------------------------------------
+
+Prompt:
+Invalid json format:
+```json
+{
+  "Tactics": [
+    "develop-content",
+    "select-channels-and-affordances",
+    "establish-assets",
+    "maximise-exposure",
+    "drive-online-harms",
+    "persist-in-the-information-environment"
+  ]
+}
+```
+
+ Available classes: 
+['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+{"Tactics":["develop-content","select-channels-and-affordances","establish-assets","maximise-exposure","drive-online-harms","persist-in-the-information-environment"]}
+
+Time: 115.09 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+{'Tactics': ['develop-content', 'select-channels-and-affordances', 'establish-assets', 'maximise-exposure', 'drive-online-harms', 'persist-in-the-information-environment']}
+
+Time: 482.7 seconds
+Failures: 2
+
+--------------------------------------------------
+
+Prompt:
+
+    {
+    "Techniques": [
+  {
+    "external_id": "T0010",
+    "description": "Cultivate propagandists for a cause, the goals of which are not fully comprehended, and who are used cynically by the leaders of the cause. Independent actors use social media and specialised web sites to strategically reinforce and spread messages compatible with their own. Their networks are infiltrated and used by state media disinformation organisations to amplify the state\u2019s own disinformation strategies against target populations. Many are traffickers in conspiracy theories or hoaxes, unified by a suspicion of Western governments and mainstream media. Their narratives, which appeal to leftists hostile to globalism and military intervention and nationalists against immigration, are frequently infiltrated and shaped by state-controlled trolls and altered news items from agencies such as RT and Sputnik. Also know as \"useful idiots\" or \"unwitting agents\"."
+  },
+  {
+    "external_id": "T0014",
+    "description": "Fundraising campaigns refer to an influence operation\u2019s systematic effort to seek financial support for a charity, cause, or other enterprise using online activities that further promote operation information pathways while raising a profit. Many influence operations have engaged in crowdfunding services on platforms including Tipee, Patreon, and GoFundMe. An operation may use its previously prepared fundraising campaigns (see: Develop Information Pathways) to promote operation messaging while raising money to support its activities."
+  },
+  {
+    "external_id": "T0014.001",
+    "description": "Raising funds from malign actors may include contributions from foreign agents, cutouts or proxies, shell companies, dark money groups, etc."
+  },
+  {
+    "external_id": "T0014.002",
+    "description": "Raising funds from ignorant agents may include scams, donations intended for one stated purpose but then used for another, etc."
+  },
+  {
+    "external_id": "T0065",
+    "description": "Create or coopt broadcast capabilities (e.g. TV, radio etc)."
+  },
+  {
+    "external_id": "T0091",
+    "description": "Operators recruit bad actors paying recruiting, or exerting control over individuals includes trolls, partisans, and contractors."
+  },
+  {
+    "external_id": "T0091.001",
+    "description": "Operators recruit paid contractor to support the campaign."
+  },
+  {
+    "external_id": "T0091.002",
+    "description": "Operators recruit partisans (ideologically-aligned individuals) to support the campaign."
+  },
+  {
+    "external_id": "T0091.003",
+    "description": "An influence operation may hire trolls, or human operators of fake accounts that aim to provoke others by posting and amplifying content about controversial issues. Trolls can serve to discredit an influence operation\u2019s opposition or bring attention to the operation\u2019s cause through debate. Classic trolls refer to regular people who troll for personal reasons, such as attention-seeking or boredom. Classic trolls may advance operation narratives by coincidence but are not directly affiliated with any larger operation. Conversely, hybrid trolls act on behalf of another institution, such as a state or financial organisation, and post content with a specific ideological goal. Hybrid trolls may be highly advanced and institutionalised or less organised and work for a single individual."
+  },
+  {
+    "external_id": "T0092",
+    "description": "Operators build their own network, creating links between accounts -- whether authentic or inauthentic -- in order amplify and promote narratives and artefacts, and encourage further growth of ther network, as well as the ongoing sharing and engagement with operational content."
+  },
+  {
+    "external_id": "T0092.001",
+    "description": "Influence operations may establish organisations with legitimate or falsified hierarchies, staff, and content to structure operation assets, provide a sense of legitimacy to the operation, or provide institutional backing to operation activities."
+  },
+  {
+    "external_id": "T0092.002",
+    "description": "A follow train is a group of people who follow each other on a social media platform, often as a way for an individual or campaign to grow its social media following. Follow trains may be a violation of platform Terms of Service. They are also known as follow-for-follow groups."
+  },
+  {
+    "external_id": "T0092.003",
+    "description": "When there is not an existing community or sub-group that meets a campaign's goals, an influence operation may seek to create a community or sub-group."
+  },
+  {
+    "external_id": "T0093",
+    "description": "Operators acquire an existing network by paying, recruiting, or exerting control over the leaders of the existing network."
+  },
+  {
+    "external_id": "T0093.001",
+    "description": "An influence operation may fund proxies, or external entities that work for the operation. An operation may recruit/train users with existing sympathies towards the operation\u2019s narratives and/or goals as proxies. Funding proxies serves various purposes including: - Diversifying operation locations to complicate attribution - Reducing the workload for direct operation assets"
+  },
+  {
+    "external_id": "T0093.002",
+    "description": "A botnet is a group of bots that can function in coordination with each other."
+  },
+  {
+    "external_id": "T0094",
+    "description": "Operators deceptively insert social assets into existing networks as group members in order to influence the members of the network and the wider information environment that the network impacts."
+  },
+  {
+    "external_id": "T0094.001",
+    "description": "When seeking to infiltrate an existing network, an influence operation may identify individuals and groups that might be susceptible to being co-opted or influenced."
+  },
+  {
+    "external_id": "T0094.002",
+    "description": "Butterfly attacks occur when operators pretend to be members of a certain social group, usually a group that struggles for representation. An influence operation may mimic a group to insert controversial statements into the discourse, encourage the spread of operation content, or promote harassment among group members. Unlike astroturfing, butterfly attacks aim to infiltrate and discredit existing grassroots movements, organisations, and media campaigns."
+  },
+  {
+    "external_id": "T0095",
+    "description": "An owned media asset refers to an agency or organisation through which an influence operation may create, develop, and host content and narratives. Owned media assets include websites, blogs, social media pages, forums, and other platforms that facilitate the creation and organisation of content."
+  },
+  {
+    "external_id": "T0096",
+    "description": "Using the services of large-scale content providers for creating and amplifying campaign artefacts at scale."
+  },
+  {
+    "external_id": "T0096.001",
+    "description": "An influence operation may create an organisation for creating and amplifying campaign artefacts at scale."
+  },
+  {
+    "external_id": "T0096.002",
+    "description": "An influence operation may outsource content creation to external companies to avoid attribution, increase the rate of content creation, or improve content quality, i.e., by employing an organisation that can create content in the target audience\u2019s native language. Employed organisations may include marketing companies for tailored advertisements or external content farms for high volumes of targeted media."
+  },
+  {
+    "external_id": "T0113",
+    "description": "Commercial analytic firms collect data on target audience activities and evaluate the data to detect trends, such as content receiving high click-rates. An influence operation may employ commercial analytic firms to facilitate external collection on its target audience, complicating attribution efforts and better tailoring the content to audience preferences."
+  },
+  {
+    "external_id": "T0145",
+    "description": "Introduce visual elements to an account where a platform allows this functionality (e.g. a profile picture, a cover photo, etc).\u00a0<br><br> Threat Actors who don\u2019t want to use pictures of themselves in their social media accounts may use alternate imagery to make their account appear more legitimate."
+  },
+  {
+    "external_id": "T0145.001",
+    "description": "Account imagery copied from an existing account.<br><br> Analysts may use reverse image search tools to try to identify previous uses of account imagery (e.g. a profile picture) by other accounts.<br><br> Threat Actors have been known to copy existing accounts\u2019 imagery to impersonate said accounts, or to provide imagery for unrelated accounts which aren\u2019t intended to impersonate the original assets\u2019 owner.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0143.003: Impersonated Persona:</b> Actors may copy existing accounts\u2019 imagery in an attempt to impersonate them.<br> <b>T0143.004: Parody Persona:</b> Actors may copy existing accounts\u2019 imagery as part of a parody of that account."
+  },
+  {
+    "external_id": "T0145.002",
+    "description": "AI Generated images used in account imagery.<br><br> An influence operation might flesh out its account by uploading account imagery (e.g. a profile picture), increasing its perceived legitimacy. By using an AI-generated picture for this purpose, they are able to present themselves as a real person without compromising their own identity, or risking detection by taking a real person\u2019s existing profile picture.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0086.002: Develop AI-Generated Images (Deepfakes):</b> Analysts should use this sub-technique to document use of AI generated imagery used to support narratives."
+  },
+  {
+    "external_id": "T0145.003",
+    "description": "Animal used in account imagery.<br><br> An influence operation might flesh out its account by uploading a profile picture, increasing its perceived authenticity.<br><br> People sometimes legitimately use images of animals as their profile pictures (e.g. of their pets), and threat actors can mimic this behaviour to avoid the risk of detection associated with stealing or AI-generating profile pictures (see T0145.001: Copy Account Imagery and T0145.002: AI-Generated Account Imagery).<br><br> This Technique is often used by Coordinated Inauthentic Behaviour accounts (CIBs). A collection of accounts displaying the same behaviour using similar account imagery can indicate the presence of CIB."
+  },
+  {
+    "external_id": "T0145.004",
+    "description": "Scenery or nature used in account imagery.<br><br> An influence operation might flesh out its account by uploading account imagery (e.g. a profile picture), increasing its perceived authenticity.<br><br> People sometimes legitimately use images of scenery as their profile picture, and threat actors can mimic this behaviour to avoid the risk of detection associated with stealing or AI-generating profile pictures (see T0145.001: Copy Account Imagery and T0145.002: AI-Generated Account Imagery).<br><br> This Technique is often used by Coordinated Inauthentic Behaviour accounts (CIBs). A collection of accounts displaying the same behaviour using similar account imagery can indicate the presence of CIB."
+  },
+  {
+    "external_id": "T0145.005",
+    "description": "A cartoon/illustrated/anime character used in account imagery.<br><br> An influence operation might flesh out its account by uploading account imagery (e.g. a profile picture), increasing its perceived authenticity.<br><br> People sometimes legitimately use images of illustrated characters as their profile picture, and threat actors can mimic this behaviour to avoid the risk of detection associated with stealing or AI-generating profile pictures (see T0145.001: Copy Account Imagery and T0145.002: AI-Generated Account Imagery).<br><br> This Technique is often used by Coordinated Inauthentic Behaviour accounts (CIBs). A collection of accounts displaying the same behaviour using similar account imagery can indicate the presence of CIB."
+  },
+  {
+    "external_id": "T0145.006",
+    "description": "Attractive person used in account imagery.<br><br> An influence operation might flesh out its account by uploading account imagery (e.g. a profile picture), increasing its perceived authenticity.<br><br> Pictures of physically attractive people can benefit threat actors by increasing attention given to their posts.<br><br> People sometimes legitimately use images of attractive people as their profile picture, and threat actors can mimic this behaviour to avoid the risk of detection associated with stealing or AI-generating profile pictures (see T0145.001: Copy Account Imagery and T0145.002: AI-Generated Account Imagery).<br><br> This Technique is often used by Coordinated Inauthentic Behaviour accounts (CIBs). A collection of accounts displaying the same behaviour using similar account imagery can indicate the presence of CIB.<br><br> <b>Associated Techniques and Sub-techniques</b><br> <b>T0097.109: Romantic Suitor Persona:</b> Accounts presenting as a romantic suitor may use an attractive person in their account imagery.<br> <b>T0151.017: Dating Platform:</b> Analysts can use this sub-technique for tagging cases where an account has been identified as using a dating platform."
+  },
+  {
+    "external_id": "T0145.007",
+    "description": "Stock images used in account imagery.<br><br> Stock image websites produce photos of people in various situations. Threat Actors can purchase or appropriate these images for use in their account imagery, increasing perceived legitimacy while avoiding the risk of detection associated with stealing or AI-generating profile pictures (see T0145.001: Copy Account Imagery and T0145.002: AI-Generated Account Imagery).\u00a0<br><br> Stock images tend to include physically attractive people, and this can benefit threat actors by increasing attention given to their posts.<br><br> This Technique is often used by Coordinated Inauthentic Behaviour accounts (CIBs). A collection of accounts displaying the same behaviour using similar account imagery can indicate the presence of CIB."
+  },
+  {
+    "external_id": "T0146",
+    "description": "An Account is a user-specific profile that allows access to the features and services of an online platform, typically requiring a username and password for authentication."
+  },
+  {
+    "external_id": "T0146.001",
+    "description": "Many online platforms allow users to create free accounts on their platform. A Free Account is an Account which does not require payment at account creation and is not subscribed to paid platform features."
+  },
+  {
+    "external_id": "T0146.002",
+    "description": "Some online platforms afford accounts extra features, or other benefits, if the user pays a fee. For example, as of September 2024, content posted by a Paid Account on X (previously Twitter) is prioritised in the platform\u2019s algorithm."
+  },
+  {
+    "external_id": "T0146.003",
+    "description": "Some online platforms apply badges of verification to accounts which meet certain criteria.<br><br>On some platforms (such as dating apps) a verification badge signifies that the account has passed the platform\u2019s identity verification checks. On some platforms (such as X (previously Twitter)) a verification badge signifies that an account has paid for the platform\u2019s service."
+  },
+  {
+    "external_id": "T0146.004",
+    "description": "Some accounts will have special privileges / will be in control of the Digital Community Hosting Asset; for example, the Admin of a Facebook Page, a Moderator of a Subreddit, etc. etc."
+  },
+  {
+    "external_id": "T0146.005",
+    "description": "Many platforms which host online communities require creation of a username (or another unique identifier) when an Account is created.<br><br>Sometimes people create usernames which are visually similar to other existing accounts\u2019 usernames. While this is not necessarily an indicator of malicious behaviour, actors can create Lookalike Account IDs to support Impersonations or Parody."
+  },
+  {
+    "external_id": "T0146.006",
+    "description": "Some online platforms allow users to take advantage of the platform\u2019s features without creating an account. Examples include the Paste Platform Pastebin, and the Image Board Platforms 4chan and 8chan."
+  },
+  {
+    "external_id": "T0146.007",
+    "description": "An Automated Account is an account which is displaying automated behaviour, such as republishing or liking other accounts\u2019 content, or publishing their own content."
+  },
+  {
+    "external_id": "T0147",
+    "description": "A Software is a program developed to run on computers or devices that helps users achieve specific goals, such as improving productivity, automating tasks, or having fun."
+  },
+  {
+    "external_id": "T0147.001",
+    "description": "A Game is Software which has been designed for interactive entertainment, where users take on challenges set by the game\u2019s designers.<br><br>While Online Game Platforms allow people to play with each other, Games are designed for single player experiences."
+  },
+  {
+    "external_id": "T0147.002",
+    "description": "A Game Mod is a modification which can be applied to a Game or Multiplayer Online Game to add new content or functionality to the game.<br><br>Users can Modify Games to introduce new content to the game. Modified Games can be distributed on Software Delivery Platforms such as Steam or can be distributed within the Game or Multiplayer Online Game."
+  },
+  {
+    "external_id": "T0147.003",
+    "description": "Malware is Software which has been designed to cause harm or facilitate malicious behaviour on electronic devices.<br><br>DISARM recommends using the [MITRE ATT&CK Framework](https://attack.mitre.org/) to document malware types and their usage."
+  },
+  {
+    "external_id": "T0147.004",
+    "description": "A Mobile App is an application which has been designed to run on mobile operating systems, such as Android or iOS.<br><br>Mobile Apps can enable access to online platforms (e.g. Facebook\u2019s mobile app) or can provide software which users can run offline on their device."
+  },
+  {
+    "external_id": "T0148",
+    "description": "A Financial Instrument is a platform or software that facilitates the sending, receiving, and management of money, enabling financial transactions between users or organisations.<br><br>Threat actors can deploy financial instruments legitimately to manage their own finances or illegitimately to support fraud schemes."
+  },
+  {
+    "external_id": "T0148.001",
+    "description": "Online Banking Platforms are spaces provided by banks for their customers to manage their Bank Account online.<br><br>The Online Banking Platforms available differ by country. In the United Kingdom, examples of banking institutions which provide Online Banking Platforms include Lloyds, Barclays, and Monzo. In the United States, examples include Citibank, Chase, and Capital One."
+  },
+  {
+    "external_id": "T0148.002",
+    "description": "A Bank Account is a financial account that allows individuals or organisations to store, manage, and access their money, typically for saving, spending, or investment purposes."
+  },
+  {
+    "external_id": "T0148.003",
+    "description": "Stripe, Paypal, and Apple Pay, Chargebee, Recurly and Zuora are examples of Payment Processing Platforms.<br><br>Payment Processing Platforms produce programs providing Payment Processing or Subscription Processing capabilities which actors can use to set up online storefronts, or to take donations."
+  },
+  {
+    "external_id": "T0148.004",
+    "description": "A Payment Processing Capability is a feature of online platforms or software which enables the processing of one-off payments (e.g. an online checkout, or donation processing page).<br><br>Payment Processing Capabilities can enable platform users to purchase products or services or can facilitate donations to a given cause."
+  },
+  {
+    "external_id": "T0148.005",
+    "description": "A Subscription Processing Capability is a feature of online platforms or software which enables the processing of recurring payments. <br><br>Subscription Processing Capabilities are typically used to enable recurring payments in exchange for continued access to products or services."
+  },
+  {
+    "external_id": "T0148.006",
+    "description": "Kickstarter and GoFundMe are examples of Crowdfunding Platforms.<br><br>Crowdfunding Platforms enable users with Accounts to create projects for other platform users to finance, usually in exchange for access to fruits of the project."
+  },
+  {
+    "external_id": "T0148.007",
+    "description": "Amazon, eBay and Etsy are examples of eCommerce Platforms.<br><br>eCommerce Platforms enable users with Accounts to create online storefronts from which other platform users can purchase goods or services."
+  },
+  {
+    "external_id": "T0148.008",
+    "description": "Coinbase and Kraken are examples of Cryptocurrency Exchange Platforms.<br><br>Cryptocurrency Exchange Platforms provide users a digital marketplace where they can buy, sell, and trade cryptocurrencies, such as Bitcoin or Ethereum. <br><br>Some Cryptocurrency Exchange Platforms allow users to create a Cryptocurrency Wallet."
+  },
+  {
+    "external_id": "T0148.009",
+    "description": "A Cryptocurrency Wallet is a digital tool that allows users to store, send, and receive cryptocurrencies. It manages private and public keys, enabling secure access to a user's crypto assets.<br><br>An influence operation might use cryptocurrency to conceal that they are conducting operational activities, building assets, or sponsoring aligning entities."
+  },
+  {
+    "external_id": "T0149",
+    "description": "Online Infrastructure consists of technical assets which enable online activity, such as domains, servers, and IP addresses."
+  },
+  {
+    "external_id": "T0149.001",
+    "description": "A Domain is a web address (such as \u201cgoogle[.]com\u201d), used to navigate to Websites on the internet.<br><br>Domains differ from Websites in that Websites are considered to be developed web pages which host content, whereas Domains do not necessarily host public-facing web content. <br><br>A threat actor may register a new domain to bypass the old domain being blocked."
+  },
+  {
+    "external_id": "T0149.002",
+    "description": "An Email Domain is a Domain (such as \u201cmeta[.]com\u201d) which has the ability to send emails (e.g. from an @meta[.]com address). <br><br>Any Domain which has an MX (Mail Exchange) record and configured SMTP (Simple Mail Transfer Protocol) settings can send and receive emails, and is therefore an Email Domain. "
+  },
+  {
+    "external_id": "T0149.003",
+    "description": "A Lookalike Domain is a Domain which is visually similar to another Domain, with the potential for web users to mistake one domain for the other.<br><br>Threat actors who want to impersonate organisations\u2019 websites have been observed using a variety of domain impersonation methods. For example, actors wanting to create a domain impersonating netflix.com may use methods such as typosquatting (e.g. n3tflix.com), combosquatting (e.g. netflix-billing.com), or TLD swapping (e.g. netflix.top)."
+  },
+  {
+    "external_id": "T0149.004",
+    "description": "A Redirecting Domain is a Domain which has been configured to redirect users to another Domain when visited."
+  },
+  {
+    "external_id": "T0149.005",
+    "description": "A Server is a computer which provides resources, services, or data to other computers over a network. There are different types of servers, such as web servers (which serve web pages and applications to users), database servers (which manage and provide access to databases), and file servers (which store and share files across a network)."
+  },
+  {
+    "external_id": "T0149.006",
+    "description": "An IP Address is a unique numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. IP addresses are commonly a part of any online infrastructure.<br><br>IP addresses can be in IPV4 dotted decimal (x.x.x.x) or IPV6 colon-separated hexadecimal (y:y:y:y:y:y:y:y) formats. "
+  },
+  {
+    "external_id": "T0149.007",
+    "description": "A VPN (Virtual Private Network) is a service which creates secure, encrypted connections over the internet, allowing users to transmit data safely and access network resources remotely. It masks IP Addresses, enhancing privacy and security by preventing unauthorised access and tracking. VPNs are commonly used for protecting sensitive information, bypassing geographic restrictions, and maintaining online anonymity.<br><br>VPNs can also allow a threat actor to pose as if they are located in one country while in reality being based in another. By doing so, they can try to either mis-attribute their activities to another actor or better hide their own identity."
+  },
+  {
+    "external_id": "T0149.008",
+    "description": "A Proxy IP Address allows a threat actor to mask their real IP Address by putting a layer between them and the online content they\u2019re connecting with. <br><br>Proxy IP Addresses can hide the connection between the threat actor and their online infrastructure."
+  },
+  {
+    "external_id": "T0149.009",
+    "description": "An Internet Connected Physical Asset (sometimes referred to as IoT (Internet of Things)) is a physical asset which has internet connectivity to support online features, such as digital signage, wireless printers, and smart TVs."
+  },
+  {
+    "external_id": "T0150",
+    "description": "Asset Origin contains a list of ways that an actor can obtain an asset. For example, they can create new accounts on online platforms, or they can compromise existing accounts or websites."
+  },
+  {
+    "external_id": "T0150.001",
+    "description": "A Newly Created Asset is an asset which has been created and used for the first time in a documented potential incident.<br><br>For example, analysts which can identify a recent creation date of Accounts participating in the spread of a new narrative can assert these are Newly Created Assets.<br><br>Analysts should use Dormant if the asset was created and laid dormant for an extended period of time before activity."
+  },
+  {
+    "external_id": "T0150.002",
+    "description": "A Dormant Asset is an asset which was inactive for an extended period before being used in a documented potential incident."
+  },
+  {
+    "external_id": "T0150.003",
+    "description": "Pre-Existing Assets are assets which existed before the observed incident which have not been Repurposed; i.e. they are still being used for their original purpose. <br><br>An example could be an Account which presented itself with a Journalist Persona prior to and during the observed potential incident."
+  },
+  {
+    "external_id": "T0150.004",
+    "description": "Repurposed Assets are assets which have been identified as being used previously, but are now being used for different purposes, or have new Presented Personas.<br><br>Actors have been documented compromising assets, and then repurposing them to present Inauthentic Personas as part of their operations."
+  },
+  {
+    "external_id": "T0150.005",
+    "description": "A Compromised Asset is an asset which was originally created or belonged to another person or organisation, but which an actor has gained access to without their consent.<br><br>See also MITRE ATT&CK T1708: Valid Accounts."
+  },
+  {
+    "external_id": "T0150.006",
+    "description": "A Purchased Asset is an asset which actors paid for the ownership of. <br><br>For example, threat actors have been observed selling compromised social media accounts on dark web marketplaces, which can be used to disguise operation activity."
+  },
+  {
+    "external_id": "T0150.007",
+    "description": "A Rented Asset is an asset which actors are temporarily renting or subscribing to. <br><br>For example, threat actors have been observed renting temporary access to legitimate accounts on online platforms in order to disguise operation activity."
+  },
+  {
+    "external_id": "T0150.008",
+    "description": "A Bulk Created Asset is an asset which was created alongside many other instances of the same asset.<br><br>Actors have been observed bulk creating Accounts on Social Media Platforms such as Facebook. Indicators of bulk asset creation include its creation date, assets\u2019 naming conventions, their configuration (e.g. templated personas, visually similar profile pictures), or their activity (e.g. post timings, narratives posted)."
+  }
+],
+    "Article": "\n\nShare this with\nEmail\nFacebook\nMessenger\nMessenger\nTwitter\nPinterest\nWhatsApp\nLinkedIn\nCopy this link\nThese are external links and will open in a new window\n A year-long political conflict between the tiny, wealthy state of Qatar and its larger neighbours - including Saudi Arabia and the United Arab Emirates - has been fought with a new arsenal of weapons: bots, fake news and hacking. \nIn the early hours of 24 May 2017, a news story appeared on the website of Qatar's official news agency, QNA, reporting that the country's emir, Sheikh Tamim bin Hamad al-Thani, had made an astonishing speech. \nThe quotes then appeared on the QNA's social media accounts and on the news ticker running along the bottom of the screen on videos uploaded to the agency's YouTube channel.\nThe emir was quoted praising Islamist groups Hamas, Hezbollah and the Muslim Brotherhood. And perhaps most controversially of all, Iran, Saudi Arabia's arch-rival. \nBut the story soon disappeared from the QNA website, and Qatar's foreign ministry issued a statement denying the speech had ever taken place. No video footage has ever emerged of the emir actually saying the words supposedly attributed to him.\nQatar claimed that the QNA had been hacked. And they said the hack was designed to deliberately spread fake news about the country's leader and its foreign policies. The Qataris specifically blamed UAE, an allegation later repeated by a Washington Post report which cited US intelligence sources. The UAE categorically denied those reports.\nBut the story of the emir's speech unleashed a media free-for-all. Within minutes, Saudi and UAE-owned TV networks - Al Arabiya and Sky News Arabia - picked up on the comments attributed to al-Thani. Both networks accused Qatar of funding extremist groups and of destabilising the region.\nAnd soon after there was another alleged hacking - this time, targeted at the UAE. Youssef al-Otaiba, the UAE's ambassador to the US was hacked. His emails were leaked to the press. This led to long, lurid articles about his private life in international media.\nOn 5 June 2017, Saudi Arabia, the United Arab Emirates, Bahrain, Egypt and their allies - nine governments in total - cut ties with Qatar. They expelled Qatari citizens, suspended diplomatic ties, closed Qatar's only land border, shut down their airspace and halted all trade. \nThe self-styled \"Anti-terror Quartet\", led by Saudi Arabia's new crown prince, Mohammed bin Salman, issued 13 wide-ranging demands for Qatar to meet in 10 days. These included closing down its main TV channel Al Jazeera and ceasing cooperation with Iran.\nUS President Donald Trump, fresh from his first presidential visit abroad - to Saudi Arabia - welcomed the move in a series of tweets the following day. He said it was evidence of his anti-terror policies in action. \nSo good to see the Saudi Arabia visit with the King and 50 countries already paying off. They said they would take a hard line on funding...\nEnd of Twitter post  by @realDonaldTrump\n...extremism, and all reference was pointing to Qatar. Perhaps this will be the beginning of the end to the horror of terrorism!\nEnd of Twitter post 2 by @realDonaldTrump\nHis comments fuelled the propaganda battle that had already begun on Twitter. The platform was flooded with hashtags both for and against Qatar. \nOn the Qatar side, hashtags \"Tamim The Glorious\" and \"Qatar Is Not Alone\" appeared on Twitter's homepage in the Gulf, supposedly showing they were popular sentiments for the region's social media users. Meanwhile, The Saudi and UAE side accused Sheikh Tamim of being the \"Gaddafi of the Gulf\", a reference to the late Libyan leader Muammar Gaddafi.\nHowever, a BBC Arabic investigation has revealed that the majority of tweets using these hashtags were pushed by fake accounts known as \"bots\". Bots are automated accounts which attempt to manipulate public opinion by artificially boosting the popularity of social media posts.\nBen Nimmo, a senior fellow at the Atlantic Council, took a deep dive into some of the most consistently trending hashtags in the conflict and establish the source of their popularity.\nHe detected Twitter bots using a number of methods, such as looking for sudden \"spikes\" in the traffic on a hashtag, which suggests automated posting. \n\"On #Tamim_The_Glorious, this post by an account @sabaqksa had 201 retweets in the space of a couple of seconds, that's not a normal pattern of behaviour,\" Nimmo says. The @sabaqksa account has been suspended by Twitter and BBC Arabic has not been able to contact its owner for comment.\nAnother massive surge of traffic on this hashtag came from one hundred accounts posting 1,410 times in a five hour period. Nimmo says it is \"utterly implausible\" that human operated accounts would post this frequently.\nWhen a number of bot accounts work together like this, it is called a bot net.\nBut Nimmo found bots on the anti-Qatar side too, pushing out offensive tweets including images of Qatar's emir as a dog barking orders and another in which he is depicted as cross-eyed.\nMany of the anti-Qatar bots seemed to be boosting tweets that were originally posted by one specific account, @saudq1978.\nThe @saudq1978 account belongs to Saud al-Qahtani, a prominent member of the Saudi Royal Court and advisor to Prince Mohammed bin Salman. With more than a million followers online, he has a significant presence on Twitter. \nThe top 5 tweets on the \"Gaddafi Of The Gulf\" hashtag were all from this account, which along with retweets made up 66% of the total traffic. The account accused Qatar of killing people in the Libyan civil war, and blamed it for funding terrorism and extremism. \nBBC Arabic made repeated attempts to contact Saud al-Qahtani for comment, but without success.\nMeanwhile, the \"boycott\" or \"blockade\" of Qatar - depending on which side you talk to - looks unlikely to be over soon, despite recent US efforts at mediation.\nHashtags about the conflict are still trending, and the hacking war has continued well into 2018.  And the region's satellite TV channels are still trading accusations.\nThey have also presented very different pictures of the impact of the crisis on life in Qatar. Al Arabiya, which is owned by Saudi interests, has shown footage of supermarkets with empty shelves. But reports on Al-Jazeera, which is funded by the Qatari state, tend to show people on their streets living their lives as normal.\nAccording to Dina Matar, a senior lecturer in Arab media and political communication at SOAS: \"It's not only a political battle, it's also a media battle. We have a huge problem in the Arab world just as you do in the West. Fake news is everywhere.\"\n\"Arab politicians and leaders are completely aware that the media is important and that the media is an important weapon. It is a weapon for propaganda, a weapon for private and public interests,\" she says.\nRecently, a hashtag which translates as #Anniversary_Of_The_Midnight_Fabrications trended in Qatar. It commemorates the first anniversary of the alleged hacking of the Qatar News Agency. Twelve months on from that original incident there is a little sign of the tensions abating between the two sides.\nYou may also be interested in:\nMore on this story\nDo you have a story for us? Email BBC Trending.\nMore from Trending: \nPolitical parties in Mexico are using bots and fake accounts in an attempt to influence voter behaviour and in some cases spread false stories ahead of the country's presidential elections on 1 July, according to researchers, journalists and activists. READ NOW\nYou can follow BBC Trending on Twitter @BBCtrending, and find us on Facebook.  All our stories are at bbc.com/trending.\nOur radio show airs every Saturday on BBC World Service\nAnswering life\u2019s questions through daily features, quizzes and opinions."
+    }
+
+
+Result:
+**IDs that the article supports:**
+
+* T0150.005 – Compromised Asset (the Qatar News Agency was allegedly hacked, implying compromise of a legitimate public account).  
+* T0150.008 – Bulk Created Asset (the burst of tweets on the #Tamim_The_Glorious and #Gaddafi_Of_The_Gulf hashtags was driven by a large bot‑net, indicating bulk creation of fake accounts).
+
+Time: 504.58 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response: **IDs that the article supports:**
+
+* T0150.005 – Compromised Asset (the Qatar News Agency was allegedly hacked, implying compromise of a legitimate public account).  
+* T0150.008 – Bulk Created Asset (the burst of tweets on the #Tamim_The_Glorious and #Gaddafi_Of_The_Gulf hashtags was driven by a large bot‑net, indicating bulk creation of fake accounts).
+Model failed to return valid JSON
+ Respond ONLY with valid JSON.
+
+Result:
+{"supported_ids":["T0150.005","T0150.008"]}
+
+Time: 70.77 seconds
+
+--------------------------------------------------
+
+Prompt:
+Invalid json format:
+**IDs that the article supports:**
+
+* T0150.005 – Compromised Asset (the Qatar News Agency was allegedly hacked, implying compromise of a legitimate public account).  
+* T0150.008 – Bulk Created Asset (the burst of tweets on the #Tamim_The_Glorious and #Gaddafi_Of_The_Gulf hashtags was driven by a large bot‑net, indicating bulk creation of fake accounts).
+
+ Available classes: 
+['T0010', 'T0014', 'T0014.001', 'T0014.002', 'T0065', 'T0091', 'T0091.001', 'T0091.002', 'T0091.003', 'T0092', 'T0092.001', 'T0092.002', 'T0092.003', 'T0093', 'T0093.001', 'T0093.002', 'T0094', 'T0094.001', 'T0094.002', 'T0095', 'T0096', 'T0096.001', 'T0096.002', 'T0113', 'T0145', 'T0145.001', 'T0145.002', 'T0145.003', 'T0145.004', 'T0145.005', 'T0145.006', 'T0145.007', 'T0146', 'T0146.001', 'T0146.002', 'T0146.003', 'T0146.004', 'T0146.005', 'T0146.006', 'T0146.007', 'T0147', 'T0147.001', 'T0147.002', 'T0147.003', 'T0147.004', 'T0148', 'T0148.001', 'T0148.002', 'T0148.003', 'T0148.004', 'T0148.005', 'T0148.006', 'T0148.007', 'T0148.008', 'T0148.009', 'T0149', 'T0149.001', 'T0149.002', 'T0149.003', 'T0149.004', 'T0149.005', 'T0149.006', 'T0149.007', 'T0149.008', 'T0149.009', 'T0150', 'T0150.001', 'T0150.002', 'T0150.003', 'T0150.004', 'T0150.005', 'T0150.006', 'T0150.007', 'T0150.008']
+
+Result:
+{"Techniques":["T0150.005","T0150.008"]}
+
+Time: 94.14 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['T0010', 'T0014', 'T0014.001', 'T0014.002', 'T0065', 'T0091', 'T0091.001', 'T0091.002', 'T0091.003', 'T0092', 'T0092.001', 'T0092.002', 'T0092.003', 'T0093', 'T0093.001', 'T0093.002', 'T0094', 'T0094.001', 'T0094.002', 'T0095', 'T0096', 'T0096.001', 'T0096.002', 'T0113', 'T0145', 'T0145.001', 'T0145.002', 'T0145.003', 'T0145.004', 'T0145.005', 'T0145.006', 'T0145.007', 'T0146', 'T0146.001', 'T0146.002', 'T0146.003', 'T0146.004', 'T0146.005', 'T0146.006', 'T0146.007', 'T0147', 'T0147.001', 'T0147.002', 'T0147.003', 'T0147.004', 'T0148', 'T0148.001', 'T0148.002', 'T0148.003', 'T0148.004', 'T0148.005', 'T0148.006', 'T0148.007', 'T0148.008', 'T0148.009', 'T0149', 'T0149.001', 'T0149.002', 'T0149.003', 'T0149.004', 'T0149.005', 'T0149.006', 'T0149.007', 'T0149.008', 'T0149.009', 'T0150', 'T0150.001', 'T0150.002', 'T0150.003', 'T0150.004', 'T0150.005', 'T0150.006', 'T0150.007', 'T0150.008']
+
+Result:
+{'Techniques': ['T0150.005', 'T0150.008']}
+
+Time: 669.51 seconds
+Failures: 2
+
+--------------------------------------------------
+

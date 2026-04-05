@@ -1,0 +1,3374 @@
+DISARM Log File - Created on 20260309-183601
+SETUP:
+Large Model: Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8
+Fast Model: Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8
+Temperature: 0.0
+Max Fix Attempts: 2
+
+==================================================
+
+Prompt:
+
+{
+"Tactics": [
+  {
+    "name": "plan-strategy",
+    "description": "Define the desired end state, i.e. the set of required conditions that defines achievement of all objectives."
+  },
+  {
+    "name": "plan-objectives",
+    "description": "Set clearly defined, measurable, and achievable objectives. In some cases achieving objectives ties execution of tactical tasks to reaching the desired strategic end state. In other cases, where there is no clearly defined strategic end state, the tactical objective may stand on its own. The objective statement should not specify the way and means of accomplishment but rather the goal the threat actor wishes to achieve. "
+  },
+  {
+    "name": "microtarget",
+    "description": "Actions taken which help target content to specific audiences identified and analysed as part of TA13: Target Audience Analysis."
+  },
+  {
+    "name": "develop-content",
+    "description": "Create or acquire text, images, and other content"
+  },
+  {
+    "name": "select-channels-and-affordances",
+    "description": "Selecting platforms and affordances assesses which online or offline platforms and their associated affordances maximise an influence operation\u2019s ability to reach its target audience. To select the most appropriate platform(s), an operation may assess the technological affordances including platform algorithms, terms of service, permitted content types, or other attributes that determine platform usability and accessibility. Selecting platforms includes both choosing platforms on which the operation will publish its own content and platforms on which the operation will attempt to restrict adversarial content."
+  },
+  {
+    "name": "conduct-pump-priming",
+    "description": "Release content on a targetted small scale, prior to general release, including releasing seed. Used for preparation before broader release, and as message honing. Used for preparation before broader release, and as message honing."
+  },
+  {
+    "name": "deliver-content",
+    "description": "Release content to general public or larger population"
+  },
+  {
+    "name": "drive-offline-activity",
+    "description": "Move incident/campaign from online to offline. Encouraging users to move from the platform on which they initially viewed operation content and engage in the physical information space or offline world. This may include operation-aligned rallies or protests, radio, newspaper, or billboards. An influence operation may drive to physical forums to diversify its information channels and facilitate spaces where the target audience can engage with both operation content and like-minded individuals offline."
+  },
+  {
+    "name": "persist-in-the-information-environment",
+    "description": "Persist in the Information Space refers to taking measures that allow an operation to maintain its presence and avoid takedown by an external entity. Techniques in Persist in the Information Space help campaigns operate without detection and appear legitimate to the target audience and platform monitoring services. Influence operations on social media often persist online by varying the type of information assets and platforms used throughout the campaign."
+  },
+  {
+    "name": "assess-effectiveness",
+    "description": "Assess effectiveness of action, for use in future plans"
+  },
+  {
+    "name": "target-audience-analysis",
+    "description": "Identifying and analysing the target audience examines target audience member locations, political affiliations, financial situations, and other attributes that an influence operation may incorporate into its messaging strategy. During this tactic, influence operations may also identify existing similarities and differences between target audience members to unite like groups and divide opposing groups. Identifying and analysing target audience members allows influence operations to tailor operation strategy and content to their analysis."
+  },
+  {
+    "name": "develop-narratives",
+    "description": "The promotion of beneficial master narratives is perhaps the most effective method for achieving long-term strategic narrative dominance. From a \"\"whole of society\"\" perspective the promotion of the society's core master narratives should occupy a central strategic role. From a misinformation campaign / cognitive security perpectve the tactics around master narratives centre more precisely on the day-to-day promotion and reinforcement of this messaging. In other words, beneficial, high-coverage master narratives are a central strategic goal and their promotion constitutes an ongoing tactical struggle carried out at a whole-of-society level. Tactically, their promotion covers a broad spectrum of activities both on- and offline."
+  },
+  {
+    "name": "establish-assets",
+    "description": "Establishing information assets generates messaging tools, including social media accounts, operation personnel, and organisations, including directly and indirectly managed assets. For assets under their direct control, the operation can add, change, or remove these assets at will. Establishing information assets allows an influence operation to promote messaging directly to the target audience without navigating through external entities. Many online influence operations create or compromise social media accounts as a primary vector of information dissemination.\n\nThis Tactic was previously called Establish Social Assets."
+  },
+  {
+    "name": "establish-legitimacy",
+    "description": "Establish assets that create trust"
+  },
+  {
+    "name": "maximise-exposure",
+    "description": "Maximise exposure of the target audience to incident/campaign content via flooding, amplifying, and cross-posting."
+  },
+  {
+    "name": "drive-online-harms",
+    "description": "Actions taken by an influence operation to harm their opponents in online spaces through harassment, suppression, releasing private information, and controlling the information space through offensive cyberspace operations."
+  }
+],
+"Article": "\nIran has taken a page from the Russian playbook: Passing off military groups as civilians for the sake of PR and plausible deniability.\n\nIranian state-backed advanced persistent threat (APT) groups have been masquerading as hacktivists, claiming attacks against Israeli critical infrastructure and air defense systems.\n\nWhile threat actors in Gaza itself\u00a0[have been radio silent](https://web.archive.org/web/20240221113558/https://www.darkreading.com/threat-intelligence/hamas-cyberattacks-ceased-after-october-7-attack-but-why), the majority of cyberattacks against Israel in recent months have been carried out by hacktivist operations and nation-state actors \"playing them on TV,\" according to a new report from CrowdStrike.\n\nThese so-called \"faketivists\" have had a mixed impact on the Israeli-Gaza war thus far, claiming many public relations wins but leaving evidence of few truly disruptive attacks.\n\nWhat's clearer are the benefits of the model itself: creating a layer of plausible deniability for the state, and the impression among the public that their attacks are grassroots-inspired. While this deniability has always been a key driver with state-sponsored cyberattacks, researchers characterized this instance as noteworthy for the effort behind the charade.\n\n\"We've seen a lot of hacktivist activity that seems to be nation-states trying to have that 'deniable' capability,\" Adam Meyers, CrowdStrike senior vice president for counter adversary operations said in a press conference this week. \"And so these groups continue to maintain activity, moving from what was traditionally website defacements and DDoS attacks, into a lot of hack and leak operations.\"\n\n## **Iran's Faketivists**\n\nFaketivists can be nation-state actors \u2014 such as \"Karma Power,\" the front for the Ministry of Intelligence-linked BANISHED KITTEN, or\u00a0[\"The Malek Team,\" in actuality SPECTRAL KITTEN](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/israeli-defence-force-medical-data-hacked)\u00a0\u2014 or corporate ones like HAYWIRE KITTEN \u2014 associated with Islamic Revolutionary Guard Corps contractor Emennet Pasargad, which at various times has operated under the nom de guerre Yare Gomnam Cyber Team and\u00a0[al Toufan Team (aka Cyber Toufan)](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/-cyber-toufan-hacktivists-leaked-100-plus-israeli-orgs-in-one-month).\n\nTo sell the persona, faketivists like to adopt the aesthetic, rhetoric, tactics, techniques, and procedures (TTPs), and sometimes the actual names and iconography associated with legitimate hacktivist outfits. Keen eyes will spot that they typically arise just after major geopolitical events, without an established history of activity, in alignment with the interests of their government sponsors.\n\nOftentimes, it's difficult to separate the faketivists from the hacktivists, as each might promote and support the activities of the other.\n\nPost-Oct. 7 activity from Iran's faketivists \u2014 real and otherwise \u2014 has involved purported attacks against critical infrastructure and Israel's \"Iron Dome\" missile defense system, as well as frequent information operations.\n\nAnd the former is often just a thin guise for the latter. While faketivists have achieved a select number of\u00a0[breaches of note](https://web.archive.org/web/20240221113558/https://www.darkreading.com/ics-ot-security/pro-iran-attackers-access-multiple-water-facility-controllers), the majority of them appear to be opportunistic attacks of low material impact, intended to\u00a0[boost the morale of one side and degrade the other's](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/hackers-blast-violent-gaza-message-popular-israeli-movie-theater).\n\n\"We've seen disruptions targeting Israel, a lot of focus on things like air alert systems that alert about incoming missile strikes. We've seen attempts to disrupt infrastructure within Israel, for sure,\" Meyers said, adding that such activity is likely to continue in order to terrorize Israelis. \"It's basically the same playbook that Russia used in Ukraine, of how can we terrorize the population and delegitimize their government, and cause them to distrust things.\"\n\n## **The Gap Left by Hamas Threat Actors**\n\nAt the same time Iranian faketivism has shot up in Israel, cyber activity associated with Hamas has taken a nosedive.\n\nSince the Oct. 7 terrorist attack in Israel, threat analysts have consistently found zilch from Hamas-connected cyber threat actors like Extreme Jackal (aka BLACKSTEM, MOLERATS) and Renegade Jackal (aka DESERTVARNISH, UNC718, Desert Falcons, Arid Viper).\n\nThis, CrowdStrike speculates in its report, might be explained by significant Internet disruptions in the region. Since the onset of war, it explained, connectivity in Gaza has been hampered by some combination of kinetic war, power outages, and distributed denial-of-service (DDoS) attacks.\n\nCase-in-point: there is one Hamas-linked group \u2014 CruelAlchemy \u2014 whose command-and-control (C2) infrastructure has remained active since the onset of war. Though Gaza-connected, the group appears to be physically located in Turkey.\n\nSo while Hamas remains MIA online, its allies are making up the difference ([in volume, if not quality](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/worldwide-hacktivists-take-sides-over-gaza-with-little-show)).\n\n\"The point is that APTs continue to proliferate. We see more and more threat actors every year, and more and more activity from those threat actors every single year,\" Meyers says.\n"
+}
+
+
+Result:
+{
+"Tactics": ["plan-strategy", "develop-content", "select-channels-and-affordances", "establish-assets", "establish-legitimacy", "maximise-exposure", "target-audience-analysis"]
+}
+
+Time: 2.19 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['plan-strategy', 'plan-objectives', 'microtarget', 'develop-content', 'select-channels-and-affordances', 'conduct-pump-priming', 'deliver-content', 'drive-offline-activity', 'persist-in-the-information-environment', 'assess-effectiveness', 'target-audience-analysis', 'develop-narratives', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'drive-online-harms']
+
+Result:
+{'Tactics': ['plan-strategy', 'develop-content', 'select-channels-and-affordances', 'establish-assets', 'establish-legitimacy', 'maximise-exposure', 'target-audience-analysis']}
+
+Time: 2.19 seconds
+Failures: 0
+
+--------------------------------------------------
+
+Prompt:
+
+    {
+    "Techniques": [
+  {
+    "external_id": "T0073",
+    "description": "Determining the target audiences (segments of the population) who will receive campaign narratives and artefacts intended to achieve the strategic ends."
+  },
+  {
+    "external_id": "T0074",
+    "description": "These are the long-term end-states the campaign aims to bring about. They typically involve an advantageous position vis-a-vis competitors in terms of power or influence.  The strategic goal may be to improve or simply to hold one\u2019s position. Competition occurs in the public sphere in the domains of war, diplomacy, politics, economics, and ideology, and can play out between armed groups, nation-states, political parties, corporations, interest groups, or individuals. "
+  },
+  {
+    "external_id": "T0074.001",
+    "description": "Favourable position on the international stage in terms of great power politics or regional rivalry. Geopolitics plays out in the realms of foreign policy, national security, diplomacy, and intelligence. It involves nation-state governments, heads of state, foreign ministers, intergovernmental organisations, and regional security alliances."
+  },
+  {
+    "external_id": "T0074.002",
+    "description": "Favourable position vis-\u00e0-vis national or sub-national political opponents such as political parties, interest groups, politicians, candidates.  "
+  },
+  {
+    "external_id": "T0074.003",
+    "description": "Favourable position domestically or internationally in the realms of commerce, trade, finance, industry. Economics involves nation-states, corporations, banks, trade blocs, industry associations, cartels.  "
+  },
+  {
+    "external_id": "T0074.004",
+    "description": "Favourable position domestically or internationally in the market for ideas, beliefs, and world views. Competition plays out among faith systems, political systems, and value systems. It can involve sub-national, national or supra-national movements.    "
+  }
+],
+    "Article": "\nIran has taken a page from the Russian playbook: Passing off military groups as civilians for the sake of PR and plausible deniability.\n\nIranian state-backed advanced persistent threat (APT) groups have been masquerading as hacktivists, claiming attacks against Israeli critical infrastructure and air defense systems.\n\nWhile threat actors in Gaza itself\u00a0[have been radio silent](https://web.archive.org/web/20240221113558/https://www.darkreading.com/threat-intelligence/hamas-cyberattacks-ceased-after-october-7-attack-but-why), the majority of cyberattacks against Israel in recent months have been carried out by hacktivist operations and nation-state actors \"playing them on TV,\" according to a new report from CrowdStrike.\n\nThese so-called \"faketivists\" have had a mixed impact on the Israeli-Gaza war thus far, claiming many public relations wins but leaving evidence of few truly disruptive attacks.\n\nWhat's clearer are the benefits of the model itself: creating a layer of plausible deniability for the state, and the impression among the public that their attacks are grassroots-inspired. While this deniability has always been a key driver with state-sponsored cyberattacks, researchers characterized this instance as noteworthy for the effort behind the charade.\n\n\"We've seen a lot of hacktivist activity that seems to be nation-states trying to have that 'deniable' capability,\" Adam Meyers, CrowdStrike senior vice president for counter adversary operations said in a press conference this week. \"And so these groups continue to maintain activity, moving from what was traditionally website defacements and DDoS attacks, into a lot of hack and leak operations.\"\n\n## **Iran's Faketivists**\n\nFaketivists can be nation-state actors \u2014 such as \"Karma Power,\" the front for the Ministry of Intelligence-linked BANISHED KITTEN, or\u00a0[\"The Malek Team,\" in actuality SPECTRAL KITTEN](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/israeli-defence-force-medical-data-hacked)\u00a0\u2014 or corporate ones like HAYWIRE KITTEN \u2014 associated with Islamic Revolutionary Guard Corps contractor Emennet Pasargad, which at various times has operated under the nom de guerre Yare Gomnam Cyber Team and\u00a0[al Toufan Team (aka Cyber Toufan)](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/-cyber-toufan-hacktivists-leaked-100-plus-israeli-orgs-in-one-month).\n\nTo sell the persona, faketivists like to adopt the aesthetic, rhetoric, tactics, techniques, and procedures (TTPs), and sometimes the actual names and iconography associated with legitimate hacktivist outfits. Keen eyes will spot that they typically arise just after major geopolitical events, without an established history of activity, in alignment with the interests of their government sponsors.\n\nOftentimes, it's difficult to separate the faketivists from the hacktivists, as each might promote and support the activities of the other.\n\nPost-Oct. 7 activity from Iran's faketivists \u2014 real and otherwise \u2014 has involved purported attacks against critical infrastructure and Israel's \"Iron Dome\" missile defense system, as well as frequent information operations.\n\nAnd the former is often just a thin guise for the latter. While faketivists have achieved a select number of\u00a0[breaches of note](https://web.archive.org/web/20240221113558/https://www.darkreading.com/ics-ot-security/pro-iran-attackers-access-multiple-water-facility-controllers), the majority of them appear to be opportunistic attacks of low material impact, intended to\u00a0[boost the morale of one side and degrade the other's](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/hackers-blast-violent-gaza-message-popular-israeli-movie-theater).\n\n\"We've seen disruptions targeting Israel, a lot of focus on things like air alert systems that alert about incoming missile strikes. We've seen attempts to disrupt infrastructure within Israel, for sure,\" Meyers said, adding that such activity is likely to continue in order to terrorize Israelis. \"It's basically the same playbook that Russia used in Ukraine, of how can we terrorize the population and delegitimize their government, and cause them to distrust things.\"\n\n## **The Gap Left by Hamas Threat Actors**\n\nAt the same time Iranian faketivism has shot up in Israel, cyber activity associated with Hamas has taken a nosedive.\n\nSince the Oct. 7 terrorist attack in Israel, threat analysts have consistently found zilch from Hamas-connected cyber threat actors like Extreme Jackal (aka BLACKSTEM, MOLERATS) and Renegade Jackal (aka DESERTVARNISH, UNC718, Desert Falcons, Arid Viper).\n\nThis, CrowdStrike speculates in its report, might be explained by significant Internet disruptions in the region. Since the onset of war, it explained, connectivity in Gaza has been hampered by some combination of kinetic war, power outages, and distributed denial-of-service (DDoS) attacks.\n\nCase-in-point: there is one Hamas-linked group \u2014 CruelAlchemy \u2014 whose command-and-control (C2) infrastructure has remained active since the onset of war. Though Gaza-connected, the group appears to be physically located in Turkey.\n\nSo while Hamas remains MIA online, its allies are making up the difference ([in volume, if not quality](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/worldwide-hacktivists-take-sides-over-gaza-with-little-show)).\n\n\"The point is that APTs continue to proliferate. We see more and more threat actors every year, and more and more activity from those threat actors every single year,\" Meyers says.\n"
+    }
+
+
+Result:
+{
+  "Techniques": ["T0073", "T0074.001"]
+}
+
+
+Time: 0.83 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['T0073', 'T0074', 'T0074.001', 'T0074.002', 'T0074.003', 'T0074.004']
+
+Result:
+{'Techniques': ['T0073', 'T0074.001']}
+
+Time: 0.83 seconds
+Failures: 0
+
+--------------------------------------------------
+
+Prompt:
+
+    {
+    "Techniques": [
+  {
+    "external_id": "T0015",
+    "description": "Create one or more hashtags and/or hashtag groups. Many incident-based campaigns will create hashtags to promote their fabricated event. Creating a hashtag for an incident can have two important effects: 1. Create a perception of reality around an event. Certainly only \"real\" events would be discussed in a hashtag. After all, the event has a name!, and 2. Publicise the story more widely through trending lists and search behaviour. Asset needed to direct/control/manage \"conversation\" connected to launching new incident/campaign with new hashtag for applicable social media sites)."
+  },
+  {
+    "external_id": "T0015.001",
+    "description": "Use a dedicated, existing hashtag for the campaign/incident. This Technique covers behaviours previously documented by T0104.005: Use Hashtags, which has since been deprecated.  "
+  },
+  {
+    "external_id": "T0015.002",
+    "description": "Create a campaign/incident specific hashtag. This Technique covers behaviours previously documented by T0104.006: Create Dedicated Hashtag, which has since been deprecated. "
+  },
+  {
+    "external_id": "T0023",
+    "description": "Change, twist, or exaggerate existing facts to construct a narrative that differs from reality. Examples: images and ideas can be distorted by being placed in an improper content"
+  },
+  {
+    "external_id": "T0023.001",
+    "description": "Reframing context refers to removing an event from its surrounding context to distort its intended meaning. Rather than deny that an event occurred, reframing context frames an event in a manner that may lead the target audience to draw a different conclusion about its intentions."
+  },
+  {
+    "external_id": "T0023.002",
+    "description": "An influence operation may edit open-source content, such as collaborative blogs or encyclopaedias, to promote its narratives on outlets with existing credibility and audiences. Editing open-source content may allow an operation to post content on platforms without dedicating resources to the creation and maintenance of its own assets."
+  },
+  {
+    "external_id": "T0084",
+    "description": "When an operation recycles content from its own previous operations or plagiarises from external operations. An operation may launder information to conserve resources that would have otherwise been utilised to develop new content."
+  },
+  {
+    "external_id": "T0084.001",
+    "description": "Copypasta refers to a piece of text that has been copied and pasted multiple times across various online platforms. A copypasta\u2019s final form may differ from its original source text as users add, delete, or otherwise edit the content as they repost the text."
+  },
+  {
+    "external_id": "T0084.002",
+    "description": "An influence operation may take content from other sources without proper attribution. This content may be either misinformation content shared by others without malicious intent but now leveraged by the campaign as disinformation or disinformation content from other sources."
+  },
+  {
+    "external_id": "T0084.003",
+    "description": "An influence operation may take authentic content from other sources and add deceptive labels or deceptively translate the content into other langauges."
+  },
+  {
+    "external_id": "T0084.004",
+    "description": "An influence operation may take content from other sources with proper attribution. This content may be either misinformation content shared by others without malicious intent but now leveraged by the campaign as disinformation or disinformation content from other sources. Examples include the appropriation of content from one inauthentic news site to another inauthentic news site or network in ways that align with the originators licencing or terms of service."
+  },
+  {
+    "external_id": "T0085",
+    "description": "Creating and editing false or misleading text-based artefacts, often aligned with one or more specific narratives, for use in a disinformation campaign."
+  },
+  {
+    "external_id": "T0085.001",
+    "description": "AI-generated texts refers to synthetic text composed by computers using text-generating AI technology. Autonomous generation refers to content created by a bot without human input, also known as bot-created content generation. Autonomous generation represents the next step in automation after language generation and may lead to automated journalism. An influence operation may use read fakes or autonomous generation to quickly develop and distribute content to the target audience.<br><br><b>Associated Techniques and Sub-techniques:</b><br><b>T0085.008: Machine Translated Text:</b> Use this sub-technique when AI has been used to generate a translation of a piece of text."
+  },
+  {
+    "external_id": "T0085.003",
+    "description": "An influence operation may develop false or misleading news articles aligned to their campaign goals or narratives."
+  },
+  {
+    "external_id": "T0085.004",
+    "description": "Produce text in the form of a document."
+  },
+  {
+    "external_id": "T0085.005",
+    "description": "Produce text content in the form of a book.\u00a0<br /> <br />This technique covers both e-books and physical books, however, the former is more easily deployed by threat actors given the lower cost to develop."
+  },
+  {
+    "external_id": "T0085.006",
+    "description": "Opinion articles (aka \u201cOp-Eds\u201d or \u201cEditorials\u201d) are articles or regular columns flagged as \u201copinion\u201d posted to news sources, and can be contributed by people outside the organisation.\u00a0<br /> <br />Flagging articles as opinions allow news organisations to distinguish them from the typical expectations of objective news reporting while distancing the presented opinion from the organisation or its employees.<br /> <br /> The use of this technique is not by itself an indication of malicious or inauthentic content; Op-eds are a common format in media. However, threat actors exploit op-eds to, for example, submit opinion articles to local media to promote their narratives. <br /> <br />Examples from the perspective of a news site involve publishing op-eds from perceived prestigious voices to give legitimacy to an inauthentic publication, or supporting causes by hosting op-eds from actors aligned with the organisation\u2019s goals."
+  },
+  {
+    "external_id": "T0085.007",
+    "description": "Create fake academic research. Example: fake social science research is often aimed at hot-button social issues such as gender, race and sexuality. Fake science research can target Climate Science debate or pseudoscience like anti-vaxx.<br /> <br />This Technique previously used the ID T0019.001."
+  },
+  {
+    "external_id": "T0085.008",
+    "description": "Text which has been translated into another language using machine translation tools, such as AI."
+  },
+  {
+    "external_id": "T0086",
+    "description": "Creating and editing false or misleading visual artefacts, often aligned with one or more specific narratives, for use in a disinformation campaign. This may include photographing staged real-life situations, repurposing existing digital images, or using image creation and editing technologies."
+  },
+  {
+    "external_id": "T0086.001",
+    "description": "Memes are one of the most important single artefact types in all of computational propaganda. Memes in this framework denotes the narrow image-based definition. But that naming is no accident, as these items have most of the important properties of Dawkins' original conception as a self-replicating unit of culture. Memes pull together reference and commentary; image and narrative; emotion and message. Memes are a powerful tool and the heart of modern influence campaigns."
+  },
+  {
+    "external_id": "T0086.002",
+    "description": "Deepfakes refer to AI-generated falsified photos, videos, or soundbites. An influence operation may use deepfakes to depict an inauthentic situation by synthetically recreating an individual\u2019s face, body, voice, and physical gestures.<br><br> <b>Associated Techniques and Sub-techniques:</b><br> <b>T0145.002: AI-Generated Account Imagery:</b> Analysts should use this sub-technique to document use of AI generated imagery in accounts\u2019 profile pictures or other account imagery."
+  },
+  {
+    "external_id": "T0086.003",
+    "description": "Cheap fakes utilise less sophisticated measures of altering an image, video, or audio for example, slowing, speeding, or cutting footage to create a false context surrounding an image or event."
+  },
+  {
+    "external_id": "T0086.004",
+    "description": "Image files that aggregate positive evidence (Joan Donovan)"
+  },
+  {
+    "external_id": "T0087",
+    "description": "Creating and editing false or misleading video artefacts, often aligned with one or more specific narratives, for use in a disinformation campaign. This may include staging videos of purportedly real situations, repurposing existing video artefacts, or using AI-generated video creation and editing technologies (including deepfakes)."
+  },
+  {
+    "external_id": "T0087.001",
+    "description": "Deepfakes refer to AI-generated falsified photos, videos, or soundbites. An influence operation may use deepfakes to depict an inauthentic situation by synthetically recreating an individual\u2019s face, body, voice, and physical gestures."
+  },
+  {
+    "external_id": "T0087.002",
+    "description": "Cheap fakes utilise less sophisticated measures of altering an image, video, or audio for example, slowing, speeding, or cutting footage to create a false context surrounding an image or event."
+  },
+  {
+    "external_id": "T0088",
+    "description": "Creating and editing false or misleading audio artefacts, often aligned with one or more specific narratives, for use in a disinformation campaign. This may include creating completely new audio content, repurposing existing audio artefacts (including cheap fakes), or using AI-generated audio creation and editing technologies (including deepfakes)."
+  },
+  {
+    "external_id": "T0088.001",
+    "description": "Deepfakes refer to AI-generated falsified photos, videos, or soundbites. An influence operation may use deepfakes to depict an inauthentic situation by synthetically recreating an individual\u2019s face, body, voice, and physical gestures."
+  },
+  {
+    "external_id": "T0088.002",
+    "description": "Cheap fakes utilise less sophisticated measures of altering an image, video, or audio for example, slowing, speeding, or cutting footage to create a false context surrounding an image or event."
+  },
+  {
+    "external_id": "T0089",
+    "description": "Procuring documents that are not publicly available, by whatever means -- whether legal or illegal, highly-resourced or less so. These documents can include authentic non-public documents, authentic non-public documents have been altered, or inauthentic documents intended to appear as if they are authentic non-public documents. All of these types of documents can be \"leaked\" during later stages in the operation."
+  },
+  {
+    "external_id": "T0089.001",
+    "description": "Procure authentic documents that are not publicly available, by whatever means -- whether legal or illegal, highly-resourced or less so. These documents can be \"leaked\" during later stages in the operation."
+  },
+  {
+    "external_id": "T0089.003",
+    "description": "Alter authentic documents (public or non-public) to achieve campaign goals. The altered documents are intended to appear as if they are authentic and can be \"leaked\" during later stages in the operation."
+  }
+],
+    "Article": "\nIran has taken a page from the Russian playbook: Passing off military groups as civilians for the sake of PR and plausible deniability.\n\nIranian state-backed advanced persistent threat (APT) groups have been masquerading as hacktivists, claiming attacks against Israeli critical infrastructure and air defense systems.\n\nWhile threat actors in Gaza itself\u00a0[have been radio silent](https://web.archive.org/web/20240221113558/https://www.darkreading.com/threat-intelligence/hamas-cyberattacks-ceased-after-october-7-attack-but-why), the majority of cyberattacks against Israel in recent months have been carried out by hacktivist operations and nation-state actors \"playing them on TV,\" according to a new report from CrowdStrike.\n\nThese so-called \"faketivists\" have had a mixed impact on the Israeli-Gaza war thus far, claiming many public relations wins but leaving evidence of few truly disruptive attacks.\n\nWhat's clearer are the benefits of the model itself: creating a layer of plausible deniability for the state, and the impression among the public that their attacks are grassroots-inspired. While this deniability has always been a key driver with state-sponsored cyberattacks, researchers characterized this instance as noteworthy for the effort behind the charade.\n\n\"We've seen a lot of hacktivist activity that seems to be nation-states trying to have that 'deniable' capability,\" Adam Meyers, CrowdStrike senior vice president for counter adversary operations said in a press conference this week. \"And so these groups continue to maintain activity, moving from what was traditionally website defacements and DDoS attacks, into a lot of hack and leak operations.\"\n\n## **Iran's Faketivists**\n\nFaketivists can be nation-state actors \u2014 such as \"Karma Power,\" the front for the Ministry of Intelligence-linked BANISHED KITTEN, or\u00a0[\"The Malek Team,\" in actuality SPECTRAL KITTEN](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/israeli-defence-force-medical-data-hacked)\u00a0\u2014 or corporate ones like HAYWIRE KITTEN \u2014 associated with Islamic Revolutionary Guard Corps contractor Emennet Pasargad, which at various times has operated under the nom de guerre Yare Gomnam Cyber Team and\u00a0[al Toufan Team (aka Cyber Toufan)](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/-cyber-toufan-hacktivists-leaked-100-plus-israeli-orgs-in-one-month).\n\nTo sell the persona, faketivists like to adopt the aesthetic, rhetoric, tactics, techniques, and procedures (TTPs), and sometimes the actual names and iconography associated with legitimate hacktivist outfits. Keen eyes will spot that they typically arise just after major geopolitical events, without an established history of activity, in alignment with the interests of their government sponsors.\n\nOftentimes, it's difficult to separate the faketivists from the hacktivists, as each might promote and support the activities of the other.\n\nPost-Oct. 7 activity from Iran's faketivists \u2014 real and otherwise \u2014 has involved purported attacks against critical infrastructure and Israel's \"Iron Dome\" missile defense system, as well as frequent information operations.\n\nAnd the former is often just a thin guise for the latter. While faketivists have achieved a select number of\u00a0[breaches of note](https://web.archive.org/web/20240221113558/https://www.darkreading.com/ics-ot-security/pro-iran-attackers-access-multiple-water-facility-controllers), the majority of them appear to be opportunistic attacks of low material impact, intended to\u00a0[boost the morale of one side and degrade the other's](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/hackers-blast-violent-gaza-message-popular-israeli-movie-theater).\n\n\"We've seen disruptions targeting Israel, a lot of focus on things like air alert systems that alert about incoming missile strikes. We've seen attempts to disrupt infrastructure within Israel, for sure,\" Meyers said, adding that such activity is likely to continue in order to terrorize Israelis. \"It's basically the same playbook that Russia used in Ukraine, of how can we terrorize the population and delegitimize their government, and cause them to distrust things.\"\n\n## **The Gap Left by Hamas Threat Actors**\n\nAt the same time Iranian faketivism has shot up in Israel, cyber activity associated with Hamas has taken a nosedive.\n\nSince the Oct. 7 terrorist attack in Israel, threat analysts have consistently found zilch from Hamas-connected cyber threat actors like Extreme Jackal (aka BLACKSTEM, MOLERATS) and Renegade Jackal (aka DESERTVARNISH, UNC718, Desert Falcons, Arid Viper).\n\nThis, CrowdStrike speculates in its report, might be explained by significant Internet disruptions in the region. Since the onset of war, it explained, connectivity in Gaza has been hampered by some combination of kinetic war, power outages, and distributed denial-of-service (DDoS) attacks.\n\nCase-in-point: there is one Hamas-linked group \u2014 CruelAlchemy \u2014 whose command-and-control (C2) infrastructure has remained active since the onset of war. Though Gaza-connected, the group appears to be physically located in Turkey.\n\nSo while Hamas remains MIA online, its allies are making up the difference ([in volume, if not quality](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/worldwide-hacktivists-take-sides-over-gaza-with-little-show)).\n\n\"The point is that APTs continue to proliferate. We see more and more threat actors every year, and more and more activity from those threat actors every single year,\" Meyers says.\n"
+    }
+
+
+Result:
+{
+  "Techniques": ["T0023", "T0085", "T0086", "T0087", "T0088", "T0089"]
+}
+```
+
+Time: 2.24 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+{
+  "Techniques": [
+    "T0023",
+    "T0085",
+    "T0086",
+    "T0087",
+    "T0088",
+    "T0089"
+  ]
+}
+
+Time: 2.0 seconds
+
+--------------------------------------------------
+
+ROUND SUMMARY:
+Available Classes:
+['T0015', 'T0015.001', 'T0015.002', 'T0023', 'T0023.001', 'T0023.002', 'T0084', 'T0084.001', 'T0084.002', 'T0084.003', 'T0084.004', 'T0085', 'T0085.001', 'T0085.003', 'T0085.004', 'T0085.005', 'T0085.006', 'T0085.007', 'T0085.008', 'T0086', 'T0086.001', 'T0086.002', 'T0086.003', 'T0086.004', 'T0087', 'T0087.001', 'T0087.002', 'T0088', 'T0088.001', 'T0088.002', 'T0089', 'T0089.001', 'T0089.003']
+
+Result:
+{'Techniques': ['T0023', 'T0085', 'T0086', 'T0087', 'T0088', 'T0089']}
+
+Time: 4.24 seconds
+Failures: 1
+
+--------------------------------------------------
+
+Prompt:
+
+    {
+    "Techniques": [
+  {
+    "external_id": "T0029",
+    "description": "Create fake online polls, or manipulate existing online polls. Data gathering tactic to target those who engage, and potentially their networks of friends/followers as well"
+  },
+  {
+    "external_id": "T0107",
+    "description": "Platforms for searching, sharing, and curating content and media. Examples include Pinterest, Flipboard, etc."
+  },
+  {
+    "external_id": "T0109",
+    "description": "Platforms for finding, reviewing, and sharing information about brands, products, services, restaurants, travel destinations, etc. Examples include Yelp, TripAdvisor, etc."
+  },
+  {
+    "external_id": "T0110",
+    "description": "Leveraging formal, traditional, diplomatic channels to communicate with foreign governments (written documents, meetings, summits, diplomatic visits, etc). This type of diplomacy is conducted by diplomats of one nation with diplomats and other officials of another nation or international organisation."
+  },
+  {
+    "external_id": "T0111",
+    "description": "Examples include TV, Newspaper, Radio, etc."
+  },
+  {
+    "external_id": "T0111.001",
+    "description": "TV"
+  },
+  {
+    "external_id": "T0111.002",
+    "description": "Newspaper"
+  },
+  {
+    "external_id": "T0111.003",
+    "description": "Radio"
+  },
+  {
+    "external_id": "T0151",
+    "description": "A Digital Community Hosting Asset is an online asset which can be used by actors to provide spaces for users to interact with each other.<br><br>Sub-techniques categorised under Digital Community Hosting Assets can include Content Hosting and Content Delivery capabilities; however, their nominal primary purpose is to provide a space for community interaction."
+  },
+  {
+    "external_id": "T0151.001",
+    "description": "Examples of popular Social Media Platforms include Facebook, Instagram, and VK.<br><br>Social Media Platforms allow users to create Accounts, which they can configure to present themselves to other platform users. This typically involves Establishing Account Imagery and Presenting a Persona.<br><br>Social Media Platforms typically allow the creation of Online Community Groups and Online Community Pages.<br><br>Accounts on Social Media Platforms are typically presented with a feed of content posted to the platform. The content that populates this feed can be aggregated by the platform\u2019s proprietary Content Recommendation Algorithm, or users can \u201cfriend\u201d or \u201cfollow\u201d other accounts to add their posts to their feed.<br><br>Many Social Media Platforms also allow users to send direct messages to other users on the platform. "
+  },
+  {
+    "external_id": "T0151.002",
+    "description": "Some online platforms allow people with Accounts to create Online Community Groups. Groups are usually created around a specific topic or locality, and allow users to post content to the group, and interact with other users\u2019 posted content. <br><br>For example, Meta\u2019s Social Media Platform Facebook allows users to create a \u201cFacebook group\u201d. This feature is not exclusive to Social Media Platforms; the Microblogging Platform X (prev. Twitter) allows users to create \u201cX Communities\u201d, groups based on particular topics which users can join and post to; the Software Delivery Platform Steam allows users to create Steam Community Groups.<br><br>Online Community Groups can be open or gated (for example, groups can require admin approval before users can join)."
+  },
+  {
+    "external_id": "T0151.003",
+    "description": "A Facebook Page is an example of an Online Community Page.<br><br>Online Community Pages allow Administrator Accounts to post content to the page, which other users can interact with. Pages can be followed or liked by other users - but these users can\u2019t initiate new posts to the page."
+  },
+  {
+    "external_id": "T0151.004",
+    "description": "Examples of popular Chat Platforms include WhatsApp, WeChat, Telegram, and Signal; Slack, Mattermost, and Discord; Zoom, GoTo Meeting, and WebEx.<br><br>Chat Platforms allow users to engage in text, audio, or video chats with other platform users.<br><br>Different Chat Platforms afford users different capabilities. Examples include Direct Messaging, Chat Rooms, Chat Broadcast Channels, and Chat Community Servers.<br><br>Some Chat Platforms enable encrypted communication between platform users."
+  },
+  {
+    "external_id": "T0151.005",
+    "description": "Chat Platforms such as Discord, Slack, and Microsoft Teams allow users to create their own Chat Community Servers, which they can invite other platform users to join.<br><br>Chat Community Servers are online communities made up of Chat Rooms (or \u201cChannels\u201d) in which users can discuss the given group\u2019s topic. Groups can either be public (shown in the server\u2019s browsable list of channels, available for any member to view and join) or Gated (users must be added to the chat group by existing members to participate).<br><br>Some Chat Community Servers allow users to create Chat Broadcast Groups, in which only specific members (e.g. server administrators) of the chat are able to post new content to the group."
+  },
+  {
+    "external_id": "T0151.006",
+    "description": "Many platforms which enable community interaction allow users to create Chat Rooms; a room in which members of the group can talk to each other via text, audio, or video.<br><br>Most Chat Rooms are Gated; users must be added to the chat group before they can post to the chat group, or view its content. For example, on WhatsApp a user can create a Chat Room containing other WhatsApp users whose contact information they have. At this point the user who created the Chat Room has an Administrator Account; they are uniquely able to add other users to the Chat Room.<br><br>However, Chat Rooms made on Chat Community Servers such as Discord can be Gated or open. If left open, anyone on the server can view the Chat Room (\u201cchannel\u201d), read its contents, and choose to join it.<br><br>Examples of Platforms which allow creation of Chat Rooms include:<br>Instagram, Facebook, X (prev. Twitter) (Group Direct Messaging)<br>Whatsapp, Telegram, WeChat, Signal (Group Chats)<br>Discord, Slack, Mattermost, Microsoft Teams (Channels)"
+  },
+  {
+    "external_id": "T0151.007",
+    "description": "A Chat Broadcast Group is a type of Chat Group in which only specific members can send content to the channel (typically administrators, or approved group members). Members of the channel may be able to react to content, or comment on it, but can\u2019t directly push new content to the channel.<br><br>Examples include:<br>WhatsApp, Telegram, Discord: Chat Groups in which only admins are able to post new content.<br>X (prev. Twitter): Spaces (an audio discussion hosting feature) in which admins control who can speak at a given moment."
+  },
+  {
+    "external_id": "T0151.008",
+    "description": "Examples of Microblogging Platforms include TikTok, Threads, Bluesky, Mastodon, QQ, Tumblr, and X (formerly Twitter).<br><br>Microblogging Platforms allow users to create Accounts, which they can configure to present themselves to other platform users. This typically involves Establishing Account Imagery and Presenting a Persona. <br><br>Accounts on Microblogging Platforms are able to post short-form text content alongside media.<br><br>Content posted to the platforms is aggregated into different feeds and presented to the user. Typical feeds include content posted by other Accounts which the user follows, and content promoted by the platform\u2019s proprietary Content Recommendation Algorithm. Users can also search or use hashtags to discover new content.<br><br>Mastodon is an open-source decentralised software which allows anyone to create their own Microblogging Platform that can communicate with other platforms within the \u201cfediverse\u201d (similar to how different email platforms can send emails to each other). Meta\u2019s Threads is a Microblogging Platform which can interact with the fediverse."
+  },
+  {
+    "external_id": "T0151.009",
+    "description": "Examples of Legacy Online Forum Platforms include Something Awful (SA Forums), Ars Technica forums, and NeoGAF, and the forums available on the Mumsnet and War Thunder websites.<br><br>Legacy Online Forum Platforms are a type of message board (using software such as vBulletin or phpBB) popular in the early 2000s for online communities. They are often used to provide spaces for a community to exist around a given website or topic. <br><br>Legacy Online Forum Platforms allow users to create Accounts to join in discussion threads posted to any number of Forums and Sub-Forums on the platform. Forums and Sub-Forums can be Gated, allowing access to approved users only. They can vary in size. Some are larger platforms that host a wider set of topics and communities while others are smaller in scope and size. "
+  },
+  {
+    "external_id": "T0151.010",
+    "description": "Reddit, Lemmy and Tildes are examples of Community Forum Platforms.<br><br>Community Forum Platforms are exemplified by users\u2019 ability to create their own sub-communities (Community Sub-Forums) which other platform users can join. <br><br>Platform users can view aggregated content from all Community Sub-Forums they subscribe to, or they can view all content from a particular Community Sub-Forum."
+  },
+  {
+    "external_id": "T0151.011",
+    "description": "Community Forum Platforms are made up of many Community Sub-Forums. Sub-Forums provide spaces for platform users to create a community based around any topic. <br><br>For example, Reddit (a popular Community Forum Platform) has over 138,000 \u201csubreddits\u201d (Community Sub-Forums), including 1082 unique cat-based communities.<br><br>Typically, Sub-Forums allow users post text, image, or video to them, and other platform users can up/downvote, or comment on it. Sub-forums may have their own extra rules alongside the platform\u2019s global rules, enforced by community moderators. <br><br>While most Sub-Forums are made by users with Accounts on the Community Forum Platform, Sub-Forums can also be created by the platform itself."
+  },
+  {
+    "external_id": "T0151.012",
+    "description": "4chan and 8chan are examples of Image Board Platforms.<br><br>Image Board Platforms provide individual boards on which users can start threads related to the board\u2019s topic. For example, 4chan\u2019s /pol/ board provides a space for users to talk about politics. <br><br>Most Image Board Platforms allow users to post without creating an account. Posts are typically made anonymously, although users can choose to post under a pseudonym."
+  },
+  {
+    "external_id": "T0151.013",
+    "description": "Quora, Stack Overflow, and Yahoo Answers are examples of Question and Answer Platforms.<br><br>Question and Answer Platforms allow users to create Accounts letting them post questions to the platform community, and respond to other platform users\u2019 questions."
+  },
+  {
+    "external_id": "T0151.014",
+    "description": "Many platforms enable community interaction via Comments Sections on posted content. Comments Sections allow platform users to comment on content posted by other users. <br><br>On some platforms Comments Sections are the only place available for community interaction, such as news websites which provide a Comments Section to discuss articles posted to the website."
+  },
+  {
+    "external_id": "T0151.015",
+    "description": "Roblox, Minecraft, Fortnite, League of Legends, and World of Warcraft are examples of Online Game Platforms.<br><br>Online Game Platforms allow users to create Accounts which they can use to access Online Game Sessions; i.e. an individual instance of a multiplayer online game.<br><br>Many Online Game Platforms support text or voice chat within Online Game Sessions."
+  },
+  {
+    "external_id": "T0151.016",
+    "description": "Online Game Sessions are instances of a game played on an Online Game Platform. Examples of Online Game Sessions include a match in Fortnite or League of Legends, or a server in Minecraft, Fortnite, or World of Warcraft.<br><br>Some Online Game Platforms (such as Fortnite, League of Legends, and World of Warcraft) host Online Game Sessions on their own Servers, and don\u2019t allow other actors to host Online Game Sessions.<br><br>Some Online Game Platforms (such as Roblox and Minecraft) allow users to host instances of Online Game Sessions on their own Servers."
+  },
+  {
+    "external_id": "T0151.017",
+    "description": "Tinder, Bumble, Grindr, Tantan, Badoo, Plenty of Fish, hinge, LOVOO, OkCupid, happn, and Mamba are examples of Dating Platforms.<br><br>Dating Platforms allow users to create Accounts, letting them connect with other platform users with the purpose of developing a physical/romantic relationship."
+  },
+  {
+    "external_id": "T0152",
+    "description": "Digital Content Hosting Assets are online assets which are primarily designed to allow actors to upload content to the internet. <br><br>Sub-techniques categorised under Digital Content Hosting Assets can include Community Hosting and Content Delivery capabilities; however their nominal primary purpose is to host content online."
+  },
+  {
+    "external_id": "T0152.001",
+    "description": "Medium and Substack are examples of Blogging Platforms. <br><br>By creating an Account on a Blogging Platform, people are able to create their own Blog."
+  },
+  {
+    "external_id": "T0152.002",
+    "description": "Blogs are a collation of posts centred on a particular topic, author, or collection of authors.<br><br>Some platforms are designed to support users in hosting content online, such as Blogging Platforms like Substack which allow users to create Blogs, but other online platforms can also be used to produce a Blog; a Paid Account on X (prev Twitter) is able to post long-form text content to their timeline in a style of a blog.<br><br>Actors may create Accounts on Blogging Platforms to create a Blog, or make their own Blog on a Website."
+  },
+  {
+    "external_id": "T0152.003",
+    "description": "Examples of Website Hosting Platforms include Wix, Webflow, Weebly, and Wordpress.<br><br>Website Hosting Platforms help users with managing online infrastructure required to host a website online; such as securing IP Addresses and Domains."
+  },
+  {
+    "external_id": "T0152.004",
+    "description": "A Website is a collection of related web pages hosted on a server and accessible via a web browser. Websites have an associated Domain and can host various types of content, such as text, images, videos, and interactive features. <br><br>When a Website is fleshed out, it Presents a Persona to site visitors. For example, the Domain \u201cbbc.co.uk/news\u201d hosts a Website which uses the News Outlet Persona."
+  },
+  {
+    "external_id": "T0152.005",
+    "description": "Pastebin is an example of a Paste Platform.<br><br>Paste Platforms allow people to upload unformatted text to the platform, which they can share via a link. Some Paste Platforms are Open Access Platforms which allow users to upload content without creating an Account first."
+  },
+  {
+    "external_id": "T0152.006",
+    "description": "YouTube, Vimeo, and LiveLeak are examples of Video Platforms.<br><br>Video Platforms allow people to create Accounts which they can use to upload video content for people to watch on the platform.<br><br>The ability to host videos is not exclusive to Video Platforms; many online platforms allow users with Accounts to upload video content. However, Video Platforms\u2019 primary purpose is to be a place to host and view video content."
+  },
+  {
+    "external_id": "T0152.007",
+    "description": "Soundcloud, Spotify, and YouTube Music; Apple Podcasts, Podbean, and Captivate are examples of Audio Platforms.<br><br>Audio Platforms allow people to create Accounts which they can use to upload audio content to the platform. <br><br>The ability to host audio is not exclusive to Audio Platforms; many online platforms allow users with Accounts to upload audio content. However, Audio Platforms\u2019 primary purpose is to be a place to host and listen to audio content."
+  },
+  {
+    "external_id": "T0152.008",
+    "description": "Twitch.tv and Whatnot are examples of Live Streaming Platforms. <br><br>Live Streaming Platforms allow people to create Accounts and stream live content (video or audio). A temporary open Group Chat is created alongside live streamed content for viewers to discuss the stream. Some Live Streaming Platforms allow users to archive streamed content for later non-live viewing.<br><br>The ability to stream live media is not exclusive to Live Streaming Platforms; many online platforms allow users with Accounts to stream content (such as the Video Platform YouTube\u2019s \u201cYouTube Live\u201d, and the Social Media Platform Facebook\u2019s \u201cFacebook Live\u201d). However, Live Streaming Platforms\u2019 primary purpose is to be a place for people to stream content live."
+  },
+  {
+    "external_id": "T0152.009",
+    "description": "Apple\u2019s App Store, Google\u2019s Google Play Store, and Valve\u2019s Steam are examples of Software Delivery Platforms.<br><br>Software Delivery Platforms are designed to enable users to download programmes uploaded to the platform. Software can be purchased, or downloaded for free. <br><br>Some Software Delivery Platforms require users to have an Account before they can download software, and software they acquire becomes associated with the account (i.e. the account owns a licence to download the software). Some platforms don\u2019t require users to make accounts before downloading software.<br><br>Actors may create their own Software Delivery Platform on a Domain they own."
+  },
+  {
+    "external_id": "T0152.010",
+    "description": "Dropbox and Google Drive are examples of File Hosting Platforms.<br><br>File Hosting Platforms allow people to create Accounts which they can use to host files on another server, enabling access to content on any machine, and the ability to easily share files with anyone online.<br><br>Actors may also create their own File Hosting Platform on a Website or Server they control."
+  },
+  {
+    "external_id": "T0152.011",
+    "description": "Wikipedia, Fandom, Ruwiki, TV Tropes, and the SCP Foundation are examples of Wiki Platforms.<br><br>Wikis use wiki software to allow platform users to collaboratively create and maintain an encyclopedia of information related to a given topic. "
+  },
+  {
+    "external_id": "T0152.012",
+    "description": "Patreon, Fansly, and OnlyFans are examples of Subscription Service Platforms.<br><br>Subscription Service Platforms enable users with Accounts to host online content to which other platform users can subscribe to access. Content typically requires Paid Subscription to access, however open content is often also supported."
+  },
+  {
+    "external_id": "T0153",
+    "description": "Digital Content Delivery Assets are assets which support the delivery of content to users online. <br><br>Sub-techniques categorised under Digital Content Delivery Assets can include Community Hosting and Content Hosting capabilities; however their nominal primary purpose is to support the delivery of content to users online."
+  },
+  {
+    "external_id": "T0153.001",
+    "description": "Gmail, iCloud mail, and Microsoft Outlook are examples of Email Platforms.<br><br>Email Platforms are online platforms which allow people to create Accounts that they can use to send and receive emails to and from other email accounts. <br><br>Instead of using an Email Platform, actors may set up their own Email Domain, letting them send and receive emails on a custom domain.<br><br>Analysts should default to Email Platform if they cannot confirm whether an email was sent using a privately operated email, or via an account on a public email platform (for example, in situations where analysts are coding third party reporting which does not specify the type of email used)."
+  },
+  {
+    "external_id": "T0153.002",
+    "description": "Bitly and TinyURL are examples of Link Shortening Platforms.<br><br>Link Shortening Platforms are online platforms which allow people to create Accounts that they can use to convert existing URLs into Shortened Links, or into QR Codes."
+  },
+  {
+    "external_id": "T0153.003",
+    "description": "A Shortened Link is a custom URL which is typically a shortened version of another URL."
+  },
+  {
+    "external_id": "T0153.004",
+    "description": "A QR Code allows people to use cameras on their smartphones to open a URL."
+  },
+  {
+    "external_id": "T0153.005",
+    "description": "Google Ads, Facebook Ads, and LinkedIn Marketing Solutions are examples of Online Advertising Platforms.<br><br>Online Advertising Platforms are online platforms which allow people to create Accounts that they can use to upload and deliver adverts to people online."
+  },
+  {
+    "external_id": "T0153.006",
+    "description": "Many online platforms have Content Recommendation Algorithms, which promote content posted to the platform to users based on metrics the platform operators are trying to meet. Algorithms typically surface platform content which the user is likely to engage with, based on how they and other users have behaved on the platform."
+  },
+  {
+    "external_id": "T0153.007",
+    "description": "Many online platforms allow users to contact other platform users via Direct Messaging; private messaging which can be initiated by a user with other platform users.<br><br>Examples include messaging on WhatsApp, Telegram, and Signal; direct messages (DMs) on Facebook or Instagram.<br><br>Some platforms\u2019 Direct Messaging capabilities provide users with Encrypted Communication."
+  },
+  {
+    "external_id": "T0154",
+    "description": "Digital Content Creation Assets are Platforms or Software which help actors produce content for publication online."
+  },
+  {
+    "external_id": "T0154.001",
+    "description": "OpenAI\u2019s ChatGPT, Google\u2019s Bard, Microsoft\u2019s Turing-NLG, Google\u2019s T5 (Text-to-Text Transfer Transformer), and Facebook\u2019s BART are examples of AI LLM (Large Language Model) Platforms.<br><br>AI LLM Platforms are online platforms which allow people to create Accounts that they can use to interact with the platform\u2019s AI Large Language Model, to produce text-based content.<br><br>LLMs can create hyper-realistic synthetic text that is both scalable and persuasive. LLMs can largely automate content production, reducing the overhead in persona creation, and generate culturally appropriate outputs that are less prone to exhibiting conspicuous signs of inauthenticity.<br><br>Some platforms implement protections against misuse of AI by their users. Threat Actors have been observed bypassing these protections using prompt injections, poisoning, jailbreaking, or integrity attacks."
+  },
+  {
+    "external_id": "T0154.002",
+    "description": "AI Media Platforms are online platforms that allow people to create Accounts which they can use to produce image, video, or audio content (also known as \u201cdeepfakes\u201d) using the platform\u2019s AI Software.<br><br>Midjourney, DALL-E, Stable Diffusion, and Adobe Firefly are examples of AI Media Platforms which allow users to Develop AI-Generated Images, AI-Generated Videos and AI-Generated Account Imagery. <br><br>Similarly, Reface, Zao, FaceApp, and Wombo are mobile apps which offer features for creating AI-Generated videos, gifs, or trending memes.<br><br>AI-Generated Audio such as text-to-speech and voice cloning have revolutionised the creation of synthetic voices that closely mimic human speech. AI Media Platforms such as Descript, Fliki, Murf AI, PlayHT, and Resemble AI can be used to generate synthetic voice. <br><br>Some platforms implement protections against misuse of AI by their users. Threat Actors have been observed bypassing these protections using prompt injections, poisoning, jailbreaking, or integrity attacks."
+  },
+  {
+    "external_id": "T0155",
+    "description": "Some assets are Gated; closed communities or platforms which can\u2019t be accessed openly. They may be password protected or require admin approval for entry. Many different digital assets can be gated. This technique contains sub-techniques with methods used to gate assets. Analysts can use T0155: Gated Asset if the method of gating is unclear."
+  },
+  {
+    "external_id": "T0155.001",
+    "description": "A Password Gated Asset is an online asset which requires a password to gain access. <br><br>Examples include password protected Servers set up to be a File Hosting Platform, or password protected Community Sub-Forums."
+  },
+  {
+    "external_id": "T0155.002",
+    "description": "An Invite Gated Asset is an online asset which requires an existing user to invite other users for access to the asset.<br><br>Examples include Chat Groups in which Administrator Accounts are able to add or remove users, or File Hosting Platforms which allow users to invite other users to access their files."
+  },
+  {
+    "external_id": "T0155.003",
+    "description": "An Approval Gated Asset is an online asset which requires approval from Administrator Accounts for access to the asset.<br><br>Examples include Online Community Groups on Facebook, which can be configured to require questions and approval before access, and Accounts on Social Media Platforms such as Instagram, which allow users to set their accounts as visible to approved friends only."
+  },
+  {
+    "external_id": "T0155.004",
+    "description": "A Geoblocked Asset is an online asset which cannot be accessed in specific geographical locations.<br><br>Assets can be Geoblocked by choice of the platform, or can have Geoblocking mandated by regulators, and enforced through Internet Service Providers."
+  },
+  {
+    "external_id": "T0155.005",
+    "description": "A Paid Access Asset is an online asset which requires a single payment for permanent access to the asset."
+  },
+  {
+    "external_id": "T0155.006",
+    "description": "A Subscription Access Asset is an online asset which requires a continued subscription for access to the asset.<br><br>Examples include the Blogging Platform Substack, which affords Blogs hosted on their platform the ability to produce subscriber-only posts, and the Subscription Service Platform Patreon."
+  },
+  {
+    "external_id": "T0155.007",
+    "description": "Some online platforms support encrypted communication between platform users, for example the Chat Platforms Telegram and Signal."
+  }
+],
+    "Article": "\nIran has taken a page from the Russian playbook: Passing off military groups as civilians for the sake of PR and plausible deniability.\n\nIranian state-backed advanced persistent threat (APT) groups have been masquerading as hacktivists, claiming attacks against Israeli critical infrastructure and air defense systems.\n\nWhile threat actors in Gaza itself\u00a0[have been radio silent](https://web.archive.org/web/20240221113558/https://www.darkreading.com/threat-intelligence/hamas-cyberattacks-ceased-after-october-7-attack-but-why), the majority of cyberattacks against Israel in recent months have been carried out by hacktivist operations and nation-state actors \"playing them on TV,\" according to a new report from CrowdStrike.\n\nThese so-called \"faketivists\" have had a mixed impact on the Israeli-Gaza war thus far, claiming many public relations wins but leaving evidence of few truly disruptive attacks.\n\nWhat's clearer are the benefits of the model itself: creating a layer of plausible deniability for the state, and the impression among the public that their attacks are grassroots-inspired. While this deniability has always been a key driver with state-sponsored cyberattacks, researchers characterized this instance as noteworthy for the effort behind the charade.\n\n\"We've seen a lot of hacktivist activity that seems to be nation-states trying to have that 'deniable' capability,\" Adam Meyers, CrowdStrike senior vice president for counter adversary operations said in a press conference this week. \"And so these groups continue to maintain activity, moving from what was traditionally website defacements and DDoS attacks, into a lot of hack and leak operations.\"\n\n## **Iran's Faketivists**\n\nFaketivists can be nation-state actors \u2014 such as \"Karma Power,\" the front for the Ministry of Intelligence-linked BANISHED KITTEN, or\u00a0[\"The Malek Team,\" in actuality SPECTRAL KITTEN](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/israeli-defence-force-medical-data-hacked)\u00a0\u2014 or corporate ones like HAYWIRE KITTEN \u2014 associated with Islamic Revolutionary Guard Corps contractor Emennet Pasargad, which at various times has operated under the nom de guerre Yare Gomnam Cyber Team and\u00a0[al Toufan Team (aka Cyber Toufan)](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/-cyber-toufan-hacktivists-leaked-100-plus-israeli-orgs-in-one-month).\n\nTo sell the persona, faketivists like to adopt the aesthetic, rhetoric, tactics, techniques, and procedures (TTPs), and sometimes the actual names and iconography associated with legitimate hacktivist outfits. Keen eyes will spot that they typically arise just after major geopolitical events, without an established history of activity, in alignment with the interests of their government sponsors.\n\nOftentimes, it's difficult to separate the faketivists from the hacktivists, as each might promote and support the activities of the other.\n\nPost-Oct. 7 activity from Iran's faketivists \u2014 real and otherwise \u2014 has involved purported attacks against critical infrastructure and Israel's \"Iron Dome\" missile defense system, as well as frequent information operations.\n\nAnd the former is often just a thin guise for the latter. While faketivists have achieved a select number of\u00a0[breaches of note](https://web.archive.org/web/20240221113558/https://www.darkreading.com/ics-ot-security/pro-iran-attackers-access-multiple-water-facility-controllers), the majority of them appear to be opportunistic attacks of low material impact, intended to\u00a0[boost the morale of one side and degrade the other's](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/hackers-blast-violent-gaza-message-popular-israeli-movie-theater).\n\n\"We've seen disruptions targeting Israel, a lot of focus on things like air alert systems that alert about incoming missile strikes. We've seen attempts to disrupt infrastructure within Israel, for sure,\" Meyers said, adding that such activity is likely to continue in order to terrorize Israelis. \"It's basically the same playbook that Russia used in Ukraine, of how can we terrorize the population and delegitimize their government, and cause them to distrust things.\"\n\n## **The Gap Left by Hamas Threat Actors**\n\nAt the same time Iranian faketivism has shot up in Israel, cyber activity associated with Hamas has taken a nosedive.\n\nSince the Oct. 7 terrorist attack in Israel, threat analysts have consistently found zilch from Hamas-connected cyber threat actors like Extreme Jackal (aka BLACKSTEM, MOLERATS) and Renegade Jackal (aka DESERTVARNISH, UNC718, Desert Falcons, Arid Viper).\n\nThis, CrowdStrike speculates in its report, might be explained by significant Internet disruptions in the region. Since the onset of war, it explained, connectivity in Gaza has been hampered by some combination of kinetic war, power outages, and distributed denial-of-service (DDoS) attacks.\n\nCase-in-point: there is one Hamas-linked group \u2014 CruelAlchemy \u2014 whose command-and-control (C2) infrastructure has remained active since the onset of war. Though Gaza-connected, the group appears to be physically located in Turkey.\n\nSo while Hamas remains MIA online, its allies are making up the difference ([in volume, if not quality](https://web.archive.org/web/20240221113558/https://www.darkreading.com/cyberattacks-data-breaches/worldwide-hacktivists-take-sides-over-gaza-with-little-show)).\n\n\"The point is that APTs continue to proliferate. We see more and more threat actors every year, and more and more activity from those threat actors every single year,\" Meyers says.\n"
+    }
+
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+{
+  "Techniques": [
+    {
+      "external_id": "T0029",
+      "description": "Create fake online polls, or manipulate existing online polls. Data gathering tactic to target those who engage, and potentially their networks of friends/followers as well"
+    },
+    {
+      "external_id": "T0107",
+      "description": "Platforms for searching, sharing, and curating content and media. Examples include Pinterest, Flipboard, etc."
+    },
+    {
+      "external_id": "T0109",
+      "description": "Platforms for finding, reviewing, and sharing information about brands, products, services, restaurants, travel destinations, etc. Examples include Yelp, TripAdvisor, etc."
+    },
+    {
+      "external_id": "T0110",
+      "description": "Leveraging formal, traditional, diplomatic channels to communicate with foreign governments (written documents, meetings, summits, diplomatic visits, etc). This type of diplomacy is conducted by diplomats of one nation with diplomats and other officials of another nation or international organisation."
+    },
+    {
+      "external_id": "T0111",
+      "description": "Examples include TV, Newspaper, Radio, etc."
+    },
+    {
+      "external_id": "T0111.001",
+      "description": "TV"
+    },
+    {
+      "external_id": "T0111.002",
+      "description": "Newspaper"
+    },
+    {
+      "external_id": "T0111.003",
+      "description": "Radio"
+    },
+    {
+      "external_id": "T0151",
+      "description": "A Digital Community Hosting Asset is an online asset which can be used by actors to provide spaces for users to interact with each other.<br><br>Sub-techniques categorised under Digital Community Hosting Assets can include Content Hosting and Content Delivery capabilities; however, their nominal primary purpose is to provide
+
+Time: 10.95 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.02 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.03 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.04 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+
+Prompt:
+ERROR: Failed to parse JSON from model response 
+Model failed to return valid JSON
+Respond ONLY with valid JSON.
+
+Result:
+
+
+Time: 0.05 seconds
+
+--------------------------------------------------
+

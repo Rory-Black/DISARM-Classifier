@@ -1,5 +1,7 @@
-.ZeDPEB_logs/*
-!.ZeDPEB_logs/.gitkeep
-
 .exe_logs/*
 !.exe_logs/.gitkeep
+!.exe_logs/saved
+
+.ZeDPEB_logs/*
+!.ZeDPEB_logs/.gitkeep
+!.ZeDPEB_logs/saved
